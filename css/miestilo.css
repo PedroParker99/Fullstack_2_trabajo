@@ -1,0 +1,6 @@
+
+/* Crear el cuerpo que se vaya repitiendo*/
+body {
+    background-image: url('../img/Nubes_Fondo.png');
+    background-repeat: repeat;
+}

@@ -16,20 +16,123 @@
 
 
 <body>
-    <!-- NAVBAR -->
+    <!-- ========= NAVBAR ========= -->
+    <!-- El "#" Se ocupara para aún no mandar a ninguna parte-->
     <!-- Se deja con el nav, para que pueda identificar que cumple ese rol -->
     <!-- navbar-light es para señalar el color-->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <!-- container centra el contenido y genera margenes laterales -->
+        <!--navbar-light es para señalar el color-->
+        <!--container centra el contenido y genera margenes laterales -->
         <div class="container">
-
-            <!-- Acá adentro va todo: logo, botón hamburguesa, menú -->
+            <!-- Logo / marca -->
+            <a class="navbar-brand" href="index.html">
+                <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
+            </a>
+            <!-- Botón hamburguesa (solo aparece en celular) -->
+            <!-- navbar-toggler es para el modo hamburguesa de celular, además que el target menuPrincipal
+            le dice que elemento debe abrir/cerrar, por eso el id de abajo debe coincidir perfectamente-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Contenido que se colapsa en celular, acá se coloca la id que nombré arriba -->
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
+                <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
+                <!-- === Grupo 1 === -->
+                <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+                    <!-- Apartado "Boton de Inicio" -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <!-- Apartado "Boton de Nuestra Tienda" -->
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link" href="#">Nuestra Tienda</a>
+                    </li>
+                    <!-- Apartado "Boton de Packs de Decoración" -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Packs Decoración Cumpleaños</a>
+                    </li>
+                    <!-- === Fin Grupo 1 ===-->
+            </div>
         </div>
     </nav>
+    <!-- ======= FIN DEL NAVBAR ======= -->
+    <!-- ===== BANNER PRINCIPAL ===== -->
+    <div class="banner-hero">
+        <img src="img/Banner_portada.png" class="w-100 h-100" alt="Villa del Globo - Cotillón infantil">
+    </div>
+    <!-- ===== FIN BANNER PRINCIPAL===== -->
+    <!-- ==== BARRA DE ANUNCIOS ==== -->
+    <div class="bg-rosa-brand text-white text-center py-2">
+        <!-- Acá señalo las letras blancas y el fondo de color que yo desee, de 
+        los colores predefinidos de bootstrap, además lo dejo centrado con text-center, con un padding vertical(0 a 5) -->
+        <span class="fw-bold fs-5"> <!--Es la fuente negrita  -->
+            Envío Gratis desde $45.000 &nbsp;|&nbsp;🚛 Envíos a todo
+            Chile &nbsp;|&nbsp; Envío Gratis desde $45.000
+            &nbsp;|&nbsp;🚛 Envíos a todo Chile &nbsp;|&nbsp; Envío
+            Gratis desde $45.000 &nbsp;|&nbsp;
+            <!-- Es HTML puro, no Bootstrap: &nbsp; es un espacio "duro" que no se colapsa, 
+            y | es solo el símbolo de barra vertical como separador visual-->
+        </span>
+    </div>
+    <!-- ==== FIN BARRA DE ANUNCIOS ==== -->
+
+
+
+    <!-- ===== FOOTER ===== -->
+    <!-- Padding arriba de 5 y abajo de 3, el mt-5 ayuda a separar el footer del contenido de arriba-->
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- === COLUMNA 1: Marca === -->
+                <!-- col-md-4 En celular cada columna ocupa el 100% (una debajo de otra), y en tablet(md) en adelante se reparten en 3 columnas iguales -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold">🎈 Villa del Globo</h5>
+                    <!-- Estilo de texto, gris suave, bueno para texto secundario con fondo oscuro -->
+                    <p class="text-secondary">
+                        Todo lo que necesitas para tus fiestas:
+                        cotillón, decoración,
+                        globos, disfraces y mucho más.
+                    </p>
+                </div>
+
+                <!-- === COLUMNA 2: Tienda === -->
+                <div class="col-md-4">
+                    <h6 class="fw-bold">Tienda</h6>
+                    <!-- Estilo del link -->
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="link-light text-decoration-none">Inicio</a></li>
+                        <li><a href="#" class="link-light text-decoration-none">Nuestra Tienda</a></li>
+                        <li><a href="#" class="link-light text-decoration-none">Packs Decoración</a></li>
+                    </ul>
+                </div>
+
+                <!-- === COLUMNA 3: Contacto === -->
+                <div class="col-md-4">
+                    <h6 class="fw-bold">Contacto</h6>
+                    <ul class="list-unstyled text-secondary">
+                        <li>📞 9 7909 9900</li>
+                        <li>✉️ villadelglobospa@gmail.com</li>
+                    </ul>
+                    <div class="mt-2">
+                        <!-- El me-3 Margin end(Desde la derecha) tamaño 3, separa Facebook de Instagram -->
+                        <a href="#" class="link-light me-3">Facebook</a>
+                        <a href="#" class="link-light">Instagram</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Una linea divisoria -->
+            <hr class="border-secondary my-4">
+            <p class="text-center text-secondary mb-0"> 
+                <!-- El &copy; es el símbolo de copyright -->
+                &copy; 2026 Villa del Globo. Todos los derechos
+                reservados.
+            </p>
+        </div>
+    </footer>
 
 
 </body>
-
-
 
 </html>

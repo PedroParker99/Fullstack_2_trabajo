@@ -4,3 +4,9 @@ body {
     background-image: url('../img/Nubes_Fondo.png');
     background-repeat: repeat;
 }
+
+/* Clase para el banner principal */
+.banner-hero {
+    max-height: 600px;
+    overflow: hidden;
+}

@@ -8,6 +8,7 @@
     <!-- COLOCAR BOOTSTRAP 5 -->
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <!-- SE CONECTA CON CSS/MIESTILO.CSS -->
     <link rel="stylesheet" href="css/miestilo.css">
@@ -16,66 +17,427 @@
 
 
 <body>
-    <!-- ========= NAVBAR ========= -->
-    <!-- El "#" Se ocupara para aún no mandar a ninguna parte-->
-    <!-- Se deja con el nav, para que pueda identificar que cumple ese rol -->
-    <!-- navbar-light es para señalar el color-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <!--navbar-light es para señalar el color-->
-        <!--container centra el contenido y genera margenes laterales -->
-        <div class="container">
-            <!-- Logo / marca -->
-            <a class="navbar-brand" href="index.html">
-                <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
-            </a>
-            <!-- Botón hamburguesa (solo aparece en celular) -->
-            <!-- navbar-toggler es para el modo hamburguesa de celular, además que el target menuPrincipal
+    <div class="page-wrapper">
+        <!-- ========= NAVBAR ========= -->
+        <!-- El "#" Se ocupara para aún no mandar a ninguna parte-->
+        <!-- Se deja con el nav, para que pueda identificar que cumple ese rol -->
+        <!-- navbar-light es para señalar el color-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+            <!--navbar-light es para señalar el color-->
+            <!--container centra el contenido y genera margenes laterales -->
+            <div class="container">
+                <!-- Logo / marca -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
+                </a>
+                <!-- Botón hamburguesa (solo aparece en celular) -->
+                <!-- navbar-toggler es para el modo hamburguesa de celular, además que el target menuPrincipal
             le dice que elemento debe abrir/cerrar, por eso el id de abajo debe coincidir perfectamente-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Contenido que se colapsa en celular, acá se coloca la id que nombré arriba -->
-            <div class="collapse navbar-collapse" id="menuPrincipal">
-                <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
-                <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
-                <!-- === Grupo 1 === -->
-                <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
-                    <!-- Apartado "Boton de Inicio" -->
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Inicio</a>
-                    </li>
-                    <!-- Apartado "Boton de Nuestra Tienda" -->
-                    <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link" href="#">Nuestra Tienda</a>
-                    </li>
-                    <!-- Apartado "Boton de Packs de Decoración" -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Packs Decoración Cumpleaños</a>
-                    </li>
-                    <!-- === Fin Grupo 1 ===-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Contenido que se colapsa en celular, acá se coloca la id que nombré arriba -->
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
+                    <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
+                    <!-- === Grupo 1 === -->
+                    <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+                        <!-- Apartado "Boton de Inicio" -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Inicio</a>
+                        </li>
+                        <!-- Apartado "Boton de Nuestra Tienda" -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link" href="#">Nuestra Tienda</a>
+                        </li>
+                        <!-- Apartado "Boton de Packs de Decoración" -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Packs Decoración Cumpleaños</a>
+                        </li>
+                        <!-- === Fin Grupo 1 ===-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- ======= FIN DEL NAVBAR ======= -->
+        <!-- ===== BANNER PRINCIPAL ===== -->
+        <div class="banner-hero">
+            <img src="img/Banner_portada.png" class="w-100 h-100" alt="Villa del Globo - Cotillón infantil">
+        </div>
+        <!-- ===== FIN BANNER PRINCIPAL===== -->
+        <!-- ==== BARRA DE ANUNCIOS ==== -->
+        <div class="bg-rosa-brand text-white text-center py-2">
+            <!-- Acá señalo las letras blancas y el fondo de color que yo desee, de 
+        los colores predefinidos de bootstrap, además lo dejo centrado con text-center, con un padding vertical(0 a 5) -->
+            <span class="fw-bold fs-5"> <!--Es la fuente negrita  -->
+                Envío Gratis desde $45.000 &nbsp;|&nbsp;🚛 Envíos a todo
+                Chile &nbsp;|&nbsp; Envío Gratis desde $45.000
+                &nbsp;|&nbsp;🚛 Envíos a todo Chile &nbsp;|&nbsp; Envío
+                Gratis desde $45.000 &nbsp;|&nbsp;
+                <!-- Es HTML puro, no Bootstrap: &nbsp; es un espacio "duro" que no se colapsa, 
+            y | es solo el símbolo de barra vertical como separador visual-->
+            </span>
+        </div>
+        <!-- ==== FIN BARRA DE ANUNCIOS ==== -->
+
+
+
+
+        <!-- PRODUCTOS MÁS VENDIDOS, los productos que se venden con card -->
+        <div class="container mb-5">
+            <h2 class="text-center mb-4">Productos más Vendidos</h2>
+
+            <div class="row g-4">
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <!-- card es el contenedor principal en proyectos reales, el h-100 es altura 100% del contenedor padre, Asi todas las tarjetas
+        de una fila quedan igual de altas, aunque el texto varie, el shadow-sm es una sombra suave para dar profundidad,
+        y el card-producto es la clase personalizada para los efectos hover -->
+                    <div class="card h-100 card-producto shadow-sm">
+                        <!-- badge bg-danger es una etiqueta pequeña, ideal para mostrar descuentos, y el position-absolute saca el badge del flujo
+        normal y lo posiciona flotando sobre la imagen -->
+                        <span class="badge bg-danger position-absolute m-2">Ahorras
+                            33%</span>
+                        <img src="img/SETTOYSTORY2.webp" class="card-img-top" alt="Set Toy Story">
+                        <!-- card-body es el contenido dentro de la tarjeta, con su padding correcto, el d-flex y flex collumn, conviernen el
+        contenedor flexible en una columna -->
+                        <div class="card-body d-flex flex-column">
+                            <!-- Estilo para el titulo del producto -->
+                            <h6 class="card-title">Set decoración cumpleaños
+                                Toy Story</h6>
+                            <p class="mb-1">
+                                <span class="text-decoration-line-through text-muted">$29.990</span>
+                                <span class="text-danger fw-bold ms-2">$19.990</span>
+                            </p>
+                            <!-- mt-auto, empuja el botón siempre al fondo de la tarjeta, si nimportar cuanto texto haya arriba -->
+                            <button class="btn btn-primary mt-auto btn-agregar-carrito"
+                                data-nombre="Set decoración cumpleañosToy Story" data-precio="19990"
+                                data-imagen="https://placehold.co/100x100/0d6efd/white?text=Toy+Story">
+                                Añadir al carrito
+                            </button>
+                            <!-- La mezcla del flex-column + mt-auto hace que aunque el producto tenga un nombre largo y otro corto, los botones quedarian
+            a la misma altura, y no se verían desordenados -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 card-producto shadow-sm">
+                        <img src="img/SETMERLINA.webp" class="card-img-top" alt="Set Merlina">
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="card-title">Set decoración cumpleaños
+                                Merlina</h6>
+                            <p class="mb-1">
+                                <span class="text-decoration-line-through text-muted">$24.990</span>
+                                <span class="text-danger fw-bold ms-2">$19.990</span>
+                            </p>
+                            <!-- el apartado disabled es un atributo HTML para deshabilitar el botón-->
+                            <button class="btn btn-secondary mt-auto" disabled>Agotado</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 card-producto shadow-sm">
+                        <span class="badge bg-danger position-absolute m-2">Ahorras
+                            25%</span>
+                        <img src="img/SETMASHA.webp" class="card-img-top" alt="Set Masha">
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="card-title">Set decoración cumpleaños
+                                Masha y el Oso</h6>
+                            <p class="mb-1">
+                                <span class="text-decoration-line-through text-muted">$26.990</span>
+                                <span class="text-danger fw-bold ms-2">$19.990</span>
+                            </p>
+                            <button class="btn btn-primary mt-auto btn-agregar-carrito">Añadir
+                                al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 card-producto shadow-sm">
+                        <img src="img/Bolsas_Minnie.webp" class="card-img-top" alt="Bolsas Minnie">
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="card-title">Bolsas de dulces Minnie
+                                Mouse x6</h6>
+                            <p class="mb-1">
+                                <span class="fw-bold">$5.390</span>
+                            </p>
+                            <button class="btn btn-primary mt-auto btn-agregar-carrito">Añadir
+                                al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </nav>
-    <!-- ======= FIN DEL NAVBAR ======= -->
-    <!-- ===== BANNER PRINCIPAL ===== -->
-    <div class="banner-hero">
-        <img src="img/Banner_portada.png" class="w-100 h-100" alt="Villa del Globo - Cotillón infantil">
+
+        <!-- PRODUCTOS EN EL CARRUSEL -->
+        <div class="container mb-5">
+            <h2 class="text-center mb-4">Novedades en Decoración</h2>
+            <!-- Marca el contenedor principal como carrusel con transición deslizante -->
+            <!-- Usa una id para que los botones sepan que carruslen controlar -->
+            <div id="carruselProductos" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- Los "slides" -->
+                <!-- Contenedor que recorta y desliza los slides -->
+                <div class="carousel-inner">
+
+                    <!-- Slide 1 -->
+                    <!-- Cada slide individual, el primero siempre debe tener la clase "avite" o el carrusel no mostrará nada al cargar -->
+                    <div class="carousel-item active">
+                        <div class="row g-4 px-5">
+
+                            <div class="col-6 col-lg-3">
+                                <div class="card h-100 card-producto shadow-sm">
+                                    <span class="badge bg-danger position-absolute m-2">Ahorras
+                                        33%</span>
+                                    <img src="img/SETTOYSTORY2.webp" class="card-img-top" alt="Set Toy Story">
+                                    <div class="card-body d-flex flex-column">
+                                        <h6 class="card-title">Set Toy
+                                            Story</h6>
+                                        <p class="mb-1">
+                                            <span class="text-decoration-line-through text-muted">$29.990</span>
+                                            <span class="text-danger fw-bold ms-2">$19.990</span>
+                                        </p>
+                                        <button class="btn btn-primary mt-auto btn-agregar-carrito">Añadir
+                                            al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <div class="card h-100 card-producto shadow-sm">
+                                    <img src="img/SETMERLINA.webp" class="card-img-top" alt="Set Merlina">
+                                    <div class="card-body d-flex flex-column">
+                                        <h6 class="card-title">Set
+                                            Merlina</h6>
+                                        <p class="mb-1">
+                                            <span class="text-decoration-line-through text-muted">$24.990</span>
+                                            <span class="text-danger fw-bold ms-2">$19.990</span>
+                                        </p>
+                                        <button class="btn btn-secondary mt-auto" disabled>Agotado</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <div class="card h-100 card-producto shadow-sm">
+                                    <span class="badge bg-danger position-absolute m-2">Ahorras
+                                        25%</span>
+                                    <img src="img/SETMASHA.webp" class="card-img-top" alt="Set Masha">
+                                    <div class="card-body d-flex flex-column">
+                                        <h6 class="card-title">Set Masha y
+                                            el Oso</h6>
+                                        <p class="mb-1">
+                                            <span class="text-decoration-line-through text-muted">$26.990</span>
+                                            <span class="text-danger fw-bold ms-2">$19.990</span>
+                                        </p>
+                                        <button class="btn btn-primary mt-auto btn-agregar-carrito">Añadir
+                                            al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <div class="card h-100 card-producto shadow-sm">
+                                    <img src="img/Bolsas_Minnie.webp" class="card-img-top" alt="Bolsas Minnie">
+                                    <div class="card-body d-flex flex-column">
+                                        <h6 class="card-title">Bolsas Minnie
+                                            Mouse x6</h6>
+                                        <p class="mb-1">
+                                            <span class="fw-bold">$5.390</span>
+                                        </p>
+                                        <button class="btn btn-primary mt-auto btn-agregar-carrito">Añadir
+                                            al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Slide 1 -->
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="row g-4 px-5">
+
+                            <div class="col-6 col-lg-3">
+                                <div class="card h-100 card-producto shadow-sm">
+                                    <img src="img/spiderman_mantel.webp" class="card-img-top" alt="Mantel Spiderman">
+                                    <div class="card-body d-flex flex-column">
+                                        <h6 class="card-title">Mantel
+                                            Spiderman</h6>
+                                        <p class="mb-1">
+                                            <span class="text-decoration-line-through text-muted">$4.990</span>
+                                            <span class="text-danger fw-bold ms-2">$3.990</span>
+                                        </p>
+                                        <button class="btn btn-primary mt-auto btn-agregar-carrito">Añadir
+                                            al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <div class="card h-100 card-producto shadow-sm">
+                                    <span class="badge bg-danger position-absolute m-2">Ahorras
+                                        20%</span>
+                                    <img src="img/frozen_mantel.webp" class="card-img-top" alt="Mantel Frozen">
+                                    <div class="card-body d-flex flex-column">
+                                        <h6 class="card-title">Mantel
+                                            Frozen</h6>
+                                        <p class="mb-1">
+                                            <span class="text-decoration-line-through text-muted">$4.990</span>
+                                            <span class="text-danger fw-bold ms-2">$3.990</span>
+                                        </p>
+                                        <button class="btn btn-primary mt-auto btn-agregar-carrito">Añadir
+                                            al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <div class="card h-100 card-producto shadow-sm">
+                                    <img src="img/SETMARIO.webp" class="card-img-top" alt="Set Mario Bross">
+                                    <div class="card-body d-flex flex-column">
+                                        <h6 class="card-title">Set Mario
+                                            Bross</h6>
+                                        <p class="mb-1">
+                                            <span class="text-decoration-line-through text-muted">$24.990</span>
+                                            <span class="text-danger fw-bold ms-2">$19.990</span>
+                                        </p>
+                                        <button class="btn btn-primary mt-auto btn-agregar-carrito">Añadir
+                                            al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <div class="card h-100 card-producto shadow-sm">
+                                    <img src="img/minecraft_corona.webp" class="card-img-top" alt="Corona Minecraft">
+                                    <div class="card-body d-flex flex-column">
+                                        <h6 class="card-title">Corona
+                                            Minecraft</h6>
+                                        <p class="mb-1">
+                                            <span class="text-decoration-line-through text-muted">$4.990</span>
+                                            <span class="text-danger fw-bold ms-2">$3.990</span>
+                                        </p>
+                                        <button class="btn btn-primary mt-auto btn-agregar-carrito">Añadir
+                                            al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Slide 2 -->
+
+                </div>
+
+                <!-- Flechas de navegación -->
+                <!-- data-bs-target le dice a la flecha que el carrusel le pertenece a la id correspondiente, y el data-bs-slide="prev" o "next"
+le dice al botón si debe retroceder o avanzar -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carruselProductos"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carruselProductos"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- TEMÁTICA DESTACADA: BLUEY -->
+        <div class="container mb-5">
+            <!-- align-items-center(en el row), centra verticalmente las columnas entre si, asi la imagen y el texto quedan alineados al medio y no arriba -->
+            <div class="row align-items-center g-4 bg-light rounded p-4">
+
+                <!-- Imagen grande de la temática -->
+                <div class="col-md-5">
+                    <img src="img/Bluey.jpg" class="img-fluid rounded shadow-sm" alt="Temática Bluey">
+                </div>
+
+                <!-- Info y opciones relacionadas -->
+                <div class="col-md-7">
+                    <span class="badge bg-primary mb-2">Temática
+                        destacada</span>
+                    <h2 class="fw-bold">Bluey</h2>
+                    <p class="text-muted">
+                        Todo lo que necesitas para una fiesta con la
+                        temática favorita
+                        de los más pequeños. Descubre nuestros productos
+                        relacionados:
+                    </p>
+                    <!-- Convierte el contenedor de botones en flexbox, hace que si no caben en una linea, pasen a la siguiente, y gap-2
+    pone el espacio uniforme entre todos sin necesitar margenes individuales -->
+                    <div class="d-flex flex-wrap gap-2">
+                        <!-- el rounded-pill hace que tengan forma de capsulas, que sean completamente redondeados -->
+                        <a href="#" class="btn btn-outline-primary rounded-pill">Set
+                            decoración</a>
+                        <a href="#" class="btn btn-outline-primary rounded-pill">Globos</a>
+                        <a href="#" class="btn btn-outline-primary rounded-pill">Mantel</a>
+                        <a href="#" class="btn btn-outline-primary rounded-pill">Vasos</a>
+                        <a href="#" class="btn btn-outline-primary rounded-pill">Piñata</a>
+                        <a href="#" class="btn btn-outline-primary rounded-pill">Corona</a>
+                    </div>
+
+                    <a href="#" class="btn btn-primary mt-4">Ver todo de
+                        Bluey</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TEMÁTICA DESTACADA: MINECRAFT -->
+        <div class="container mb-5">
+            <div class="row align-items-center g-4 bg-light rounded p-4">
+
+                <!-- Info y opciones relacionadas (ahora va PRIMERO en el código) -->
+                <!-- Acá a diferencia del primero, el order-md-1 me ayuda a colocarlo en el otro sector la imagen -->
+                <div class="col-md-7 order-md-1">
+                    <span class="badge bg-success mb-2">Temática
+                        destacada</span>
+                    <h2 class="fw-bold">Minecraft</h2>
+                    <p class="text-muted">
+                        Construye la fiesta perfecta para los amantes de
+                        este mundo de
+                        bloques. Todo lo que necesitas en un solo lugar:
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="#" class="btn btn-outline-success rounded-pill">Set
+                            decoración</a>
+                        <a href="#" class="btn btn-outline-success rounded-pill">Cajas
+                            sorpresa</a>
+                        <a href="#" class="btn btn-outline-success rounded-pill">Corona</a>
+                        <a href="#" class="btn btn-outline-success rounded-pill">Globos</a>
+                        <a href="#" class="btn btn-outline-success rounded-pill">Mantel</a>
+                        <a href="#" class="btn btn-outline-success rounded-pill">Vasos</a>
+                    </div>
+                    <!-- Acá se cambió el btn.primary por el btn-success para que la paleta de colores coincida-->
+                    <a href="#" class="btn btn-success mt-4">Ver todo de
+                        Minecraft</a>
+                </div>
+
+                <!-- Imagen grande (ahora va SEGUNDO en el código, pero se ve a la derecha) -->
+                <div class="col-md-5 order-md-2">
+                    <img src="img/Minecraft.jpg" class="img-fluid rounded shadow-sm" alt="Temática Minecraft">
+                </div>
+
+            </div>
+        </div>
+
+
+
+
     </div>
-    <!-- ===== FIN BANNER PRINCIPAL===== -->
-    <!-- ==== BARRA DE ANUNCIOS ==== -->
-    <div class="bg-rosa-brand text-white text-center py-2">
-        <!-- Acá señalo las letras blancas y el fondo de color que yo desee, de 
-        los colores predefinidos de bootstrap, además lo dejo centrado con text-center, con un padding vertical(0 a 5) -->
-        <span class="fw-bold fs-5"> <!--Es la fuente negrita  -->
-            Envío Gratis desde $45.000 &nbsp;|&nbsp;🚛 Envíos a todo
-            Chile &nbsp;|&nbsp; Envío Gratis desde $45.000
-            &nbsp;|&nbsp;🚛 Envíos a todo Chile &nbsp;|&nbsp; Envío
-            Gratis desde $45.000 &nbsp;|&nbsp;
-            <!-- Es HTML puro, no Bootstrap: &nbsp; es un espacio "duro" que no se colapsa, 
-            y | es solo el símbolo de barra vertical como separador visual-->
-        </span>
-    </div>
-    <!-- ==== FIN BARRA DE ANUNCIOS ==== -->
+
+
+
+
 
 
 
@@ -124,7 +486,7 @@
             </div>
             <!-- Una linea divisoria -->
             <hr class="border-secondary my-4">
-            <p class="text-center text-secondary mb-0"> 
+            <p class="text-center text-secondary mb-0">
                 <!-- El &copy; es el símbolo de copyright -->
                 &copy; 2026 Villa del Globo. Todos los derechos
                 reservados.

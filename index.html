@@ -8,6 +8,7 @@
     <!-- COLOCAR BOOTSTRAP 5 -->
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- COLOCAR LOS ICONOES DE BOOTSTRAP 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <!-- SE CONECTA CON CSS/MIESTILO.CSS -->
@@ -40,7 +41,8 @@
                 <div class="collapse navbar-collapse" id="menuPrincipal">
                     <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
                     <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
-                    <!-- === Grupo 1 === -->
+
+                    <!-- ===== INICIO GRUPO 1 ===== -->
                     <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
                         <!-- Apartado "Boton de Inicio" -->
                         <li class="nav-item">
@@ -48,13 +50,146 @@
                         </li>
                         <!-- Apartado "Boton de Nuestra Tienda" -->
                         <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link" href="#">Nuestra Tienda</a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Nuestra tienda </a>
+                            <!-- ===  INICIO OPCIONES DE TEMATICAS === -->
+                            <div class="dropdown-menu mega-menu p-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="fw-bold">Temáticas 1</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="dropdown-item px-0">Among Us</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Baby Shark</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Barbie</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Bluey</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Bob Esponja</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Cars</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Cinnamonroll</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Circo Digital</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="fw-bold">Temáticas 2</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="dropdown-item px-0">Dragon Ball</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Dinosaurio</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">FNAF</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Frozen</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Guerreras K-pop</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Hello kitty</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Intensamente</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Kuromi</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="fw-bold">Temáticas 3</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="dropdown-item px-0">Mario Bross</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Masha</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Merlina</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Mickey Mouse</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Minecraft</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Minions</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Minnie Mouse</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ===  FIN OPCIONES DE TEMATICAS === -->
                         </li>
                         <!-- Apartado "Boton de Packs de Decoración" -->
                         <li class="nav-item">
                             <a class="nav-link" href="#">Packs Decoración Cumpleaños</a>
                         </li>
-                        <!-- === Fin Grupo 1 ===-->
+                    </ul>
+                    <!-- ===== FIN GRUPO 1 =====-->
+
+
+                    <!-- ===== INICIO GRUPO 2 =====-->
+                    <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-link text-dark p-0 me-3 border-0 shadow-none"
+                                data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
+                                <i class="bi bi-search fs-2"></i>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown me-3">
+                                <!-- ===== INICIO BOTÓN DE PERFIL CON MENÚ DESPLEGABLE ===== -->
+                                <button class="btn btn-link text-dark p-0 border-0 shadow-none" type="button"
+                                    id="dropdownPerfil" data-bs-toggle="dropdown" aria-expanded="false"
+                                    aria-label="Cuenta de usuario">
+                                    <i class="bi bi-person fs-2"></i>
+                                </button>
+
+                                <!-- ===== INICIO MENÚ DESPLEGABLE ===== -->
+                                <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
+                                    aria-labelledby="dropdownPerfil"
+                                    style="border-radius: 12px; min-width: 220px; z-index: 1050;">
+                                    <li>
+                                        <div class="px-2 py-1">
+                                            <p class="mb-0 small text-muted">¡Hola! Bienvenido a</p>
+                                            <h6 class="fw-bold text-dark mb-0">Villa del Globo</h6>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider my-2">
+                                    </li>
+                                    <li>
+                                        <!-- Opciones para inicio de sesión -->
+                                        <button
+                                            class="dropdown-item rounded py-2 fw-semibold text-white mb-1 d-flex align-items-center justify-content-center"
+                                            data-bs-toggle="modal" data-bs-target="#modalLogin"
+                                            style="background-color: #e6007e;">
+                                            <i class="bi bi-box-arrow-in-right me-2"></i>
+                                            Iniciar Sesión
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item rounded py-2 text-muted small d-flex align-items-center"
+                                            href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                                            <i class="bi bi-person-plus me-2"></i> ¿No tienes cuenta? Regístrate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider my-2">
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item rounded py-2 d-flex align-items-center" href="#">
+                                            <i class="bi bi-truck me-2 text-muted"></i> Mis Pedidos / Estado
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item rounded py-2 d-flex align-items-center" href="#">
+                                            <i class="bi bi-heart me-2 text-muted"></i> Lista de Deseos
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- ===== FIN BOTON Y MENÚ DESPLEGABLE ===== -->
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <!-- ===== INICIO BOTÓN DEL CARRITO EN EL NAVBAR ===== -->
+                            <button type="button"
+                                class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-label="Ver carrito">
+                                <i class="bi bi-bag fs-2"></i>
+                                <!-- Contador de productos -->
+                                <!-- el font size me ayuda para darle tamaño al contador -->
+                                <span id="cart-count"
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                                    style="background-color: #e6007e; font-size: 0.85rem;">
+                                    0
+                                </span>
+                            </button>
+                            <!-- ===== FIN BOTÓN DEL CARRITO EN EL NAVBAR ===== -->
+                        </li>
+                    </ul>
+                    <!-- ===== FIN GRUPO 2 =====-->
+
+
+
+
                     </ul>
                 </div>
             </div>
@@ -80,9 +215,85 @@
         </div>
         <!-- ==== FIN BARRA DE ANUNCIOS ==== -->
 
+        <!-- ACÁ EMPIEZA EL CUERPO DE LA PAGINA -->
+        <!-- TÍTULO PRINCIPAL -->
+        <div class="container text-center my-5">
+            <!-- my-5 es el margen vertical (arriba y abajo) (0 a 5) -->
+            <h1 class="fw-bold">Decoración de Cumpleaños Temática en
+                Chile</h1>
+            <!-- El text-muted es un texto gris apagado , -->
+            <p class="text-muted">Encuentra sets, globos, manteles y más de
+                50 temáticas</p>
+        </div>
+
+        <!-- ===== INICIO CATEGORÍAS DESTACADAS  =====-->
+        <div class="container mb-5 seccion-categorias">
+            <h2 class="text-center mb-4">Explora por Temática</h2>
+
+            <div class="row g-3">
+                <!-- Cada div tiene 3 clases de columna. Esto es diseño responsive, cada una aplica según el tamaño que ocupa en pantalla-->
+                <div class="col-6 col-md-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="categoria-card">
+                            <!-- placehold es un servicio gratuito para generar imagenes de relleno con texto y color -->
+                            <img src="img/Bluey.jpg" class="categoria-img" alt="Bluey">
+                            <!--El img-fluid hace que no se desborde de su columna y el rounded que tenga bordes redondeados -->
+                            <span class="categoria-nombre">Bluey</span>
+                            <!-- el span sirve para que esté al medio de la imagen, que va encima -->
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="categoria-card">
+                            <img src="img/Frozen.jpg" class="categoria-img" alt="Frozen">
+                            <span class="categoria-nombre">Frozen</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="categoria-card">
+                            <img src="img/Mario.jpg" class="categoria-img" alt="Mario Bross">
+                            <span class="categoria-nombre">Mario Bross</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="categoria-card">
+                            <img src="img/Merlina.jpg" class="categoria-img" alt="Merlina">
+                            <span class="categoria-nombre">Merlina</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="categoria-card">
+                            <img src="img/Barbie.jpg" class="categoria-img" alt="Barbie">
+                            <span class="categoria-nombre">Barbie</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="categoria-card">
+                            <img src="img/Spiderman.jpg" class="categoria-img" alt="Spiderman">
+                            <span class="categoria-nombre">Spiderman</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- ===== FIN DE CATEGORÍAS DESTACADAS  =====-->
 
 
-
+        <!-- ==== INICIO VENTA DE PRODUCTOS DESTACADOS ==== -->
         <!-- PRODUCTOS MÁS VENDIDOS, los productos que se venden con card -->
         <div class="container mb-5">
             <h2 class="text-center mb-4">Productos más Vendidos</h2>
@@ -91,20 +302,18 @@
 
                 <div class="col-6 col-md-4 col-lg-3">
                     <!-- card es el contenedor principal en proyectos reales, el h-100 es altura 100% del contenedor padre, Asi todas las tarjetas
-        de una fila quedan igual de altas, aunque el texto varie, el shadow-sm es una sombra suave para dar profundidad,
-        y el card-producto es la clase personalizada para los efectos hover -->
+                    de una fila quedan igual de altas, aunque el texto varie, el shadow-sm es una sombra suave para dar profundidad,
+                    y el card-producto es la clase personalizada para los efectos hover -->
                     <div class="card h-100 card-producto shadow-sm">
                         <!-- badge bg-danger es una etiqueta pequeña, ideal para mostrar descuentos, y el position-absolute saca el badge del flujo
-        normal y lo posiciona flotando sobre la imagen -->
-                        <span class="badge bg-danger position-absolute m-2">Ahorras
-                            33%</span>
+                        normal y lo posiciona flotando sobre la imagen -->
+                        <span class="badge bg-danger position-absolute m-2">Ahorras 33%</span>
                         <img src="img/SETTOYSTORY2.webp" class="card-img-top" alt="Set Toy Story">
-                        <!-- card-body es el contenido dentro de la tarjeta, con su padding correcto, el d-flex y flex collumn, conviernen el
-        contenedor flexible en una columna -->
+                        <!-- card-body es el contenido dentro de la tarjeta, con su padding correcto, el d-flex y flex collumn,
+                        conviernen el contenedor flexible en una columna -->
                         <div class="card-body d-flex flex-column">
                             <!-- Estilo para el titulo del producto -->
-                            <h6 class="card-title">Set decoración cumpleaños
-                                Toy Story</h6>
+                            <h6 class="card-title">Set decoración cumpleaños Toy Story</h6>
                             <p class="mb-1">
                                 <span class="text-decoration-line-through text-muted">$29.990</span>
                                 <span class="text-danger fw-bold ms-2">$19.990</span>
@@ -116,7 +325,7 @@
                                 Añadir al carrito
                             </button>
                             <!-- La mezcla del flex-column + mt-auto hace que aunque el producto tenga un nombre largo y otro corto, los botones quedarian
-            a la misma altura, y no se verían desordenados -->
+                            a la misma altura, y no se verían desordenados -->
                         </div>
                     </div>
                 </div>
@@ -172,8 +381,10 @@
 
             </div>
         </div>
+        <!-- ==== FIN VENTA DE PRODUCTOS DESTACADOS ==== -->
 
-        <!-- PRODUCTOS EN EL CARRUSEL -->
+
+        <!-- ==== INICIO PRODUCTOS EN EL CARRUSEL ==== -->
         <div class="container mb-5">
             <h2 class="text-center mb-4">Novedades en Decoración</h2>
             <!-- Marca el contenedor principal como carrusel con transición deslizante -->
@@ -332,12 +543,11 @@
                         </div>
                     </div>
                     <!-- Fin Slide 2 -->
-
                 </div>
 
                 <!-- Flechas de navegación -->
                 <!-- data-bs-target le dice a la flecha que el carrusel le pertenece a la id correspondiente, y el data-bs-slide="prev" o "next"
-le dice al botón si debe retroceder o avanzar -->
+                le dice al botón si debe retroceder o avanzar -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#carruselProductos"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
@@ -349,7 +559,9 @@ le dice al botón si debe retroceder o avanzar -->
 
             </div>
         </div>
+        <!-- ==== FIN PRODUCTOS EN EL CARRUSEL ==== -->
 
+        <!-- ==== INICIO TEMATICAS DESTACADAS ==== -->
         <!-- TEMÁTICA DESTACADA: BLUEY -->
         <div class="container mb-5">
             <!-- align-items-center(en el row), centra verticalmente las columnas entre si, asi la imagen y el texto quedan alineados al medio y no arriba -->
@@ -372,7 +584,7 @@ le dice al botón si debe retroceder o avanzar -->
                         relacionados:
                     </p>
                     <!-- Convierte el contenedor de botones en flexbox, hace que si no caben en una linea, pasen a la siguiente, y gap-2
-    pone el espacio uniforme entre todos sin necesitar margenes individuales -->
+                    pone el espacio uniforme entre todos sin necesitar margenes individuales -->
                     <div class="d-flex flex-wrap gap-2">
                         <!-- el rounded-pill hace que tengan forma de capsulas, que sean completamente redondeados -->
                         <a href="#" class="btn btn-outline-primary rounded-pill">Set
@@ -429,16 +641,26 @@ le dice al botón si debe retroceder o avanzar -->
 
             </div>
         </div>
+        <!-- ==== FIN TEMATICAS DESTACADAS ==== -->
 
 
-
-
+        <!-- TEXTO AGREGADO -->
+        <div class="container text-center my-5 texto-descripcion">
+            <!-- my-5 es el margen vertical (arriba y abajo) (0 a 5) -->
+            <!-- El text-muted es un texto gris apagado , -->
+            <p class="text-muted"> Villa del Globo es tu tienda online de
+                artículos de fiesta y decoración temática para cumpleaños
+                infantiles en Chile.
+                Encuentra sets completos, globos metalizados, manteles,
+                piñatas, coronas y mucho más con los personajes que tus
+                hijos aman:
+                Bluey, Frozen, Spiderman, Peppa Pig, Minecraft, Barbie y más
+                de 50 temáticas disponibles. Con envío a todo Chile y
+                despacho gratis desde $45.000
+                en la Región Metropolitana y 8ª Región.</p>
+        </div>
+        <!-- FIN TEXTO AGREGADO -->
     </div>
-
-
-
-
-
 
 
     <!-- ===== FOOTER ===== -->

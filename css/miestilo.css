@@ -157,3 +157,166 @@ body {
     color: #0d6efd;
     transform: translateX(4px);
 }
+
+/* Para el texto final del index */
+.texto-descripcion {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+/* Efecto al pasar el mouse por encima */
+.btn-limpiar:hover {
+    background-color: #bb2d3b; /* Rojo un poco más oscuro */
+    color: #ffffff !important;
+}
+
+/* Efecto al hacer clic */
+.btn-limpiar:active {
+    transform: scale(0.98);
+}
+
+/* Acordeón siempre blanco (abierto o cerrado) */
+.accordion-button,
+.accordion-button:not(.collapsed) {
+    background-color: #ffffff !important;
+    color: #212529 !important;
+    box-shadow: none !important;
+}
+
+/* Eliminar el borde/sombra azul al hacer clic (focus) */
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 125px; /* Ajusta este valor según la altura de tu menú superior */
+    max-height: calc(100vh - 40px); /* Opcional: permite scroll interno si el menú es muy alto */
+    overflow-y: auto;
+}
+
+.bg-rosa-brand {
+    background-color: #e6027e; /* Rosado vibrante de la marca */
+}
+
+
+/* SECCIÓN PARA LAS TARJETAS DE LOS PRODUCTOS */
+
+/* Transición suave para todas las tarjetas */
+.card-producto {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden; /* Mantiene la imagen redondeada en los bordes */
+}
+
+/* Transición suave para las imágenes */
+.card-producto .card-img-top {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL PUNTERO (HOVER) */
+.card-producto:hover {
+    /* 1. Eleva ligeramente la tarjeta */
+    transform: translateY(-6px);
+    
+    /* 2. EFECTO DE LUZ / RESPLANDOR (Glow con el rosado de tu marca o sombra suave) */
+    box-shadow: 0 10px 25px rgba(230, 0, 126, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* EFECTO DE ILUMINACIÓN EN LA IMAGEN */
+.card-producto:hover .card-img-top {
+    /* Alumbra / aclara la foto un 8% */
+    filter: brightness(1.08);
+    
+    /* Pequeño zoom suave a la imagen */
+    transform: scale(1.02);
+}
+
+/* Asegura que las etiquetas flotantes siempre estén por encima de la imagen */
+.card-producto .badge {
+    z-index: 5;
+    top: 10px;
+    left: 10px;
+}
+
+
+/* ESTO ES PARA EL FILTRO QUE CUENTA CON LOS PRECIOS */
+
+
+/* Quita el borde y la sombra azul al hacer foco en el buscador del modal */
+#inputSearchModal:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: transparent !important;
+}
+
+.rango-precio {
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* 1. Línea gris de fondo (Capa inferior z-index: 1) */
+.rango-precio::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+/* 2. Limpieza de inputs y z-index superior */
+.rango-precio input[type="range"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent !important;
+    border: none;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+/* Ocultar la pista nativa de Chrome/Safari/Firefox */
+.rango-precio input[type="range"]::-webkit-slider-runnable-track {
+    background: transparent;
+    border: none;
+}
+.rango-precio input[type="range"]::-moz-range-track {
+    background: transparent;
+    border: none;
+}
+
+/* 3. Perilla rosada (Chrome, Safari, Edge) */
+.rango-precio input[type="range"]::-webkit-slider-thumb {
+    pointer-events: auto;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #e6007e;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+/* 3. Perilla rosada (Firefox) */
+.rango-precio input[type="range"]::-moz-range-thumb {
+    pointer-events: auto;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #e6007e;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    border: none;
+}

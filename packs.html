@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Packs decoración cumpleaños</title>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<body>
+    <!-- ========= NAVBAR ========= -->
+    <!-- El "#" Se ocupara para aún no mandar a ninguna parte-->
+    <!-- Se deja con el nav, para que pueda identificar que cumple ese rol -->
+    <!-- navbar-light es para señalar el color-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <!--navbar-light es para señalar el color-->
+        <!--container centra el contenido y genera margenes laterales -->
+        <div class="container">
+            <!-- Logo / marca -->
+            <a class="navbar-brand" href="index.html">
+                <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
+            </a>
+            <!-- Botón hamburguesa (solo aparece en celular) -->
+            <!-- navbar-toggler es para el modo hamburguesa de celular, además que el target menuPrincipal
+            le dice que elemento debe abrir/cerrar, por eso el id de abajo debe coincidir perfectamente-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Contenido que se colapsa en celular, acá se coloca la id que nombré arriba -->
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
+                <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
+                <!-- === Grupo 1 === -->
+                <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+                    <!-- Apartado "Boton de Inicio" -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <!-- Apartado "Boton de Nuestra Tienda" -->
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link" href="#">Nuestra Tienda</a>
+                    </li>
+                    <!-- Apartado "Boton de Packs de Decoración" -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="packs.html">Packs Decoración Cumpleaños</a>
+                    </li>
+                    <!-- === Fin Grupo 1 ===-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ======= FIN DEL NAVBAR ======= -->
+
+    <main class="container py-5">
+
+        <!-- Título -->
+        <h1 class="mb-4">Packs decoración cumpleaños</h1>
+
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Packs decoración cumpleaños
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Barra de ordenamiento -->
+        <div class="bg-light p-3 rounded d-flex justify-content-end mb-4">
+            <div class="input-group" style="max-width: 300px;">
+                <span class="input-group-text">Ordenar por</span>
+
+                <select class="form-select">
+                    <option selected>Características</option>
+                    <option>Precio: menor a mayor</option>
+                    <option>Precio: mayor a menor</option>
+                    <option>Nombre</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- FILTROS -->
+            <!-- FILTROS -->
+            <aside class="col-lg-3">
+
+                <!-- ===== PERSONAJE ===== -->
+                <div class="mb-4">
+
+                    <!-- Título del filtro -->
+                    <button class="btn w-100 p-0 border-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#filtroPersonaje">
+
+                        <div class="d-flex justify-content-between align-items-center border-bottom pb-3">
+                            <h5 class="mb-0">Personaje</h5>
+                            <span>⌃</span>
+                        </div>
+
+                    </button>
+
+                    <!-- Contenido desplegable -->
+                    <div class="collapse show mt-3" id="filtroPersonaje">
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="toyStory">
+                            <label class="form-check-label" for="toyStory">
+                                Toy Story (1)
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="merlina">
+                            <label class="form-check-label" for="merlina">
+                                Merlina (1)
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="masha">
+                            <label class="form-check-label" for="masha">
+                                Masha (1)
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===== DISPONIBILIDAD ===== -->
+                <div class="mb-4">
+
+                    <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                        <h5 class="mb-0">Disponibilidad</h5>
+                        <span>⌃</span>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="disponible">
+                        <label class="form-check-label" for="disponible">
+                            En existencia (3)
+                        </label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="agotado">
+                        <label class="form-check-label" for="agotado">
+                            Agotado (0)
+                        </label>
+                    </div>
+
+                </div>
+
+
+                <!-- ===== PRECIO ===== -->
+                <div class="mb-4">
+
+                    <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                        <h5 class="mb-0">Precio</h5>
+                        <span>⌃</span>
+                    </div>
+
+                    <!-- Precio mínimo y máximo -->
+                    <div class="row g-2 mb-3">
+
+                        <div class="col-6">
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" value="0" min="0">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" value="19990" min="0">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Barra de precio -->
+                    <input type="range" class="form-range" min="0" max="19990" value="19990">
+
+                </div>
+
+            </aside>
+
+
+            <!-- PRODUCTOS -->
+            <section class="col-lg-9">
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+
+                    <!-- Producto 1 -->
+                    <div class="col">
+                        <div class="card h-100">
+
+                            <img src="img/SETTOYSTORY2.webp" class="card-img-top" alt="Set Toy Story">
+
+                            <div class="card-body text-center">
+
+                                <h5 class="card-title">
+                                    Set decoración Toy Story
+                                </h5>
+
+                                <p class="card-text fs-5">
+                                    $19.990
+                                </p>
+
+                                <button class="btn btn-primary w-100">
+                                    Añadir al carrito
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Producto 2 -->
+                    <div class="col">
+                        <div class="card h-100">
+
+                            <img src="img/SETMERLINA.webp" class="card-img-top" alt="Set Merlina">
+
+                            <div class="card-body text-center">
+
+                                <h5 class="card-title">
+                                    Set decoración Merlina
+                                </h5>
+
+                                <p class="card-text fs-5">
+                                    $19.990
+                                </p>
+
+                                <button class="btn btn-primary w-100">
+                                    Añadir al carrito
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Producto 3 -->
+                    <div class="col">
+                        <div class="card h-100">
+
+                            <img src="img/SETMASHA.webp" class="card-img-top" alt="Set Masha">
+
+                            <div class="card-body text-center">
+
+                                <h5 class="card-title">
+                                    Set decoración Masha
+                                </h5>
+
+                                <p class="card-text fs-5">
+                                    $19.990
+                                </p>
+
+                                <button class="btn btn-primary w-100">
+                                    Añadir al carrito
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <!-- Padding arriba de 5 y abajo de 3, el mt-5 ayuda a separar el footer del contenido de arriba-->
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- === COLUMNA 1: Marca === -->
+                <!-- col-md-4 En celular cada columna ocupa el 100% (una debajo de otra), y en tablet(md) en adelante se reparten en 3 columnas iguales -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold">🎈 Villa del Globo</h5>
+                    <!-- Estilo de texto, gris suave, bueno para texto secundario con fondo oscuro -->
+                    <p class="text-secondary">
+                        Todo lo que necesitas para tus fiestas:
+                        cotillón, decoración,
+                        globos, disfraces y mucho más.
+                    </p>
+                </div>
+
+                <!-- === COLUMNA 2: Tienda === -->
+                <div class="col-md-4">
+                    <h6 class="fw-bold">Tienda</h6>
+                    <!-- Estilo del link -->
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="link-light text-decoration-none">Inicio</a></li>
+                        <li><a href="#" class="link-light text-decoration-none">Nuestra Tienda</a></li>
+                        <li><a href="#" class="link-light text-decoration-none">Packs Decoración</a></li>
+                    </ul>
+                </div>
+
+                <!-- === COLUMNA 3: Contacto === -->
+                <div class="col-md-4">
+                    <h6 class="fw-bold">Contacto</h6>
+                    <ul class="list-unstyled text-secondary">
+                        <li>📞 9 7909 9900</li>
+                        <li>✉️ villadelglobospa@gmail.com</li>
+                    </ul>
+                    <div class="mt-2">
+                        <!-- El me-3 Margin end(Desde la derecha) tamaño 3, separa Facebook de Instagram -->
+                        <a href="#" class="link-light me-3">Facebook</a>
+                        <a href="#" class="link-light">Instagram</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Una linea divisoria -->
+            <hr class="border-secondary my-4">
+            <p class="text-center text-secondary mb-0">
+                <!-- El &copy; es el símbolo de copyright -->
+                &copy; 2026 Villa del Globo. Todos los derechos
+                reservados.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

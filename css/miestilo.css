@@ -320,3 +320,20 @@ body {
     cursor: pointer;
     border: none;
 }
+
+/* ===== FILTROS PACKS / packs.html===== */
+
+.flecha {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Bootstrap cambia aria-expanded cuando abre/cierra el filtro */
+button[aria-expanded="false"] .flecha {
+    transform: rotate(180deg);
+}
+
+/* ===== FILTROS PACKS / packs.html===== */
+.ordenar-productos {
+    max-width: 300px;
+}

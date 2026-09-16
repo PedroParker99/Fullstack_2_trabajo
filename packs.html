@@ -3,13 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Packs decoración cumpleaños</title>
-</head>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="css/miestilo.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <title>Packs decoración cumpleaños | Villa del Globo</title>
+</head>
 
 <body>
     <!-- ========= NAVBAR ========= -->
@@ -34,28 +41,194 @@
             <div class="collapse navbar-collapse" id="menuPrincipal">
                 <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
                 <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
-                <!-- === Grupo 1 === -->
-                <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
-                    <!-- Apartado "Boton de Inicio" -->
+                <!-- ===== INICIO GRUPO 1 ===== -->
+                    <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+                        <!-- Apartado "Boton de Inicio" -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Inicio</a>
+                        </li>
+                        <!-- Apartado "Boton de Nuestra Tienda" -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Nuestra tienda </a>
+                            <!-- ===  INICIO OPCIONES DE TEMATICAS === -->
+                            <div class="dropdown-menu mega-menu p-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="fw-bold">Temáticas 1</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="dropdown-item px-0">Among Us</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Baby Shark</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Barbie</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Bluey</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Bob Esponja</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Cars</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Cinnamonroll</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Circo Digital</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="fw-bold">Temáticas 2</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="dropdown-item px-0">Dragon Ball</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Dinosaurio</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">FNAF</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Frozen</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Guerreras K-pop</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Hello kitty</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Intensamente</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Kuromi</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="fw-bold">Temáticas 3</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="dropdown-item px-0">Mario Bross</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Masha</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Merlina</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Mickey Mouse</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Minecraft</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Minions</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Minnie Mouse</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ===  FIN OPCIONES DE TEMATICAS === -->
+                        </li>
+                        <!-- Apartado "Boton de Packs de Decoración" -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="packs.html">Packs Decoración Cumpleaños</a>
+                        </li>
+                    </ul>
+                    <!-- ===== FIN GRUPO 1 =====-->
+
+
+                <!-- ===== INICIO GRUPO 2 ===== -->
+                <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+
+                    <!-- BUSCADOR -->
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Inicio</a>
+                        <button type="button" class="btn btn-link text-dark p-0 me-3 border-0 shadow-none"
+                            data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
+
+                            <i class="bi bi-search fs-2"></i>
+
+                        </button>
                     </li>
-                    <!-- Apartado "Boton de Nuestra Tienda" -->
-                    <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link" href="#">Nuestra Tienda</a>
-                    </li>
-                    <!-- Apartado "Boton de Packs de Decoración" -->
+
+
+                    <!-- PERFIL -->
                     <li class="nav-item">
-                        <a class="nav-link" href="packs.html">Packs Decoración Cumpleaños</a>
+
+                        <div class="dropdown me-3">
+
+                            <button class="btn btn-link text-dark p-0 border-0 shadow-none" type="button"
+                                id="dropdownPerfil" data-bs-toggle="dropdown" aria-expanded="false"
+                                aria-label="Cuenta de usuario">
+
+                                <i class="bi bi-person fs-2"></i>
+
+                            </button>
+
+                            <!-- MENÚ PERFIL -->
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
+                                aria-labelledby="dropdownPerfil"
+                                style="border-radius: 12px; min-width: 220px; z-index: 1050;">
+
+                                <li>
+                                    <div class="px-2 py-1">
+                                        <p class="mb-0 small text-muted">
+                                            ¡Hola! Bienvenido a
+                                        </p>
+
+                                        <h6 class="fw-bold text-dark mb-0">
+                                            Villa del Globo
+                                        </h6>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <hr class="dropdown-divider my-2">
+                                </li>
+
+                                <li>
+                                    <button class="dropdown-item rounded py-2 fw-semibold text-white mb-1
+                               d-flex align-items-center justify-content-center" data-bs-toggle="modal"
+                                        data-bs-target="#modalLogin" style="background-color: #e6007e;">
+
+                                        <i class="bi bi-box-arrow-in-right me-2"></i>
+
+                                        Iniciar Sesión
+                                    </button>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item rounded py-2 text-muted small d-flex align-items-center"
+                                        href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
+
+                                        <i class="bi bi-person-plus me-2"></i>
+
+                                        ¿No tienes cuenta? Regístrate
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr class="dropdown-divider my-2">
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item rounded py-2 d-flex align-items-center" href="#">
+
+                                        <i class="bi bi-truck me-2 text-muted"></i>
+                                        Mis Pedidos / Estado
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item rounded py-2 d-flex align-items-center" href="#">
+
+                                        <i class="bi bi-heart me-2 text-muted"></i>
+                                        Lista de Deseos
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
                     </li>
-                    <!-- === Fin Grupo 1 ===-->
+
+                    <!-- CARRITO -->
+                    <li class="nav-item">
+
+                        <button type="button" class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito"
+                            aria-controls="offcanvasCarrito" aria-label="Ver carrito">
+
+                            <i class="bi bi-bag fs-2"></i>
+
+                            <!-- Contador -->
+                            <span id="cart-count"
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                                style="background-color: #e6007e; font-size: 0.85rem;">
+
+                                0
+
+                            </span>
+
+                        </button>
+
+                    </li>
+
                 </ul>
+                <!-- ===== FIN GRUPO 2 ===== -->
             </div>
         </div>
     </nav>
     <!-- ======= FIN DEL NAVBAR ======= -->
 
-    <main class="container py-5">
+    <main class="container bg-white rounded-3 shadow-sm p-4 my-5">
 
         <!-- Título -->
         <h1 class="mb-4">Packs decoración cumpleaños</h1>
@@ -74,7 +247,7 @@
 
         <!-- Barra de ordenamiento -->
         <div class="bg-light p-3 rounded d-flex justify-content-end mb-4">
-            <div class="input-group" style="max-width: 300px;">
+            <div class="input-group ordenar-productos">
                 <span class="input-group-text">Ordenar por</span>
 
                 <select class="form-select">
@@ -88,26 +261,22 @@
 
         <div class="row">
 
-            <!-- FILTROS -->
-            <!-- FILTROS -->
+            <!-- ===== FILTROS ===== -->
             <aside class="col-lg-3">
 
                 <!-- ===== PERSONAJE ===== -->
                 <div class="mb-4">
 
-                    <!-- Título del filtro -->
-                    <button class="btn w-100 p-0 border-0" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#filtroPersonaje">
+                    <button class="btn w-100 p-0 border-0 border-bottom pb-3
+                       d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#filtroPersonaje" aria-expanded="true" aria-controls="filtroPersonaje">
 
-                        <div class="d-flex justify-content-between align-items-center border-bottom pb-3">
-                            <h5 class="mb-0">Personaje</h5>
-                            <span>⌃</span>
-                        </div>
+                        <span class="fw-semibold">Personaje</span>
+                        <span class="flecha">⌃</span>
 
                     </button>
 
-                    <!-- Contenido desplegable -->
-                    <div class="collapse show mt-3" id="filtroPersonaje">
+                    <div class="collapse show pt-3" id="filtroPersonaje">
 
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="toyStory">
@@ -138,23 +307,32 @@
                 <!-- ===== DISPONIBILIDAD ===== -->
                 <div class="mb-4">
 
-                    <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
-                        <h5 class="mb-0">Disponibilidad</h5>
-                        <span>⌃</span>
-                    </div>
+                    <button class="btn w-100 p-0 border-0 border-bottom pb-3
+                       d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#filtroDisponibilidad" aria-expanded="true"
+                        aria-controls="filtroDisponibilidad">
 
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" id="disponible">
-                        <label class="form-check-label" for="disponible">
-                            En existencia (3)
-                        </label>
-                    </div>
+                        <span class="fw-semibold">Disponibilidad</span>
+                        <span class="flecha">⌃</span>
 
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" id="agotado">
-                        <label class="form-check-label" for="agotado">
-                            Agotado (0)
-                        </label>
+                    </button>
+
+                    <div class="collapse show pt-3" id="filtroDisponibilidad">
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="disponible">
+                            <label class="form-check-label" for="disponible">
+                                En existencia (3)
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="agotado">
+                            <label class="form-check-label" for="agotado">
+                                Agotado (0)
+                            </label>
+                        </div>
+
                     </div>
 
                 </div>
@@ -163,32 +341,53 @@
                 <!-- ===== PRECIO ===== -->
                 <div class="mb-4">
 
-                    <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
-                        <h5 class="mb-0">Precio</h5>
-                        <span>⌃</span>
-                    </div>
+                    <button class="btn w-100 p-0 border-0 border-bottom pb-3
+                       d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#filtroPrecio" aria-expanded="true" aria-controls="filtroPrecio">
 
-                    <!-- Precio mínimo y máximo -->
-                    <div class="row g-2 mb-3">
+                        <span class="fw-semibold">Precio</span>
+                        <span class="flecha">⌃</span>
 
-                        <div class="col-6">
-                            <div class="input-group">
-                                <span class="input-group-text">$</span>
-                                <input type="number" class="form-control" value="0" min="0">
+                    </button>
+
+                    <div class="collapse show pt-3" id="filtroPrecio">
+
+                        <!-- Precio mínimo y máximo -->
+                        <div class="row g-2 mb-3">
+
+                            <!-- Mínimo -->
+                            <div class="col-6">
+                                <label for="precioMinimo" class="form-label small">
+                                    Mínimo
+                                </label>
+
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+
+                                    <input type="number" class="form-control" id="precioMinimo" value="0" min="0">
+                                </div>
                             </div>
+
+                            <!-- Máximo -->
+                            <div class="col-6">
+                                <label for="precioMaximo" class="form-label small">
+                                    Máximo
+                                </label>
+
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+
+                                    <input type="number" class="form-control" id="precioMaximo" value="19990" min="0"
+                                        max="19990">
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="col-6">
-                            <div class="input-group">
-                                <span class="input-group-text">$</span>
-                                <input type="number" class="form-control" value="19990" min="0">
-                            </div>
-                        </div>
+                        <!-- Barra de precio -->
+                        <input type="range" class="form-range" id="rangoPrecio" min="0" max="19990" value="19990">
 
                     </div>
-
-                    <!-- Barra de precio -->
-                    <input type="range" class="form-range" min="0" max="19990" value="19990">
 
                 </div>
 
@@ -202,7 +401,7 @@
 
                     <!-- Producto 1 -->
                     <div class="col">
-                        <div class="card h-100">
+                        <div class="card">
 
                             <img src="img/SETTOYSTORY2.webp" class="card-img-top" alt="Set Toy Story">
 
@@ -227,7 +426,7 @@
 
                     <!-- Producto 2 -->
                     <div class="col">
-                        <div class="card h-100">
+                        <div class="card">
 
                             <img src="img/SETMERLINA.webp" class="card-img-top" alt="Set Merlina">
 
@@ -252,7 +451,7 @@
 
                     <!-- Producto 3 -->
                     <div class="col">
-                        <div class="card h-100">
+                        <div class="card">
 
                             <img src="img/SETMASHA.webp" class="card-img-top" alt="Set Masha">
 
@@ -273,10 +472,33 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Producto 4 -->
+                    <div class="col">
+                        <div class="card">
 
+                            <img src="img/SETMARIO.webp" class="card-img-top" alt="Set Mario Bros">
+
+                            <div class="card-body text-center">
+
+                                <h5 class="card-title">
+                                    Set decoración Mario Bros
+                                </h5>
+
+                                <p class="card-text fs-5">
+                                    $19.990
+                                </p>
+
+                                <button class="btn btn-primary w-100">
+                                    Añadir al carrito
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
+        </div>
 
-            </section>
+        </section>
 
         </div>
 
@@ -334,6 +556,10 @@
             </p>
         </div>
     </footer>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

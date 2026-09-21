@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Admin | Villa del Globo</title>
+    <title>Panel Admin | Descuentos | Villa del Globo</title>
 
     <!-- COLOCAR BOOTSTRAP 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,16 +18,10 @@
 
 <body>
     <!-- ========= LAYOUT ADMIN: SIDEBAR + CONTENIDO ========= -->
-    <!-- .page-wrapper: la misma "hoja blanca" que usa index.html, viene de miestilo.css -->
-    <!-- El fondo de nubes sigue viviendo en el <body>; el page-wrapper se dibuja encima -->
     <div class="page-wrapper">
-        <!-- d-flex pone al sidebar y al <main> uno al lado del otro -->
         <div class="d-flex">
 
         <!-- ===== SIDEBAR ===== -->
-        <!-- flex-shrink-0: no se encoge -->
-        <!-- vh-100: ocupa el 100% del alto de la pantalla -->
-        <!-- position-sticky top-0: se queda fijo aunque hagas scroll en el contenido -->
         <nav class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0"
             style="width: 260px;">
 
@@ -38,7 +32,6 @@
             <hr>
 
             <!-- === Links de navegación === -->
-            <!-- nav-pills + flex-column: menú vertical con fondo tipo "píldora" en el activo -->
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
                     <a href="perfilAdmin.html" class="nav-link text-white">
@@ -89,10 +82,288 @@
         <!-- ===== FIN SIDEBAR ===== -->
 
         <!-- ===== CONTENIDO PRINCIPAL ===== -->
-        <!-- flex-grow-1: ocupa todo el espacio restante que el sidebar no usa -->
         <main class="flex-grow-1 p-4">
-            <h1 class="mb-1">Bienvenido, Admin</h1>
-            <p class="text-muted">Menú Descuentos.</p>
+
+            <!-- === Encabezado de la página === -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="mb-1">Descuentos y Cupones</h1>
+                    <p class="text-muted mb-0">Gestiona las promociones, cupones de descuento y ofertas de la tienda.</p>
+                </div>
+                <!-- Botón que activa el Modal de Nuevo Descuento -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNuevoDescuento">
+                    <i class="bi bi-plus-lg me-1"></i>Nuevo Cupon
+                </button>
+            </div>
+
+            <!-- === Barra de búsqueda y filtros === -->
+            <div class="row g-3 mb-4">
+                <div class="col-md-5 col-lg-4">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Buscar por código promocional...">
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <select class="form-select">
+                        <option selected>Todos los tipos</option>
+                        <option value="porcentaje">Porcentaje (%)</option>
+                        <option value="monto">Monto Fijo ($)</option>
+                        <option value="envio">Envío Gratis</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- === Pestañas de filtro por estado del cupón === -->
+            <ul class="nav nav-tabs mb-3" id="tabsDescuentos" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-todos" type="button">
+                        Todos
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-activos" type="button">
+                        Activos
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-programados" type="button">
+                        Programados
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-expirados" type="button">
+                        Expirados / Agotados
+                    </button>
+                </li>
+            </ul>
+
+            <!-- === Contenido de cada pestaña === -->
+            <div class="tab-content" id="contenidoTabsDescuentos">
+
+                <!-- --- TAB: TODOS LOS DESCUENTOS --- -->
+                <div class="tab-pane fade show active" id="tab-todos" role="tabpanel">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Código Cupón</th>
+                                    <th>Tipo</th>
+                                    <th>Valor</th>
+                                    <th>Usos / Límite</th>
+                                    <th>Vigencia</th>
+                                    <th>Estado</th>
+                                    <th class="text-end">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Cupón 1 -->
+                                <tr>
+                                    <td>
+                                        <span class="badge bg-light text-dark border font-monospace fs-6">BIENVENIDA10</span>
+                                    </td>
+                                    <td>Porcentaje</td>
+                                    <td><strong>10% OFF</strong></td>
+                                    <td>45 / 100 usos</td>
+                                    <td>01-09-2026 al 31-12-2026</td>
+                                    <td><span class="badge bg-success">Activo</span></td>
+                                    <td class="text-end">
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                                                Acciones
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i>Editar</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="bi bi-bar-chart me-2"></i>Ver estadísticas</a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-pause-circle me-2"></i>Desactivar</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Cupón 2 -->
+                                <tr>
+                                    <td>
+                                        <span class="badge bg-light text-dark border font-monospace fs-6">FIESTAFIESTA</span>
+                                    </td>
+                                    <td>Monto Fijo</td>
+                                    <td><strong>$5.000 OFF</strong></td>
+                                    <td>12 / 50 usos</td>
+                                    <td>15-09-2026 al 30-09-2026</td>
+                                    <td><span class="badge bg-success">Activo</span></td>
+                                    <td class="text-end">
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                                                Acciones
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i>Editar</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="bi bi-bar-chart me-2"></i>Ver estadísticas</a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-pause-circle me-2"></i>Desactivar</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Cupón 3 -->
+                                <tr>
+                                    <td>
+                                        <span class="badge bg-light text-dark border font-monospace fs-6">CUMPLEOCTUBRE</span>
+                                    </td>
+                                    <td>Porcentaje</td>
+                                    <td><strong>20% OFF</strong></td>
+                                    <td>0 / 200 usos</td>
+                                    <td>01-10-2026 al 31-10-2026</td>
+                                    <td><span class="badge bg-info text-dark">Programado</span></td>
+                                    <td class="text-end">
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                                                Acciones
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i>Editar</a></li>
+                                                <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Cupón 4 -->
+                                <tr>
+                                    <td>
+                                        <span class="badge bg-light text-dark border font-monospace fs-6">ENVIOFREE</span>
+                                    </td>
+                                    <td>Envío Gratis</td>
+                                    <td><strong>100% Envío</strong></td>
+                                    <td>30 / 30 usos</td>
+                                    <td>01-08-2026 al 31-08-2026</td>
+                                    <td><span class="badge bg-secondary">Agotado</span></td>
+                                    <td class="text-end">
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                                                Acciones
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-counterclockwise me-2"></i>Reactivar</a></li>
+                                                <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- --- TAB: ACTIVOS --- -->
+                <div class="tab-pane fade" id="tab-activos" role="tabpanel">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Código Cupón</th>
+                                    <th>Tipo</th>
+                                    <th>Valor</th>
+                                    <th>Usos / Límite</th>
+                                    <th>Vigencia</th>
+                                    <th>Estado</th>
+                                    <th class="text-end">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge bg-light text-dark border font-monospace fs-6">BIENVENIDA10</span></td>
+                                    <td>Porcentaje</td>
+                                    <td><strong>10% OFF</strong></td>
+                                    <td>45 / 100 usos</td>
+                                    <td>01-09-2026 al 31-12-2026</td>
+                                    <td><span class="badge bg-success">Activo</span></td>
+                                    <td class="text-end"><button class="btn btn-sm btn-outline-secondary">Editar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- --- TAB: PROGRAMADOS --- -->
+                <div class="tab-pane fade" id="tab-programados" role="tabpanel">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Código Cupón</th>
+                                    <th>Tipo</th>
+                                    <th>Valor</th>
+                                    <th>Usos / Límite</th>
+                                    <th>Vigencia</th>
+                                    <th>Estado</th>
+                                    <th class="text-end">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge bg-light text-dark border font-monospace fs-6">CUMPLEOCTUBRE</span></td>
+                                    <td>Porcentaje</td>
+                                    <td><strong>20% OFF</strong></td>
+                                    <td>0 / 200 usos</td>
+                                    <td>01-10-2026 al 31-10-2026</td>
+                                    <td><span class="badge bg-info text-dark">Programado</span></td>
+                                    <td class="text-end"><button class="btn btn-sm btn-outline-secondary">Editar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- --- TAB: EXPIRADOS --- -->
+                <div class="tab-pane fade" id="tab-expirados" role="tabpanel">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Código Cupón</th>
+                                    <th>Tipo</th>
+                                    <th>Valor</th>
+                                    <th>Usos / Límite</th>
+                                    <th>Vigencia</th>
+                                    <th>Estado</th>
+                                    <th class="text-end">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge bg-light text-dark border font-monospace fs-6">ENVIOFREE</span></td>
+                                    <td>Envío Gratis</td>
+                                    <td><strong>100% Envío</strong></td>
+                                    <td>30 / 30 usos</td>
+                                    <td>01-08-2026 al 31-08-2026</td>
+                                    <td><span class="badge bg-secondary">Agotado</span></td>
+                                    <td class="text-end"><button class="btn btn-sm btn-outline-secondary">Reactivar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- === Paginación === -->
+            <nav aria-label="Paginación de descuentos" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">Anterior</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Siguiente</a>
+                    </li>
+                </ul>
+            </nav>
+
         </main>
         <!-- ===== FIN CONTENIDO PRINCIPAL ===== -->
 
@@ -102,6 +373,73 @@
     </div>
     <!-- cierra .page-wrapper -->
     <!-- ========= FIN LAYOUT ADMIN ========= -->
+
+    <!-- ========= MODAL: NUEVO DESCUENTO ========= -->
+    <div class="modal fade" id="modalNuevoDescuento" tabindex="-1" aria-labelledby="modalNuevoDescuentoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalNuevoDescuentoLabel"><i class="bi bi-percent me-2"></i>Crear Nuevo Cupón de Descuento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="codigoCupon" class="form-label">Código del Cupón</label>
+                                <input type="text" class="form-control font-monospace text-uppercase" id="codigoCupon" placeholder="Ej: PROMOVERANO2026" required>
+                                <div class="form-text">Usa letras mayúsculas y números sin espacios.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="tipoDescuento" class="form-label">Tipo de Descuento</label>
+                                <select class="form-select" id="tipoDescuento" required>
+                                    <option value="" selected disabled>Seleccionar...</option>
+                                    <option value="porcentaje">Porcentaje de Descuento (%)</option>
+                                    <option value="monto">Monto Fijo ($)</option>
+                                    <option value="envio">Envío Gratuito</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="valorDescuento" class="form-label">Valor del Descuento</label>
+                                <input type="number" class="form-control" id="valorDescuento" placeholder="Ej: 15 para 15% o 5000 para $5.000">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="compraMinima" class="form-label">Monto Mínimo de Compra ($)</label>
+                                <input type="number" class="form-control" id="compraMinima" placeholder="Ej: 15000 (Opcional)">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fechaInicio" class="form-label">Fecha de Inicio</label>
+                                <input type="date" class="form-control" id="fechaInicio" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fechaFin" class="form-label">Fecha de Expiración</label>
+                                <input type="date" class="form-control" id="fechaFin" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="limiteUso" class="form-label">Límite Total de Usos</label>
+                                <input type="number" class="form-control" id="limiteUso" placeholder="Ej: 100 (Dejar en blanco para ilimitado)">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="estadoCupon" class="form-label">Estado Inicial</label>
+                                <select class="form-select" id="estadoCupon">
+                                    <option value="activo" selected>Activo (Disponible inmediatamente)</option>
+                                    <option value="inactivo">Inactivo / En Pausa</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success"><i class="bi bi-check-lg me-1"></i>Crear Cupón</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========= FIN MODAL ========= -->
+
+    <!-- BOOTSTRAP 5 JS BUNDLE -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

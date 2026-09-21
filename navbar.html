@@ -1,0 +1,208 @@
+<!-- ========= NAVBAR ========= -->
+    <!-- El "#" Se ocupara para aún no mandar a ninguna parte-->
+    <!-- Se deja con el nav, para que pueda identificar que cumple ese rol -->
+    <!-- navbar-light es para señalar el color-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <!--navbar-light es para señalar el color-->
+        <!--container centra el contenido y genera margenes laterales -->
+        <div class="container">
+            <!-- Logo / marca -->
+            <a class="navbar-brand" href="index.html">
+                <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
+            </a>
+            <!-- Botón hamburguesa (solo aparece en celular) -->
+            <!-- navbar-toggler es para el modo hamburguesa de celular, además que el target menuPrincipal
+            le dice que elemento debe abrir/cerrar, por eso el id de abajo debe coincidir perfectamente-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Contenido que se colapsa en celular, acá se coloca la id que nombré arriba -->
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
+                <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
+                <!-- ===== INICIO GRUPO 1 ===== -->
+                    <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+                        <!-- Apartado "Boton de Inicio" -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Inicio</a>
+                        </li>
+                        <!-- Apartado "Boton de Nuestra Tienda" -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Nuestra tienda </a>
+                            <!-- ===  INICIO OPCIONES DE TEMATICAS === -->
+                            <div class="dropdown-menu mega-menu p-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="fw-bold">Temáticas 1</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="dropdown-item px-0">Among Us</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Baby Shark</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Barbie</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Bluey</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Bob Esponja</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Cars</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Cinnamonroll</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Circo Digital</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="fw-bold">Temáticas 2</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="dropdown-item px-0">Dragon Ball</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Dinosaurio</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">FNAF</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Frozen</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Guerreras K-pop</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Hello kitty</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Intensamente</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Kuromi</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="fw-bold">Temáticas 3</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="dropdown-item px-0">Mario Bross</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Masha</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Merlina</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Mickey Mouse</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Minecraft</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Minions</a></li>
+                                            <li><a href="#" class="dropdown-item px-0">Minnie Mouse</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ===  FIN OPCIONES DE TEMATICAS === -->
+                        </li>
+                        <!-- Apartado "Boton de Packs de Decoración" -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="packs.html">Packs Decoración Cumpleaños</a>
+                        </li>
+                    </ul>
+                    <!-- ===== FIN GRUPO 1 =====-->
+
+
+                <!-- ===== INICIO GRUPO 2 ===== -->
+                <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+
+                    <!-- BUSCADOR -->
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-link text-dark p-0 me-3 border-0 shadow-none"
+                            data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
+
+                            <i class="bi bi-search fs-2"></i>
+
+                        </button>
+                    </li>
+
+
+                    <!-- PERFIL -->
+                    <li class="nav-item">
+
+                        <div class="dropdown me-3">
+
+                            <button class="btn btn-link text-dark p-0 border-0 shadow-none" type="button"
+                                id="dropdownPerfil" data-bs-toggle="dropdown" aria-expanded="false"
+                                aria-label="Cuenta de usuario">
+
+                                <i class="bi bi-person fs-2"></i>
+
+                            </button>
+
+                            <!-- MENÚ PERFIL -->
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
+                                aria-labelledby="dropdownPerfil"
+                                style="border-radius: 12px; min-width: 220px; z-index: 1050;">
+
+                                <li>
+                                    <div class="px-2 py-1">
+                                        <p class="mb-0 small text-muted">
+                                            ¡Hola! Bienvenido a
+                                        </p>
+
+                                        <h6 class="fw-bold text-dark mb-0">
+                                            Villa del Globo
+                                        </h6>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <hr class="dropdown-divider my-2">
+                                </li>
+
+                                <li>
+                                    <button class="dropdown-item rounded py-2 fw-semibold text-white mb-1
+                               d-flex align-items-center justify-content-center" data-bs-toggle="modal"
+                                        data-bs-target="#modalLogin" style="background-color: #e6007e;">
+
+                                        <i class="bi bi-box-arrow-in-right me-2"></i>
+
+                                        Iniciar Sesión
+                                    </button>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item rounded py-2 text-muted small d-flex align-items-center"
+                                        href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
+
+                                        <i class="bi bi-person-plus me-2"></i>
+
+                                        ¿No tienes cuenta? Regístrate
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr class="dropdown-divider my-2">
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item rounded py-2 d-flex align-items-center" href="#">
+
+                                        <i class="bi bi-truck me-2 text-muted"></i>
+                                        Mis Pedidos / Estado
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item rounded py-2 d-flex align-items-center" href="#">
+
+                                        <i class="bi bi-heart me-2 text-muted"></i>
+                                        Lista de Deseos
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </li>
+
+                    <!-- CARRITO -->
+                    <li class="nav-item">
+
+                        <button type="button" class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito"
+                            aria-controls="offcanvasCarrito" aria-label="Ver carrito">
+
+                            <i class="bi bi-bag fs-2"></i>
+
+                            <!-- Contador -->
+                            <span id="cart-count"
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                                style="background-color: #e6007e; font-size: 0.85rem;">
+
+                                0
+
+                            </span>
+
+                        </button>
+
+                    </li>
+
+                </ul>
+                <!-- ===== FIN GRUPO 2 ===== -->
+            </div>
+        </div>
+    </nav>
+    <!-- ======= FIN DEL NAVBAR ======= -->

@@ -7,9 +7,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mi cuenta | Villa del Globo</title>
+    <title>Seguridad | Villa del Globo</title>
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
@@ -237,9 +237,10 @@
         <!-- ======= FIN DEL NAVBAR ======= -->
 
 
-        <!-- ================================================= -->
-        <!-- CONTENIDO PERFIL -->
-        <!-- ================================================= -->
+
+        <!-- ==========================================
+             CONTENIDO
+             ========================================== -->
 
         <main class="container py-5">
 
@@ -248,27 +249,42 @@
 
             <div class="mb-5">
 
-                <h1 class="fw-bold">
-                    Mi cuenta
+                <a href="perfilUsuario.html" class="text-decoration-none text-muted">
+
+                    <i class="bi bi-arrow-left me-2"></i>
+
+                    Volver a mi cuenta
+
+                </a>
+
+
+                <h1 class="fw-bold mt-3 mb-2">
+
+                    Seguridad
+
                 </h1>
 
-                <p class="text-muted mb-0">
-                    Hola, Juan 👋
-                </p>
 
-                <p class="text-muted">
-                    Administra tu información, compras y preferencias.
+                <p class="text-muted mb-0">
+
+                    Administra la seguridad y el acceso a tu cuenta.
+
                 </p>
 
             </div>
 
 
-            <div class="row g-4">
+
+            <!-- ==========================================
+                 BARRA LATERAL + CONTENIDO
+                 ========================================== -->
+
+            <div class="row g-4 align-items-start">
 
 
-                <!-- ================================================= -->
-                <!-- MENÚ LATERAL -->
-                <!-- ================================================= -->
+                <!-- =====================================
+                     BARRA LATERAL
+                     ===================================== -->
 
                 <aside class="col-lg-3">
 
@@ -277,18 +293,14 @@
                         <div class="card-body p-3">
 
 
-                            <!-- PERFIL -->
-
-                            <div class="perfil-menu-item active">
+                            <a href="perfilUsuario.html" class="perfil-menu-item text-decoration-none d-block">
 
                                 <i class="bi bi-person me-2"></i>
 
                                 Mi perfil
 
-                            </div>
+                            </a>
 
-
-                            <!-- COMPRAS -->
 
                             <a href="usuarioCompras.html" class="perfil-menu-item text-decoration-none d-block">
 
@@ -299,41 +311,38 @@
                             </a>
 
 
-                            <!-- DIRECCIONES -->
-
                             <a href="usuarioDirecciones.html" class="perfil-menu-item text-decoration-none d-block">
 
                                 <i class="bi bi-geo-alt me-2"></i>
+
                                 Mis direcciones
 
                             </a>
 
 
-                            <!-- PAGOS -->
-
                             <a href="usuarioPagos.html" class="perfil-menu-item text-decoration-none d-block">
 
                                 <i class="bi bi-credit-card me-2"></i>
+
                                 Métodos de pago
 
                             </a>
 
 
-                            <!-- SEGURIDAD -->
-
-                            <a href="usuarioSeguridad.html" class="perfil-menu-item text-decoration-none d-block">
+                            <a href="usuarioSeguridad.html"
+                                class="perfil-menu-item active text-decoration-none d-block">
 
                                 <i class="bi bi-shield-lock me-2"></i>
+
                                 Seguridad
 
                             </a>
 
 
-                            <!-- FAVORITOS -->
-
                             <a href="usuarioFavoritos.html" class="perfil-menu-item text-decoration-none d-block">
 
                                 <i class="bi bi-heart me-2"></i>
+
                                 Lista de deseos
 
                             </a>
@@ -342,16 +351,13 @@
                             <hr>
 
 
-                            <!-- CERRAR SESIÓN -->
-
-                            <div class="perfil-menu-item text-danger">
+                            <a href="#" class="perfil-menu-item text-danger text-decoration-none d-block">
 
                                 <i class="bi bi-box-arrow-right me-2"></i>
 
                                 Cerrar sesión
 
-                            </div>
-
+                            </a>
 
                         </div>
 
@@ -360,190 +366,440 @@
                 </aside>
 
 
-                <!-- ================================================= -->
-                <!-- INFORMACIÓN PRINCIPAL -->
-                <!-- ================================================= -->
+
+                <!-- =====================================
+                     CONTENIDO SEGURIDAD
+                     ===================================== -->
 
                 <section class="col-lg-9">
 
 
-                    <!-- INFORMACIÓN PERSONAL -->
+                    <!-- =====================================
+                         CONTRASEÑA
+                         ===================================== -->
 
                     <div class="card border-0 shadow-sm mb-4">
 
                         <div class="card-body p-4">
 
 
-                            <div class="d-flex justify-content-between
-                                align-items-center mb-4">
+                            <div class="d-flex
+                                justify-content-between
+                                align-items-center">
 
-                                <div>
 
-                                    <h4 class="fw-bold mb-1">
-                                        Información personal
-                                    </h4>
+                                <div class="d-flex align-items-center">
 
-                                    <p class="text-muted mb-0">
-                                        Datos de tu cuenta
-                                    </p>
+
+                                    <div class="seguridad-icono me-3">
+
+                                        <i class="bi bi-key"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <h5 class="fw-bold mb-1">
+
+                                            Contraseña
+
+                                        </h5>
+
+                                        <p class="text-muted mb-0 small">
+
+                                            Mantén segura tu cuenta
+                                            utilizando una contraseña
+                                            fuerte.
+
+                                        </p>
+
+                                    </div>
 
                                 </div>
 
+
                                 <button class="btn btn-outline-dark">
 
-                                    <i class="bi bi-pencil me-2"></i>
-
-                                    Editar
+                                    Cambiar
 
                                 </button>
 
                             </div>
 
 
-                            <div class="row g-4">
-
-                                <div class="col-md-6">
-
-                                    <label class="text-muted small">
-                                        Nombre
-                                    </label>
-
-                                    <p class="fw-semibold mb-0">
-                                        Juan
-                                    </p>
-
-                                </div>
+                            <hr>
 
 
-                                <div class="col-md-6">
+                            <div class="d-flex
+                                align-items-center
+                                text-muted small">
 
-                                    <label class="text-muted small">
-                                        Apellido
-                                    </label>
+                                <i class="bi bi-check-circle-fill
+                                    text-success me-2"></i>
 
-                                    <p class="fw-semibold mb-0">
-                                        Pérez
-                                    </p>
-
-                                </div>
-
-
-                                <div class="col-md-6">
-
-                                    <label class="text-muted small">
-                                        Correo electrónico
-                                    </label>
-
-                                    <p class="fw-semibold mb-0">
-                                        juan@email.com
-                                    </p>
-
-                                </div>
-
-
-                                <div class="col-md-6">
-
-                                    <label class="text-muted small">
-                                        Teléfono
-                                    </label>
-
-                                    <p class="fw-semibold mb-0">
-                                        +56 9 1234 5678
-                                    </p>
-
-                                </div>
+                                Última actualización: hace 3 meses
 
                             </div>
+
 
                         </div>
 
                     </div>
 
 
-                    <!-- ================================================= -->
-                    <!-- ÚLTIMA COMPRA -->
-                    <!-- ================================================= -->
+
+                    <!-- =====================================
+                         VERIFICACIÓN EN DOS PASOS
+                         ===================================== -->
 
                     <div class="card border-0 shadow-sm mb-4">
 
                         <div class="card-body p-4">
 
 
-                            <div class="d-flex justify-content-between
-                                align-items-center mb-4">
-
-                                <div>
-
-                                    <h4 class="fw-bold mb-1">
-                                        Última compra
-                                    </h4>
-
-                                    <p class="text-muted mb-0">
-                                        Revisa el estado de tu pedido
-                                    </p>
-
-                                </div>
-
-                                <a href="usuarioCompras.html" class="text-dark fw-semibold">
-
-                                    Ver todas
-
-                                </a>
-
-                            </div>
+                            <div class="d-flex
+                                justify-content-between
+                                align-items-start">
 
 
-                            <div class="border rounded-3 p-3">
+                                <div class="d-flex align-items-center">
 
 
-                                <div class="row align-items-center">
+                                    <div class="seguridad-icono me-3">
 
-
-                                    <div class="col-md-2">
-
-                                        <img src="img/SETTOYSTORY2.webp" class="img-fluid rounded" alt="Pack Toy Story">
+                                        <i class="bi bi-shield-check"></i>
 
                                     </div>
 
 
-                                    <div class="col-md-6">
+                                    <div>
 
-                                        <h6 class="fw-bold mb-1">
-                                            Pack decoración Toy Story
+                                        <h5 class="fw-bold mb-1">
+
+                                            Verificación en dos pasos
+
+                                        </h5>
+
+
+                                        <p class="text-muted mb-0">
+
+                                            Añade una capa adicional
+                                            de seguridad a tu cuenta.
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- SWITCH -->
+
+                                <div class="form-check form-switch">
+
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="verificacionDosPasos">
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-4
+                                p-3
+                                rounded
+                                bg-light">
+
+
+                                <div class="d-flex
+                                    align-items-start
+                                    gap-3">
+
+
+                                    <i class="bi bi-info-circle
+                                        text-muted"></i>
+
+
+                                    <p class="small
+                                        text-muted
+                                        mb-0">
+
+                                        Cuando esta opción esté activada,
+                                        se solicitará un código adicional
+                                        al iniciar sesión desde un
+                                        dispositivo nuevo.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         SESIONES ACTIVAS
+                         ===================================== -->
+
+                    <div class="card border-0 shadow-sm mb-4">
+
+                        <div class="card-body p-4">
+
+
+                            <div class="d-flex
+                                justify-content-between
+                                align-items-center mb-4">
+
+
+                                <div>
+
+                                    <h5 class="fw-bold mb-1">
+
+                                        Sesiones activas
+
+                                    </h5>
+
+
+                                    <p class="text-muted mb-0">
+
+                                        Revisa los dispositivos donde
+                                        tienes iniciada tu sesión.
+
+                                    </p>
+
+                                </div>
+
+
+                                <button class="btn btn-outline-danger">
+
+                                    Cerrar todas
+
+                                </button>
+
+                            </div>
+
+
+
+                            <!-- DISPOSITIVO ACTUAL -->
+
+                            <div class="sesion-item">
+
+
+                                <div class="d-flex
+                                    align-items-center">
+
+
+                                    <div class="sesion-icono me-3">
+
+                                        <i class="bi bi-laptop"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <h6 class="fw-semibold mb-1">
+
+                                            Este dispositivo
+
                                         </h6>
 
-                                        <p class="text-muted small mb-1">
-                                            Pedido #000123
-                                        </p>
-
                                         <p class="text-muted small mb-0">
-                                            21 de septiembre de 2026
+
+                                            Chrome · Windows
+
                                         </p>
 
-                                    </div>
+                                        <small class="text-success">
 
+                                            Activo ahora
 
-                                    <div class="col-md-2">
-
-                                        <span class="badge rounded-pill" style="background-color:#e6007e;">
-
-                                            En preparación
-
-                                        </span>
+                                        </small>
 
                                     </div>
-
-
-                                    <div class="col-md-2 text-md-end">
-
-                                        <strong>
-                                            $19.990
-                                        </strong>
-
-                                    </div>
-
 
                                 </div>
+
+
+                                <span class="badge rounded-pill
+                                    bg-success-subtle
+                                    text-success">
+
+                                    Actual
+
+                                </span>
+
+                            </div>
+
+
+                            <hr>
+
+
+                            <!-- SEGUNDO DISPOSITIVO -->
+
+                            <div class="sesion-item">
+
+
+                                <div class="d-flex
+                                    align-items-center">
+
+
+                                    <div class="sesion-icono me-3">
+
+                                        <i class="bi bi-phone"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <h6 class="fw-semibold mb-1">
+
+                                            Teléfono móvil
+
+                                        </h6>
+
+                                        <p class="text-muted small mb-0">
+
+                                            Safari · iPhone
+
+                                        </p>
+
+                                        <small class="text-muted">
+
+                                            Último acceso:
+                                            hace 2 días
+
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+                                <button class="btn btn-sm
+                                    btn-outline-danger">
+
+                                    Cerrar sesión
+
+                                </button>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         ACTIVIDAD DE SEGURIDAD
+                         ===================================== -->
+
+                    <div class="card border-0 shadow-sm mb-4">
+
+                        <div class="card-body p-4">
+
+
+                            <h5 class="fw-bold mb-1">
+
+                                Actividad de seguridad
+
+                            </h5>
+
+
+                            <p class="text-muted mb-4">
+
+                                Revisa los últimos cambios relacionados
+                                con la seguridad de tu cuenta.
+
+                            </p>
+
+
+
+                            <!-- ACTIVIDAD -->
+
+                            <div class="actividad-seguridad">
+
+
+                                <div class="actividad-item">
+
+
+                                    <div class="actividad-icono">
+
+                                        <i class="bi bi-box-arrow-in-right"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <h6 class="fw-semibold mb-1">
+
+                                            Inicio de sesión
+
+                                        </h6>
+
+                                        <p class="text-muted small mb-0">
+
+                                            Se inició sesión desde
+                                            Chrome en Windows.
+
+                                        </p>
+
+                                        <small class="text-muted">
+
+                                            Hoy, 10:32
+
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="actividad-item">
+
+
+                                    <div class="actividad-icono">
+
+                                        <i class="bi bi-key"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <h6 class="fw-semibold mb-1">
+
+                                            Contraseña actualizada
+
+                                        </h6>
+
+                                        <p class="text-muted small mb-0">
+
+                                            Se realizó un cambio en
+                                            la contraseña.
+
+                                        </p>
+
+                                        <small class="text-muted">
+
+                                            12 de junio de 2026
+
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
 
                             </div>
 
@@ -552,64 +808,71 @@
                     </div>
 
 
-                    <!-- ================================================= -->
-                    <!-- DIRECCIÓN -->
-                    <!-- ================================================= -->
 
-                    <div class="card border-0 shadow-sm">
+                    <!-- =====================================
+                         ZONA DE PELIGRO
+                         ===================================== -->
+
+                    <div class="card border-danger border-opacity-25 mb-4">
 
                         <div class="card-body p-4">
 
 
-                            <div class="d-flex justify-content-between
-                                align-items-center mb-4">
+                            <h5 class="fw-bold text-danger mb-2">
 
-                                <div>
+                                Zona de seguridad
 
-                                    <h4 class="fw-bold mb-1">
-                                        Dirección principal
-                                    </h4>
-
-                                    <p class="text-muted mb-0">
-                                        Dirección utilizada para tus pedidos
-                                    </p>
-
-                                </div>
-
-                                <button class="btn btn-outline-dark">
-
-                                    <i class="bi bi-pencil me-2"></i>
-
-                                    Editar
-
-                                </button>
-
-                            </div>
+                            </h5>
 
 
-                            <div class="d-flex">
+                            <p class="text-muted mb-4">
 
-                                <i class="bi bi-geo-alt fs-3 me-3" style="color:#e6007e;">
-                                </i>
+                                Estas acciones pueden afectar
+                                permanentemente el acceso a tu cuenta.
 
-                                <div>
+                            </p>
 
-                                    <h6 class="fw-bold">
-                                        Casa
-                                    </h6>
 
-                                    <p class="mb-1">
-                                        Av. Principal 1234
-                                    </p>
+                            <button class="btn btn-outline-danger">
 
-                                    <p class="text-muted mb-0">
-                                        Concepción, Biobío
-                                    </p>
+                                <i class="bi bi-trash me-2"></i>
 
-                                </div>
+                                Eliminar mi cuenta
 
-                            </div>
+                            </button>
 
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- AVISO -->
+
+                    <div class="alert alert-light border
+                        d-flex align-items-start gap-3">
+
+
+                        <i class="bi bi-shield-lock fs-4
+                            text-success"></i>
+
+
+                        <div>
+
+                            <h6 class="fw-bold mb-1">
+
+                                Protege tu cuenta
+
+                            </h6>
+
+
+                            <p class="small text-muted mb-0">
+
+                                Nunca compartas tu contraseña ni los
+                                códigos de seguridad con otras personas.
+
+                            </p>
 
                         </div>
 
@@ -621,6 +884,7 @@
             </div>
 
         </main>
+
 
 
         <!-- ===== FOOTER ===== -->

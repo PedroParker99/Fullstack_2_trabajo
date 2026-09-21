@@ -321,6 +321,8 @@ body {
     border: none;
 }
 
+/* ===== INICIO DEV2 ===== */
+
 /* ===== FILTROS PACKS / packs.html===== */
 
 .flecha {
@@ -337,3 +339,234 @@ button[aria-expanded="false"] .flecha {
 .ordenar-productos {
     max-width: 300px;
 }
+
+/* =========================================
+   PERFIL DEL CLIENTE
+   ========================================= */
+
+   .perfil-menu-item {
+    padding: 0.85rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #333;
+}
+
+.perfil-menu-item:hover {
+    background-color: #f8f8f8;
+    transform: translateX(3px);
+}
+
+.perfil-menu-item.active {
+    background-color: #fce4f2;
+    color: #e6007e;
+    font-weight: 600;
+}
+
+.perfil-menu-item i {
+    width: 22px;
+}
+
+.perfil-menu-item.text-danger:hover {
+    background-color: #fff0f0;
+}
+
+/* =========================================
+   DIRECCIONES DEL USUARIO
+   ========================================= */
+
+   .direccion-icono {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #fce4f2;
+    color: #e6007e;
+
+    font-size: 1.2rem;
+}
+
+
+.direccion-datos {
+    padding-left: 58px;
+}
+
+
+.direccion-agregar {
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px dashed #d9d9d9;
+    border-radius: 0.75rem;
+
+    background-color: #fff;
+
+    color: #333;
+
+    transition: all 0.2s ease;
+}
+
+
+.direccion-agregar:hover {
+    border-color: #e6007e;
+    background-color: #fff8fc;
+    color: #e6007e;
+}
+
+
+.direccion-agregar small {
+    margin-top: 0.25rem;
+}
+
+/* =========================================
+   MÉTODOS DE PAGO
+   ========================================= */
+
+   .pago-icono {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #fce4f2;
+
+    color: #e6007e;
+
+    font-size: 1.25rem;
+}
+
+
+.pago-informacion {
+    padding-left: 64px;
+}
+
+
+.pago-metodo-icono {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f5f5f5;
+
+    color: #333;
+
+    font-size: 1.15rem;
+}
+
+
+.pago-metodo-icono i {
+    line-height: 1;
+}
+
+/* =========================================
+   SEGURIDAD
+   ========================================= */
+
+   .seguridad-icono {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #fce4f2;
+
+    color: #e6007e;
+
+    font-size: 1.25rem;
+}
+
+
+/* =========================================
+   SESIONES
+   ========================================= */
+
+.sesion-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+}
+
+
+.sesion-icono {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f5f5f5;
+
+    color: #333;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   ACTIVIDAD DE SEGURIDAD
+   ========================================= */
+
+.actividad-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 1rem;
+
+    padding: 1rem 0;
+}
+
+
+.actividad-item + .actividad-item {
+    border-top: 1px solid #eee;
+}
+
+
+.actividad-icono {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #f5f5f5;
+
+    color: #555;
+}
+
+/* ===== FIN DEV2 ===== */

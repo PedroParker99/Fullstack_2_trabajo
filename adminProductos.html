@@ -23,8 +23,8 @@
         <div class="d-flex min-vh-100">
 
             <!-- ===== SIDEBAR ===== -->
-            <nav class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0"
-                style="width: 260px;">
+            <nav
+                class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0 sidebar-admin">
 
                 <!-- Marca del panel -->
                 <a href="perfilAdmin.html" class="d-flex align-items-center mb-3 text-white text-decoration-none">
@@ -83,7 +83,7 @@
             <!-- ===== FIN SIDEBAR ===== -->
 
             <!-- ===== CONTENIDO PRINCIPAL ===== -->
-            <main class="flex-grow-1 p-4">
+            <main class="flex-grow-1 p-4 overflow-x-auto">
 
                 <!-- === Encabezado de la página === -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -103,16 +103,17 @@
                     <div class="col-md-5 col-lg-4">
                         <div class="input-group">
                             <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Buscar por nombre o SKU...">
+                            <input type="text" id="inputBuscar" class="form-control"
+                                placeholder="Buscar por nombre o SKU..." oninput="filtrarProductos()">
                         </div>
                     </div>
                     <div class="col-md-4 col-lg-3">
-                        <select class="form-select">
-                            <option selected>Todas las categorías</option>
-                            <option value="1">Globos de Látex</option>
-                            <option value="2">Globos Metalizados</option>
-                            <option value="3">Kits de Fiesta</option>
-                            <option value="4">Accesorios e Infladores</option>
+                        <select id="selectCategoria" class="form-select" onchange="filtrarProductos()">
+                            <option value="">Todas las categorías</option>
+                            <option value="Kits de Fiesta">Kits de Fiesta</option>
+                            <option value="Accesorios e Infladores">Accesorios e Infladores</option>
+                            <option value="Globos de Látex">Globos de Látex</option>
+                            <option value="Globos Metalizados">Globos Metalizados</option>
                         </select>
                     </div>
                 </div>
@@ -147,7 +148,7 @@
                     <!-- --- TAB: TODOS LOS PRODUCTOS --- -->
                     <div class="tab-pane fade show active" id="tab-todos" role="tabpanel">
                         <div class="table-responsive">
-                            <table class="table table-hover align-middle">
+                            <table id="tablaProductos" class="table table-hover align-middle">
                                 <thead class="table-light">
                                     <tr>
                                         <th style="width: 70px;">Imagen</th>
@@ -181,9 +182,13 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalEditarProducto"
+                                                            onclick="cargarEditarProducto('KIT-001')"><i
                                                                 class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetalleProducto"
+                                                            onclick="cargarDetalleProducto('KIT-001')"><i
                                                                 class="bi bi-eye me-2"></i>Ver detalles</a></li>
                                                     <li>
                                                         <hr class="dropdown-divider">
@@ -214,12 +219,15 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalEditarProducto"
+                                                            onclick="cargarEditarProducto('KIT-002')"><i
                                                                 class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetalleProducto"
+                                                            onclick="cargarDetalleProducto('KIT-002')"><i
                                                                 class="bi bi-eye me-2"></i>Ver detalles</a></li>
-                                                    <li>
-                                                        <hr class="dropdown-divider">
+                                                    <hr class="dropdown-divider">
                                                     </li>
                                                     <li><a class="dropdown-item text-danger" href="#"><i
                                                                 class="bi bi-trash me-2"></i>Eliminar</a></li>
@@ -247,12 +255,15 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalEditarProducto"
+                                                            onclick="cargarEditarProducto('KIT-003')"><i
                                                                 class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetalleProducto"
+                                                            onclick="cargarDetalleProducto('KIT-003')"><i
                                                                 class="bi bi-eye me-2"></i>Ver detalles</a></li>
-                                                    <li>
-                                                        <hr class="dropdown-divider">
+                                                    <hr class="dropdown-divider">
                                                     </li>
                                                     <li><a class="dropdown-item text-danger" href="#"><i
                                                                 class="bi bi-trash me-2"></i>Eliminar</a></li>
@@ -281,12 +292,15 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalEditarProducto"
+                                                            onclick="cargarEditarProducto('KIT-004')"><i
                                                                 class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetalleProducto"
+                                                            onclick="cargarDetalleProducto('KIT-004')"><i
                                                                 class="bi bi-eye me-2"></i>Ver detalles</a></li>
-                                                    <li>
-                                                        <hr class="dropdown-divider">
+                                                    <hr class="dropdown-divider">
                                                     </li>
                                                     <li><a class="dropdown-item text-danger" href="#"><i
                                                                 class="bi bi-trash me-2"></i>Eliminar</a></li>
@@ -315,12 +329,15 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalEditarProducto"
+                                                            onclick="cargarEditarProducto('ACC-001')"><i
                                                                 class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetalleProducto"
+                                                            onclick="cargarDetalleProducto('ACC-001')"><i
                                                                 class="bi bi-eye me-2"></i>Ver detalles</a></li>
-                                                    <li>
-                                                        <hr class="dropdown-divider">
+                                                    <hr class="dropdown-divider">
                                                     </li>
                                                     <li><a class="dropdown-item text-danger" href="#"><i
                                                                 class="bi bi-trash me-2"></i>Eliminar</a></li>
@@ -349,12 +366,15 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalEditarProducto"
+                                                            onclick="cargarEditarProducto('ACC-002')"><i
                                                                 class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetalleProducto"
+                                                            onclick="cargarDetalleProducto('ACC-002')"><i
                                                                 class="bi bi-eye me-2"></i>Ver detalles</a></li>
-                                                    <li>
-                                                        <hr class="dropdown-divider">
+                                                    <hr class="dropdown-divider">
                                                     </li>
                                                     <li><a class="dropdown-item text-danger" href="#"><i
                                                                 class="bi bi-trash me-2"></i>Eliminar</a></li>
@@ -383,12 +403,15 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalEditarProducto"
+                                                            onclick="cargarEditarProducto('ACC-003')"><i
                                                                 class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetalleProducto"
+                                                            onclick="cargarDetalleProducto('ACC-003')"><i
                                                                 class="bi bi-eye me-2"></i>Ver detalles</a></li>
-                                                    <li>
-                                                        <hr class="dropdown-divider">
+                                                    <hr class="dropdown-divider">
                                                     </li>
                                                     <li><a class="dropdown-item text-danger" href="#"><i
                                                                 class="bi bi-trash me-2"></i>Eliminar</a></li>
@@ -417,12 +440,15 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalEditarProducto"
+                                                            onclick="cargarEditarProducto('ACC-004')"><i
                                                                 class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item" href="#"><i
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetalleProducto"
+                                                            onclick="cargarDetalleProducto('ACC-004')"><i
                                                                 class="bi bi-eye me-2"></i>Ver detalles</a></li>
-                                                    <li>
-                                                        <hr class="dropdown-divider">
+                                                    <hr class="dropdown-divider">
                                                     </li>
                                                     <li><a class="dropdown-item text-danger" href="#"><i
                                                                 class="bi bi-trash me-2"></i>Eliminar</a></li>
@@ -689,9 +715,307 @@
     </div>
     <!-- ========= FIN MODAL ========= -->
 
+    <!-- ================= MODAL UNIFICADO EDITAR PRODUCTO ================= -->
+    <div class="modal fade" id="modalEditarProducto" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title">
+                        <i class="bi bi-pencil-square me-2"></i>Editar Producto — <span id="editSkuTitle"
+                            class="text-warning">KIT-000</span>
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="formEditarProducto" onsubmit="guardarCambiosProducto(event)">
+                        <input type="hidden" id="editSkuOriginal">
+                        <div class="row g-3">
+                            <div class="col-md-8">
+                                <label for="editNombre" class="form-label fw-bold">Nombre del Producto</label>
+                                <input type="text" class="form-control" id="editNombre" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="editSku" class="form-label fw-bold">Código / SKU</label>
+                                <input type="text" class="form-control" id="editSku" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editCategoria" class="form-label fw-bold">Categoría</label>
+                                <select class="form-select" id="editCategoria" required>
+                                    <option value="Kits de Fiesta">Kits de Fiesta</option>
+                                    <option value="Accesorios e Infladores">Accesorios e Infladores</option>
+                                    <option value="Globos de Látex">Globos de Látex</option>
+                                    <option value="Globos Metalizados">Globos Metalizados</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="editPrecio" class="form-label fw-bold">Precio ($)</label>
+                                <input type="number" class="form-control" id="editPrecio" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="editStock" class="form-label fw-bold">Stock</label>
+                                <input type="number" class="form-control" id="editStock" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="editDescripcion" class="form-label fw-bold">Descripción</label>
+                                <textarea class="form-control" id="editDescripcion" rows="3" required></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer px-0 pb-0 mt-4">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save me-1"></i>Guardar Cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================= FIN MODAL UNIFICADO EDITAR PRODUCTO ================= -->
+
     <!-- BOOTSTRAP 5 JS BUNDLE -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- ================= MODAL UNIFICADO DETALLE PRODUCTO ================= -->
+    <div class="modal fade" id="modalDetalleProducto" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title">
+                        <i class="bi bi-box-seam me-2"></i>Detalle del Producto — <code id="modalSku"
+                            class="text-warning">---</code>
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-5 text-center">
+                            <img id="modalImagen" src="" alt="Producto" class="img-fluid rounded border shadow-sm"
+                                style="max-height: 230px; object-fit: cover;">
+                        </div>
+                        <div class="col-md-7">
+                            <h4 id="modalNombre" class="fw-bold mb-2">--</h4>
+                            <div class="mb-3">
+                                <span id="modalEstado" class="badge fs-6 me-2">--</span>
+                                <span class="text-muted">Categoría: <strong id="modalCategoria"
+                                        class="text-dark">--</strong></span>
+                            </div>
+                            <div class="row g-2 mb-3 bg-light p-3 rounded border">
+                                <div class="col-6">
+                                    <span class="text-muted small d-block">Precio Unitario</span>
+                                    <h5 id="modalPrecio" class="fw-bold text-primary mb-0">$0</h5>
+                                </div>
+                                <div class="col-6">
+                                    <span class="text-muted small d-block">Stock Disponible</span>
+                                    <h5 id="modalStock" class="fw-bold mb-0">0 un.</h5>
+                                </div>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1"><i class="bi bi-file-text me-1"></i> Descripción:</h6>
+                                <p id="modalDescripcion" class="text-muted small mb-0">--</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================= FIN MODAL UNIFICADO DETALLE PRODUCTO ================= -->
 </body>
+<script>
+    // Base de datos simulada de los 8 productos del catálogo
+    const productosBD = {
+        'KIT-001': {
+            nombre: 'Set decoración cumpleaños Toy Story',
+            categoria: 'Kits de Fiesta',
+            precio: '$19.990',
+            stock: '25 un.',
+            estado: 'Disponible',
+            badgeClass: 'bg-success text-white',
+            imagen: 'img/SETTOYSTORY2.webp',
+            descripcion: 'Incluye banderín de feliz cumpleaños, globos temáticos de Woody y Buzz, mantel temático y kit de platos y vasos para 12 personas.'
+        },
+        'KIT-002': {
+            nombre: 'Set decoración cumpleaños Merlina',
+            categoria: 'Kits de Fiesta',
+            precio: '$19.990',
+            stock: '0 un.',
+            estado: 'Agotado',
+            badgeClass: 'bg-danger text-white',
+            imagen: 'img/SETMERLINA.webp',
+            descripcion: 'Kit completo en tonos oscuros y morados. Incluye globos foil, cortina metálica morada, Topper para pastel y vajilla desechable.'
+        },
+        'KIT-003': {
+            nombre: 'Set decoración cumpleaños Masha y el Oso',
+            categoria: 'Kits de Fiesta',
+            precio: '$19.990',
+            stock: '5 un.',
+            estado: 'Poco Stock',
+            badgeClass: 'bg-warning text-dark',
+            imagen: 'img/SETMASHA.webp',
+            descripcion: 'Set temático para fiestas infantiles. Incluye globos pastel, guirnalda, figura gigante de Masha y mantelería decorativa.'
+        },
+        'KIT-004': {
+            nombre: 'Set decoración cumpleaños Mario Bross',
+            categoria: 'Kits de Fiesta',
+            precio: '$19.990',
+            stock: '18 un.',
+            estado: 'Disponible',
+            badgeClass: 'bg-success text-white',
+            imagen: 'img/SETMARIO.webp',
+            descripcion: 'Set de súper héroes y videojuegos. Incluye globos con forma de hongo y estrella, banner feliz cumpleaños y servilletas temáticas.'
+        },
+        'ACC-001': {
+            nombre: 'Bolsas de dulces Minnie Mouse x6',
+            categoria: 'Accesorios e Infladores',
+            precio: '$5.390',
+            stock: '40 un.',
+            estado: 'Disponible',
+            badgeClass: 'bg-success text-white',
+            imagen: 'img/Bolsas_Minnie.webp',
+            descripcion: 'Pack de 6 bolsas para dulces estampadas con el diseño oficial de Minnie Mouse, ideales para sorpresas al final del evento.'
+        },
+        'ACC-002': {
+            nombre: 'Mantel Spiderman',
+            categoria: 'Accesorios e Infladores',
+            precio: '$3.990',
+            stock: '15 un.',
+            estado: 'Disponible',
+            badgeClass: 'bg-success text-white',
+            imagen: 'img/spiderman_mantel.webp',
+            descripcion: 'Mantel de plástico impermeable con impresión de alta calidad del Hombre Araña. Medidas: 108 x 180 cm.'
+        },
+        'ACC-003': {
+            nombre: 'Mantel Frozen',
+            categoria: 'Accesorios e Infladores',
+            precio: '$3.990',
+            stock: '4 un.',
+            estado: 'Poco Stock',
+            badgeClass: 'bg-warning text-dark',
+            imagen: 'img/frozen_mantel.webp',
+            descripcion: 'Mantel plástico temático de Elsa y Anna. Lavable y reutilizable, ideal para mesas principales de dulces.'
+        },
+        'ACC-004': {
+            nombre: 'Corona Minecraft',
+            categoria: 'Accesorios e Infladores',
+            precio: '$3.990',
+            stock: '30 un.',
+            estado: 'Disponible',
+            badgeClass: 'bg-success text-white',
+            imagen: 'img/minecraft_corona.webp',
+            descripcion: 'Corona de cartón rígido plastificado con diseño pixelado estilo Minecraft para el festejado o invitados.'
+        }
+    };
+
+    // Función que inyecta la información en el modal ==== PARA EDITAR LA INFORMACIÓN ====
+    function cargarDetalleProducto(sku) {
+        const prod = productosBD[sku];
+        if (!prod) return;
+
+        document.getElementById('modalSku').textContent = sku;
+        document.getElementById('modalNombre').textContent = prod.nombre;
+        document.getElementById('modalCategoria').textContent = prod.categoria;
+        document.getElementById('modalPrecio').textContent = prod.precio;
+        document.getElementById('modalStock').textContent = prod.stock;
+        document.getElementById('modalDescripcion').textContent = prod.descripcion;
+        document.getElementById('modalImagen').src = prod.imagen;
+
+        const badge = document.getElementById('modalEstado');
+        badge.textContent = prod.estado;
+        badge.className = `badge fs-6 me-2 ${prod.badgeClass}`;
+    }
+    // Función para abrir el modal de edición y llenar los campos con la información actual
+    function cargarEditarProducto(sku) {
+        const prod = productosBD[sku];
+        if (!prod) return;
+
+        // Limpiar formato de precio y stock para dejar solo números en el input
+        const precioNumero = parseInt(prod.precio.replace(/[^0-9]/g, '')) || 0;
+        const stockNumero = parseInt(prod.stock.replace(/[^0-9]/g, '')) || 0;
+
+        // Cargar los valores en los campos del formulario
+        document.getElementById('editSkuTitle').textContent = sku;
+        document.getElementById('editSkuOriginal').value = sku;
+        document.getElementById('editSku').value = sku;
+        document.getElementById('editNombre').value = prod.nombre;
+        document.getElementById('editCategoria').value = prod.categoria;
+        document.getElementById('editPrecio').value = precioNumero;
+        document.getElementById('editStock').value = stockNumero;
+        document.getElementById('editDescripcion').value = prod.descripcion;
+    }
+
+    // Función para procesar y guardar los cambios realizados
+    function guardarCambiosProducto(event) {
+        event.preventDefault(); // Previene la recarga de página
+
+        const sku = document.getElementById('editSkuOriginal').value;
+        const prod = productosBD[sku];
+
+        if (prod) {
+            const nuevoStock = parseInt(document.getElementById('editStock').value);
+            const nuevoPrecio = parseInt(document.getElementById('editPrecio').value);
+
+            // Actualizar el objeto con los nuevos datos
+            prod.nombre = document.getElementById('editNombre').value;
+            prod.categoria = document.getElementById('editCategoria').value;
+            prod.precio = `$${nuevoPrecio.toLocaleString('es-CL')}`;
+            prod.stock = `${nuevoStock} un.`;
+            prod.descripcion = document.getElementById('editDescripcion').value;
+
+            // Recalcular el estado según el stock ingresado
+            if (nuevoStock === 0) {
+                prod.estado = 'Agotado';
+                prod.badgeClass = 'bg-danger text-white';
+            } else if (nuevoStock <= 5) {
+                prod.estado = 'Poco Stock';
+                prod.badgeClass = 'bg-warning text-dark';
+            } else {
+                prod.estado = 'Disponible';
+                prod.badgeClass = 'bg-success text-white';
+            }
+
+            // Cerrar el modal
+            const modalElement = document.getElementById('modalEditarProducto');
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+            modalInstance.hide();
+
+            alert(`¡Producto ${sku} actualizado con éxito!`);
+        }
+    }
+
+    // ===================== FILTRADO DE PRODUCTOS ====================
+    function filtrarProductos() {
+        // 1. Obtener los valores de los filtros
+        const texto = document.getElementById('inputBuscar').value.toLowerCase().trim();
+        const categoria = document.getElementById('selectCategoria').value;
+
+        // 2. Obtener todas las filas de la tabla
+        const filas = document.querySelectorAll('#tablaProductos tbody tr');
+
+        // 3. Evaluar fila por fila
+        filas.forEach(fila => {
+            // Obtenemos el texto de las celdas: Producto (columna 1), SKU (columna 2), Categoría (columna 3)
+            const colNombre = fila.cells[1] ? fila.cells[1].textContent.toLowerCase() : '';
+            const colSku = fila.cells[2] ? fila.cells[2].textContent.toLowerCase() : '';
+            const colCategoria = fila.cells[3] ? fila.cells[3].textContent.trim() : '';
+
+            // Condición 1: El texto coincide con Nombre O con SKU
+            const coincideTexto = colNombre.includes(texto) || colSku.includes(texto);
+
+            // Condición 2: La categoría coincide O está seleccionada "Todas las categorías" (valor vacío)
+            const coincideCategoria = (categoria === '') || (colCategoria === categoria);
+
+            // Si ambas condiciones se cumplen, muestra la fila; si no, la oculta
+            if (coincideTexto && coincideCategoria) {
+                fila.style.display = '';
+            } else {
+                fila.style.display = 'none';
+            }
+        });
+    }
+</script>
 
 </html>

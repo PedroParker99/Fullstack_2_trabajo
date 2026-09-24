@@ -28,8 +28,8 @@
             <!-- flex-shrink-0: no se encoge -->
             <!-- vh-100: ocupa el 100% del alto de la pantalla -->
             <!-- position-sticky top-0: se queda fijo aunque hagas scroll en el contenido -->
-            <nav class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0"
-                style="width: 260px;">
+            <nav
+                class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0 sidebar-admin">
 
                 <!-- Marca del panel -->
                 <a href="perfilAdmin.html" class="d-flex align-items-center mb-3 text-white text-decoration-none">
@@ -90,7 +90,7 @@
 
             <!-- ===== CONTENIDO PRINCIPAL ===== -->
             <!-- flex-grow-1: ocupa todo el espacio restante que el sidebar no usa -->
-            <main class="flex-grow-1 p-4">
+            <main class="flex-grow-1 p-4 overflow-x-auto">
 
                 <!-- === Encabezado de la página === -->
                 <!-- d-flex + justify-content-between: título a la izquierda, botón a la derecha -->
@@ -105,10 +105,10 @@
                 </div>
 
                 <!-- === Barra de búsqueda === -->
-                <!-- input-group: junta un ícono/texto con el input en una sola pieza visual -->
                 <div class="input-group mb-4" style="max-width: 350px;">
                     <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Buscar pedido o cliente...">
+                    <input type="text" id="inputBuscarPedido" class="form-control"
+                        placeholder="Buscar pedido o cliente..." oninput="filtrarPedidos()">
                 </div>
 
                 <!-- === Pestañas de filtro por estado === -->
@@ -171,7 +171,10 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#">Ver detalle</a></li>
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetallePedido"
+                                                            onclick="cargarDetalle('VG-1042')"><i
+                                                                class="bi bi-eye me-2"></i>Ver detalle</a></li>
                                                     <li><a class="dropdown-item" href="#">Marcar como enviado</a></li>
                                                     <li>
                                                         <hr class="dropdown-divider">
@@ -195,7 +198,10 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#">Ver detalle</a></li>
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetallePedido"
+                                                            onclick="cargarDetalle('VG-1041')"><i
+                                                                class="bi bi-eye me-2"></i>Ver detalle</a></li>
                                                     <li><a class="dropdown-item" href="#">Marcar como completado</a>
                                                     </li>
                                                 </ul>
@@ -215,7 +221,10 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#">Ver detalle</a></li>
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#modalDetallePedido"
+                                                            onclick="cargarDetalle('VG-1040')"><i
+                                                                class="bi bi-eye me-2"></i>Ver detalle</a></li>
                                                 </ul>
                                             </div>
                                         </td>
@@ -233,8 +242,13 @@
                                                     Acciones
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#">Ver detalle</a></li>
-                                                </ul>
+                                                    <li>
+                                                        <a class="dropdown-item text-dark" href="#"
+                                                            data-bs-toggle="modal" data-bs-target="#modalDetallePedido"
+                                                            onclick="cargarDetalle('VG-1039')">
+                                                            <i class="bi bi-eye me-2"></i>Ver detalle
+                                                        </a>
+                                                    </li>
                                             </div>
                                         </td>
                                     </tr>
@@ -393,6 +407,180 @@
     <!-- COLOCAR BOOTSTRAP 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- ================= MODAL UNIFICADO Y DINÁMICO ================= -->
+    <div class="modal fade" id="modalDetallePedido" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title">
+                        <i class="bi bi-receipt me-2"></i>Detalle del Pedido <span id="modalNumPedido">#VG-0000</span>
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                        <div>
+                            <span class="text-muted small">Fecha de Pedido:</span>
+                            <h6 class="mb-0 fw-bold" id="modalFecha">--/--/----</h6>
+                        </div>
+                        <div>
+                            <span id="modalEstado" class="badge bg-secondary fs-6 px-3 py-2">--</span>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="p-3 bg-light rounded border h-100">
+                                <h6 class="fw-bold text-primary mb-2"><i class="bi bi-person me-1"></i> Cliente</h6>
+                                <p class="mb-1"><strong>Nombre:</strong> <span id="modalCliente">--</span></p>
+                                <p class="mb-0"><strong>Correo:</strong> <span id="modalEmail">--</span></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 bg-light rounded border h-100">
+                                <h6 class="fw-bold text-primary mb-2"><i class="bi bi-truck me-1"></i> Envío</h6>
+                                <p class="mb-0"><strong>Dirección:</strong> <span id="modalDireccion">--</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h6 class="fw-bold mb-3"><i class="bi bi-box-seam me-1"></i> Productos</h6>
+                    <div class="table-responsive mb-3">
+                        <table class="table table-bordered align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Producto</th>
+                                    <th class="text-center">Cant.</th>
+                                    <th class="text-end">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="modalTablaProductos">
+                                <!-- Los productos se cargan con JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="text-end">
+                        <h5 class="fw-bold text-primary">Total: <span id="modalTotal">$0</span></h5>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ================= FIN MODAL UNIFICADO Y DINÁMICO ================= -->
+
+    <script>
+        // Objeto con la información simulada de tus pedidos
+        const pedidosBD = {
+            'VG-1042': {
+                cliente: 'Camila Reyes',
+                email: 'camila.reyes@email.com',
+                direccion: 'Av. Providencia 1234, Depto 502, Santiago',
+                fecha: '18-09-2026',
+                estado: 'Pendiente',
+                badgeClass: 'bg-warning text-dark',
+                total: '$38.990',
+                productos: [
+                    { nombre: '🎈 Pack Globos Pastel Cumpleaños', cant: 2, subtotal: '$25.980' },
+                    { nombre: '✨ Guirnalda Metálica Dorada 3m', cant: 1, subtotal: '$13.010' }
+                ]
+            },
+            'VG-1041': {
+                cliente: 'Matías Soto',
+                email: 'matias.soto@email.com',
+                direccion: 'Calle Los Alerces 456, Concepción',
+                fecha: '17-09-2026',
+                estado: 'Enviado',
+                badgeClass: 'bg-info text-dark',
+                total: '$21.500',
+                productos: [
+                    { nombre: '🎉 Inflador Eléctrico de Globos', cant: 1, subtotal: '$21.500' }
+                ]
+            },
+            'VG-1040': {
+                cliente: 'Francisca Muñoz',
+                email: 'f.munoz@email.com',
+                direccion: 'Aníbal Pinto 789, Valparaíso',
+                fecha: '15-09-2026',
+                estado: 'Completado',
+                badgeClass: 'bg-success text-white',
+                total: '$54.300',
+                productos: [
+                    { nombre: '👑 Kit Decoración Fiesta Deluxe', cant: 1, subtotal: '$40.000' },
+                    { nombre: '🎈 Pack 50 Globos Rojos 12"', cant: 1, subtotal: '$14.300' }
+                ]
+            },
+            'VG-1039': {
+                cliente: 'Ignacio Vera',
+                email: 'ignacio.vera@email.com',
+                direccion: 'Av. Alemania 123, Temuco',
+                fecha: '14-09-2026',
+                estado: 'Cancelado',
+                badgeClass: 'bg-danger text-white',
+                total: '$12.990',
+                productos: [
+                    { nombre: '🎈 Set Globos Metalizados Número 5', cant: 1, subtotal: '$12.990' }
+                ]
+            }
+        };
+
+        // Función que reescribe el contenido del modal dinámicamente
+        function cargarDetalle(idPedido) {
+            const pedido = pedidosBD[idPedido];
+            if (!pedido) return;
+
+            // Inyectar datos en el Modal
+            document.getElementById('modalNumPedido').textContent = `#${idPedido}`;
+            document.getElementById('modalFecha').textContent = pedido.fecha;
+            document.getElementById('modalCliente').textContent = pedido.cliente;
+            document.getElementById('modalEmail').textContent = pedido.email;
+            document.getElementById('modalDireccion').textContent = pedido.direccion;
+            document.getElementById('modalTotal').textContent = pedido.total;
+
+            // Cambiar estado y color de badge
+            const badge = document.getElementById('modalEstado');
+            badge.textContent = pedido.estado;
+            badge.className = `badge fs-6 px-3 py-2 ${pedido.badgeClass}`;
+
+            // Construir la tabla de productos dinámicamente
+            const tablaBody = document.getElementById('modalTablaProductos');
+            tablaBody.innerHTML = ''; // Limpiar filas anteriores
+
+            pedido.productos.forEach(prod => {
+                tablaBody.innerHTML += `
+                <tr>
+                    <td>${prod.nombre}</td>
+                    <td class="text-center">${prod.cant}</td>
+                    <td class="text-end fw-semibold">${prod.subtotal}</td>
+                </tr>
+            `;
+            });
+        }
+
+
+        // Función para filtrar filas de pedidos por N° de pedido, cliente o fecha
+        function filtrarPedidos() {
+            const textoBusqueda = document.getElementById('inputBuscarPedido').value.toLowerCase();
+            // Selecciona todas las filas de las tablas en todas las pestañas
+            const filas = document.querySelectorAll('#contenidoTabsPedidos tbody tr');
+
+            filas.forEach(fila => {
+                const contenidoFila = fila.textContent.toLowerCase();
+                if (contenidoFila.includes(textoBusqueda)) {
+                    fila.style.display = '';
+                } else {
+                    fila.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

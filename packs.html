@@ -264,626 +264,73 @@
     <!-- ==================== PACKS ==================== -->
     <main class="container py-5">
 
+        <div class="bg-white rounded-4 shadow-sm p-4">
 
-        <!-- Encabezado -->
-        <section class="bg-white rounded-4 shadow-sm p-4 mb-4">
+            <!-- Encabezado -->
+            <section class="pb-4 mb-4 border-bottom">
 
-            <!-- Breadcrumb -->
-            <nav aria-label="breadcrumb">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb">
 
-                <ol class="breadcrumb mb-3">
+                    <ol class="breadcrumb mb-3">
 
-                    <li class="breadcrumb-item">
-                        <a href="index.html" class="text-rosa text-decoration-none">
-                            Inicio
-                        </a>
-                    </li>
+                        <li class="breadcrumb-item">
+                            <a href="index.html" class="text-rosa text-decoration-none">
+                                Inicio
+                            </a>
+                        </li>
 
-                    <li class="breadcrumb-item active" aria-current="page">
-                        Packs decoración cumpleaños
-                    </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Packs decoración cumpleaños
+                        </li>
 
-                </ol>
+                    </ol>
 
-            </nav>
+                </nav>
 
 
-            <div class="d-flex flex-column flex-lg-row
+                <div class="d-flex flex-column flex-lg-row
                         justify-content-between
                         align-items-lg-end gap-4">
 
 
-                <!-- Título -->
-                <div>
-
-                    <span class="text-rosa small fw-bold text-uppercase">
-                        Packs de celebración
-                    </span>
-
-                    <h1 class="fw-bold mt-2 mb-2">
-                        Packs decoración cumpleaños
-                    </h1>
-
-                    <p class="text-muted mb-0">
-                        Encuentra la temática perfecta para hacer de tu
-                        celebración un momento inolvidable.
-                    </p>
-
-                </div>
-
-
-                <!-- Ordenar -->
-                <div class="input-group ordenar-productos">
-
-                    <span class="input-group-text bg-white">
-
-                        <i class="bi bi-sort-down me-2"></i>
-                        Ordenar por
-
-                    </span>
-
-                    <select class="form-select" aria-label="Ordenar productos">
-
-                        <option selected>Características</option>
-                        <option>Precio: menor a mayor</option>
-                        <option>Precio: mayor a menor</option>
-                        <option>Nombre</option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ==================== FILTROS + PRODUCTOS ==================== -->
-        <div class="row g-4 align-items-start">
-
-
-            <!-- ==================== FILTROS ==================== -->
-            <aside class="col-lg-3">
-
-                <div class="bg-white rounded-4 shadow-sm p-4">
-
-
                     <!-- Título -->
-                    <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
 
-                        <h5 class="fw-bold mb-0">
+                        <span class="text-rosa small fw-bold text-uppercase">
+                            Packs de celebración
+                        </span>
 
-                            <i class="bi bi-sliders me-2"></i>
-                            Filtros
+                        <h1 class="fw-bold mt-2 mb-2">
+                            Packs decoración cumpleaños
+                        </h1>
 
-                        </h5>
-
-                        <button type="button" class="btn btn-link btn-sm text-muted text-decoration-none p-0">
-
-                            Limpiar
-
-                        </button>
+                        <p class="text-muted mb-0">
+                            Encuentra la temática perfecta para hacer de tu
+                            celebración un momento inolvidable.
+                        </p>
 
                     </div>
 
 
+                    <!-- Ordenar -->
+                    <div class="input-group ordenar-productos">
 
-                    <!-- ==================== PERSONAJE ==================== -->
-                    <div class="filtro-grupo">
+                        <span class="input-group-text bg-white">
 
-                        <button class="filtro-titulo" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#filtroPersonaje" aria-expanded="true" aria-controls="filtroPersonaje">
+                            <i class="bi bi-sort-down me-2"></i>
+                            Ordenar por
 
-                            <span>Personaje</span>
+                        </span>
 
-                            <i class="bi bi-chevron-up flecha"></i>
+                        <select class="form-select" aria-label="Ordenar productos">
 
-                        </button>
+                            <option selected>Características</option>
+                            <option>Precio: menor a mayor</option>
+                            <option>Precio: mayor a menor</option>
+                            <option>Nombre</option>
 
-
-                        <div class="collapse show pt-3" id="filtroPersonaje">
-
-
-                            <div class="form-check mb-3">
-
-                                <input class="form-check-input" type="checkbox" id="toyStory">
-
-                                <label class="form-check-label w-100 d-flex justify-content-between" for="toyStory">
-
-                                    <span>Toy Story</span>
-                                    <small class="text-muted">1</small>
-
-                                </label>
-
-                            </div>
-
-
-                            <div class="form-check mb-3">
-
-                                <input class="form-check-input" type="checkbox" id="merlina">
-
-                                <label class="form-check-label w-100 d-flex justify-content-between" for="merlina">
-
-                                    <span>Merlina</span>
-                                    <small class="text-muted">1</small>
-
-                                </label>
-
-                            </div>
-
-
-                            <div class="form-check mb-3">
-
-                                <input class="form-check-input" type="checkbox" id="masha">
-
-                                <label class="form-check-label w-100 d-flex justify-content-between" for="masha">
-
-                                    <span>Masha y el Oso</span>
-                                    <small class="text-muted">1</small>
-
-                                </label>
-
-                            </div>
-
-
-                            <div class="form-check">
-
-                                <input class="form-check-input" type="checkbox" id="mario">
-
-                                <label class="form-check-label w-100 d-flex justify-content-between" for="mario">
-
-                                    <span>Mario Bros</span>
-                                    <small class="text-muted">1</small>
-
-                                </label>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-
-                    <!-- ==================== DISPONIBILIDAD ==================== -->
-                    <div class="filtro-grupo">
-
-                        <button class="filtro-titulo" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#filtroDisponibilidad" aria-expanded="true"
-                            aria-controls="filtroDisponibilidad">
-
-                            <span>Disponibilidad</span>
-
-                            <i class="bi bi-chevron-up flecha"></i>
-
-                        </button>
-
-
-                        <div class="collapse show pt-3" id="filtroDisponibilidad">
-
-
-                            <div class="form-check mb-3">
-
-                                <input class="form-check-input" type="checkbox" id="disponible">
-
-                                <label class="form-check-label w-100 d-flex justify-content-between" for="disponible">
-
-                                    <span>En existencia</span>
-                                    <small class="text-muted">4</small>
-
-                                </label>
-
-                            </div>
-
-
-                            <div class="form-check">
-
-                                <input class="form-check-input" type="checkbox" id="agotado">
-
-                                <label class="form-check-label w-100 d-flex justify-content-between" for="agotado">
-
-                                    <span>Agotado</span>
-                                    <small class="text-muted">0</small>
-
-                                </label>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-
-                    <!-- ==================== PRECIO ==================== -->
-                    <div class="filtro-grupo">
-
-                        <button class="filtro-titulo" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#filtroPrecio" aria-expanded="true" aria-controls="filtroPrecio">
-
-                            <span>Precio</span>
-
-                            <i class="bi bi-chevron-up flecha"></i>
-
-                        </button>
-
-
-                        <div class="collapse show pt-3" id="filtroPrecio">
-
-                            <p class="small text-muted">
-                                Selecciona tu rango de precio.
-                            </p>
-
-
-                            <div class="row g-2 mb-3">
-
-
-                                <!-- Mínimo -->
-                                <div class="col-6">
-
-                                    <label for="precioMinimo" class="form-label small text-muted">
-
-                                        Mínimo
-
-                                    </label>
-
-                                    <div class="input-group input-group-sm">
-
-                                        <span class="input-group-text">$</span>
-
-                                        <input type="number" class="form-control" id="precioMinimo" value="0" min="0">
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- Máximo -->
-                                <div class="col-6">
-
-                                    <label for="precioMaximo" class="form-label small text-muted">
-
-                                        Máximo
-
-                                    </label>
-
-                                    <div class="input-group input-group-sm">
-
-                                        <span class="input-group-text">$</span>
-
-                                        <input type="number" class="form-control" id="precioMaximo" value="19990"
-                                            min="0" max="19990">
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <input type="range" class="form-range" id="rangoPrecio" min="0" max="19990" value="19990">
-
-
-                            <div class="d-flex justify-content-between text-muted small">
-
-                                <span>$0</span>
-                                <span>$19.990</span>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </aside>
-
-
-
-            <!-- ==================== PRODUCTOS ==================== -->
-            <section class="col-lg-9">
-
-
-                <!-- Barra superior -->
-                <div class="bg-white rounded-3 shadow-sm p-3 mb-3
-                            d-flex justify-content-between align-items-center">
-
-                    <p class="text-muted mb-0">
-
-                        Mostrando
-                        <strong class="text-dark">
-                            4 packs
-                        </strong>
-
-                    </p>
-
-
-                    <span class="d-none d-md-block text-muted small">
-
-                        <i class="bi bi-grid-3x3-gap-fill me-1"></i>
-                        Vista de productos
-
-                    </span>
-
-                </div>
-
-
-
-                <!-- Grid -->
-                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-
-
-                    <!-- ==================== TOY STORY ==================== -->
-                    <div class="col">
-
-                        <article class="card producto-card h-100 border-0 shadow-sm">
-
-                            <div class="producto-imagen">
-
-                                <img src="img/SETTOYSTORY2.webp" class="card-img-top" alt="Set decoración Toy Story">
-
-                                <span class="badge bg-rosa producto-badge">
-                                    Pack cumpleaños
-                                </span>
-
-                                <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                    aria-label="Agregar Toy Story a favoritos">
-
-                                    <i class="bi bi-heart"></i>
-
-                                </button>
-
-                            </div>
-
-
-                            <div class="card-body d-flex flex-column p-4">
-
-                                <small class="text-rosa fw-semibold mb-2">
-                                    Toy Story
-                                </small>
-
-                                <h5 class="card-title fw-bold">
-                                    Set decoración Toy Story
-                                </h5>
-
-                                <p class="text-muted small">
-                                    Una aventura junto a Woody, Buzz y sus amigos
-                                    para una fiesta llena de diversión.
-                                </p>
-
-
-                                <div class="mt-auto">
-
-                                    <p class="text-success small mb-2">
-
-                                        <i class="bi bi-check-circle-fill me-1"></i>
-                                        En existencia
-
-                                    </p>
-
-                                    <p class="fs-5 fw-bold mb-3">
-                                        $19.990
-                                    </p>
-
-                                    <button type="button" class="btn btn-rosa w-100">
-
-                                        <i class="bi bi-bag-plus me-2"></i>
-                                        Añadir al carrito
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-
-                    <!-- ==================== MERLINA ==================== -->
-                    <div class="col">
-
-                        <article class="card producto-card h-100 border-0 shadow-sm">
-
-                            <div class="producto-imagen">
-
-                                <img src="img/SETMERLINA.webp" class="card-img-top" alt="Set decoración Merlina">
-
-                                <span class="badge bg-rosa producto-badge">
-                                    Pack cumpleaños
-                                </span>
-
-                                <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                    aria-label="Agregar Merlina a favoritos">
-
-                                    <i class="bi bi-heart"></i>
-
-                                </button>
-
-                            </div>
-
-
-                            <div class="card-body d-flex flex-column p-4">
-
-                                <small class="text-rosa fw-semibold mb-2">
-                                    Merlina
-                                </small>
-
-                                <h5 class="card-title fw-bold">
-                                    Set decoración Merlina
-                                </h5>
-
-                                <p class="text-muted small">
-                                    Una decoración inspirada en Merlina,
-                                    perfecta para una celebración misteriosa
-                                    y diferente.
-                                </p>
-
-
-                                <div class="mt-auto">
-
-                                    <p class="text-success small mb-2">
-
-                                        <i class="bi bi-check-circle-fill me-1"></i>
-                                        En existencia
-
-                                    </p>
-
-                                    <p class="fs-5 fw-bold mb-3">
-                                        $19.990
-                                    </p>
-
-                                    <button type="button" class="btn btn-rosa w-100">
-
-                                        <i class="bi bi-bag-plus me-2"></i>
-                                        Añadir al carrito
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-
-                    <!-- ==================== MASHA ==================== -->
-                    <div class="col">
-
-                        <article class="card producto-card h-100 border-0 shadow-sm">
-
-                            <div class="producto-imagen">
-
-                                <img src="img/SETMASHA.webp" class="card-img-top" alt="Set decoración Masha y el Oso">
-
-                                <span class="badge bg-rosa producto-badge">
-                                    Pack cumpleaños
-                                </span>
-
-                                <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                    aria-label="Agregar Masha a favoritos">
-
-                                    <i class="bi bi-heart"></i>
-
-                                </button>
-
-                            </div>
-
-
-                            <div class="card-body d-flex flex-column p-4">
-
-                                <small class="text-rosa fw-semibold mb-2">
-                                    Masha y el Oso
-                                </small>
-
-                                <h5 class="card-title fw-bold">
-                                    Set decoración Masha
-                                </h5>
-
-                                <p class="text-muted small">
-                                    Una divertida fiesta inspirada en Masha y
-                                    el Oso, llena de color y ternura.
-                                </p>
-
-
-                                <div class="mt-auto">
-
-                                    <p class="text-success small mb-2">
-
-                                        <i class="bi bi-check-circle-fill me-1"></i>
-                                        En existencia
-
-                                    </p>
-
-                                    <p class="fs-5 fw-bold mb-3">
-                                        $19.990
-                                    </p>
-
-                                    <button type="button" class="btn btn-rosa w-100">
-
-                                        <i class="bi bi-bag-plus me-2"></i>
-                                        Añadir al carrito
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-
-                    <!-- ==================== MARIO BROS ==================== -->
-                    <div class="col">
-
-                        <article class="card producto-card h-100 border-0 shadow-sm">
-
-                            <div class="producto-imagen">
-
-                                <img src="img/SETMARIO.webp" class="card-img-top" alt="Set decoración Mario Bros">
-
-                                <span class="badge bg-rosa producto-badge">
-                                    Pack cumpleaños
-                                </span>
-
-                                <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                    aria-label="Agregar Mario Bros a favoritos">
-
-                                    <i class="bi bi-heart"></i>
-
-                                </button>
-
-                            </div>
-
-
-                            <div class="card-body d-flex flex-column p-4">
-
-                                <small class="text-rosa fw-semibold mb-2">
-                                    Mario Bros
-                                </small>
-
-                                <h5 class="card-title fw-bold">
-                                    Set decoración Mario Bros
-                                </h5>
-
-                                <p class="text-muted small">
-                                    Celebra con Mario, Luigi y sus amigos
-                                    en una fiesta llena de aventuras y diversión.
-                                </p>
-
-
-                                <div class="mt-auto">
-
-                                    <p class="text-success small mb-2">
-
-                                        <i class="bi bi-check-circle-fill me-1"></i>
-                                        En existencia
-
-                                    </p>
-
-                                    <p class="fs-5 fw-bold mb-3">
-                                        $19.990
-                                    </p>
-
-                                    <button type="button" class="btn btn-rosa w-100">
-
-                                        <i class="bi bi-bag-plus me-2"></i>
-                                        Añadir al carrito
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        </article>
+                        </select>
 
                     </div>
 
@@ -891,8 +338,527 @@
 
             </section>
 
-        </div>
 
+
+            <!-- ==================== FILTROS + PRODUCTOS ==================== -->
+            <div class="row g-4 align-items-start">
+
+                <!-- ==================== FILTROS ==================== -->
+                <aside class="col-lg-3">
+                    <div class="p-0 pe-lg-4">
+
+                        <!-- Título -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="fw-bold mb-0">
+                                <i class="bi bi-sliders me-2"></i>
+                                Filtros
+                            </h5>
+                            <button type="button" class="btn btn-link btn-sm text-muted text-decoration-none p-0">
+                                Limpiar
+                            </button>
+                        </div>
+
+                        <!-- ==================== PERSONAJE ==================== -->
+                        <div class="filtro-grupo">
+
+                            <button class="filtro-titulo" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#filtroPersonaje" aria-expanded="true" aria-controls="filtroPersonaje">
+                                <span>Personaje</span>
+                                <i class="bi bi-chevron-up flecha"></i>
+                            </button>
+
+                            <div class="collapse show pt-3" id="filtroPersonaje">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="toyStory">
+                                    <label class="form-check-label w-100 d-flex justify-content-between" for="toyStory">
+                                        <span>Toy Story</span>
+                                        <small class="text-muted">1</small>
+                                    </label>
+                                </div>
+
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="merlina">
+                                    <label class="form-check-label w-100 d-flex justify-content-between" for="merlina">
+                                        <span>Merlina</span>
+                                        <small class="text-muted">1</small>
+                                    </label>
+                                </div>
+
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="masha">
+                                    <label class="form-check-label w-100 d-flex justify-content-between" for="masha">
+                                        <span>Masha y el Oso</span>
+                                        <small class="text-muted">1</small>
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="mario">
+                                    <label class="form-check-label w-100 d-flex justify-content-between" for="mario">
+                                        <span>Mario Bros</span>
+                                        <small class="text-muted">1</small>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- ==================== DISPONIBILIDAD ==================== -->
+                        <div class="filtro-grupo">
+
+                            <button class="filtro-titulo" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#filtroDisponibilidad" aria-expanded="true"
+                                aria-controls="filtroDisponibilidad">
+
+                                <span>Disponibilidad</span>
+
+                                <i class="bi bi-chevron-up flecha"></i>
+
+                            </button>
+
+
+                            <div class="collapse show pt-3" id="filtroDisponibilidad">
+
+
+                                <div class="form-check mb-3">
+
+                                    <input class="form-check-input" type="checkbox" id="disponible">
+
+                                    <label class="form-check-label w-100 d-flex justify-content-between"
+                                        for="disponible">
+
+                                        <span>En existencia</span>
+                                        <small class="text-muted">4</small>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="form-check">
+
+                                    <input class="form-check-input" type="checkbox" id="agotado">
+
+                                    <label class="form-check-label w-100 d-flex justify-content-between" for="agotado">
+
+                                        <span>Agotado</span>
+                                        <small class="text-muted">0</small>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <!-- ==================== PRECIO ==================== -->
+                        <div class="filtro-grupo">
+
+                            <button class="filtro-titulo" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#filtroPrecio" aria-expanded="true" aria-controls="filtroPrecio">
+
+                                <span>Precio</span>
+
+                                <i class="bi bi-chevron-up flecha"></i>
+
+                            </button>
+
+
+                            <div class="collapse show pt-3" id="filtroPrecio">
+
+                                <p class="small text-muted">
+                                    Selecciona tu rango de precio.
+                                </p>
+
+
+                                <div class="row g-2 mb-3">
+
+
+                                    <!-- Mínimo -->
+                                    <div class="col-6">
+
+                                        <label for="precioMinimo" class="form-label small text-muted">
+
+                                            Mínimo
+
+                                        </label>
+
+                                        <div class="input-group input-group-sm">
+
+                                            <span class="input-group-text">$</span>
+
+                                            <input type="number" class="form-control" id="precioMinimo" value="0"
+                                                min="0">
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Máximo -->
+                                    <div class="col-6">
+
+                                        <label for="precioMaximo" class="form-label small text-muted">
+
+                                            Máximo
+
+                                        </label>
+
+                                        <div class="input-group input-group-sm">
+
+                                            <span class="input-group-text">$</span>
+
+                                            <input type="number" class="form-control" id="precioMaximo" value="19990"
+                                                min="0" max="19990">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <input type="range" class="form-range" id="rangoPrecio" min="0" max="19990"
+                                    value="19990">
+
+
+                                <div class="d-flex justify-content-between text-muted small">
+
+                                    <span>$0</span>
+                                    <span>$19.990</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+
+                <!-- ==================== PRODUCTOS ==================== -->
+                <section class="col-lg-9">
+
+
+                    <!-- Barra superior -->
+                    <div class="border-bottom p-3 mb-3
+                    d-flex justify-content-between align-items-center">
+
+                        <p class="text-muted mb-0">
+
+                            Mostrando
+                            <strong class="text-dark">
+                                4 packs
+                            </strong>
+
+                        </p>
+
+
+                        <span class="d-none d-md-block text-muted small">
+
+                            <i class="bi bi-grid-3x3-gap-fill me-1"></i>
+                            Vista de productos
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Grid -->
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+
+
+                        <!-- ==================== TOY STORY ==================== -->
+                        <div class="col">
+
+                            <article class="card producto-card h-100 border-0 shadow-sm">
+
+                                <div class="producto-imagen">
+
+                                    <img src="img/SETTOYSTORY2.webp" class="card-img-top"
+                                        alt="Set decoración Toy Story">
+
+                                    <span class="badge bg-rosa producto-badge">
+                                        Pack cumpleaños
+                                    </span>
+
+                                    <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
+                                        aria-label="Agregar Toy Story a favoritos">
+
+                                        <i class="bi bi-heart"></i>
+
+                                    </button>
+
+                                </div>
+
+
+                                <div class="card-body d-flex flex-column p-4">
+
+                                    <small class="text-rosa fw-semibold mb-2">
+                                        Toy Story
+                                    </small>
+
+                                    <h5 class="card-title fw-bold">
+                                        Set decoración Toy Story
+                                    </h5>
+
+                                    <p class="text-muted small">
+                                        Una aventura junto a Woody, Buzz y sus amigos
+                                        para una fiesta llena de diversión.
+                                    </p>
+
+
+                                    <div class="mt-auto">
+
+                                        <p class="text-success small mb-2">
+
+                                            <i class="bi bi-check-circle-fill me-1"></i>
+                                            En existencia
+
+                                        </p>
+
+                                        <p class="fs-5 fw-bold mb-3">
+                                            $19.990
+                                        </p>
+
+                                        <button type="button" class="btn btn-rosa w-100">
+
+                                            <i class="bi bi-bag-plus me-2"></i>
+                                            Añadir al carrito
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+
+
+                        <!-- ==================== MERLINA ==================== -->
+                        <div class="col">
+
+                            <article class="card producto-card h-100 border-0 shadow-sm">
+
+                                <div class="producto-imagen">
+
+                                    <img src="img/SETMERLINA.webp" class="card-img-top" alt="Set decoración Merlina">
+
+                                    <span class="badge bg-rosa producto-badge">
+                                        Pack cumpleaños
+                                    </span>
+
+                                    <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
+                                        aria-label="Agregar Merlina a favoritos">
+
+                                        <i class="bi bi-heart"></i>
+
+                                    </button>
+
+                                </div>
+
+
+                                <div class="card-body d-flex flex-column p-4">
+
+                                    <small class="text-rosa fw-semibold mb-2">
+                                        Merlina
+                                    </small>
+
+                                    <h5 class="card-title fw-bold">
+                                        Set decoración Merlina
+                                    </h5>
+
+                                    <p class="text-muted small">
+                                        Una decoración inspirada en Merlina,
+                                        perfecta para una celebración misteriosa
+                                        y diferente.
+                                    </p>
+
+
+                                    <div class="mt-auto">
+
+                                        <p class="text-success small mb-2">
+
+                                            <i class="bi bi-check-circle-fill me-1"></i>
+                                            En existencia
+
+                                        </p>
+
+                                        <p class="fs-5 fw-bold mb-3">
+                                            $19.990
+                                        </p>
+
+                                        <button type="button" class="btn btn-rosa w-100">
+
+                                            <i class="bi bi-bag-plus me-2"></i>
+                                            Añadir al carrito
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+
+
+                        <!-- ==================== MASHA ==================== -->
+                        <div class="col">
+
+                            <article class="card producto-card h-100 border-0 shadow-sm">
+
+                                <div class="producto-imagen">
+
+                                    <img src="img/SETMASHA.webp" class="card-img-top"
+                                        alt="Set decoración Masha y el Oso">
+
+                                    <span class="badge bg-rosa producto-badge">
+                                        Pack cumpleaños
+                                    </span>
+
+                                    <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
+                                        aria-label="Agregar Masha a favoritos">
+
+                                        <i class="bi bi-heart"></i>
+
+                                    </button>
+
+                                </div>
+
+
+                                <div class="card-body d-flex flex-column p-4">
+
+                                    <small class="text-rosa fw-semibold mb-2">
+                                        Masha y el Oso
+                                    </small>
+
+                                    <h5 class="card-title fw-bold">
+                                        Set decoración Masha
+                                    </h5>
+
+                                    <p class="text-muted small">
+                                        Una divertida fiesta inspirada en Masha y
+                                        el Oso, llena de color y ternura.
+                                    </p>
+
+
+                                    <div class="mt-auto">
+
+                                        <p class="text-success small mb-2">
+
+                                            <i class="bi bi-check-circle-fill me-1"></i>
+                                            En existencia
+
+                                        </p>
+
+                                        <p class="fs-5 fw-bold mb-3">
+                                            $19.990
+                                        </p>
+
+                                        <button type="button" class="btn btn-rosa w-100">
+
+                                            <i class="bi bi-bag-plus me-2"></i>
+                                            Añadir al carrito
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+
+
+                        <!-- ==================== MARIO BROS ==================== -->
+                        <div class="col">
+
+                            <article class="card producto-card h-100 border-0 shadow-sm">
+
+                                <div class="producto-imagen">
+
+                                    <img src="img/SETMARIO.webp" class="card-img-top" alt="Set decoración Mario Bros">
+
+                                    <span class="badge bg-rosa producto-badge">
+                                        Pack cumpleaños
+                                    </span>
+
+                                    <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
+                                        aria-label="Agregar Mario Bros a favoritos">
+
+                                        <i class="bi bi-heart"></i>
+
+                                    </button>
+
+                                </div>
+
+
+                                <div class="card-body d-flex flex-column p-4">
+
+                                    <small class="text-rosa fw-semibold mb-2">
+                                        Mario Bros
+                                    </small>
+
+                                    <h5 class="card-title fw-bold">
+                                        Set decoración Mario Bros
+                                    </h5>
+
+                                    <p class="text-muted small">
+                                        Celebra con Mario, Luigi y sus amigos
+                                        en una fiesta llena de aventuras y diversión.
+                                    </p>
+
+
+                                    <div class="mt-auto">
+
+                                        <p class="text-success small mb-2">
+
+                                            <i class="bi bi-check-circle-fill me-1"></i>
+                                            En existencia
+
+                                        </p>
+
+                                        <p class="fs-5 fw-bold mb-3">
+                                            $19.990
+                                        </p>
+
+                                        <button type="button" class="btn btn-rosa w-100">
+
+                                            <i class="bi bi-bag-plus me-2"></i>
+                                            Añadir al carrito
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+        
     </main>
 
 

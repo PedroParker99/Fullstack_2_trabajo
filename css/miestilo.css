@@ -323,44 +323,280 @@ body {
 
 /* ===== INICIO DEV2 ===== */
 
-/* ===== FILTROS PACKS / packs.html===== */
+/* =========================================================
+   VARIABLES
+   ========================================================= */
 
-.flecha {
-    display: inline-block;
-    transition: transform 0.3s ease;
+:root {
+    --rosa: #e6007e;
+    --rosa-hover: #c9006e;
+    --rosa-claro: #fce4f2;
+    --gris-claro: #f5f5f5;
+    --gris-borde: #eee;
+    --texto: #333;
+    --texto-suave: #6c757d;
 }
 
-/* Bootstrap cambia aria-expanded cuando abre/cierra el filtro */
-button[aria-expanded="false"] .flecha {
+
+/* =========================================================
+   PACKS
+   ========================================================= */
+
+.packs-contenedor {
+    max-width: 1320px;
+}
+
+
+/* Encabezado */
+
+.packs-header {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+.packs-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.packs-header p {
+    max-width: 650px;
+}
+
+.packs-etiqueta,
+.producto-categoria,
+.packs-header .breadcrumb a {
+    color: var(--rosa);
+}
+
+.packs-etiqueta,
+.producto-categoria {
+    font-weight: 700;
+}
+
+.packs-header .breadcrumb a {
+    text-decoration: none;
+}
+
+.ordenar-productos {
+    width: 100%;
+    max-width: 340px;
+}
+
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+.filtros-packs {
+    position: sticky;
+    top: 105px;
+    padding: 1.4rem;
+    background: #fff;
+    border: 1px solid var(--gris-borde);
+    border-radius: 16px;
+}
+
+.filtro-grupo {
+    padding: 1rem 0;
+    border-top: 1px solid var(--gris-borde);
+}
+
+.filtro-grupo:last-child {
+    padding-bottom: 0;
+}
+
+.filtro-titulo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #212529;
+    font-weight: 600;
+}
+
+.filtro-titulo:hover {
+    color: var(--rosa);
+}
+
+.filtro-contenido {
+    padding-top: 1rem;
+}
+
+
+/* Flecha */
+
+.flecha {
+    transition: transform .3s;
+}
+
+.filtro-titulo[aria-expanded="false"] .flecha {
     transform: rotate(180deg);
 }
 
-/* ===== FILTROS PACKS / packs.html===== */
-.ordenar-productos {
-    max-width: 300px;
+
+/* Checkbox */
+
+.filtros-packs .form-check-label {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
-/* =========================================
-   PERFIL DEL CLIENTE
-   ========================================= */
-
-   .perfil-menu-item {
-    padding: 0.85rem 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 0.25rem;
+.filtros-packs .form-check-input {
     cursor: pointer;
-    transition: all 0.2s ease;
-    color: #333;
+}
+
+.filtros-packs .form-check-input:checked {
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+}
+
+
+/* =========================================================
+   TARJETAS DE PRODUCTOS
+   ========================================================= */
+
+.card-producto {
+    overflow: hidden;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 4px 15px #00000014;
+    transition: .3s;
+}
+
+.card-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px #00000021;
+}
+
+
+/* Imagen */
+
+.producto-imagen {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    background: var(--gris-claro);
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s;
+}
+
+.card-producto:hover .producto-imagen img {
+    transform: scale(1.04);
+}
+
+
+/* Badge */
+
+.producto-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: .5rem .75rem;
+    border-radius: 20px;
+    background: var(--rosa);
+    color: #fff;
+}
+
+
+/* Favoritos */
+
+.btn-favorito {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--rosa);
+    box-shadow: 0 3px 10px #00000026;
+    transition: .2s;
+}
+
+.btn-favorito:hover {
+    background: var(--rosa);
+    color: #fff;
+}
+
+
+/* Información producto */
+
+.producto-categoria,
+.producto-stock {
+    font-size: .8rem;
+}
+
+.producto-descripcion {
+    color: var(--texto-suave);
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.producto-stock {
+    color: #198754;
+}
+
+.producto-precio {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.producto-precio-anterior {
+    color: #999;
+    font-size: .9rem;
+    text-decoration: line-through;
+}
+
+
+/* Botón carrito */
+
+.btn-carrito {
+    padding: .7rem;
+    border: 0;
+    border-radius: 10px;
+    background: var(--rosa);
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-carrito:hover {
+    background: var(--rosa-hover);
+    color: #fff;
+}
+
+
+/* =========================================================
+   MENÚ PERFIL
+   ========================================================= */
+
+.perfil-menu-item {
+    display: block;
+    padding: .85rem 1rem;
+    margin-bottom: .25rem;
+    border-radius: .5rem;
+    color: var(--texto);
+    cursor: pointer;
+    transition: .2s;
 }
 
 .perfil-menu-item:hover {
-    background-color: #f8f8f8;
+    background: #f8f8f8;
     transform: translateX(3px);
 }
 
 .perfil-menu-item.active {
-    background-color: #fce4f2;
-    color: #e6007e;
+    background: var(--rosa-claro);
+    color: var(--rosa);
     font-weight: 600;
 }
 
@@ -369,321 +605,242 @@ button[aria-expanded="false"] .flecha {
 }
 
 .perfil-menu-item.text-danger:hover {
-    background-color: #fff0f0;
+    background: #fff0f0;
 }
 
-/* =========================================
-   DIRECCIONES DEL USUARIO
-   ========================================= */
 
-   .direccion-icono {
-    width: 45px;
-    height: 45px;
+/* =========================================================
+   ICONOS DE CUENTA
+   Direcciones / Pagos / Seguridad
+   ========================================================= */
 
+/*
+   Estas tres clases comparten el mismo diseño.
+   Así evitamos repetir casi el mismo CSS tres veces.
+*/
+
+.direccion-icono,
+.pago-icono,
+.seguridad-icono {
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    flex-shrink: 0;
     border-radius: 50%;
-
-    background-color: #fce4f2;
-    color: #e6007e;
-
+    background: var(--rosa-claro);
+    color: var(--rosa);
     font-size: 1.2rem;
 }
 
+
+/* =========================================================
+   DIRECCIONES
+   ========================================================= */
 
 .direccion-datos {
     padding-left: 58px;
 }
 
-
 .direccion-agregar {
     min-height: 150px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     border: 2px dashed #d9d9d9;
-    border-radius: 0.75rem;
-
-    background-color: #fff;
-
-    color: #333;
-
-    transition: all 0.2s ease;
+    border-radius: .75rem;
+    background: #fff;
+    color: var(--texto);
+    transition: .2s;
 }
-
 
 .direccion-agregar:hover {
-    border-color: #e6007e;
-    background-color: #fff8fc;
-    color: #e6007e;
+    border-color: var(--rosa);
+    background: #fff8fc;
+    color: var(--rosa);
 }
-
 
 .direccion-agregar small {
-    margin-top: 0.25rem;
+    margin-top: .25rem;
 }
 
-/* =========================================
+
+/* =========================================================
    MÉTODOS DE PAGO
-   ========================================= */
-
-   .pago-icono {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background-color: #fce4f2;
-
-    color: #e6007e;
-
-    font-size: 1.25rem;
-}
-
+   ========================================================= */
 
 .pago-informacion {
     padding-left: 64px;
 }
 
+.pago-metodo-icono,
+.sesion-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gris-claro);
+    color: var(--texto);
+}
 
 .pago-metodo-icono {
     width: 42px;
     height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     border-radius: 10px;
-
-    background-color: #f5f5f5;
-
-    color: #333;
-
     font-size: 1.15rem;
 }
-
 
 .pago-metodo-icono i {
     line-height: 1;
 }
 
-/* =========================================
-   SEGURIDAD
-   ========================================= */
 
-   .seguridad-icono {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background-color: #fce4f2;
-
-    color: #e6007e;
-
-    font-size: 1.25rem;
-}
-
-
-/* =========================================
-   SESIONES
-   ========================================= */
+/* =========================================================
+   SEGURIDAD Y SESIONES
+   ========================================================= */
 
 .sesion-item {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 1rem;
 }
-
 
 .sesion-icono {
     width: 44px;
     height: 44px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     border-radius: 10px;
-
-    background-color: #f5f5f5;
-
-    color: #333;
-
     font-size: 1.1rem;
 }
 
 
-/* =========================================
-   ACTIVIDAD DE SEGURIDAD
-   ========================================= */
+/* Actividad */
 
 .actividad-item {
     display: flex;
-
     align-items: flex-start;
-
     gap: 1rem;
-
     padding: 1rem 0;
 }
 
-
 .actividad-item + .actividad-item {
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--gris-borde);
 }
-
 
 .actividad-icono {
     width: 40px;
     height: 40px;
-
     flex-shrink: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
-    background-color: #f5f5f5;
-
+    background: var(--gris-claro);
     color: #555;
 }
 
-/* =========================================
+
+/* =========================================================
    LISTA DE DESEOS
-   ========================================= */
+   ========================================================= */
 
 .favorito-card {
     overflow: hidden;
     border-radius: 12px;
-
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
+    transition: .2s;
 }
-
 
 .favorito-card:hover {
     transform: translateY(-4px);
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 10px 25px #0000001f !important;
 }
 
 
-/* IMAGEN */
+/* Imagen */
 
 .favorito-imagen {
     position: relative;
     height: 230px;
-
     overflow: hidden;
-
-    background-color: #f5f5f5;
+    background: var(--gris-claro);
 }
-
 
 .favorito-imagen img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
-    transition: transform 0.3s ease;
+    transition: transform .3s;
 }
-
 
 .favorito-card:hover .favorito-imagen img {
     transform: scale(1.05);
 }
 
 
-/* CORAZÓN */
+/* Corazón */
 
 .favorito-corazon {
     position: absolute;
-
     top: 12px;
     right: 12px;
-
     width: 40px;
     height: 40px;
-
-    border: none;
-    border-radius: 50%;
-
-    background-color: white;
-
-    color: #e6007e;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--rosa);
     font-size: 1.1rem;
-
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-
-    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px #00000026;
+    transition: .2s;
 }
-
 
 .favorito-corazon:hover {
     transform: scale(1.1);
-
-    background-color: #e6007e;
-
-    color: white;
+    background: var(--rosa);
+    color: #fff;
 }
 
 
-/* BADGE */
+/* Badge */
 
 .favorito-badge {
     position: absolute;
-
     bottom: 12px;
     left: 12px;
-
     padding: 5px 10px;
-
     border-radius: 20px;
-
-    background-color: #e6007e;
-
-    color: white;
-
-    font-size: 0.75rem;
+    background: var(--rosa);
+    color: #fff;
+    font-size: .75rem;
     font-weight: 600;
 }
 
 
-/* PRECIO */
+/* Precio */
 
 .favorito-precio {
+    color: var(--rosa);
     font-size: 1.15rem;
-
     font-weight: 700;
+}
 
-    color: #e6007e;
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 991px) {
+    .filtros-packs {
+        position: static;
+    }
+
+    .ordenar-productos {
+        max-width: 100%;
+    }
 }
 
 /* ===== FIN DEV2 ===== */

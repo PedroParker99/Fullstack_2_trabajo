@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,112 +17,271 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <title>Packs decoración cumpleaños | Villa del Globo</title>
+
 </head>
 
+
 <body>
-    <!-- ========= NAVBAR ========= -->
-    <!-- El "#" Se ocupara para aún no mandar a ninguna parte-->
-    <!-- Se deja con el nav, para que pueda identificar que cumple ese rol -->
-    <!-- navbar-light es para señalar el color-->
+
+
+    <!-- ==================================================
+         NAVBAR
+         ================================================== -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <!--navbar-light es para señalar el color-->
-        <!--container centra el contenido y genera margenes laterales -->
+
         <div class="container">
-            <!-- Logo / marca -->
+
+
+            <!-- LOGO -->
+
             <a class="navbar-brand" href="index.html">
+
                 <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
+
             </a>
-            <!-- Botón hamburguesa (solo aparece en celular) -->
-            <!-- navbar-toggler es para el modo hamburguesa de celular, además que el target menuPrincipal
-            le dice que elemento debe abrir/cerrar, por eso el id de abajo debe coincidir perfectamente-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+
+
+            <!-- BOTÓN HAMBURGUESA -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
-            <!-- Contenido que se colapsa en celular, acá se coloca la id que nombré arriba -->
+
+
+            <!-- CONTENIDO NAVBAR -->
+
             <div class="collapse navbar-collapse" id="menuPrincipal">
-                <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
-                <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
-                <!-- ===== INICIO GRUPO 1 ===== -->
+
+
+                <!-- ==========================
+                     GRUPO IZQUIERDO
+                     ========================== -->
+
                 <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
-                    <!-- Apartado "Boton de Inicio" -->
+
+
+                    <!-- INICIO -->
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Inicio</a>
+
+                        <a class="nav-link" href="index.html">
+
+                            Inicio
+
+                        </a>
+
                     </li>
-                    <!-- Apartado "Boton de Nuestra Tienda" -->
+
+
+                    <!-- NUESTRA TIENDA -->
+
                     <li class="nav-item dropdown mega-dropdown">
+
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Nuestra tienda </a>
-                        <!-- ===  INICIO OPCIONES DE TEMATICAS === -->
+
+                            Nuestra tienda
+
+                        </a>
+
+
+                        <!-- MEGA MENÚ -->
+
                         <div class="dropdown-menu mega-menu p-4">
+
                             <div class="row">
+
+
+                                <!-- TEMÁTICAS 1 -->
+
                                 <div class="col">
-                                    <h6 class="fw-bold">Temáticas 1</h6>
+
+                                    <h6 class="fw-bold">
+                                        Temáticas 1
+                                    </h6>
+
                                     <ul class="list-unstyled">
-                                        <li><a href="#" class="dropdown-item px-0">Among Us</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Baby Shark</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Barbie</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Bluey</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Bob Esponja</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Cars</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Cinnamonroll</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Circo Digital</a></li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Among Us</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Baby Shark</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Barbie</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Bluey</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Bob Esponja</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Cars</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Cinnamonroll</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Circo Digital</a>
+                                        </li>
+
                                     </ul>
+
                                 </div>
+
+
+                                <!-- TEMÁTICAS 2 -->
+
                                 <div class="col">
-                                    <h6 class="fw-bold">Temáticas 2</h6>
+
+                                    <h6 class="fw-bold">
+                                        Temáticas 2
+                                    </h6>
+
                                     <ul class="list-unstyled">
-                                        <li><a href="#" class="dropdown-item px-0">Dragon Ball</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Dinosaurio</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">FNAF</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Frozen</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Guerreras K-pop</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Hello kitty</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Intensamente</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Kuromi</a></li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Dragon Ball</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Dinosaurio</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">FNAF</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Frozen</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Guerreras K-pop</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Hello Kitty</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Intensamente</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Kuromi</a>
+                                        </li>
+
                                     </ul>
+
                                 </div>
+
+
+                                <!-- TEMÁTICAS 3 -->
+
                                 <div class="col">
-                                    <h6 class="fw-bold">Temáticas 3</h6>
+
+                                    <h6 class="fw-bold">
+                                        Temáticas 3
+                                    </h6>
+
                                     <ul class="list-unstyled">
-                                        <li><a href="#" class="dropdown-item px-0">Mario Bross</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Masha</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Merlina</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Mickey Mouse</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Minecraft</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Minions</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Minnie Mouse</a></li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Mario Bros</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Masha</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Merlina</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Mickey Mouse</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Minecraft</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Minions</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="dropdown-item px-0">Minnie Mouse</a>
+                                        </li>
+
                                     </ul>
+
                                 </div>
+
                             </div>
+
                         </div>
-                        <!-- ===  FIN OPCIONES DE TEMATICAS === -->
+
                     </li>
-                    <!-- Apartado "Boton de Packs de Decoración" -->
+
+
+                    <!-- PACKS -->
+
                     <li class="nav-item">
-                        <a class="nav-link" href="packs.html">Packs Decoración Cumpleaños</a>
+
+                        <a class="nav-link active" href="packs.html">
+
+                            Packs Decoración Cumpleaños
+
+                        </a>
+
                     </li>
+
                 </ul>
-                <!-- ===== FIN GRUPO 1 =====-->
 
 
-                <!-- ===== INICIO GRUPO 2 ===== -->
+
+                <!-- ==========================
+                     GRUPO DERECHO
+                     ========================== -->
+
                 <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
 
+
                     <!-- BUSCADOR -->
+
                     <li class="nav-item">
+
                         <button type="button" class="btn btn-link text-dark p-0 me-3 border-0 shadow-none"
                             data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
 
                             <i class="bi bi-search fs-2"></i>
 
                         </button>
+
                     </li>
 
 
+
                     <!-- PERFIL -->
+
                     <li class="nav-item">
 
                         <div class="dropdown me-3">
+
 
                             <button class="btn btn-link text-dark p-0 border-0 shadow-none" type="button"
                                 id="dropdownPerfil" data-bs-toggle="dropdown" aria-expanded="false"
@@ -131,13 +291,18 @@
 
                             </button>
 
+
                             <!-- MENÚ PERFIL -->
+
                             <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
                                 aria-labelledby="dropdownPerfil"
                                 style="border-radius: 12px; min-width: 220px; z-index: 1050;">
 
+
                                 <li>
+
                                     <div class="px-2 py-1">
+
                                         <p class="mb-0 small text-muted">
                                             ¡Hola! Bienvenido a
                                         </p>
@@ -145,52 +310,76 @@
                                         <h6 class="fw-bold text-dark mb-0">
                                             Villa del Globo
                                         </h6>
+
                                     </div>
+
                                 </li>
+
 
                                 <li>
                                     <hr class="dropdown-divider my-2">
                                 </li>
 
+
                                 <li>
+
                                     <button class="dropdown-item rounded py-2 fw-semibold text-white mb-1
-                               d-flex align-items-center justify-content-center" data-bs-toggle="modal"
+                                        d-flex align-items-center justify-content-center" data-bs-toggle="modal"
                                         data-bs-target="#modalLogin" style="background-color: #e6007e;">
 
                                         <i class="bi bi-box-arrow-in-right me-2"></i>
 
                                         Iniciar Sesión
+
                                     </button>
+
                                 </li>
 
+
                                 <li>
+
                                     <a class="dropdown-item rounded py-2 text-muted small d-flex align-items-center"
                                         href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
 
                                         <i class="bi bi-person-plus me-2"></i>
 
                                         ¿No tienes cuenta? Regístrate
+
                                     </a>
+
                                 </li>
+
 
                                 <li>
                                     <hr class="dropdown-divider my-2">
                                 </li>
 
+
                                 <li>
-                                    <a class="dropdown-item rounded py-2 d-flex align-items-center" href="#">
+
+                                    <a class="dropdown-item rounded py-2 d-flex align-items-center"
+                                        href="usuarioCompras.html">
 
                                         <i class="bi bi-truck me-2 text-muted"></i>
+
                                         Mis Pedidos / Estado
+
                                     </a>
+
                                 </li>
 
+
                                 <li>
-                                    <a class="dropdown-item rounded py-2 d-flex align-items-center" href="#">
+
+                                    <a class="dropdown-item rounded py-2 d-flex align-items-center"
+                                        href="usuarioFavoritos.html">
 
                                         <i class="bi bi-heart me-2 text-muted"></i>
+
                                         Lista de Deseos
+
                                     </a>
+
                                 </li>
 
                             </ul>
@@ -199,7 +388,10 @@
 
                     </li>
 
+
+
                     <!-- CARRITO -->
+
                     <li class="nav-item">
 
                         <button type="button" class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
@@ -208,7 +400,7 @@
 
                             <i class="bi bi-bag fs-2"></i>
 
-                            <!-- Contador -->
+
                             <span id="cart-count"
                                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
                                 style="background-color: #e6007e; font-size: 0.85rem;">
@@ -222,340 +414,999 @@
                     </li>
 
                 </ul>
-                <!-- ===== FIN GRUPO 2 ===== -->
+
             </div>
+
         </div>
+
     </nav>
-    <!-- ======= FIN DEL NAVBAR ======= -->
 
-    <main class="container bg-white rounded-3 shadow-sm p-4 my-5">
 
-        <!-- Título -->
-        <h1 class="mb-4">Packs decoración cumpleaños</h1>
 
-        <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="index.html">Inicio</a>
-                </li>
-                <li class="breadcrumb-item active">
-                    Packs decoración cumpleaños
-                </li>
-            </ol>
-        </nav>
+    <!-- ==================================================
+         CONTENIDO PRINCIPAL
+         ================================================== -->
 
-        <!-- Barra de ordenamiento -->
-        <div class="bg-light p-3 rounded d-flex justify-content-end mb-4">
-            <div class="input-group ordenar-productos">
-                <span class="input-group-text">Ordenar por</span>
+    <main class="container packs-contenedor bg-white rounded-4 shadow-sm p-4 p-lg-5 my-5">
 
-                <select class="form-select">
-                    <option selected>Características</option>
-                    <option>Precio: menor a mayor</option>
-                    <option>Precio: mayor a menor</option>
-                    <option>Nombre</option>
-                </select>
+
+        <!-- ==================================================
+             ENCABEZADO
+             ================================================== -->
+
+        <div class="packs-header mb-5">
+
+
+            <!-- BREADCRUMB -->
+
+            <nav aria-label="breadcrumb">
+
+                <ol class="breadcrumb mb-3">
+
+                    <li class="breadcrumb-item">
+
+                        <a href="index.html">
+                            Inicio
+                        </a>
+
+                    </li>
+
+                    <li class="breadcrumb-item active" aria-current="page">
+
+                        Packs decoración cumpleaños
+
+                    </li>
+
+                </ol>
+
+            </nav>
+
+
+
+            <div class="d-flex flex-column flex-lg-row
+                justify-content-between align-items-lg-end gap-4">
+
+
+                <!-- TÍTULO -->
+
+                <div>
+
+                    <span class="packs-etiqueta">
+                        Packs de celebración
+                    </span>
+
+                    <h1 class="fw-bold mt-2 mb-2">
+                        Packs decoración cumpleaños
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Encuentra la temática perfecta para hacer de tu
+                        celebración un momento inolvidable.
+                    </p>
+
+                </div>
+
+
+
+                <!-- ORDENAR -->
+
+                <div class="input-group ordenar-productos">
+
+                    <span class="input-group-text">
+
+                        <i class="bi bi-sort-down me-2"></i>
+
+                        Ordenar por
+
+                    </span>
+
+                    <select class="form-select">
+
+                        <option selected>
+                            Características
+                        </option>
+
+                        <option>
+                            Precio: menor a mayor
+                        </option>
+
+                        <option>
+                            Precio: mayor a menor
+                        </option>
+
+                        <option>
+                            Nombre
+                        </option>
+
+                    </select>
+
+                </div>
+
             </div>
+
         </div>
 
-        <div class="row">
 
-            <!-- ===== FILTROS ===== -->
+
+        <!-- ==================================================
+             FILTROS + PRODUCTOS
+             ================================================== -->
+
+        <div class="row g-4 g-xl-5 align-items-start">
+
+
+            <!-- ==================================================
+                 FILTROS
+                 ================================================== -->
+
             <aside class="col-lg-3">
 
-                <!-- ===== PERSONAJE ===== -->
-                <div class="mb-4">
 
-                    <button class="btn w-100 p-0 border-0 border-bottom pb-3
-                       d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#filtroPersonaje" aria-expanded="true" aria-controls="filtroPersonaje">
+                <div class="filtros-packs">
 
-                        <span class="fw-semibold">Personaje</span>
-                        <span class="flecha">⌃</span>
 
-                    </button>
+                    <!-- TÍTULO FILTROS -->
 
-                    <div class="collapse show pt-3" id="filtroPersonaje">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
 
-                        <div class="form-check mb-2">
-                            <input class="form-check-input" type="checkbox" id="toyStory">
-                            <label class="form-check-label" for="toyStory">
-                                Toy Story (1)
-                            </label>
-                        </div>
+                        <h5 class="fw-bold mb-0">
 
-                        <div class="form-check mb-2">
-                            <input class="form-check-input" type="checkbox" id="merlina">
-                            <label class="form-check-label" for="merlina">
-                                Merlina (1)
-                            </label>
-                        </div>
+                            <i class="bi bi-sliders me-2"></i>
 
-                        <div class="form-check mb-2">
-                            <input class="form-check-input" type="checkbox" id="masha">
-                            <label class="form-check-label" for="masha">
-                                Masha (1)
-                            </label>
-                        </div>
+                            Filtros
+
+                        </h5>
+
+
+                        <button type="button" class="btn btn-link btn-sm
+                            text-muted text-decoration-none p-0">
+
+                            Limpiar
+
+                        </button>
 
                     </div>
 
-                </div>
 
 
-                <!-- ===== DISPONIBILIDAD ===== -->
-                <div class="mb-4">
+                    <!-- ==========================================
+                         PERSONAJE
+                         ========================================== -->
 
-                    <button class="btn w-100 p-0 border-0 border-bottom pb-3
-                       d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#filtroDisponibilidad" aria-expanded="true"
-                        aria-controls="filtroDisponibilidad">
-
-                        <span class="fw-semibold">Disponibilidad</span>
-                        <span class="flecha">⌃</span>
-
-                    </button>
-
-                    <div class="collapse show pt-3" id="filtroDisponibilidad">
-
-                        <div class="form-check mb-2">
-                            <input class="form-check-input" type="checkbox" id="disponible">
-                            <label class="form-check-label" for="disponible">
-                                En existencia (3)
-                            </label>
-                        </div>
-
-                        <div class="form-check mb-2">
-                            <input class="form-check-input" type="checkbox" id="agotado">
-                            <label class="form-check-label" for="agotado">
-                                Agotado (0)
-                            </label>
-                        </div>
-
-                    </div>
-
-                </div>
+                    <div class="filtro-grupo">
 
 
-                <!-- ===== PRECIO ===== -->
-                <div class="mb-4">
+                        <button class="filtro-titulo" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#filtroPersonaje" aria-expanded="true" aria-controls="filtroPersonaje">
 
-                    <button class="btn w-100 p-0 border-0 border-bottom pb-3
-                       d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#filtroPrecio" aria-expanded="true" aria-controls="filtroPrecio">
+                            <span>
+                                Personaje
+                            </span>
 
-                        <span class="fw-semibold">Precio</span>
-                        <span class="flecha">⌃</span>
+                            <i class="bi bi-chevron-up flecha"></i>
 
-                    </button>
+                        </button>
 
-                    <div class="collapse show pt-3" id="filtroPrecio">
 
-                        <!-- Precio mínimo y máximo -->
-                        <div class="row g-2 mb-3">
+                        <div class="collapse show filtro-contenido" id="filtroPersonaje">
 
-                            <!-- Mínimo -->
-                            <div class="col-6">
-                                <label for="precioMinimo" class="form-label small">
-                                    Mínimo
+
+                            <!-- TOY STORY -->
+
+                            <div class="form-check mb-3">
+
+                                <input class="form-check-input" type="checkbox" id="toyStory">
+
+                                <label class="form-check-label w-100" for="toyStory">
+
+                                    <span>
+                                        Toy Story
+                                    </span>
+
+                                    <small class="text-muted">
+                                        1
+                                    </small>
+
                                 </label>
 
-                                <div class="input-group">
-                                    <span class="input-group-text">$</span>
-
-                                    <input type="number" class="form-control" id="precioMinimo" value="0" min="0">
-                                </div>
                             </div>
 
-                            <!-- Máximo -->
-                            <div class="col-6">
-                                <label for="precioMaximo" class="form-label small">
-                                    Máximo
+
+                            <!-- MERLINA -->
+
+                            <div class="form-check mb-3">
+
+                                <input class="form-check-input" type="checkbox" id="merlina">
+
+                                <label class="form-check-label w-100" for="merlina">
+
+                                    <span>
+                                        Merlina
+                                    </span>
+
+                                    <small class="text-muted">
+                                        1
+                                    </small>
+
                                 </label>
 
-                                <div class="input-group">
-                                    <span class="input-group-text">$</span>
-
-                                    <input type="number" class="form-control" id="precioMaximo" value="19990" min="0"
-                                        max="19990">
-                                </div>
                             </div>
+
+
+                            <!-- MASHA -->
+
+                            <div class="form-check mb-3">
+
+                                <input class="form-check-input" type="checkbox" id="masha">
+
+                                <label class="form-check-label w-100" for="masha">
+
+                                    <span>
+                                        Masha y el Oso
+                                    </span>
+
+                                    <small class="text-muted">
+                                        1
+                                    </small>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- MARIO -->
+
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" id="mario">
+
+                                <label class="form-check-label w-100" for="mario">
+
+                                    <span>
+                                        Mario Bros
+                                    </span>
+
+                                    <small class="text-muted">
+                                        1
+                                    </small>
+
+                                </label>
+
+                            </div>
+
 
                         </div>
 
-                        <!-- Barra de precio -->
-                        <input type="range" class="form-range" id="rangoPrecio" min="0" max="19990" value="19990">
+                    </div>
+
+
+
+                    <!-- ==========================================
+                         DISPONIBILIDAD
+                         ========================================== -->
+
+                    <div class="filtro-grupo">
+
+
+                        <button class="filtro-titulo" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#filtroDisponibilidad" aria-expanded="true"
+                            aria-controls="filtroDisponibilidad">
+
+                            <span>
+                                Disponibilidad
+                            </span>
+
+                            <i class="bi bi-chevron-up flecha"></i>
+
+                        </button>
+
+
+                        <div class="collapse show filtro-contenido" id="filtroDisponibilidad">
+
+
+                            <div class="form-check mb-3">
+
+                                <input class="form-check-input" type="checkbox" id="disponible">
+
+                                <label class="form-check-label w-100" for="disponible">
+
+                                    <span>
+                                        En existencia
+                                    </span>
+
+                                    <small class="text-muted">
+                                        4
+                                    </small>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" id="agotado">
+
+                                <label class="form-check-label w-100" for="agotado">
+
+                                    <span>
+                                        Agotado
+                                    </span>
+
+                                    <small class="text-muted">
+                                        0
+                                    </small>
+
+                                </label>
+
+                            </div>
+
+
+                        </div>
 
                     </div>
+
+
+
+                    <!-- ==========================================
+                         PRECIO
+                         ========================================== -->
+
+                    <div class="filtro-grupo">
+
+
+                        <button class="filtro-titulo" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#filtroPrecio" aria-expanded="true" aria-controls="filtroPrecio">
+
+                            <span>
+                                Precio
+                            </span>
+
+                            <i class="bi bi-chevron-up flecha"></i>
+
+                        </button>
+
+
+                        <div class="collapse show filtro-contenido" id="filtroPrecio">
+
+
+                            <p class="small text-muted mb-3">
+                                Selecciona tu rango de precio.
+                            </p>
+
+
+                            <!-- INPUTS -->
+
+                            <div class="row g-2 mb-3">
+
+
+                                <!-- MÍNIMO -->
+
+                                <div class="col-6">
+
+                                    <label for="precioMinimo" class="form-label small text-muted">
+
+                                        Mínimo
+
+                                    </label>
+
+
+                                    <div class="input-group input-group-sm">
+
+                                        <span class="input-group-text">
+                                            $
+                                        </span>
+
+                                        <input type="number" class="form-control" id="precioMinimo" value="0" min="0">
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- MÁXIMO -->
+
+                                <div class="col-6">
+
+                                    <label for="precioMaximo" class="form-label small text-muted">
+
+                                        Máximo
+
+                                    </label>
+
+
+                                    <div class="input-group input-group-sm">
+
+                                        <span class="input-group-text">
+                                            $
+                                        </span>
+
+                                        <input type="number" class="form-control" id="precioMaximo" value="19990"
+                                            min="0" max="19990">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- RANGO -->
+
+                            <input type="range" class="form-range" id="rangoPrecio" min="0" max="19990" value="19990">
+
+
+                            <div class="d-flex justify-content-between
+                                text-muted small">
+
+                                <span>
+                                    $0
+                                </span>
+
+                                <span>
+                                    $19.990
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
 
                 </div>
 
             </aside>
 
 
-            <!-- PRODUCTOS -->
+
+            <!-- ==================================================
+                 PRODUCTOS
+                 ================================================== -->
+
             <section class="col-lg-9">
+
+
+                <!-- INFORMACIÓN RESULTADOS -->
+
+                <div class="d-flex justify-content-between
+                    align-items-center mb-4">
+
+                    <p class="text-muted mb-0">
+
+                        Mostrando
+                        <strong class="text-dark">
+                            4 packs
+                        </strong>
+
+                    </p>
+
+
+                    <div class="d-none d-md-flex align-items-center gap-2 text-muted small">
+
+                        <i class="bi bi-grid-3x3-gap-fill"></i>
+
+                        Vista de productos
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GRILLA -->
 
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
 
-                    <!-- Producto 1 -->
+
+                    <!-- ==================================================
+                         PRODUCTO 1 - TOY STORY
+                         ================================================== -->
+
                     <div class="col">
-                        <div class="card">
 
-                            <img src="img/SETTOYSTORY2.webp" class="card-img-top" alt="Set Toy Story">
 
-                            <div class="card-body text-center">
+                        <article class="card card-producto h-100 border-0">
 
-                                <h5 class="card-title">
+
+                            <!-- IMAGEN -->
+
+                            <div class="producto-imagen">
+
+
+                                <img src="img/SETTOYSTORY2.webp" class="card-img-top" alt="Set decoración Toy Story">
+
+
+                                <span class="badge producto-badge">
+                                    Pack cumpleaños
+                                </span>
+
+
+                                <button type="button" class="btn-favorito" aria-label="Agregar Toy Story a favoritos">
+
+                                    <i class="bi bi-heart"></i>
+
+                                </button>
+
+
+                            </div>
+
+
+
+                            <!-- INFORMACIÓN -->
+
+                            <div class="card-body d-flex flex-column p-4">
+
+
+                                <small class="producto-categoria mb-2">
+                                    Toy Story
+                                </small>
+
+
+                                <h5 class="card-title fw-bold mb-2">
                                     Set decoración Toy Story
                                 </h5>
 
-                                <p class="card-text fs-5">
-                                    $19.990
+
+                                <p class="producto-descripcion">
+                                    Una aventura junto a Woody, Buzz y sus
+                                    amigos para una fiesta llena de diversión.
                                 </p>
 
-                                <button class="btn btn-primary w-100">
-                                    Añadir al carrito
-                                </button>
+
+                                <div class="mt-auto">
+
+
+                                    <div class="producto-stock mb-2">
+
+                                        <i class="bi bi-check-circle-fill me-1"></i>
+
+                                        En existencia
+
+                                    </div>
+
+
+                                    <div class="d-flex align-items-center
+                                        justify-content-between mb-3">
+
+                                        <span class="producto-precio">
+                                            $19.990
+                                        </span>
+
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-carrito w-100">
+
+                                        <i class="bi bi-bag-plus me-2"></i>
+
+                                        Añadir al carrito
+
+                                    </button>
+
+
+                                </div>
 
                             </div>
-                        </div>
+
+
+                        </article>
+
                     </div>
 
 
-                    <!-- Producto 2 -->
+
+                    <!-- ==================================================
+                         PRODUCTO 2 - MERLINA
+                         ================================================== -->
+
                     <div class="col">
-                        <div class="card">
 
-                            <img src="img/SETMERLINA.webp" class="card-img-top" alt="Set Merlina">
 
-                            <div class="card-body text-center">
+                        <article class="card card-producto h-100 border-0">
 
-                                <h5 class="card-title">
+
+                            <div class="producto-imagen">
+
+
+                                <img src="img/SETMERLINA.webp" class="card-img-top" alt="Set decoración Merlina">
+
+
+                                <span class="badge producto-badge">
+                                    Pack cumpleaños
+                                </span>
+
+
+                                <button type="button" class="btn-favorito" aria-label="Agregar Merlina a favoritos">
+
+                                    <i class="bi bi-heart"></i>
+
+                                </button>
+
+
+                            </div>
+
+
+                            <div class="card-body d-flex flex-column p-4">
+
+
+                                <small class="producto-categoria mb-2">
+                                    Merlina
+                                </small>
+
+
+                                <h5 class="card-title fw-bold mb-2">
                                     Set decoración Merlina
                                 </h5>
 
-                                <p class="card-text fs-5">
-                                    $19.990
+
+                                <p class="producto-descripcion">
+                                    Una decoración inspirada en Merlina,
+                                    perfecta para una celebración misteriosa
+                                    y diferente.
                                 </p>
 
-                                <button class="btn btn-primary w-100">
-                                    Añadir al carrito
-                                </button>
+
+                                <div class="mt-auto">
+
+
+                                    <div class="producto-stock mb-2">
+
+                                        <i class="bi bi-check-circle-fill me-1"></i>
+
+                                        En existencia
+
+                                    </div>
+
+
+                                    <div class="d-flex align-items-center
+                                        justify-content-between mb-3">
+
+                                        <span class="producto-precio">
+                                            $19.990
+                                        </span>
+
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-carrito w-100">
+
+                                        <i class="bi bi-bag-plus me-2"></i>
+
+                                        Añadir al carrito
+
+                                    </button>
+
+
+                                </div>
 
                             </div>
-                        </div>
+
+
+                        </article>
+
                     </div>
 
 
-                    <!-- Producto 3 -->
+
+                    <!-- ==================================================
+                         PRODUCTO 3 - MASHA
+                         ================================================== -->
+
                     <div class="col">
-                        <div class="card">
 
-                            <img src="img/SETMASHA.webp" class="card-img-top" alt="Set Masha">
 
-                            <div class="card-body text-center">
+                        <article class="card card-producto h-100 border-0">
 
-                                <h5 class="card-title">
+
+                            <div class="producto-imagen">
+
+
+                                <img src="img/SETMASHA.webp" class="card-img-top" alt="Set decoración Masha y el Oso">
+
+
+                                <span class="badge producto-badge">
+                                    Pack cumpleaños
+                                </span>
+
+
+                                <button type="button" class="btn-favorito" aria-label="Agregar Masha a favoritos">
+
+                                    <i class="bi bi-heart"></i>
+
+                                </button>
+
+
+                            </div>
+
+
+                            <div class="card-body d-flex flex-column p-4">
+
+
+                                <small class="producto-categoria mb-2">
+                                    Masha y el Oso
+                                </small>
+
+
+                                <h5 class="card-title fw-bold mb-2">
                                     Set decoración Masha
                                 </h5>
 
-                                <p class="card-text fs-5">
-                                    $19.990
+
+                                <p class="producto-descripcion">
+                                    Una divertida fiesta inspirada en Masha
+                                    y el Oso, llena de color y ternura.
                                 </p>
 
-                                <button class="btn btn-primary w-100">
-                                    Añadir al carrito
-                                </button>
+
+                                <div class="mt-auto">
+
+
+                                    <div class="producto-stock mb-2">
+
+                                        <i class="bi bi-check-circle-fill me-1"></i>
+
+                                        En existencia
+
+                                    </div>
+
+
+                                    <div class="d-flex align-items-center
+                                        justify-content-between mb-3">
+
+                                        <span class="producto-precio">
+                                            $19.990
+                                        </span>
+
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-carrito w-100">
+
+                                        <i class="bi bi-bag-plus me-2"></i>
+
+                                        Añadir al carrito
+
+                                    </button>
+
+
+                                </div>
 
                             </div>
-                        </div>
+
+
+                        </article>
+
                     </div>
-                    <!-- Producto 4 -->
+
+
+
+                    <!-- ==================================================
+                         PRODUCTO 4 - MARIO BROS
+                         ================================================== -->
+
                     <div class="col">
-                        <div class="card">
 
-                            <img src="img/SETMARIO.webp" class="card-img-top" alt="Set Mario Bros">
 
-                            <div class="card-body text-center">
+                        <article class="card card-producto h-100 border-0">
 
-                                <h5 class="card-title">
+
+                            <div class="producto-imagen">
+
+
+                                <img src="img/SETMARIO.webp" class="card-img-top" alt="Set decoración Mario Bros">
+
+
+                                <span class="badge producto-badge">
+                                    Pack cumpleaños
+                                </span>
+
+
+                                <button type="button" class="btn-favorito" aria-label="Agregar Mario Bros a favoritos">
+
+                                    <i class="bi bi-heart"></i>
+
+                                </button>
+
+
+                            </div>
+
+
+                            <div class="card-body d-flex flex-column p-4">
+
+
+                                <small class="producto-categoria mb-2">
+                                    Mario Bros
+                                </small>
+
+
+                                <h5 class="card-title fw-bold mb-2">
                                     Set decoración Mario Bros
                                 </h5>
 
-                                <p class="card-text fs-5">
-                                    $19.990
+
+                                <p class="producto-descripcion">
+                                    Celebra con Mario, Luigi y sus amigos en
+                                    una fiesta llena de aventuras y diversión.
                                 </p>
 
-                                <button class="btn btn-primary w-100">
-                                    Añadir al carrito
-                                </button>
+
+                                <div class="mt-auto">
+
+
+                                    <div class="producto-stock mb-2">
+
+                                        <i class="bi bi-check-circle-fill me-1"></i>
+
+                                        En existencia
+
+                                    </div>
+
+
+                                    <div class="d-flex align-items-center
+                                        justify-content-between mb-3">
+
+                                        <span class="producto-precio">
+                                            $19.990
+                                        </span>
+
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-carrito w-100">
+
+                                        <i class="bi bi-bag-plus me-2"></i>
+
+                                        Añadir al carrito
+
+                                    </button>
+
+
+                                </div>
 
                             </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
 
-        </section>
+
+                        </article>
+
+                    </div>
+
+
+                </div>
+
+            </section>
 
         </div>
 
     </main>
 
-    <!-- ===== FOOTER ===== -->
-    <!-- Padding arriba de 5 y abajo de 3, el mt-5 ayuda a separar el footer del contenido de arriba-->
+
+
+    <!-- ==================================================
+         FOOTER
+         ================================================== -->
+
     <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+
+
         <div class="container">
+
+
             <div class="row g-4">
-                <!-- === COLUMNA 1: Marca === -->
-                <!-- col-md-4 En celular cada columna ocupa el 100% (una debajo de otra), y en tablet(md) en adelante se reparten en 3 columnas iguales -->
+
+
+                <!-- MARCA -->
+
                 <div class="col-md-4">
-                    <h5 class="fw-bold">🎈 Villa del Globo</h5>
-                    <!-- Estilo de texto, gris suave, bueno para texto secundario con fondo oscuro -->
+
+                    <h5 class="fw-bold">
+                        🎈 Villa del Globo
+                    </h5>
+
                     <p class="text-secondary">
+
                         Todo lo que necesitas para tus fiestas:
-                        cotillón, decoración,
-                        globos, disfraces y mucho más.
+                        cotillón, decoración, globos, disfraces
+                        y mucho más.
+
                     </p>
+
                 </div>
 
-                <!-- === COLUMNA 2: Tienda === -->
+
+
+                <!-- TIENDA -->
+
                 <div class="col-md-4">
-                    <h6 class="fw-bold">Tienda</h6>
-                    <!-- Estilo del link -->
+
+                    <h6 class="fw-bold">
+                        Tienda
+                    </h6>
+
                     <ul class="list-unstyled">
-                        <li><a href="#" class="link-light text-decoration-none">Inicio</a></li>
-                        <li><a href="#" class="link-light text-decoration-none">Nuestra Tienda</a></li>
-                        <li><a href="#" class="link-light text-decoration-none">Packs Decoración</a></li>
+
+                        <li>
+                            <a href="index.html" class="link-light text-decoration-none">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="link-light text-decoration-none">
+                                Nuestra Tienda
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="packs.html" class="link-light text-decoration-none">
+                                Packs Decoración
+                            </a>
+                        </li>
+
                     </ul>
+
                 </div>
 
-                <!-- === COLUMNA 3: Contacto === -->
+
+
+                <!-- CONTACTO -->
+
                 <div class="col-md-4">
-                    <h6 class="fw-bold">Contacto</h6>
+
+                    <h6 class="fw-bold">
+                        Contacto
+                    </h6>
+
                     <ul class="list-unstyled text-secondary">
-                        <li>📞 9 7909 9900</li>
-                        <li>✉️ villadelglobospa@gmail.com</li>
+
+                        <li>
+                            📞 9 7909 9900
+                        </li>
+
+                        <li>
+                            ✉️ villadelglobospa@gmail.com
+                        </li>
+
                     </ul>
+
+
                     <div class="mt-2">
-                        <!-- El me-3 Margin end(Desde la derecha) tamaño 3, separa Facebook de Instagram -->
-                        <a href="#" class="link-light me-3">Facebook</a>
-                        <a href="#" class="link-light">Instagram</a>
+
+                        <a href="#" class="link-light me-3">
+                            Facebook
+                        </a>
+
+                        <a href="#" class="link-light">
+                            Instagram
+                        </a>
+
                     </div>
+
                 </div>
 
             </div>
-            <!-- Una linea divisoria -->
+
+
             <hr class="border-secondary my-4">
+
+
             <p class="text-center text-secondary mb-0">
-                <!-- El &copy; es el símbolo de copyright -->
-                &copy; 2026 Villa del Globo. Todos los derechos
-                reservados.
+
+                &copy; 2026 Villa del Globo.
+                Todos los derechos reservados.
+
             </p>
+
+
         </div>
+
     </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

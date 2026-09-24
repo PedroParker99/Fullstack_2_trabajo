@@ -18,382 +18,393 @@
 
 <body>
     <!-- ========= LAYOUT ADMIN: SIDEBAR + CONTENIDO ========= -->
-    <div class="page-wrapper">
-        <div class="d-flex">
+    <!-- Reemplaza el inicio del layout en tus 5 archivos HTML -->
+    <div class="page-wrapper min-vh-100">
+        <div class="d-flex min-vh-100">
 
-        <!-- ===== SIDEBAR ===== -->
-        <nav class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0"
-            style="width: 260px;">
+            <!-- ===== SIDEBAR ===== -->
+            <nav class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0"
+                style="width: 260px;">
 
-            <!-- Marca del panel -->
-            <a href="perfilAdmin.html" class="d-flex align-items-center mb-3 text-white text-decoration-none">
-                <span class="fs-4">🎈 Panel Admin</span>
-            </a>
-            <hr>
-
-            <!-- === Links de navegación === -->
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a href="perfilAdmin.html" class="nav-link text-white">
-                        <i class="bi bi-house-door me-2"></i>Inicio
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="adminPedidos.html" class="nav-link text-white">
-                        <i class="bi bi-bag-check me-2"></i>Pedidos
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="adminProductos.html" class="nav-link text-white">
-                        <i class="bi bi-box-seam me-2"></i>Productos
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="adminClientes.html" class="nav-link text-white">
-                        <i class="bi bi-people me-2"></i>Clientes
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="adminDescuentos.html" class="nav-link text-white">
-                        <i class="bi bi-percent me-2"></i>Descuentos
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="adminInformes.html" class="nav-link active" aria-current="page">
-                        <i class="bi bi-graph-up me-2"></i>Informe y Estadísticas
-                    </a>
-                </li>
-            </ul>
-            <hr>
-
-            <!-- === Pie del sidebar: usuario conectado === -->
-            <div class="dropdown">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                    data-bs-toggle="dropdown">
-                    <i class="bi bi-person-circle me-2 fs-4"></i>
-                    <strong>Admin</strong>
+                <!-- Marca del panel -->
+                <a href="perfilAdmin.html" class="d-flex align-items-center mb-3 text-white text-decoration-none">
+                    <span class="fs-4">🎈 Panel Admin</span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                    <li><a class="dropdown-item" href="#">Configuración</a></li>
-                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                <hr>
+
+                <!-- === Links de navegación === -->
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="perfilAdmin.html" class="nav-link text-white">
+                            <i class="bi bi-house-door me-2"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminPedidos.html" class="nav-link text-white">
+                            <i class="bi bi-bag-check me-2"></i>Pedidos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminProductos.html" class="nav-link text-white">
+                            <i class="bi bi-box-seam me-2"></i>Productos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminClientes.html" class="nav-link text-white">
+                            <i class="bi bi-people me-2"></i>Clientes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminDescuentos.html" class="nav-link text-white">
+                            <i class="bi bi-percent me-2"></i>Descuentos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminInformes.html" class="nav-link active" aria-current="page">
+                            <i class="bi bi-graph-up me-2"></i>Informe y Estadísticas
+                        </a>
+                    </li>
                 </ul>
-            </div>
-        </nav>
-        <!-- ===== FIN SIDEBAR ===== -->
+                <hr>
 
-        <!-- ===== CONTENIDO PRINCIPAL ===== -->
-        <main class="flex-grow-1 p-4">
-
-            <!-- === Encabezado de la página === -->
-            <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
-                <div>
-                    <h1 class="mb-1">Informes y Estadísticas</h1>
-                    <p class="text-muted mb-0">Análisis detallado de ventas, rendimiento de productos y clientes.</p>
+                <!-- === Pie del sidebar: usuario conectado === -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle me-2 fs-4"></i>
+                        <strong>Admin</strong>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="#">Configuración</a></li>
+                        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                    </ul>
                 </div>
-                <!-- Filtro de fechas y exportación -->
-                <div class="d-flex gap-2">
-                    <select class="form-select form-select-sm" style="width: auto;">
-                        <option value="este-mes" selected>Este Mes (Septiembre 2026)</option>
-                        <option value="mes-pasado">Mes Pasado</option>
-                        <option value="ultimo-trimestre">Último Trimestre</option>
-                        <option value="este-ano">Año 2026</option>
-                    </select>
-                    <button class="btn btn-outline-primary btn-sm">
-                        <i class="bi bi-download me-1"></i>Exportar PDF
-                    </button>
-                    <button class="btn btn-success btn-sm">
-                        <i class="bi bi-file-earmark-excel me-1"></i>Excel
-                    </button>
-                </div>
-            </div>
+            </nav>
+            <!-- ===== FIN SIDEBAR ===== -->
 
-            <!-- === Tarjetas de Indicadores Clave (KPIs) === -->
-            <div class="row g-3 mb-4">
-                <!-- Ventas Totales -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="text-muted small">Ventas Totales</span>
-                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2">
-                                    <i class="bi bi-currency-dollar fs-5"></i>
-                                </div>
-                            </div>
-                            <h3 class="card-title fw-bold mb-1">$1.850.000</h3>
-                            <span class="badge bg-success-subtle text-success">
-                                <i class="bi bi-arrow-up-short"></i>+14,2% vs mes anterior
-                            </span>
-                        </div>
+            <!-- ===== CONTENIDO PRINCIPAL ===== -->
+            <main class="flex-grow-1 p-4">
+
+                <!-- === Encabezado de la página === -->
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+                    <div>
+                        <h1 class="mb-1">Informes y Estadísticas</h1>
+                        <p class="text-muted mb-0">Análisis detallado de ventas, rendimiento de productos y clientes.
+                        </p>
+                    </div>
+                    <!-- Filtro de fechas y exportación -->
+                    <div class="d-flex gap-2">
+                        <select class="form-select form-select-sm" style="width: auto;">
+                            <option value="este-mes" selected>Este Mes (Septiembre 2026)</option>
+                            <option value="mes-pasado">Mes Pasado</option>
+                            <option value="ultimo-trimestre">Último Trimestre</option>
+                            <option value="este-ano">Año 2026</option>
+                        </select>
+                        <button class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-download me-1"></i>Exportar PDF
+                        </button>
+                        <button class="btn btn-success btn-sm">
+                            <i class="bi bi-file-earmark-excel me-1"></i>Excel
+                        </button>
                     </div>
                 </div>
 
-                <!-- Pedidos Realizados -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="text-muted small">Pedidos Concluidos</span>
-                                <div class="bg-success bg-opacity-10 text-success rounded p-2">
-                                    <i class="bi bi-bag-check fs-5"></i>
+                <!-- === Tarjetas de Indicadores Clave (KPIs) === -->
+                <div class="row g-3 mb-4">
+                    <!-- Ventas Totales -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="text-muted small">Ventas Totales</span>
+                                    <div class="bg-primary bg-opacity-10 text-primary rounded p-2">
+                                        <i class="bi bi-currency-dollar fs-5"></i>
+                                    </div>
                                 </div>
+                                <h3 class="card-title fw-bold mb-1">$1.850.000</h3>
+                                <span class="badge bg-success-subtle text-success">
+                                    <i class="bi bi-arrow-up-short"></i>+14,2% vs mes anterior
+                                </span>
                             </div>
-                            <h3 class="card-title fw-bold mb-1">124</h3>
-                            <span class="badge bg-success-subtle text-success">
-                                <i class="bi bi-arrow-up-short"></i>+8,5% vs mes anterior
-                            </span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Ticket Promedio -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="text-muted small">Ticket Promedio</span>
-                                <div class="bg-warning bg-opacity-10 text-warning rounded p-2">
-                                    <i class="bi bi-receipt fs-5"></i>
+                    <!-- Pedidos Realizados -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="text-muted small">Pedidos Concluidos</span>
+                                    <div class="bg-success bg-opacity-10 text-success rounded p-2">
+                                        <i class="bi bi-bag-check fs-5"></i>
+                                    </div>
                                 </div>
+                                <h3 class="card-title fw-bold mb-1">124</h3>
+                                <span class="badge bg-success-subtle text-success">
+                                    <i class="bi bi-arrow-up-short"></i>+8,5% vs mes anterior
+                                </span>
                             </div>
-                            <h3 class="card-title fw-bold mb-1">$14.920</h3>
-                            <span class="badge bg-success-subtle text-success">
-                                <i class="bi bi-arrow-up-short"></i>+3,1% vs mes anterior
-                            </span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Nuevos Clientes -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="text-muted small">Nuevos Clientes</span>
-                                <div class="bg-info bg-opacity-10 text-info rounded p-2">
-                                    <i class="bi bi-person-plus fs-5"></i>
+                    <!-- Ticket Promedio -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="text-muted small">Ticket Promedio</span>
+                                    <div class="bg-warning bg-opacity-10 text-warning rounded p-2">
+                                        <i class="bi bi-receipt fs-5"></i>
+                                    </div>
                                 </div>
+                                <h3 class="card-title fw-bold mb-1">$14.920</h3>
+                                <span class="badge bg-success-subtle text-success">
+                                    <i class="bi bi-arrow-up-short"></i>+3,1% vs mes anterior
+                                </span>
                             </div>
-                            <h3 class="card-title fw-bold mb-1">48</h3>
-                            <span class="badge bg-danger-subtle text-danger">
-                                <i class="bi bi-arrow-down-short"></i>-2,4% vs mes anterior
-                            </span>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- === Fila de Rendimiento de Categorías y Métodos de Pago === -->
-            <div class="row g-4 mb-4">
-                
-                <!-- Ventas por Categoría -->
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-header bg-white py-3">
-                            <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-pie-chart me-2"></i>Ventas por Categoría</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span class="small fw-semibold">Globos de Helio</span>
-                                    <span class="small text-muted">$820.000 (44%)</span>
+                    <!-- Nuevos Clientes -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="text-muted small">Nuevos Clientes</span>
+                                    <div class="bg-info bg-opacity-10 text-info rounded p-2">
+                                        <i class="bi bi-person-plus fs-5"></i>
+                                    </div>
                                 </div>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 44%;"></div>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span class="small fw-semibold">Sets Temáticos y Arreglos</span>
-                                    <span class="small text-muted">$510.000 (28%)</span>
-                                </div>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 28%;"></div>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span class="small fw-semibold">Globos de Números/Letras</span>
-                                    <span class="small text-muted">$330.000 (18%)</span>
-                                </div>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 18%;"></div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span class="small fw-semibold">Accesorios e Infladores</span>
-                                    <span class="small text-muted">$190.000 (10%)</span>
-                                </div>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 10%;"></div>
-                                </div>
+                                <h3 class="card-title fw-bold mb-1">48</h3>
+                                <span class="badge bg-danger-subtle text-danger">
+                                    <i class="bi bi-arrow-down-short"></i>-2,4% vs mes anterior
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Rendimiento por Método de Pago -->
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-header bg-white py-3">
-                            <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-credit-card me-2"></i>Métodos de Pago Preferidos</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span class="small fw-semibold">Transferencia Bancaria Directa</span>
-                                    <span class="small text-muted">52% de los pedidos</span>
-                                </div>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-dark" role="progressbar" style="width: 52%;"></div>
-                                </div>
-                            </div>
+                <!-- === Fila de Rendimiento de Categorías y Métodos de Pago === -->
+                <div class="row g-4 mb-4">
 
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span class="small fw-semibold">Tarjeta de Débito (Webpay)</span>
-                                    <span class="small text-muted">33% de los pedidos</span>
-                                </div>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 33%;"></div>
-                                </div>
+                    <!-- Ventas por Categoría -->
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-header bg-white py-3">
+                                <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-pie-chart me-2"></i>Ventas por
+                                    Categoría</h5>
                             </div>
-
-                            <div>
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span class="small fw-semibold">Tarjeta de Crédito</span>
-                                    <span class="small text-muted">15% de los pedidos</span>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="small fw-semibold">Globos de Helio</span>
+                                        <span class="small text-muted">$820.000 (44%)</span>
+                                    </div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 44%;">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 15%;"></div>
+
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="small fw-semibold">Sets Temáticos y Arreglos</span>
+                                        <span class="small text-muted">$510.000 (28%)</span>
+                                    </div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 28%;">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="small fw-semibold">Globos de Números/Letras</span>
+                                        <span class="small text-muted">$330.000 (18%)</span>
+                                    </div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 18%;">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="small fw-semibold">Accesorios e Infladores</span>
+                                        <span class="small text-muted">$190.000 (10%)</span>
+                                    </div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 10%;"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Rendimiento por Método de Pago -->
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-header bg-white py-3">
+                                <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-credit-card me-2"></i>Métodos
+                                    de Pago Preferidos</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="small fw-semibold">Transferencia Bancaria Directa</span>
+                                        <span class="small text-muted">52% de los pedidos</span>
+                                    </div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-dark" role="progressbar" style="width: 52%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="small fw-semibold">Tarjeta de Débito (Webpay)</span>
+                                        <span class="small text-muted">33% de los pedidos</span>
+                                    </div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 33%;"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="small fw-semibold">Tarjeta de Crédito</span>
+                                        <span class="small text-muted">15% de los pedidos</span>
+                                    </div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 15%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-            </div>
+                <!-- === Tabla Top Productos más vendidos === -->
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-trophy me-2"></i>Top 5 Productos Más
+                            Vendidos</h5>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Producto</th>
+                                    <th>Categoría</th>
+                                    <th>Unidades Vendidas</th>
+                                    <th>Precio Unit.</th>
+                                    <th class="text-end">Ingreso Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge bg-warning text-dark fw-bold">1</span></td>
+                                    <td>
+                                        <strong>Set de Globos Cumpleaños Arcoíris</strong>
+                                    </td>
+                                    <td>Sets Temáticos</td>
+                                    <td>86 unidades</td>
+                                    <td>$12.990</td>
+                                    <td class="text-end fw-bold">$1.117.140</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-secondary fw-bold">2</span></td>
+                                    <td><strong>Globo Metálico Número "2" (Dorado)</strong></td>
+                                    <td>Números y Letras</td>
+                                    <td>64 unidades</td>
+                                    <td>$2.500</td>
+                                    <td class="text-end fw-bold">$160.000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-danger bg-opacity-75 fw-bold">3</span></td>
+                                    <td><strong>Pack 10 Globos Helio Multicolor</strong></td>
+                                    <td>Globos de Helio</td>
+                                    <td>42 unidades</td>
+                                    <td>$8.990</td>
+                                    <td class="text-end fw-bold">$377.580</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><strong>Inflador Manual Doble Acción</strong></td>
+                                    <td>Accesorios</td>
+                                    <td>38 unidades</td>
+                                    <td>$4.500</td>
+                                    <td class="text-end fw-bold">$171.000</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><strong>Bouquet de Globos Revelación de Género</strong></td>
+                                    <td>Arreglos Especiales</td>
+                                    <td>25 unidades</td>
+                                    <td>$18.500</td>
+                                    <td class="text-end fw-bold">$462.500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-            <!-- === Tabla Top Productos más vendidos === -->
-            <div class="card border-0 shadow-sm mb-4">
-                <div class="card-header bg-white py-3">
-                    <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-trophy me-2"></i>Top 5 Productos Más Vendidos</h5>
+                <!-- === Tabla Resumen Mensual Historico === -->
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-calendar3 me-2"></i>Histórico Reciente
+                        </h5>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Mes / Año</th>
+                                    <th>Pedidos</th>
+                                    <th>Nuevos Clientes</th>
+                                    <th>Ticket Promedio</th>
+                                    <th class="text-end">Monto Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Septiembre 2026</strong> <span class="badge bg-info text-dark ms-1">En
+                                            curso</span></td>
+                                    <td>124</td>
+                                    <td>48</td>
+                                    <td>$14.920</td>
+                                    <td class="text-end fw-bold">$1.850.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Agosto 2026</td>
+                                    <td>114</td>
+                                    <td>49</td>
+                                    <td>$14.470</td>
+                                    <td class="text-end fw-bold">$1.620.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Julio 2026</td>
+                                    <td>98</td>
+                                    <td>41</td>
+                                    <td>$13.800</td>
+                                    <td class="text-end fw-bold">$1.352.400</td>
+                                </tr>
+                                <tr>
+                                    <td>Junio 2026</td>
+                                    <td>105</td>
+                                    <td>44</td>
+                                    <td>$14.100</td>
+                                    <td class="text-end fw-bold">$1.480.500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0">
-                        <thead class="table-light">
-                            <tr>
-                                <th>#</th>
-                                <th>Producto</th>
-                                <th>Categoría</th>
-                                <th>Unidades Vendidas</th>
-                                <th>Precio Unit.</th>
-                                <th class="text-end">Ingreso Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="badge bg-warning text-dark fw-bold">1</span></td>
-                                <td>
-                                    <strong>Set de Globos Cumpleaños Arcoíris</strong>
-                                </td>
-                                <td>Sets Temáticos</td>
-                                <td>86 unidades</td>
-                                <td>$12.990</td>
-                                <td class="text-end fw-bold">$1.117.140</td>
-                            </tr>
-                            <tr>
-                                <td><span class="badge bg-secondary fw-bold">2</span></td>
-                                <td><strong>Globo Metálico Número "2" (Dorado)</strong></td>
-                                <td>Números y Letras</td>
-                                <td>64 unidades</td>
-                                <td>$2.500</td>
-                                <td class="text-end fw-bold">$160.000</td>
-                            </tr>
-                            <tr>
-                                <td><span class="badge bg-danger bg-opacity-75 fw-bold">3</span></td>
-                                <td><strong>Pack 10 Globos Helio Multicolor</strong></td>
-                                <td>Globos de Helio</td>
-                                <td>42 unidades</td>
-                                <td>$8.990</td>
-                                <td class="text-end fw-bold">$377.580</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><strong>Inflador Manual Doble Acción</strong></td>
-                                <td>Accesorios</td>
-                                <td>38 unidades</td>
-                                <td>$4.500</td>
-                                <td class="text-end fw-bold">$171.000</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td><strong>Bouquet de Globos Revelación de Género</strong></td>
-                                <td>Arreglos Especiales</td>
-                                <td>25 unidades</td>
-                                <td>$18.500</td>
-                                <td class="text-end fw-bold">$462.500</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
 
-            <!-- === Tabla Resumen Mensual Historico === -->
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white py-3">
-                    <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-calendar3 me-2"></i>Histórico Reciente</h5>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Mes / Año</th>
-                                <th>Pedidos</th>
-                                <th>Nuevos Clientes</th>
-                                <th>Ticket Promedio</th>
-                                <th class="text-end">Monto Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Septiembre 2026</strong> <span class="badge bg-info text-dark ms-1">En curso</span></td>
-                                <td>124</td>
-                                <td>48</td>
-                                <td>$14.920</td>
-                                <td class="text-end fw-bold">$1.850.000</td>
-                            </tr>
-                            <tr>
-                                <td>Agosto 2026</td>
-                                <td>114</td>
-                                <td>49</td>
-                                <td>$14.470</td>
-                                <td class="text-end fw-bold">$1.620.000</td>
-                            </tr>
-                            <tr>
-                                <td>Julio 2026</td>
-                                <td>98</td>
-                                <td>41</td>
-                                <td>$13.800</td>
-                                <td class="text-end fw-bold">$1.352.400</td>
-                            </tr>
-                            <tr>
-                                <td>Junio 2026</td>
-                                <td>105</td>
-                                <td>44</td>
-                                <td>$14.100</td>
-                                <td class="text-end fw-bold">$1.480.500</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-        </main>
-        <!-- ===== FIN CONTENIDO PRINCIPAL ===== -->
+            </main>
+            <!-- ===== FIN CONTENIDO PRINCIPAL ===== -->
 
         </div>
         <!-- cierra .d-flex -->

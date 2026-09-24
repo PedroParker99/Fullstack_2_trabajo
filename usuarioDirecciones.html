@@ -2,848 +2,529 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Mis direcciones | Villa del Globo</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-    <!-- CSS propio -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/miestilo.css">
-
 </head>
-
 
 <body>
 
-    <div class="page-wrapper">
-
-
-        <!-- ========= NAVBAR ========= -->
-    <!-- El "#" Se ocupara para aún no mandar a ninguna parte-->
-    <!-- Se deja con el nav, para que pueda identificar que cumple ese rol -->
-    <!-- navbar-light es para señalar el color-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <!--navbar-light es para señalar el color-->
-        <!--container centra el contenido y genera margenes laterales -->
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <!-- Logo / marca -->
+
             <a class="navbar-brand" href="index.html">
                 <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
             </a>
-            <!-- Botón hamburguesa (solo aparece en celular) -->
-            <!-- navbar-toggler es para el modo hamburguesa de celular, además que el target menuPrincipal
-            le dice que elemento debe abrir/cerrar, por eso el id de abajo debe coincidir perfectamente-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Contenido que se colapsa en celular, acá se coloca la id que nombré arriba -->
+
             <div class="collapse navbar-collapse" id="menuPrincipal">
-                <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
-                <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
-                <!-- ===== INICIO GRUPO 1 ===== -->
-                    <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
-                        <!-- Apartado "Boton de Inicio" -->
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Inicio</a>
-                        </li>
-                        <!-- Apartado "Boton de Nuestra Tienda" -->
-                        <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                Nuestra tienda </a>
-                            <!-- ===  INICIO OPCIONES DE TEMATICAS === -->
-                            <div class="dropdown-menu mega-menu p-4">
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 class="fw-bold">Temáticas 1</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a href="#" class="dropdown-item px-0">Among Us</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Baby Shark</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Barbie</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Bluey</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Bob Esponja</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Cars</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Cinnamonroll</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Circo Digital</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col">
-                                        <h6 class="fw-bold">Temáticas 2</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a href="#" class="dropdown-item px-0">Dragon Ball</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Dinosaurio</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">FNAF</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Frozen</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Guerreras K-pop</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Hello kitty</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Intensamente</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Kuromi</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col">
-                                        <h6 class="fw-bold">Temáticas 3</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a href="#" class="dropdown-item px-0">Mario Bross</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Masha</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Merlina</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Mickey Mouse</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Minecraft</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Minions</a></li>
-                                            <li><a href="#" class="dropdown-item px-0">Minnie Mouse</a></li>
-                                        </ul>
-                                    </div>
+
+                <!-- Menú izquierdo -->
+                <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Nuestra tienda
+                        </a>
+
+                        <div class="dropdown-menu mega-menu p-4">
+                            <div class="row g-3">
+
+                                <div class="col-lg-4">
+                                    <h6 class="fw-bold">Temáticas 1</h6>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="dropdown-item">Among Us</a></li>
+                                        <li><a href="#" class="dropdown-item">Baby Shark</a></li>
+                                        <li><a href="#" class="dropdown-item">Barbie</a></li>
+                                        <li><a href="#" class="dropdown-item">Bluey</a></li>
+                                        <li><a href="#" class="dropdown-item">Bob Esponja</a></li>
+                                        <li><a href="#" class="dropdown-item">Cars</a></li>
+                                        <li><a href="#" class="dropdown-item">Cinnamonroll</a></li>
+                                        <li><a href="#" class="dropdown-item">Circo Digital</a></li>
+                                    </ul>
                                 </div>
+
+                                <div class="col-lg-4">
+                                    <h6 class="fw-bold">Temáticas 2</h6>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="dropdown-item">Dragon Ball</a></li>
+                                        <li><a href="#" class="dropdown-item">Dinosaurio</a></li>
+                                        <li><a href="#" class="dropdown-item">FNAF</a></li>
+                                        <li><a href="#" class="dropdown-item">Frozen</a></li>
+                                        <li><a href="#" class="dropdown-item">Guerreras K-pop</a></li>
+                                        <li><a href="#" class="dropdown-item">Hello Kitty</a></li>
+                                        <li><a href="#" class="dropdown-item">Intensamente</a></li>
+                                        <li><a href="#" class="dropdown-item">Kuromi</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <h6 class="fw-bold">Temáticas 3</h6>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="dropdown-item">Mario Bros</a></li>
+                                        <li><a href="#" class="dropdown-item">Masha</a></li>
+                                        <li><a href="#" class="dropdown-item">Merlina</a></li>
+                                        <li><a href="#" class="dropdown-item">Mickey Mouse</a></li>
+                                        <li><a href="#" class="dropdown-item">Minecraft</a></li>
+                                        <li><a href="#" class="dropdown-item">Minions</a></li>
+                                        <li><a href="#" class="dropdown-item">Minnie Mouse</a></li>
+                                    </ul>
+                                </div>
+
                             </div>
-                            <!-- ===  FIN OPCIONES DE TEMATICAS === -->
-                        </li>
-                        <!-- Apartado "Boton de Packs de Decoración" -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="packs.html">Packs Decoración Cumpleaños</a>
-                        </li>
-                    </ul>
-                    <!-- ===== FIN GRUPO 1 =====-->
-
-
-                <!-- ===== INICIO GRUPO 2 ===== -->
-                <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
-
-                    <!-- BUSCADOR -->
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-link text-dark p-0 me-3 border-0 shadow-none"
-                            data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
-
-                            <i class="bi bi-search fs-2"></i>
-
-                        </button>
-                    </li>
-
-
-                    <!-- PERFIL -->
-                    <li class="nav-item">
-
-                        <div class="dropdown me-3">
-
-                            <button class="btn btn-link text-dark p-0 border-0 shadow-none" type="button"
-                                id="dropdownPerfil" data-bs-toggle="dropdown" aria-expanded="false"
-                                aria-label="Cuenta de usuario">
-
-                                <i class="bi bi-person fs-2"></i>
-
-                            </button>
-
-                            <!-- MENÚ PERFIL -->
-                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
-                                aria-labelledby="dropdownPerfil"
-                                style="border-radius: 12px; min-width: 220px; z-index: 1050;">
-
-                                <li>
-                                    <div class="px-2 py-1">
-                                        <p class="mb-0 small text-muted">
-                                            ¡Hola! Bienvenido a
-                                        </p>
-
-                                        <h6 class="fw-bold text-dark mb-0">
-                                            Villa del Globo
-                                        </h6>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <hr class="dropdown-divider my-2">
-                                </li>
-
-                                <li>
-                                    <button class="dropdown-item rounded py-2 fw-semibold text-white mb-1
-                               d-flex align-items-center justify-content-center" data-bs-toggle="modal"
-                                        data-bs-target="#modalLogin" style="background-color: #e6007e;">
-
-                                        <i class="bi bi-box-arrow-in-right me-2"></i>
-
-                                        Iniciar Sesión
-                                    </button>
-                                </li>
-
-                                <li>
-                                    <a class="dropdown-item rounded py-2 text-muted small d-flex align-items-center"
-                                        href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
-
-                                        <i class="bi bi-person-plus me-2"></i>
-
-                                        ¿No tienes cuenta? Regístrate
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <hr class="dropdown-divider my-2">
-                                </li>
-
-                                <li>
-                                    <a class="dropdown-item rounded py-2 d-flex align-items-center" href="#">
-
-                                        <i class="bi bi-truck me-2 text-muted"></i>
-                                        Mis Pedidos / Estado
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a class="dropdown-item rounded py-2 d-flex align-items-center" href="#">
-
-                                        <i class="bi bi-heart me-2 text-muted"></i>
-                                        Lista de Deseos
-                                    </a>
-                                </li>
-
-                            </ul>
-
                         </div>
-
                     </li>
 
-                    <!-- CARRITO -->
                     <li class="nav-item">
-
-                        <button type="button" class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
-                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito"
-                            aria-controls="offcanvasCarrito" aria-label="Ver carrito">
-
-                            <i class="bi bi-bag fs-2"></i>
-
-                            <!-- Contador -->
-                            <span id="cart-count"
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
-                                style="background-color: #e6007e; font-size: 0.85rem;">
-
-                                0
-
-                            </span>
-
-                        </button>
-
+                        <a class="nav-link" href="packs.html">
+                            Packs Decoración Cumpleaños
+                        </a>
                     </li>
 
                 </ul>
-                <!-- ===== FIN GRUPO 2 ===== -->
+
+                <!-- Iconos -->
+                <ul class="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
+
+                    <!-- Buscar -->
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-link text-dark p-0 border-0 shadow-none"
+                            data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
+                            <i class="bi bi-search fs-2"></i>
+                        </button>
+                    </li>
+
+                    <!-- Perfil -->
+                    <li class="nav-item">
+                        <div class="dropdown">
+
+                            <button class="btn btn-link text-dark p-0 border-0 shadow-none" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" aria-label="Cuenta de usuario">
+                                <i class="bi bi-person fs-2"></i>
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
+                                <li class="px-2 py-1">
+                                    <small class="text-muted">¡Hola!</small>
+                                    <h6 class="fw-bold mb-0">Juan Pérez</h6>
+                                </li>
+
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                                <li>
+                                    <a href="perfilUsuario.html" class="dropdown-item rounded">
+                                        <i class="bi bi-person me-2"></i>Mi cuenta
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="usuarioCompras.html" class="dropdown-item rounded">
+                                        <i class="bi bi-box-seam me-2"></i>Mis compras
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="usuarioFavoritos.html" class="dropdown-item rounded">
+                                        <i class="bi bi-heart me-2"></i>Lista de deseos
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                                <li>
+                                    <a href="#" class="dropdown-item rounded text-danger">
+                                        <i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+
+                    <!-- Carrito -->
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-label="Ver carrito">
+
+                            <i class="bi bi-bag fs-2"></i>
+
+                            <span id="cart-count"
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-rosa">
+                                0
+                            </span>
+                        </button>
+                    </li>
+
+                </ul>
             </div>
         </div>
     </nav>
-    <!-- ======= FIN DEL NAVBAR ======= -->
 
 
+    <!-- ================= MI CUENTA ================= -->
+    <main class="container py-5">
 
-        <!-- ==========================================
-             CONTENIDO
-             ========================================== -->
+        <div class="cuenta-panel bg-white rounded-4 shadow-sm overflow-hidden">
 
-        <main class="container py-5">
-
-
-            <!-- ENCABEZADO -->
-
-            <div class="mb-5">
-
-                <a href="perfilUsuario.html"
-                    class="text-decoration-none text-muted">
-
-                    <i class="bi bi-arrow-left me-2"></i>
-
-                    Volver a mi cuenta
-
-                </a>
-
-
-                <h1 class="fw-bold mt-3 mb-2">
-
-                    Mis direcciones
-
-                </h1>
-
-
+            <!-- Encabezado -->
+            <header class="p-4 p-lg-5 border-bottom">
+                <span class="text-rosa small fw-semibold">MI CUENTA</span>
+                <h1 class="fw-bold mt-2 mb-1">Mis direcciones</h1>
                 <p class="text-muted mb-0">
-
                     Administra las direcciones donde recibirás tus pedidos.
-
                 </p>
+            </header>
 
-            </div>
+            <div class="row g-0">
 
+                <!-- Sidebar -->
+                <aside class="col-lg-3 border-end">
+                    <nav class="p-3 p-lg-4">
 
+                        <a href="perfilUsuario.html" class="perfil-menu-item">
+                            <i class="bi bi-person"></i> Mi perfil
+                        </a>
 
-            <!-- ==========================================
-                 BARRA LATERAL + CONTENIDO
-                 ========================================== -->
+                        <a href="usuarioCompras.html" class="perfil-menu-item">
+                            <i class="bi bi-box-seam"></i> Mis compras
+                        </a>
 
-            <div class="row g-4 align-items-start">
+                        <a href="usuarioDirecciones.html" class="perfil-menu-item active">
+                            <i class="bi bi-geo-alt"></i> Mis direcciones
+                        </a>
 
+                        <a href="usuarioPagos.html" class="perfil-menu-item">
+                            <i class="bi bi-credit-card"></i> Métodos de pago
+                        </a>
 
-                <!-- =====================================
-                     BARRA LATERAL
-                     ===================================== -->
+                        <a href="usuarioSeguridad.html" class="perfil-menu-item">
+                            <i class="bi bi-shield-lock"></i> Seguridad
+                        </a>
 
-                <aside class="col-lg-3">
+                        <a href="usuarioFavoritos.html" class="perfil-menu-item">
+                            <i class="bi bi-heart"></i> Lista de deseos
+                        </a>
 
-                    <div class="card border-0 shadow-sm">
+                        <hr class="my-3">
 
-                        <div class="card-body p-3">
+                        <a href="#" class="perfil-menu-item text-danger">
+                            <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+                        </a>
 
-
-                            <a href="perfilUsuario.html"
-                                class="perfil-menu-item text-decoration-none d-block">
-
-                                <i class="bi bi-person me-2"></i>
-
-                                Mi perfil
-
-                            </a>
-
-
-                            <a href="usuarioCompras.html"
-                                class="perfil-menu-item text-decoration-none d-block">
-
-                                <i class="bi bi-box-seam me-2"></i>
-
-                                Mis compras
-
-                            </a>
-
-
-                            <a href="usuarioDirecciones.html"
-                                class="perfil-menu-item active text-decoration-none d-block">
-
-                                <i class="bi bi-geo-alt me-2"></i>
-
-                                Mis direcciones
-
-                            </a>
-
-
-                            <a href="usuarioPagos.html"
-                                class="perfil-menu-item text-decoration-none d-block">
-
-                                <i class="bi bi-credit-card me-2"></i>
-
-                                Métodos de pago
-
-                            </a>
-
-
-                            <a href="usuarioSeguridad.html"
-                                class="perfil-menu-item text-decoration-none d-block">
-
-                                <i class="bi bi-shield-lock me-2"></i>
-
-                                Seguridad
-
-                            </a>
-
-
-                            <a href="usuarioFavoritos.html"
-                                class="perfil-menu-item text-decoration-none d-block">
-
-                                <i class="bi bi-heart me-2"></i>
-
-                                Lista de deseos
-
-                            </a>
-
-
-                            <hr>
-
-
-                            <a href="#"
-                                class="perfil-menu-item text-danger text-decoration-none d-block">
-
-                                <i class="bi bi-box-arrow-right me-2"></i>
-
-                                Cerrar sesión
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
+                    </nav>
                 </aside>
 
 
-
-                <!-- =====================================
-                     CONTENIDO DIRECCIONES
-                     ===================================== -->
-
+                <!-- Contenido -->
                 <section class="col-lg-9">
+                    <div class="p-4 p-lg-5">
 
+                        <!-- Cabecera -->
+                        <div
+                            class="d-flex flex-wrap justify-content-between align-items-center gap-3 pb-4 border-bottom">
+                            <div>
+                                <h3 class="fw-bold mb-1">Direcciones guardadas</h3>
+                                <p class="text-muted mb-0">
+                                    Tienes 2 direcciones guardadas.
+                                </p>
+                            </div>
 
-                    <!-- CABECERA -->
-
-                    <div class="d-flex flex-wrap
-                        justify-content-between
-                        align-items-center mb-4">
-
-
-                        <div>
-
-                            <h4 class="fw-bold mb-1">
-
-                                Mis direcciones
-
-                            </h4>
-
-                            <p class="text-muted mb-0">
-
-                                Tienes 2 direcciones guardadas.
-
-                            </p>
-
+                            <button type="button" class="btn btn-dark">
+                                <i class="bi bi-plus-lg me-2"></i>
+                                Agregar dirección
+                            </button>
                         </div>
 
 
-                        <button class="btn btn-dark">
+                        <!-- ================= CASA ================= -->
+                        <article class="direccion-item py-4 border-bottom">
 
-                            <i class="bi bi-plus-lg me-2"></i>
+                            <div class="row g-3">
 
-                            Agregar dirección
+                                <!-- Icono -->
+                                <div class="col-auto">
+                                    <div class="direccion-icono">
+                                        <i class="bi bi-house"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Datos -->
+                                <div class="col">
+
+                                    <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                                        <h5 class="fw-bold mb-0">Casa</h5>
+
+                                        <span class="badge badge-principal rounded-pill">
+                                            Principal
+                                        </span>
+                                    </div>
+
+                                    <small class="text-muted d-block mb-3">
+                                        Dirección de entrega
+                                    </small>
+
+                                    <h6 class="fw-bold mb-2">Juan Pérez</h6>
+
+                                    <p class="mb-1">Av. Principal 1234</p>
+                                    <p class="mb-1">Departamento 502</p>
+                                    <p class="text-muted mb-1">Concepción, Biobío</p>
+                                    <p class="text-muted mb-3">Chile</p>
+
+                                    <small class="text-muted">
+                                        <i class="bi bi-telephone me-2"></i>
+                                        +56 9 1234 5678
+                                    </small>
+
+                                </div>
+
+                                <!-- Opciones -->
+                                <div class="col-auto">
+
+                                    <div class="dropdown">
+
+                                        <button class="btn btn-light border" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false" aria-label="Opciones de dirección">
+
+                                            <i class="bi bi-three-dots"></i>
+
+                                        </button>
+
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="bi bi-pencil me-2"></i>
+                                                    Editar
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="bi bi-star me-2"></i>
+                                                    Quitar principal
+                                                </a>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- ================= TRABAJO ================= -->
+                        <article class="direccion-item py-4 border-bottom">
+
+                            <div class="row g-3">
+
+                                <!-- Icono -->
+                                <div class="col-auto">
+                                    <div class="direccion-icono">
+                                        <i class="bi bi-building"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Datos -->
+                                <div class="col">
+
+                                    <h5 class="fw-bold mb-1">Trabajo</h5>
+
+                                    <small class="text-muted d-block mb-3">
+                                        Dirección alternativa
+                                    </small>
+
+                                    <h6 class="fw-bold mb-2">Juan Pérez</h6>
+
+                                    <p class="mb-1">Av. Los Carrera 567</p>
+                                    <p class="mb-1">Oficina 204</p>
+                                    <p class="text-muted mb-1">Concepción, Biobío</p>
+                                    <p class="text-muted mb-3">Chile</p>
+
+                                    <small class="text-muted">
+                                        <i class="bi bi-telephone me-2"></i>
+                                        +56 9 1234 5678
+                                    </small>
+
+                                </div>
+
+                                <!-- Opciones -->
+                                <div class="col-auto">
+
+                                    <div class="dropdown">
+
+                                        <button class="btn btn-light border" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false" aria-label="Opciones de dirección">
+
+                                            <i class="bi bi-three-dots"></i>
+
+                                        </button>
+
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="bi bi-pencil me-2"></i>
+                                                    Editar
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="bi bi-star me-2"></i>
+                                                    Establecer como principal
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item text-danger" href="#">
+                                                    <i class="bi bi-trash me-2"></i>
+                                                    Eliminar
+                                                </a>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Agregar otra dirección -->
+                        <button type="button" class="direccion-agregar btn w-100 mt-4 py-4">
+
+                            <i class="bi bi-plus-circle fs-3"></i>
+
+                            <span class="d-block fw-semibold mt-1">
+                                Agregar una nueva dirección
+                            </span>
+
+                            <small class="text-muted">
+                                Guarda otra dirección para tus pedidos.
+                            </small>
 
                         </button>
 
                     </div>
-
-
-
-                    <!-- =====================================
-                         DIRECCIÓN PRINCIPAL
-                         ===================================== -->
-
-                    <div class="card border-0 shadow-sm mb-4">
-
-                        <div class="card-body p-4">
-
-
-                            <!-- CABECERA TARJETA -->
-
-                            <div class="d-flex justify-content-between
-                                align-items-start mb-4">
-
-
-                                <div class="d-flex align-items-center">
-
-                                    <div class="direccion-icono me-3">
-
-                                        <i class="bi bi-house"></i>
-
-                                    </div>
-
-
-                                    <div>
-
-                                        <div class="d-flex align-items-center gap-2">
-
-                                            <h5 class="fw-bold mb-0">
-
-                                                Casa
-
-                                            </h5>
-
-
-                                            <span
-                                                class="badge rounded-pill"
-                                                style="background-color:#fce4f2;
-                                                color:#e6007e;">
-
-                                                Principal
-
-                                            </span>
-
-                                        </div>
-
-                                        <small class="text-muted">
-
-                                            Dirección de entrega
-
-                                        </small>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- MENÚ -->
-
-                                <div class="dropdown">
-
-                                    <button
-                                        class="btn btn-light border-0"
-                                        type="button"
-                                        data-bs-toggle="dropdown">
-
-                                        <i class="bi bi-three-dots"></i>
-
-                                    </button>
-
-
-                                    <ul class="dropdown-menu dropdown-menu-end">
-
-                                        <li>
-
-                                            <a class="dropdown-item"
-                                                href="#">
-
-                                                <i class="bi bi-pencil me-2"></i>
-
-                                                Editar
-
-                                            </a>
-
-                                        </li>
-
-
-                                        <li>
-
-                                            <a class="dropdown-item"
-                                                href="#">
-
-                                                <i class="bi bi-star me-2"></i>
-
-                                                Quitar principal
-
-                                            </a>
-
-                                        </li>
-
-                                    </ul>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <!-- INFORMACIÓN -->
-
-                            <div class="direccion-datos">
-
-                                <h6 class="fw-bold mb-2">
-
-                                    Juan Pérez
-
-                                </h6>
-
-
-                                <p class="mb-1">
-
-                                    Av. Principal 1234
-
-                                </p>
-
-
-                                <p class="mb-1">
-
-                                    Departamento 502
-
-                                </p>
-
-
-                                <p class="text-muted mb-1">
-
-                                    Concepción, Biobío
-
-                                </p>
-
-
-                                <p class="text-muted mb-0">
-
-                                    Chile
-
-                                </p>
-
-                            </div>
-
-
-
-                            <hr>
-
-
-                            <div class="d-flex align-items-center
-                                text-muted small">
-
-                                <i class="bi bi-telephone me-2"></i>
-
-                                +56 9 1234 5678
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- =====================================
-                         SEGUNDA DIRECCIÓN
-                         ===================================== -->
-
-                    <div class="card border-0 shadow-sm mb-4">
-
-                        <div class="card-body p-4">
-
-
-                            <!-- CABECERA -->
-
-                            <div class="d-flex justify-content-between
-                                align-items-start mb-4">
-
-
-                                <div class="d-flex align-items-center">
-
-                                    <div class="direccion-icono me-3">
-
-                                        <i class="bi bi-building"></i>
-
-                                    </div>
-
-
-                                    <div>
-
-                                        <h5 class="fw-bold mb-0">
-
-                                            Trabajo
-
-                                        </h5>
-
-                                        <small class="text-muted">
-
-                                            Dirección alternativa
-
-                                        </small>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="dropdown">
-
-                                    <button
-                                        class="btn btn-light border-0"
-                                        type="button"
-                                        data-bs-toggle="dropdown">
-
-                                        <i class="bi bi-three-dots"></i>
-
-                                    </button>
-
-
-                                    <ul class="dropdown-menu dropdown-menu-end">
-
-                                        <li>
-
-                                            <a class="dropdown-item"
-                                                href="#">
-
-                                                <i class="bi bi-pencil me-2"></i>
-
-                                                Editar
-
-                                            </a>
-
-                                        </li>
-
-
-                                        <li>
-
-                                            <a class="dropdown-item"
-                                                href="#">
-
-                                                <i class="bi bi-star me-2"></i>
-
-                                                Establecer como principal
-
-                                            </a>
-
-                                        </li>
-
-
-                                        <li>
-
-                                            <hr class="dropdown-divider">
-
-                                        </li>
-
-
-                                        <li>
-
-                                            <a class="dropdown-item text-danger"
-                                                href="#">
-
-                                                <i class="bi bi-trash me-2"></i>
-
-                                                Eliminar
-
-                                            </a>
-
-                                        </li>
-
-                                    </ul>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <!-- INFORMACIÓN -->
-
-                            <div class="direccion-datos">
-
-                                <h6 class="fw-bold mb-2">
-
-                                    Juan Pérez
-
-                                </h6>
-
-
-                                <p class="mb-1">
-
-                                    Av. Los Carrera 567
-
-                                </p>
-
-
-                                <p class="mb-1">
-
-                                    Oficina 204
-
-                                </p>
-
-
-                                <p class="text-muted mb-1">
-
-                                    Concepción, Biobío
-
-                                </p>
-
-
-                                <p class="text-muted mb-0">
-
-                                    Chile
-
-                                </p>
-
-                            </div>
-
-
-
-                            <hr>
-
-
-                            <div class="d-flex align-items-center
-                                text-muted small">
-
-                                <i class="bi bi-telephone me-2"></i>
-
-                                +56 9 1234 5678
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- =====================================
-                         AGREGAR DIRECCIÓN
-                         ===================================== -->
-
-                    <button class="direccion-agregar w-100">
-
-                        <i class="bi bi-plus-circle fs-3 mb-2"></i>
-
-                        <span class="fw-semibold">
-
-                            Agregar una nueva dirección
-
-                        </span>
-
-                        <small class="text-muted">
-
-                            Guarda otra dirección para tus pedidos.
-
-                        </small>
-
-                    </button>
-
-
                 </section>
 
             </div>
+        </div>
 
-        </main>
+    </main>
 
 
-
-        <!-- ===== FOOTER ===== -->
-    <!-- Padding arriba de 5 y abajo de 3, el mt-5 ayuda a separar el footer del contenido de arriba-->
+    <!-- ================= FOOTER ================= -->
     <footer class="bg-dark text-white pt-5 pb-3 mt-5">
         <div class="container">
+
             <div class="row g-4">
-                <!-- === COLUMNA 1: Marca === -->
-                <!-- col-md-4 En celular cada columna ocupa el 100% (una debajo de otra), y en tablet(md) en adelante se reparten en 3 columnas iguales -->
+
                 <div class="col-md-4">
                     <h5 class="fw-bold">🎈 Villa del Globo</h5>
-                    <!-- Estilo de texto, gris suave, bueno para texto secundario con fondo oscuro -->
                     <p class="text-secondary">
                         Todo lo que necesitas para tus fiestas:
-                        cotillón, decoración,
-                        globos, disfraces y mucho más.
+                        cotillón, decoración, globos, disfraces y mucho más.
                     </p>
                 </div>
 
-                <!-- === COLUMNA 2: Tienda === -->
                 <div class="col-md-4">
                     <h6 class="fw-bold">Tienda</h6>
-                    <!-- Estilo del link -->
                     <ul class="list-unstyled">
-                        <li><a href="#" class="link-light text-decoration-none">Inicio</a></li>
-                        <li><a href="#" class="link-light text-decoration-none">Nuestra Tienda</a></li>
-                        <li><a href="#" class="link-light text-decoration-none">Packs Decoración</a></li>
+                        <li>
+                            <a href="index.html" class="link-light text-decoration-none">
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="link-light text-decoration-none">
+                                Nuestra Tienda
+                            </a>
+                        </li>
+                        <li>
+                            <a href="packs.html" class="link-light text-decoration-none">
+                                Packs Decoración
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- === COLUMNA 3: Contacto === -->
                 <div class="col-md-4">
                     <h6 class="fw-bold">Contacto</h6>
+
                     <ul class="list-unstyled text-secondary">
-                        <li>📞 9 7909 9900</li>
-                        <li>✉️ villadelglobospa@gmail.com</li>
+                        <li>
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            9 7909 9900
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope-fill me-2"></i>
+                            villadelglobospa@gmail.com
+                        </li>
                     </ul>
-                    <div class="mt-2">
-                        <!-- El me-3 Margin end(Desde la derecha) tamaño 3, separa Facebook de Instagram -->
-                        <a href="#" class="link-light me-3">Facebook</a>
-                        <a href="#" class="link-light">Instagram</a>
+
+                    <div class="d-flex gap-3 mt-3">
+
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="link-light fs-4"
+                            aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="link-light fs-4"
+                            aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
                     </div>
                 </div>
 
             </div>
-            <!-- Una linea divisoria -->
+
             <hr class="border-secondary my-4">
+
             <p class="text-center text-secondary mb-0">
-                <!-- El &copy; es el símbolo de copyright -->
-                &copy; 2026 Villa del Globo. Todos los derechos
-                reservados.
+                &copy; 2026 Villa del Globo. Todos los derechos reservados.
             </p>
+
         </div>
     </footer>
+
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

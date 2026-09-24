@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,953 +11,728 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-    <!-- CSS propio -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/miestilo.css">
-
 </head>
 
 <body>
 
-    <div class="page-wrapper">
+    <!-- ==================================================
+         NAVBAR
+    ================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
 
+        <div class="container">
 
-        <!-- ==================================================
-             NAVBAR
-             ================================================== -->
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
+            </a>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+            <!-- Botón responsive -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
 
-            <div class="container">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <!-- LOGO -->
-                <a class="navbar-brand" href="index.html">
 
-                    <img src="img/Villa_del_Globo_Mark.avif"
-                        alt="Villa del Globo"
-                        class="rounded-circle"
-                        height="70">
+            <div class="collapse navbar-collapse" id="menuPrincipal">
 
-                </a>
+                <!-- Menú izquierdo -->
+                <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0">
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Inicio
+                        </a>
+                    </li>
 
-                <!-- BOTÓN HAMBURGUESA -->
-                <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuPrincipal"
-                    aria-controls="menuPrincipal"
-                    aria-expanded="false"
-                    aria-label="Abrir menú">
 
-                    <span class="navbar-toggler-icon"></span>
+                    <!-- Nuestra tienda -->
+                    <li class="nav-item dropdown mega-dropdown">
 
-                </button>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
 
+                            Nuestra tienda
+                        </a>
 
-                <div class="collapse navbar-collapse" id="menuPrincipal">
 
+                        <!-- Mega menú -->
+                        <div class="dropdown-menu mega-menu p-4">
 
-                    <!-- GRUPO IZQUIERDO -->
-                    <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+                            <div class="row g-4">
 
-                        <li class="nav-item">
+                                <!-- Temáticas 1 -->
+                                <div class="col-lg-4">
 
-                            <a class="nav-link"
-                                href="index.html">
+                                    <h6 class="fw-bold border-bottom pb-2">
+                                        Temáticas 1
+                                    </h6>
 
-                                Inicio
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="dropdown-item">Among Us</a></li>
+                                        <li><a href="#" class="dropdown-item">Baby Shark</a></li>
+                                        <li><a href="#" class="dropdown-item">Barbie</a></li>
+                                        <li><a href="#" class="dropdown-item">Bluey</a></li>
+                                        <li><a href="#" class="dropdown-item">Bob Esponja</a></li>
+                                        <li><a href="#" class="dropdown-item">Cars</a></li>
+                                        <li><a href="#" class="dropdown-item">Cinnamonroll</a></li>
+                                        <li><a href="#" class="dropdown-item">Circo Digital</a></li>
+                                    </ul>
 
-                            </a>
+                                </div>
 
-                        </li>
 
+                                <!-- Temáticas 2 -->
+                                <div class="col-lg-4">
 
-                        <!-- NUESTRA TIENDA -->
-                        <li class="nav-item dropdown mega-dropdown">
+                                    <h6 class="fw-bold border-bottom pb-2">
+                                        Temáticas 2
+                                    </h6>
 
-                            <a class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="dropdown-item">Dragon Ball</a></li>
+                                        <li><a href="#" class="dropdown-item">Dinosaurio</a></li>
+                                        <li><a href="#" class="dropdown-item">FNAF</a></li>
+                                        <li><a href="#" class="dropdown-item">Frozen</a></li>
+                                        <li><a href="#" class="dropdown-item">Guerreras K-pop</a></li>
+                                        <li><a href="#" class="dropdown-item">Hello Kitty</a></li>
+                                        <li><a href="#" class="dropdown-item">Intensamente</a></li>
+                                        <li><a href="#" class="dropdown-item">Kuromi</a></li>
+                                    </ul>
 
-                                Nuestra tienda
+                                </div>
 
-                            </a>
 
+                                <!-- Temáticas 3 -->
+                                <div class="col-lg-4">
 
-                            <!-- MEGA MENÚ -->
-                            <div class="dropdown-menu mega-menu p-4">
+                                    <h6 class="fw-bold border-bottom pb-2">
+                                        Temáticas 3
+                                    </h6>
 
-                                <div class="row">
-
-
-                                    <!-- TEMÁTICAS 1 -->
-                                    <div class="col">
-
-                                        <h6 class="fw-bold">
-                                            Temáticas 1
-                                        </h6>
-
-                                        <ul class="list-unstyled">
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Among Us</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Baby Shark</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Barbie</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Bluey</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Bob Esponja</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Cars</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Cinnamonroll</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Circo Digital</a>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-
-                                    <!-- TEMÁTICAS 2 -->
-                                    <div class="col">
-
-                                        <h6 class="fw-bold">
-                                            Temáticas 2
-                                        </h6>
-
-                                        <ul class="list-unstyled">
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Dragon Ball</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Dinosaurio</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">FNAF</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Frozen</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Guerreras K-pop</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Hello Kitty</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Intensamente</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Kuromi</a>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-
-                                    <!-- TEMÁTICAS 3 -->
-                                    <div class="col">
-
-                                        <h6 class="fw-bold">
-                                            Temáticas 3
-                                        </h6>
-
-                                        <ul class="list-unstyled">
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Mario Bros</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Masha</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Merlina</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Mickey Mouse</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Minecraft</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Minions</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown-item px-0">Minnie Mouse</a>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="dropdown-item">Mario Bros</a></li>
+                                        <li><a href="#" class="dropdown-item">Masha</a></li>
+                                        <li><a href="#" class="dropdown-item">Merlina</a></li>
+                                        <li><a href="#" class="dropdown-item">Mickey Mouse</a></li>
+                                        <li><a href="#" class="dropdown-item">Minecraft</a></li>
+                                        <li><a href="#" class="dropdown-item">Minions</a></li>
+                                        <li><a href="#" class="dropdown-item">Minnie Mouse</a></li>
+                                    </ul>
 
                                 </div>
 
                             </div>
 
-                        </li>
+                        </div>
+
+                    </li>
 
 
-                        <!-- PACKS -->
-                        <li class="nav-item">
+                    <!-- Packs -->
+                    <li class="nav-item">
 
-                            <a class="nav-link"
-                                href="packs.html">
+                        <a class="nav-link" href="packs.html">
+                            Packs Decoración Cumpleaños
+                        </a>
 
-                                Packs Decoración Cumpleaños
+                    </li>
 
-                            </a>
-
-                        </li>
-
-                    </ul>
+                </ul>
 
 
+                <!-- Menú derecho -->
+                <ul class="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
 
-                    <!-- GRUPO DERECHO -->
-                    <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+                    <!-- Buscador -->
+                    <li class="nav-item">
+
+                        <button type="button" class="btn btn-link text-dark p-0 border-0 shadow-none"
+                            data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
+
+                            <i class="bi bi-search fs-2"></i>
+
+                        </button>
+
+                    </li>
 
 
-                        <!-- BUSCADOR -->
-                        <li class="nav-item">
+                    <!-- Perfil -->
+                    <li class="nav-item">
 
-                            <button type="button"
-                                class="btn btn-link text-dark p-0 me-3 border-0 shadow-none"
-                                data-bs-toggle="modal"
-                                data-bs-target="#modalBuscador"
-                                aria-label="Buscar productos">
+                        <div class="dropdown">
 
-                                <i class="bi bi-search fs-2"></i>
+                            <button class="btn btn-link text-dark p-0 border-0 shadow-none" type="button"
+                                id="dropdownPerfil" data-bs-toggle="dropdown" aria-expanded="false"
+                                aria-label="Cuenta de usuario">
+
+                                <i class="bi bi-person fs-2"></i>
 
                             </button>
 
-                        </li>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2"
+                                aria-labelledby="dropdownPerfil">
+
+                                <li>
+
+                                    <div class="px-2 py-1">
+
+                                        <small class="text-muted">
+                                            ¡Hola!
+                                        </small>
+
+                                        <h6 class="fw-bold mb-0">
+                                            Juan Pérez
+                                        </h6>
+
+                                    </div>
+
+                                </li>
 
 
-                        <!-- PERFIL -->
-                        <li class="nav-item">
-
-                            <div class="dropdown me-3">
-
-                                <button class="btn btn-link text-dark p-0 border-0 shadow-none"
-                                    type="button"
-                                    id="dropdownPerfil"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                    aria-label="Cuenta de usuario">
-
-                                    <i class="bi bi-person fs-2"></i>
-
-                                </button>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
 
 
-                                <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
-                                    aria-labelledby="dropdownPerfil"
-                                    style="border-radius: 12px; min-width: 220px; z-index: 1050;">
+                                <li>
+
+                                    <a href="perfilUsuario.html" class="dropdown-item rounded py-2">
+
+                                        <i class="bi bi-person me-2"></i>
+
+                                        Mi cuenta
+
+                                    </a>
+
+                                </li>
 
 
-                                    <li>
+                                <li>
 
-                                        <div class="px-2 py-1">
+                                    <a href="usuarioCompras.html" class="dropdown-item rounded py-2">
 
-                                            <p class="mb-0 small text-muted">
-                                                ¡Hola! Bienvenido a
-                                            </p>
+                                        <i class="bi bi-box-seam me-2"></i>
 
-                                            <h6 class="fw-bold text-dark mb-0">
-                                                Villa del Globo
-                                            </h6>
+                                        Mis compras
 
-                                        </div>
+                                    </a>
 
-                                    </li>
+                                </li>
 
 
-                                    <li>
-                                        <hr class="dropdown-divider my-2">
-                                    </li>
+                                <li>
+
+                                    <a href="usuarioFavoritos.html" class="dropdown-item rounded py-2">
+
+                                        <i class="bi bi-heart me-2"></i>
+
+                                        Lista de deseos
+
+                                    </a>
+
+                                </li>
 
 
-                                    <li>
-
-                                        <button
-                                            class="dropdown-item rounded py-2 fw-semibold text-white mb-1
-                                            d-flex align-items-center justify-content-center"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#modalLogin"
-                                            style="background-color: #e6007e;">
-
-                                            <i class="bi bi-box-arrow-in-right me-2"></i>
-
-                                            Iniciar Sesión
-
-                                        </button>
-
-                                    </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
 
 
-                                    <li>
+                                <li>
 
-                                        <a class="dropdown-item rounded py-2 text-muted small d-flex align-items-center"
-                                            href="#"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#modalLogin">
+                                    <a href="#" class="dropdown-item rounded py-2 text-danger">
 
-                                            <i class="bi bi-person-plus me-2"></i>
+                                        <i class="bi bi-box-arrow-right me-2"></i>
 
-                                            ¿No tienes cuenta? Regístrate
+                                        Cerrar sesión
 
-                                        </a>
+                                    </a>
 
-                                    </li>
+                                </li>
 
+                            </ul>
 
-                                    <li>
-                                        <hr class="dropdown-divider my-2">
-                                    </li>
+                        </div>
+
+                    </li>
 
 
-                                    <li>
+                    <!-- Carrito -->
+                    <li class="nav-item">
 
-                                        <a class="dropdown-item rounded py-2 d-flex align-items-center"
-                                            href="usuarioCompras.html">
+                        <button type="button" class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito"
+                            aria-controls="offcanvasCarrito" aria-label="Ver carrito">
 
-                                            <i class="bi bi-truck me-2 text-muted"></i>
+                            <i class="bi bi-bag fs-2"></i>
 
-                                            Mis Pedidos / Estado
+                            <span id="cart-count"
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-rosa">
 
-                                        </a>
+                                0
 
-                                    </li>
+                            </span>
 
+                        </button>
 
-                                    <li>
+                    </li>
 
-                                        <a class="dropdown-item rounded py-2 d-flex align-items-center"
-                                            href="usuarioFavoritos.html">
-
-                                            <i class="bi bi-heart me-2 text-muted"></i>
-
-                                            Lista de Deseos
-
-                                        </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-                        </li>
-
-
-                        <!-- CARRITO -->
-                        <li class="nav-item">
-
-                            <button type="button"
-                                class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasCarrito"
-                                aria-controls="offcanvasCarrito"
-                                aria-label="Ver carrito">
-
-                                <i class="bi bi-bag fs-2"></i>
-
-                                <span id="cart-count"
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
-                                    style="background-color: #e6007e; font-size: 0.85rem;">
-
-                                    0
-
-                                </span>
-
-                            </button>
-
-                        </li>
-
-                    </ul>
-
-                </div>
+                </ul>
 
             </div>
 
-        </nav>
+        </div>
+
+    </nav>
 
 
+    <!-- ==================================================
+         CONTENIDO
+    ================================================== -->
+    <main class="container py-5">
 
-        <!-- ==================================================
-             CONTENIDO
-             ================================================== -->
-
-        <main class="container py-5">
-
-
-            <!-- ENCABEZADO -->
-            <div class="mb-5">
-
-                <a href="perfilUsuario.html"
-                    class="text-decoration-none text-muted">
-
-                    <i class="bi bi-arrow-left me-2"></i>
-
-                    Volver a mi cuenta
-
-                </a>
+        <div class="cuenta-panel bg-white rounded-4 shadow-sm overflow-hidden">
 
 
-                <h1 class="fw-bold mt-3 mb-2">
+            <!-- ================= ENCABEZADO ================= -->
+            <header class="p-4 p-lg-5 border-bottom">
+
+                <span class="text-rosa small fw-semibold">
+                    MI CUENTA
+                </span>
+
+                <h1 class="fw-bold mt-2 mb-1">
                     Lista de deseos
                 </h1>
-
 
                 <p class="text-muted mb-0">
                     Guarda tus productos favoritos para comprarlos más tarde.
                 </p>
 
-            </div>
+            </header>
 
 
-
-            <!-- ==================================================
-                 BARRA LATERAL + FAVORITOS
-                 ================================================== -->
-
-            <div class="row g-4 align-items-start">
+            <div class="row g-0">
 
 
-                <!-- ==================================================
-                     BARRA LATERAL
-                     ================================================== -->
+                <!-- ================= SIDEBAR ================= -->
+                <aside class="col-lg-3 border-end">
 
-                <aside class="col-lg-3">
+                    <nav class="p-3 p-lg-4">
 
-                    <div class="card border-0 shadow-sm">
+                        <a href="perfilUsuario.html" class="perfil-menu-item">
 
-                        <div class="card-body p-3">
+                            <i class="bi bi-person"></i>
 
+                            Mi perfil
 
-                            <a href="perfilUsuario.html"
-                                class="perfil-menu-item text-decoration-none d-block">
-
-                                <i class="bi bi-person me-2"></i>
-
-                                Mi perfil
-
-                            </a>
+                        </a>
 
 
-                            <a href="usuarioCompras.html"
-                                class="perfil-menu-item text-decoration-none d-block">
+                        <a href="usuarioCompras.html" class="perfil-menu-item">
 
-                                <i class="bi bi-box-seam me-2"></i>
+                            <i class="bi bi-box-seam"></i>
 
-                                Mis compras
+                            Mis compras
 
-                            </a>
-
-
-                            <a href="usuarioDirecciones.html"
-                                class="perfil-menu-item text-decoration-none d-block">
-
-                                <i class="bi bi-geo-alt me-2"></i>
-
-                                Mis direcciones
-
-                            </a>
+                        </a>
 
 
-                            <a href="usuarioPagos.html"
-                                class="perfil-menu-item text-decoration-none d-block">
+                        <a href="usuarioDirecciones.html" class="perfil-menu-item">
 
-                                <i class="bi bi-credit-card me-2"></i>
+                            <i class="bi bi-geo-alt"></i>
 
-                                Métodos de pago
+                            Mis direcciones
 
-                            </a>
-
-
-                            <a href="usuarioSeguridad.html"
-                                class="perfil-menu-item text-decoration-none d-block">
-
-                                <i class="bi bi-shield-lock me-2"></i>
-
-                                Seguridad
-
-                            </a>
+                        </a>
 
 
-                            <a href="usuarioFavoritos.html"
-                                class="perfil-menu-item active text-decoration-none d-block">
+                        <a href="usuarioPagos.html" class="perfil-menu-item">
 
-                                <i class="bi bi-heart-fill me-2"></i>
+                            <i class="bi bi-credit-card"></i>
 
-                                Lista de deseos
+                            Métodos de pago
 
-                            </a>
-
-
-                            <hr>
+                        </a>
 
 
-                            <a href="#"
-                                class="perfil-menu-item text-danger text-decoration-none d-block">
+                        <a href="usuarioSeguridad.html" class="perfil-menu-item">
 
-                                <i class="bi bi-box-arrow-right me-2"></i>
+                            <i class="bi bi-shield-lock"></i>
 
-                                Cerrar sesión
+                            Seguridad
 
-                            </a>
+                        </a>
 
-                        </div>
 
-                    </div>
+                        <a href="usuarioFavoritos.html" class="perfil-menu-item active">
+
+                            <i class="bi bi-heart-fill"></i>
+
+                            Lista de deseos
+
+                        </a>
+
+
+                        <hr class="my-3">
+
+
+                        <a href="#" class="perfil-menu-item text-danger">
+
+                            <i class="bi bi-box-arrow-right"></i>
+
+                            Cerrar sesión
+
+                        </a>
+
+                    </nav>
 
                 </aside>
 
 
-
-                <!-- ==================================================
-                     CONTENIDO FAVORITOS
-                     ================================================== -->
-
+                <!-- ================= FAVORITOS ================= -->
                 <section class="col-lg-9">
 
+                    <div class="p-4 p-lg-5">
 
-                    <!-- CABECERA -->
-                    <div class="d-flex flex-wrap
-                        justify-content-between
-                        align-items-center
-                        gap-3
-                        mb-4">
 
-                        <div>
+                        <!-- Cabecera favoritos -->
+                        <div class="d-flex flex-wrap
+                                    justify-content-between
+                                    align-items-center
+                                    gap-3
+                                    pb-4
+                                    mb-4
+                                    border-bottom">
 
-                            <h4 class="fw-bold mb-1">
-                                Mis favoritos
-                            </h4>
+                            <div>
 
-                            <p class="text-muted mb-0">
-                                4 productos guardados
-                            </p>
+                                <h3 class="fw-bold mb-1">
+                                    Mis favoritos
+                                </h3>
+
+                                <p class="text-muted mb-0">
+                                    4 productos guardados
+                                </p>
+
+                            </div>
+
+
+                            <button type="button" class="btn btn-dark">
+
+                                <i class="bi bi-cart-plus me-2"></i>
+
+                                Agregar todos al carrito
+
+                            </button>
 
                         </div>
 
 
-                        <button type="button"
-                            class="btn btn-outline-dark">
-
-                            <i class="bi bi-cart-plus me-2"></i>
-
-                            Agregar todos al carrito
-
-                        </button>
-
-                    </div>
+                        <!-- ================= PRODUCTOS ================= -->
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
 
 
+                            <!-- ================= TOY STORY ================= -->
+                            <div class="col">
 
-                    <!-- ==================================================
-                         PRODUCTOS
-                         ================================================== -->
+                                <article class="card producto-card h-100 border-0 shadow-sm">
 
-                    <div class="row g-4">
+                                    <div class="producto-imagen">
 
+                                        <img src="img/SETTOYSTORY2.webp" class="card-img-top"
+                                            alt="Set decoración Toy Story">
 
-                        <!-- ==================================================
-                             TOY STORY
-                             ================================================== -->
-
-                        <div class="col-md-6 col-xl-4">
-
-                            <article class="card card-producto h-100 border-0">
-
-                                <div class="producto-imagen">
-
-                                    <img src="img/SETTOYSTORY2.webp"
-                                        class="card-img-top"
-                                        alt="Set decoración Toy Story">
-
-
-                                    <span class="badge producto-badge">
-                                        Pack cumpleaños
-                                    </span>
-
-
-                                    <button type="button"
-                                        class="btn-favorito"
-                                        aria-label="Quitar Toy Story de favoritos">
-
-                                        <i class="bi bi-heart-fill"></i>
-
-                                    </button>
-
-                                </div>
-
-
-                                <div class="card-body d-flex flex-column p-4">
-
-                                    <small class="producto-categoria mb-2">
-                                        Toy Story
-                                    </small>
-
-
-                                    <h5 class="card-title fw-bold mb-2">
-                                        Set decoración Toy Story
-                                    </h5>
-
-
-                                    <p class="producto-descripcion">
-
-                                        Una aventura junto a Woody, Buzz y sus
-                                        amigos para una fiesta llena de diversión.
-
-                                    </p>
-
-
-                                    <div class="mt-auto">
-
-                                        <div class="producto-stock mb-2">
-
-                                            <i class="bi bi-check-circle-fill me-1"></i>
-
-                                            En existencia
-
-                                        </div>
-
-
-                                        <div class="mb-3">
-
-                                            <span class="producto-precio">
-                                                $19.990
-                                            </span>
-
-                                        </div>
+                                        <span class="badge bg-rosa producto-badge">
+                                            Pack cumpleaños
+                                        </span>
 
 
                                         <button type="button"
-                                            class="btn btn-carrito w-100">
+                                            class="btn btn-light rounded-circle btn-favorito activo shadow-sm"
+                                            aria-label="Quitar Toy Story de favoritos">
 
-                                            <i class="bi bi-bag-plus me-2"></i>
-
-                                            Añadir al carrito
+                                            <i class="bi bi-heart-fill"></i>
 
                                         </button>
 
                                     </div>
 
-                                </div>
 
-                            </article>
+                                    <div class="card-body d-flex flex-column p-4">
 
-                        </div>
+                                        <small class="text-rosa fw-semibold mb-2">
+                                            Toy Story
+                                        </small>
 
+                                        <h5 class="card-title fw-bold">
+                                            Set decoración Toy Story
+                                        </h5>
 
-
-                        <!-- ==================================================
-                             MERLINA
-                             ================================================== -->
-
-                        <div class="col-md-6 col-xl-4">
-
-                            <article class="card card-producto h-100 border-0">
-
-                                <div class="producto-imagen">
-
-                                    <img src="img/SETMERLINA.webp"
-                                        class="card-img-top"
-                                        alt="Set decoración Merlina">
+                                        <p class="text-muted small">
+                                            Una aventura junto a Woody, Buzz y sus amigos
+                                            para una fiesta llena de diversión.
+                                        </p>
 
 
-                                    <span class="badge producto-badge">
-                                        Pack cumpleaños
-                                    </span>
+                                        <div class="mt-auto">
 
+                                            <p class="text-success small mb-2">
 
-                                    <button type="button"
-                                        class="btn-favorito"
-                                        aria-label="Quitar Merlina de favoritos">
+                                                <i class="bi bi-check-circle-fill me-1"></i>
 
-                                        <i class="bi bi-heart-fill"></i>
+                                                En existencia
 
-                                    </button>
+                                            </p>
 
-                                </div>
-
-
-                                <div class="card-body d-flex flex-column p-4">
-
-                                    <small class="producto-categoria mb-2">
-                                        Merlina
-                                    </small>
-
-
-                                    <h5 class="card-title fw-bold mb-2">
-                                        Set decoración Merlina
-                                    </h5>
-
-
-                                    <p class="producto-descripcion">
-
-                                        Una decoración inspirada en Merlina,
-                                        perfecta para una celebración misteriosa
-                                        y diferente.
-
-                                    </p>
-
-
-                                    <div class="mt-auto">
-
-                                        <div class="producto-stock mb-2">
-
-                                            <i class="bi bi-check-circle-fill me-1"></i>
-
-                                            En existencia
-
-                                        </div>
-
-
-                                        <div class="mb-3">
-
-                                            <span class="producto-precio">
+                                            <p class="fs-5 fw-bold mb-3">
                                                 $19.990
-                                            </span>
+                                            </p>
+
+                                            <button type="button" class="btn btn-rosa w-100">
+
+                                                <i class="bi bi-bag-plus me-2"></i>
+
+                                                Añadir al carrito
+
+                                            </button>
 
                                         </div>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <!-- ================= MERLINA ================= -->
+                            <div class="col">
+
+                                <article class="card producto-card h-100 border-0 shadow-sm">
+
+                                    <div class="producto-imagen">
+
+                                        <img src="img/SETMERLINA.webp" class="card-img-top"
+                                            alt="Set decoración Merlina">
+
+                                        <span class="badge bg-rosa producto-badge">
+                                            Pack cumpleaños
+                                        </span>
 
 
                                         <button type="button"
-                                            class="btn btn-carrito w-100">
+                                            class="btn btn-light rounded-circle btn-favorito activo shadow-sm"
+                                            aria-label="Quitar Merlina de favoritos">
 
-                                            <i class="bi bi-bag-plus me-2"></i>
-
-                                            Añadir al carrito
+                                            <i class="bi bi-heart-fill"></i>
 
                                         </button>
 
                                     </div>
 
-                                </div>
 
-                            </article>
+                                    <div class="card-body d-flex flex-column p-4">
 
-                        </div>
+                                        <small class="text-rosa fw-semibold mb-2">
+                                            Merlina
+                                        </small>
 
+                                        <h5 class="card-title fw-bold">
+                                            Set decoración Merlina
+                                        </h5>
 
-
-                        <!-- ==================================================
-                             MASHA Y EL OSO
-                             ================================================== -->
-
-                        <div class="col-md-6 col-xl-4">
-
-                            <article class="card card-producto h-100 border-0">
-
-                                <div class="producto-imagen">
-
-                                    <img src="img/SETMASHA.webp"
-                                        class="card-img-top"
-                                        alt="Set decoración Masha y el Oso">
+                                        <p class="text-muted small">
+                                            Una decoración inspirada en Merlina,
+                                            perfecta para una celebración misteriosa
+                                            y diferente.
+                                        </p>
 
 
-                                    <span class="badge producto-badge">
-                                        Pack cumpleaños
-                                    </span>
+                                        <div class="mt-auto">
 
+                                            <p class="text-success small mb-2">
 
-                                    <button type="button"
-                                        class="btn-favorito"
-                                        aria-label="Quitar Masha de favoritos">
+                                                <i class="bi bi-check-circle-fill me-1"></i>
 
-                                        <i class="bi bi-heart-fill"></i>
+                                                En existencia
 
-                                    </button>
+                                            </p>
 
-                                </div>
-
-
-                                <div class="card-body d-flex flex-column p-4">
-
-                                    <small class="producto-categoria mb-2">
-                                        Masha y el Oso
-                                    </small>
-
-
-                                    <h5 class="card-title fw-bold mb-2">
-                                        Set decoración Masha
-                                    </h5>
-
-
-                                    <p class="producto-descripcion">
-
-                                        Una divertida fiesta inspirada en Masha
-                                        y el Oso, llena de color y ternura.
-
-                                    </p>
-
-
-                                    <div class="mt-auto">
-
-                                        <div class="producto-stock mb-2">
-
-                                            <i class="bi bi-check-circle-fill me-1"></i>
-
-                                            En existencia
-
-                                        </div>
-
-
-                                        <div class="mb-3">
-
-                                            <span class="producto-precio">
+                                            <p class="fs-5 fw-bold mb-3">
                                                 $19.990
-                                            </span>
+                                            </p>
+
+                                            <button type="button" class="btn btn-rosa w-100">
+
+                                                <i class="bi bi-bag-plus me-2"></i>
+
+                                                Añadir al carrito
+
+                                            </button>
 
                                         </div>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <!-- ================= MASHA ================= -->
+                            <div class="col">
+
+                                <article class="card producto-card h-100 border-0 shadow-sm">
+
+                                    <div class="producto-imagen">
+
+                                        <img src="img/SETMASHA.webp" class="card-img-top"
+                                            alt="Set decoración Masha y el Oso">
+
+                                        <span class="badge bg-rosa producto-badge">
+                                            Pack cumpleaños
+                                        </span>
 
 
                                         <button type="button"
-                                            class="btn btn-carrito w-100">
+                                            class="btn btn-light rounded-circle btn-favorito activo shadow-sm"
+                                            aria-label="Quitar Masha de favoritos">
 
-                                            <i class="bi bi-bag-plus me-2"></i>
-
-                                            Añadir al carrito
+                                            <i class="bi bi-heart-fill"></i>
 
                                         </button>
 
                                     </div>
 
-                                </div>
 
-                            </article>
+                                    <div class="card-body d-flex flex-column p-4">
 
-                        </div>
+                                        <small class="text-rosa fw-semibold mb-2">
+                                            Masha y el Oso
+                                        </small>
 
+                                        <h5 class="card-title fw-bold">
+                                            Set decoración Masha
+                                        </h5>
 
-
-                        <!-- ==================================================
-                             MARIO BROS
-                             ================================================== -->
-
-                        <div class="col-md-6 col-xl-4">
-
-                            <article class="card card-producto h-100 border-0">
-
-                                <div class="producto-imagen">
-
-                                    <img src="img/SETMARIO.webp"
-                                        class="card-img-top"
-                                        alt="Set decoración Mario Bros">
+                                        <p class="text-muted small">
+                                            Una divertida fiesta inspirada en Masha y
+                                            el Oso, llena de color y ternura.
+                                        </p>
 
 
-                                    <span class="badge producto-badge">
-                                        Pack cumpleaños
-                                    </span>
+                                        <div class="mt-auto">
 
+                                            <p class="text-success small mb-2">
 
-                                    <button type="button"
-                                        class="btn-favorito"
-                                        aria-label="Quitar Mario Bros de favoritos">
+                                                <i class="bi bi-check-circle-fill me-1"></i>
 
-                                        <i class="bi bi-heart-fill"></i>
+                                                En existencia
 
-                                    </button>
+                                            </p>
 
-                                </div>
-
-
-                                <div class="card-body d-flex flex-column p-4">
-
-                                    <small class="producto-categoria mb-2">
-                                        Mario Bros
-                                    </small>
-
-
-                                    <h5 class="card-title fw-bold mb-2">
-                                        Set decoración Mario Bros
-                                    </h5>
-
-
-                                    <p class="producto-descripcion">
-
-                                        Celebra con Mario, Luigi y sus amigos en
-                                        una fiesta llena de aventuras y diversión.
-
-                                    </p>
-
-
-                                    <div class="mt-auto">
-
-                                        <div class="producto-stock mb-2">
-
-                                            <i class="bi bi-check-circle-fill me-1"></i>
-
-                                            En existencia
-
-                                        </div>
-
-
-                                        <div class="mb-3">
-
-                                            <span class="producto-precio">
+                                            <p class="fs-5 fw-bold mb-3">
                                                 $19.990
-                                            </span>
+                                            </p>
+
+                                            <button type="button" class="btn btn-rosa w-100">
+
+                                                <i class="bi bi-bag-plus me-2"></i>
+
+                                                Añadir al carrito
+
+                                            </button>
 
                                         </div>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <!-- ================= MARIO BROS ================= -->
+                            <div class="col">
+
+                                <article class="card producto-card h-100 border-0 shadow-sm">
+
+                                    <div class="producto-imagen">
+
+                                        <img src="img/SETMARIO.webp" class="card-img-top"
+                                            alt="Set decoración Mario Bros">
+
+                                        <span class="badge bg-rosa producto-badge">
+                                            Pack cumpleaños
+                                        </span>
 
 
                                         <button type="button"
-                                            class="btn btn-carrito w-100">
+                                            class="btn btn-light rounded-circle btn-favorito activo shadow-sm"
+                                            aria-label="Quitar Mario Bros de favoritos">
 
-                                            <i class="bi bi-bag-plus me-2"></i>
-
-                                            Añadir al carrito
+                                            <i class="bi bi-heart-fill"></i>
 
                                         </button>
 
                                     </div>
 
-                                </div>
 
-                            </article>
+                                    <div class="card-body d-flex flex-column p-4">
+
+                                        <small class="text-rosa fw-semibold mb-2">
+                                            Mario Bros
+                                        </small>
+
+                                        <h5 class="card-title fw-bold">
+                                            Set decoración Mario Bros
+                                        </h5>
+
+                                        <p class="text-muted small">
+                                            Celebra con Mario, Luigi y sus amigos
+                                            en una fiesta llena de aventuras y diversión.
+                                        </p>
+
+
+                                        <div class="mt-auto">
+
+                                            <p class="text-success small mb-2">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+
+                                                En existencia
+
+                                            </p>
+
+                                            <p class="fs-5 fw-bold mb-3">
+                                                $19.990
+                                            </p>
+
+                                            <button type="button" class="btn btn-rosa w-100">
+
+                                                <i class="bi bi-bag-plus me-2"></i>
+
+                                                Añadir al carrito
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
 
                         </div>
-
 
                     </div>
 
@@ -966,144 +740,138 @@
 
             </div>
 
-        </main>
+        </div>
+
+    </main>
 
 
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
 
-        <!-- ==================================================
-             FOOTER
-             ================================================== -->
+        <div class="container">
 
-        <footer class="bg-dark text-white pt-5 pb-3 mt-5">
-
-            <div class="container">
-
-                <div class="row g-4">
+            <div class="row g-4">
 
 
-                    <!-- MARCA -->
-                    <div class="col-md-4">
+                <!-- Marca -->
+                <div class="col-md-4">
 
-                        <h5 class="fw-bold">
-                            🎈 Villa del Globo
-                        </h5>
+                    <h5 class="fw-bold">
+                        🎈 Villa del Globo
+                    </h5>
 
-                        <p class="text-secondary">
+                    <p class="text-secondary">
+                        Todo lo que necesitas para tus fiestas:
+                        cotillón, decoración, globos, disfraces y mucho más.
+                    </p>
 
-                            Todo lo que necesitas para tus fiestas:
-                            cotillón, decoración, globos, disfraces
-                            y mucho más.
-
-                        </p>
-
-                    </div>
+                </div>
 
 
-                    <!-- TIENDA -->
-                    <div class="col-md-4">
+                <!-- Tienda -->
+                <div class="col-md-4">
 
-                        <h6 class="fw-bold">
-                            Tienda
-                        </h6>
+                    <h6 class="fw-bold">
+                        Tienda
+                    </h6>
 
-                        <ul class="list-unstyled">
+                    <ul class="list-unstyled">
 
-                            <li>
-                                <a href="index.html"
-                                    class="link-light text-decoration-none">
+                        <li>
+                            <a href="index.html" class="link-light text-decoration-none">
 
-                                    Inicio
-
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#"
-                                    class="link-light text-decoration-none">
-
-                                    Nuestra Tienda
-
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="packs.html"
-                                    class="link-light text-decoration-none">
-
-                                    Packs Decoración
-
-                                </a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <!-- CONTACTO -->
-                    <div class="col-md-4">
-
-                        <h6 class="fw-bold">
-                            Contacto
-                        </h6>
-
-                        <ul class="list-unstyled text-secondary">
-
-                            <li>
-                                📞 9 7909 9900
-                            </li>
-
-                            <li>
-                                ✉️ villadelglobospa@gmail.com
-                            </li>
-
-                        </ul>
-
-
-                        <div class="mt-2">
-
-                            <a href="#"
-                                class="link-light me-3">
-
-                                Facebook
+                                Inicio
 
                             </a>
+                        </li>
 
-                            <a href="#"
-                                class="link-light">
+                        <li>
+                            <a href="#" class="link-light text-decoration-none">
 
-                                Instagram
+                                Nuestra Tienda
 
                             </a>
+                        </li>
 
-                        </div>
+                        <li>
+                            <a href="packs.html" class="link-light text-decoration-none">
+
+                                Packs Decoración
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Contacto -->
+                <div class="col-md-4">
+
+                    <h6 class="fw-bold">
+                        Contacto
+                    </h6>
+
+                    <ul class="list-unstyled text-secondary">
+
+                        <li>
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            9 7909 9900
+                        </li>
+
+                        <li>
+                            <i class="bi bi-envelope-fill me-2"></i>
+                            villadelglobospa@gmail.com
+                        </li>
+
+                    </ul>
+
+
+                    <!-- Redes sociales -->
+                    <div class="d-flex gap-3 mt-3">
+
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                            class="link-light text-decoration-none" aria-label="Facebook">
+
+                            <i class="bi bi-facebook fs-4"></i>
+
+                        </a>
+
+
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                            class="link-light text-decoration-none" aria-label="Instagram">
+
+                            <i class="bi bi-instagram fs-4"></i>
+
+                        </a>
 
                     </div>
 
                 </div>
 
-
-                <hr class="border-secondary my-4">
-
-
-                <p class="text-center text-secondary mb-0">
-
-                    &copy; 2026 Villa del Globo.
-                    Todos los derechos reservados.
-
-                </p>
-
             </div>
 
-        </footer>
 
-    </div>
+            <hr class="border-secondary my-4">
+
+
+            <p class="text-center text-secondary mb-0">
+
+                &copy; 2026 Villa del Globo.
+                Todos los derechos reservados.
+
+            </p>
+
+        </div>
+
+    </footer>
 
 
     <!-- Bootstrap Bundle -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

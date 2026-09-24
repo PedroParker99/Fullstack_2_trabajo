@@ -323,97 +323,64 @@ body {
 
 /* ===== INICIO DEV2 ===== */
 
-/* =========================================================
-   VARIABLES
-   ========================================================= */
+/* =========================================
+   VILLA DEL GLOBO
+   ========================================= */
 
 :root {
     --rosa: #e6007e;
     --rosa-hover: #c9006e;
-    --rosa-claro: #fce4f2;
-    --gris-claro: #f5f5f5;
-    --gris-borde: #eee;
-    --texto: #333;
-    --texto-suave: #6c757d;
+    --rosa-claro: #fff0f7;
+}
+
+body {
+    background: #f5f6f8;
+}
+
+.text-rosa {
+    color: var(--rosa) !important;
+}
+
+.bg-rosa {
+    background: var(--rosa) !important;
 }
 
 
-/* =========================================================
-   PACKS
-   ========================================================= */
+/* ===== BOTÓN ROSA ===== */
 
-.packs-contenedor {
-    max-width: 1320px;
+.btn-rosa {
+    background: var(--rosa);
+    border-color: var(--rosa);
+    color: #fff;
 }
 
-
-/* Encabezado */
-
-.packs-header {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--gris-borde);
+.btn-rosa:hover {
+    background: var(--rosa-hover);
+    border-color: var(--rosa-hover);
+    color: #fff;
 }
 
-.packs-header h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-}
-
-.packs-header p {
-    max-width: 650px;
-}
-
-.packs-etiqueta,
-.producto-categoria,
-.packs-header .breadcrumb a {
-    color: var(--rosa);
-}
-
-.packs-etiqueta,
-.producto-categoria {
-    font-weight: 700;
-}
-
-.packs-header .breadcrumb a {
-    text-decoration: none;
-}
+/* =========================================
+   PACKS / PRODUCTOS
+   ========================================= */
 
 .ordenar-productos {
-    width: 100%;
-    max-width: 340px;
-}
-
-
-/* =========================================================
-   FILTROS
-   ========================================================= */
-
-.filtros-packs {
-    position: sticky;
-    top: 105px;
-    padding: 1.4rem;
-    background: #fff;
-    border: 1px solid var(--gris-borde);
-    border-radius: 16px;
+    width: 350px;
+    max-width: 100%;
 }
 
 .filtro-grupo {
     padding: 1rem 0;
-    border-top: 1px solid var(--gris-borde);
-}
-
-.filtro-grupo:last-child {
-    padding-bottom: 0;
+    border-top: 1px solid #dee2e6;
 }
 
 .filtro-titulo {
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 0;
     border: 0;
     background: transparent;
-    color: #212529;
     font-weight: 600;
 }
 
@@ -421,177 +388,108 @@ body {
     color: var(--rosa);
 }
 
-.filtro-contenido {
-    padding-top: 1rem;
-}
-
-
-/* Flecha */
-
 .flecha {
-    transition: transform .3s;
+    transition: .2s;
 }
 
 .filtro-titulo[aria-expanded="false"] .flecha {
     transform: rotate(180deg);
 }
 
-
-/* Checkbox */
-
-.filtros-packs .form-check-label {
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.filtros-packs .form-check-input {
-    cursor: pointer;
-}
-
-.filtros-packs .form-check-input:checked {
+.form-check-input:checked {
     background-color: var(--rosa);
     border-color: var(--rosa);
 }
 
 
-/* =========================================================
-   TARJETAS DE PRODUCTOS
-   ========================================================= */
+/* ===== PRODUCTOS ===== */
 
-.card-producto {
+.producto-card {
     overflow: hidden;
-    border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 4px 15px #00000014;
-    transition: .3s;
+    border-radius: 1rem;
+    transition: .2s;
 }
 
-.card-producto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px #00000021;
+.producto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .12) !important;
 }
-
-
-/* Imagen */
 
 .producto-imagen {
     position: relative;
-    height: 300px;
+    height: 260px;
     overflow: hidden;
-    background: var(--gris-claro);
+    background: #f8f9fa;
 }
 
 .producto-imagen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform .3s;
 }
-
-.card-producto:hover .producto-imagen img {
-    transform: scale(1.04);
-}
-
-
-/* Badge */
 
 .producto-badge {
     position: absolute;
-    top: 14px;
-    left: 14px;
-    padding: .5rem .75rem;
-    border-radius: 20px;
-    background: var(--rosa);
-    color: #fff;
+    top: 12px;
+    left: 12px;
 }
-
-
-/* Favoritos */
 
 .btn-favorito {
     position: absolute;
-    top: 14px;
-    right: 14px;
+    top: 12px;
+    right: 12px;
+
     width: 40px;
     height: 40px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border: 0;
-    border-radius: 50%;
-    background: #fff;
     color: var(--rosa);
-    box-shadow: 0 3px 10px #00000026;
-    transition: .2s;
 }
 
-.btn-favorito:hover {
-    background: var(--rosa);
+.btn-favorito:hover,
+.btn-favorito.activo {
+    background: var(--rosa) !important;
     color: #fff;
 }
 
 
-/* Información producto */
+/* =========================================
+   ÁREA DE USUARIO
+   ========================================= */
 
-.producto-categoria,
-.producto-stock {
-    font-size: .8rem;
-}
-
-.producto-descripcion {
-    color: var(--texto-suave);
-    font-size: .9rem;
-    line-height: 1.5;
-}
-
-.producto-stock {
-    color: #198754;
-}
-
-.producto-precio {
-    font-size: 1.35rem;
-    font-weight: 700;
-}
-
-.producto-precio-anterior {
-    color: #999;
-    font-size: .9rem;
-    text-decoration: line-through;
+.cuenta-panel {
+    min-height: 650px;
 }
 
 
-/* Botón carrito */
-
-.btn-carrito {
-    padding: .7rem;
-    border: 0;
-    border-radius: 10px;
-    background: var(--rosa);
-    color: #fff;
-    font-weight: 600;
-}
-
-.btn-carrito:hover {
-    background: var(--rosa-hover);
-    color: #fff;
-}
-
-
-/* =========================================================
-   MENÚ PERFIL
-   ========================================================= */
+/* ===== MENÚ LATERAL ===== */
 
 .perfil-menu-item {
-    display: block;
-    padding: .85rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+
+    padding: .8rem 1rem;
     margin-bottom: .25rem;
+
     border-radius: .5rem;
-    color: var(--texto);
-    cursor: pointer;
-    transition: .2s;
+
+    color: #333;
+    text-decoration: none;
+}
+
+.perfil-menu-item i {
+    width: 20px;
 }
 
 .perfil-menu-item:hover {
-    background: #f8f8f8;
-    transform: translateX(3px);
+    background: #f8f9fa;
+    color: var(--rosa);
 }
 
 .perfil-menu-item.active {
@@ -600,118 +498,153 @@ body {
     font-weight: 600;
 }
 
-.perfil-menu-item i {
-    width: 22px;
+
+/* =========================================
+   COMPRAS
+   ========================================= */
+
+.compras-orden {
+    width: 160px;
 }
 
-.perfil-menu-item.text-danger:hover {
-    background: #fff0f0;
+.pedido-imagen {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.pedido:hover {
+    background: #fafafa;
 }
 
 
-/* =========================================================
-   ICONOS DE CUENTA
-   Direcciones / Pagos / Seguridad
-   ========================================================= */
-
-/*
-   Estas tres clases comparten el mismo diseño.
-   Así evitamos repetir casi el mismo CSS tres veces.
-*/
+/* =========================================
+   DIRECCIONES / PAGOS
+   ========================================= */
 
 .direccion-icono,
 .pago-icono,
-.seguridad-icono {
+.perfil-icono {
     width: 48px;
     height: 48px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     flex-shrink: 0;
+
     border-radius: 50%;
+
     background: var(--rosa-claro);
     color: var(--rosa);
-    font-size: 1.2rem;
 }
 
+.badge-principal {
+    background: var(--rosa-claro);
+    color: var(--rosa);
+}
 
-/* =========================================================
-   DIRECCIONES
-   ========================================================= */
-
-.direccion-datos {
-    padding-left: 58px;
+.direccion-item:hover,
+.pago-item:hover {
+    background: #fafafa;
 }
 
 .direccion-agregar {
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px dashed #d9d9d9;
-    border-radius: .75rem;
-    background: #fff;
-    color: var(--texto);
-    transition: .2s;
+    border: 2px dashed #dee2e6;
 }
 
 .direccion-agregar:hover {
     border-color: var(--rosa);
-    background: #fff8fc;
+    background: var(--rosa-claro);
     color: var(--rosa);
 }
 
-.direccion-agregar small {
-    margin-top: .25rem;
+
+/* =========================================
+   SEGURIDAD
+   ========================================= */
+
+.seguridad-seccion {
+    padding: 2rem 0;
+    border-bottom: 1px solid #dee2e6;
 }
 
 
-/* =========================================================
-   MÉTODOS DE PAGO
-   ========================================================= */
+/* Iconos circulares */
 
-.pago-informacion {
-    padding-left: 64px;
-}
+.seguridad-icono,
+.sesion-icono,
+.actividad-icono,
+.peligro-icono,
+.proteccion-icono {
+    width: 45px;
+    height: 45px;
 
-.pago-metodo-icono,
-.sesion-icono {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--gris-claro);
-    color: var(--texto);
-}
 
-.pago-metodo-icono {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
-    font-size: 1.15rem;
-}
+    flex-shrink: 0;
 
-.pago-metodo-icono i {
-    line-height: 1;
+    border-radius: 50%;
 }
 
 
-/* =========================================================
-   SEGURIDAD Y SESIONES
-   ========================================================= */
+/* Seguridad */
+
+.seguridad-icono,
+.actividad-icono {
+    background: var(--rosa-claro);
+    color: var(--rosa);
+}
+
+
+/* Sesión */
+
+.sesion-icono {
+    background: #f1f3f5;
+    color: #495057;
+}
+
+
+/* Eliminar cuenta */
+
+.peligro-icono {
+    background: #fdecef;
+    color: #dc3545;
+}
+
+
+/* Protección */
+
+.proteccion-icono {
+    background: #e8f7ee;
+    color: #198754;
+}
+
+
+/* Switch */
+
+.form-switch .form-check-input {
+    cursor: pointer;
+}
+
+.form-switch .form-check-input:checked {
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+}
+
+
+/* Sesiones */
 
 .sesion-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-}
 
-.sesion-icono {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    font-size: 1.1rem;
+    gap: 1rem;
+    padding: 1.25rem 0;
 }
 
 
@@ -719,128 +652,78 @@ body {
 
 .actividad-item {
     display: flex;
-    align-items: flex-start;
     gap: 1rem;
-    padding: 1rem 0;
-}
 
-.actividad-item + .actividad-item {
-    border-top: 1px solid var(--gris-borde);
-}
-
-.actividad-icono {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--gris-claro);
-    color: #555;
+    padding-bottom: 1.5rem;
 }
 
 
-/* =========================================================
-   LISTA DE DESEOS
-   ========================================================= */
+/* Avisos */
 
-.favorito-card {
-    overflow: hidden;
-    border-radius: 12px;
-    transition: .2s;
+.aviso-seguridad {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: .6rem;
 }
 
-.favorito-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px #0000001f !important;
-}
+.zona-peligro {
+    padding: 1.25rem;
 
+    border: 1px solid rgba(220, 53, 69, .25);
+    border-radius: .75rem;
 
-/* Imagen */
-
-.favorito-imagen {
-    position: relative;
-    height: 230px;
-    overflow: hidden;
-    background: var(--gris-claro);
-}
-
-.favorito-imagen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .3s;
-}
-
-.favorito-card:hover .favorito-imagen img {
-    transform: scale(1.05);
+    background: #fffafa;
 }
 
 
-/* Corazón */
+/* =========================================
+   FOOTER
+   ========================================= */
 
-.favorito-corazon {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-    border-radius: 50%;
-    background: #fff;
-    color: var(--rosa);
-    font-size: 1.1rem;
-    box-shadow: 0 3px 10px #00000026;
-    transition: .2s;
-}
-
-.favorito-corazon:hover {
-    transform: scale(1.1);
-    background: var(--rosa);
-    color: #fff;
+footer a:hover {
+    opacity: .7;
 }
 
 
-/* Badge */
-
-.favorito-badge {
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-    padding: 5px 10px;
-    border-radius: 20px;
-    background: var(--rosa);
-    color: #fff;
-    font-size: .75rem;
-    font-weight: 600;
-}
-
-
-/* Precio */
-
-.favorito-precio {
-    color: var(--rosa);
-    font-size: 1.15rem;
-    font-weight: 700;
-}
-
-
-/* =========================================================
+/* =========================================
    RESPONSIVE
-   ========================================================= */
+   ========================================= */
 
-@media (max-width: 991px) {
-    .filtros-packs {
-        position: static;
-    }
+@media (max-width: 991.98px) {
 
+    .mega-menu,
     .ordenar-productos {
+        width: 100%;
         max-width: 100%;
     }
+
+    .cuenta-panel aside {
+        border-right: 0 !important;
+        border-bottom: 1px solid #dee2e6;
+    }
+}
+
+
+@media (max-width: 575.98px) {
+
+    .producto-imagen {
+        height: 280px;
+    }
+
+    .compras-orden {
+        width: 100%;
+    }
+
+    .pedido-imagen {
+        width: 85px;
+        height: 85px;
+    }
+
+    .sesion-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
 }
 
 /* ===== FIN DEV2 ===== */

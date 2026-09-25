@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis direcciones | Villa del Globo</title>
 
-    <!-- Bootstrap 5 -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <!-- CSS -->
@@ -18,44 +16,37 @@
 
 <body>
 
-    <!-- ========= NAVBAR ========= -->
-    <!-- El "#" Se ocupara para aún no mandar a ninguna parte-->
-    <!-- Se deja con el nav, para que pueda identificar que cumple ese rol -->
-    <!-- navbar-light es para señalar el color-->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <!--navbar-light es para señalar el color-->
-        <!--container centra el contenido y genera margenes laterales -->
         <div class="container">
-            <!-- Logo / marca -->
             <a class="navbar-brand" href="index.html">
                 <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
             </a>
-            <!-- Botón hamburguesa (solo aparece en celular) -->
-            <!-- navbar-toggler es para el modo hamburguesa de celular, además que el target menuPrincipal
-            le dice que elemento debe abrir/cerrar, por eso el id de abajo debe coincidir perfectamente-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Contenido que se colapsa en celular, acá se coloca la id que nombré arriba -->
+
             <div class="collapse navbar-collapse" id="menuPrincipal">
-                <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
-                <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
-                <!-- ===== INICIO GRUPO 1 ===== -->
-                <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
-                    <!-- Apartado "Boton de Inicio" -->
+
+                <!-- Menú principal -->
+                <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Inicio</a>
+                        <a class="nav-link" href="index.html">Inicio</a>
                     </li>
-                    <!-- Apartado "Boton de Nuestra Tienda" -->
+
                     <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Nuestra tienda </a>
-                        <!-- ===  INICIO OPCIONES DE TEMATICAS === -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Nuestra tienda
+                        </a>
+
                         <div class="dropdown-menu mega-menu p-4">
-                            <div class="row">
-                                <div class="col">
+                            <div class="row g-4">
+                                <div class="col-lg-4">
                                     <h6 class="fw-bold">Temáticas 1</h6>
-                                    <ul class="list-unstyled">
+                                    <ul class="list-unstyled mb-0">
                                         <li><a href="#" class="dropdown-item px-0">Among Us</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Baby Shark</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Barbie</a></li>
@@ -66,23 +57,25 @@
                                         <li><a href="#" class="dropdown-item px-0">Circo Digital</a></li>
                                     </ul>
                                 </div>
-                                <div class="col">
+
+                                <div class="col-lg-4">
                                     <h6 class="fw-bold">Temáticas 2</h6>
-                                    <ul class="list-unstyled">
+                                    <ul class="list-unstyled mb-0">
                                         <li><a href="#" class="dropdown-item px-0">Dragon Ball</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Dinosaurio</a></li>
                                         <li><a href="#" class="dropdown-item px-0">FNAF</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Frozen</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Guerreras K-pop</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Hello kitty</a></li>
+                                        <li><a href="#" class="dropdown-item px-0">Hello Kitty</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Intensamente</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Kuromi</a></li>
                                     </ul>
                                 </div>
-                                <div class="col">
+
+                                <div class="col-lg-4">
                                     <h6 class="fw-bold">Temáticas 3</h6>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#" class="dropdown-item px-0">Mario Bross</a></li>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="dropdown-item px-0">Mario Bros</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Masha</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Merlina</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Mickey Mouse</a></li>
@@ -93,278 +86,155 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- ===  FIN OPCIONES DE TEMATICAS === -->
                     </li>
-                    <!-- Apartado "Boton de Packs de Decoración" -->
+
                     <li class="nav-item">
                         <a class="nav-link" href="packs.html">Packs Decoración Cumpleaños</a>
                     </li>
                 </ul>
-                <!-- ===== FIN GRUPO 1 =====-->
 
-
-                <!-- ===== INICIO GRUPO 2 ===== -->
-                <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
-
-                    <!-- BUSCADOR -->
+                <!-- Iconos -->
+                <ul class="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
                     <li class="nav-item">
-                        <button type="button" class="btn btn-link text-dark p-0 me-3 border-0 shadow-none"
+                        <button type="button" class="btn btn-link text-dark p-0 border-0 shadow-none"
                             data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
-
                             <i class="bi bi-search fs-2"></i>
-
                         </button>
                     </li>
 
-
-                    <!-- PERFIL -->
                     <li class="nav-item">
-
-                        <div class="dropdown me-3">
-
+                        <div class="dropdown">
                             <button class="btn btn-link text-dark p-0 border-0 shadow-none" type="button"
                                 id="dropdownPerfil" data-bs-toggle="dropdown" aria-expanded="false"
                                 aria-label="Cuenta de usuario">
-
                                 <i class="bi bi-person fs-2"></i>
-
                             </button>
 
-                            <!-- MENÚ PERFIL -->
-                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
-                                aria-labelledby="dropdownPerfil"
-                                style="border-radius: 12px; min-width: 220px; z-index: 1050;">
-
+                            <ul id="menuUsuario" class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
+                                aria-labelledby="dropdownPerfil">
                                 <li>
                                     <div class="px-2 py-1">
-                                        <p class="mb-0 small text-muted">
-                                            ¡Hola! Bienvenido a
-                                        </p>
-
-                                        <h6 class="fw-bold text-dark mb-0">
-                                            Villa del Globo
-                                        </h6>
+                                        <p class="mb-0 small text-muted">¡Hola! Bienvenido a</p>
+                                        <h6 class="fw-bold mb-0">Villa del Globo</h6>
                                     </div>
                                 </li>
-
                                 <li>
                                     <hr class="dropdown-divider my-2">
                                 </li>
-
                                 <li>
-                                    <button class="dropdown-item rounded py-2 fw-semibold text-white mb-1
-                               d-flex align-items-center justify-content-center" data-bs-toggle="modal"
-                                        data-bs-target="#modalLogin" style="background-color: #e6007e;">
-
+                                    <button type="button"
+                                        class="dropdown-item rounded py-2 fw-semibold text-white text-center bg-rosa"
+                                        data-bs-toggle="modal" data-bs-target="#modalLogin">
                                         <i class="bi bi-box-arrow-in-right me-2"></i>
-
-                                        Iniciar Sesión
+                                        Iniciar sesión
                                     </button>
                                 </li>
-
                                 <li>
-                                    <a class="dropdown-item rounded py-2 text-muted small d-flex align-items-center"
-                                        href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
-
+                                    <a class="dropdown-item rounded py-2 text-muted small" href="#"
+                                        data-bs-toggle="modal" data-bs-target="#modalLogin">
                                         <i class="bi bi-person-plus me-2"></i>
-
                                         ¿No tienes cuenta? Regístrate
                                     </a>
                                 </li>
-
                             </ul>
-
                         </div>
-
                     </li>
 
-                    <!-- CARRITO -->
                     <li class="nav-item">
-
                         <button type="button" class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
                             data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito"
                             aria-controls="offcanvasCarrito" aria-label="Ver carrito">
-
                             <i class="bi bi-bag fs-2"></i>
-
-                            <!-- Contador -->
                             <span id="cart-count"
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
-                                style="background-color: #e6007e; font-size: 0.85rem;">
-
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-rosa">
                                 0
-
                             </span>
-
                         </button>
-
                     </li>
-
                 </ul>
-                <!-- ===== FIN GRUPO 2 ===== -->
             </div>
         </div>
     </nav>
 
-    <!-- ==============================
-     BUSCADOR
-================================== -->
-    <div class="modal fade" id="modalBuscador" tabindex="-1">
+    <!-- BUSCADOR -->
+    <div class="modal fade" id="modalBuscador" tabindex="-1" aria-labelledby="tituloBuscador" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
+            <div class="modal-content border-0 shadow">
                 <div class="modal-header">
-                    <h5 class="modal-title">
-                        <i class="bi bi-search me-2"></i>
-                        Buscar productos
-                    </h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-                    </button>
+                    <h5 class="modal-title" id="tituloBuscador">Buscar productos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
 
                 <div class="modal-body">
-
-                    <input type="search" id="buscador" class="form-control" placeholder="Buscar productos...">
-
-                    <div id="resultadosBusqueda" class="mt-3"></div>
-
+                    <form id="formBuscador">
+                        <div class="input-group">
+                            <input type="search" id="buscador" class="form-control"
+                                placeholder="Buscar Toy Story, Mario Bros..." required>
+                            <button class="btn btn-rosa" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-
             </div>
         </div>
     </div>
 
-
-    <!-- ==============================
-     LOGIN
-================================== -->
-    <div class="modal fade" id="modalLogin" tabindex="-1">
-
+    <!-- LOGIN -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="tituloLogin" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-
             <div class="modal-content">
-
                 <div class="modal-header">
-
-                    <h5 class="modal-title">
-                        Iniciar sesión
-                    </h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-                    </button>
-
+                    <h5 class="modal-title" id="tituloLogin">Iniciar sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
 
-
                 <div class="modal-body">
-
                     <form id="formLogin">
-
                         <div class="mb-3">
-
-                            <label for="correoLogin" class="form-label">
-                                Correo electrónico
-                            </label>
-
+                            <label for="correoLogin" class="form-label">Correo electrónico</label>
                             <input type="email" id="correoLogin" class="form-control" required>
-
                         </div>
-
 
                         <div class="mb-3">
-
-                            <label for="passwordLogin" class="form-label">
-                                Contraseña
-                            </label>
-
+                            <label for="passwordLogin" class="form-label">Contraseña</label>
                             <input type="password" id="passwordLogin" class="form-control" required>
-
                         </div>
 
-
-                        <button type="submit" class="btn btn-rosa w-100">
-
-                            Iniciar sesión
-
-                        </button>
-
+                        <button type="submit" class="btn btn-rosa w-100">Iniciar sesión</button>
                     </form>
 
-                    <p id="mensajeLogin" class="text-center mt-3">
-                    </p>
-
+                    <p id="mensajeLogin" class="text-center mt-3 mb-0"></p>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
-
-    <!-- ==============================
-     CARRITO
-================================== -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
-
+    <!-- CARRITO -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito" aria-labelledby="tituloCarrito">
         <div class="offcanvas-header">
-
-            <h5 class="offcanvas-title">
-
+            <h5 class="offcanvas-title" id="tituloCarrito">
                 <i class="bi bi-bag me-2"></i>
-
                 Mi carrito
-
             </h5>
-
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
-            </button>
-
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
         </div>
-
 
         <div class="offcanvas-body d-flex flex-column">
+            <div id="carritoProductos" class="flex-grow-1"></div>
 
-            <!-- Aquí JavaScript mostrará los productos -->
-            <div id="carritoProductos" class="flex-grow-1">
-
-            </div>
-
-
-            <!-- Total -->
             <div class="border-top pt-3">
-
                 <div class="d-flex justify-content-between mb-3">
-
-                    <span>
-                        Total:
-                    </span>
-
-                    <strong id="carritoTotal">
-                        $0
-                    </strong>
-
+                    <span>Total:</span>
+                    <strong id="carritoTotal">$0</strong>
                 </div>
-
-
-                <button type="button" class="btn btn-rosa w-100">
-
-                    Finalizar compra
-
-                </button>
-
+                <button type="button" class="btn btn-rosa w-100">Finalizar compra</button>
             </div>
-
         </div>
-
     </div>
-    <!-- ======= FIN DEL NAVBAR ======= -->
 
-
-    <!-- ================= MI CUENTA ================= -->
+    <!-- MIS DIRECCIONES -->
     <main class="container py-5">
-
         <div class="cuenta-panel bg-white rounded-4 shadow-sm overflow-hidden">
 
             <!-- Encabezado -->
@@ -378,297 +248,239 @@
 
             <div class="row g-0">
 
-                <!-- Sidebar -->
+                <!-- Menú lateral -->
                 <aside class="col-lg-3 border-end">
                     <nav class="p-3 p-lg-4">
-
                         <a href="perfilUsuario.html" class="perfil-menu-item">
-                            <i class="bi bi-person"></i> Mi perfil
+                            <i class="bi bi-person"></i>
+                            Mi perfil
                         </a>
 
                         <a href="usuarioCompras.html" class="perfil-menu-item">
-                            <i class="bi bi-box-seam"></i> Mis compras
+                            <i class="bi bi-box-seam"></i>
+                            Mis compras
                         </a>
 
                         <a href="usuarioDirecciones.html" class="perfil-menu-item active">
-                            <i class="bi bi-geo-alt"></i> Mis direcciones
+                            <i class="bi bi-geo-alt"></i>
+                            Mis direcciones
                         </a>
 
                         <a href="usuarioPagos.html" class="perfil-menu-item">
-                            <i class="bi bi-credit-card"></i> Métodos de pago
+                            <i class="bi bi-credit-card"></i>
+                            Métodos de pago
                         </a>
 
                         <a href="usuarioSeguridad.html" class="perfil-menu-item">
-                            <i class="bi bi-shield-lock"></i> Seguridad
+                            <i class="bi bi-shield-lock"></i>
+                            Seguridad
                         </a>
 
                         <a href="usuarioFavoritos.html" class="perfil-menu-item">
-                            <i class="bi bi-heart"></i> Lista de deseos
+                            <i class="bi bi-heart"></i>
+                            Lista de deseos
                         </a>
 
                         <hr class="my-3">
 
                         <a href="#" class="perfil-menu-item text-danger">
-                            <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+                            <i class="bi bi-box-arrow-right"></i>
+                            Cerrar sesión
                         </a>
-
                     </nav>
                 </aside>
 
-
-                <!-- Contenido -->
+                <!-- Direcciones -->
                 <section class="col-lg-9">
                     <div class="p-4 p-lg-5">
 
                         <!-- Cabecera -->
-                        <div
-                            class="d-flex flex-wrap justify-content-between align-items-center gap-3 pb-4 border-bottom">
-                            <div>
-                                <h3 class="fw-bold mb-1">Direcciones guardadas</h3>
-                                <p class="text-muted mb-0">
-                                    Tienes 2 direcciones guardadas.
-                                </p>
-                            </div>
-
-                            <button type="button" class="btn btn-dark">
-                                <i class="bi bi-plus-lg me-2"></i>
-                                Agregar dirección
-                            </button>
+                        <div class="pb-4 border-bottom">
+                            <h3 class="fw-bold mb-1">Direcciones guardadas</h3>
+                            <p id="cantidadDirecciones" class="text-muted mb-0">
+                                No tienes direcciones guardadas.
+                            </p>
                         </div>
 
+                        <!-- Lista generada por JavaScript -->
+                        <div id="listaDirecciones"></div>
 
-                        <!-- ================= CASA ================= -->
-                        <article class="direccion-item py-4 border-bottom">
-
-                            <div class="row g-3">
-
-                                <!-- Icono -->
-                                <div class="col-auto">
-                                    <div class="direccion-icono">
-                                        <i class="bi bi-house"></i>
-                                    </div>
-                                </div>
-
-                                <!-- Datos -->
-                                <div class="col">
-
-                                    <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
-                                        <h5 class="fw-bold mb-0">Casa</h5>
-
-                                        <span class="badge badge-principal rounded-pill">
-                                            Principal
-                                        </span>
-                                    </div>
-
-                                    <small class="text-muted d-block mb-3">
-                                        Dirección de entrega
-                                    </small>
-
-                                    <h6 class="fw-bold mb-2">Juan Pérez</h6>
-
-                                    <p class="mb-1">Av. Principal 1234</p>
-                                    <p class="mb-1">Departamento 502</p>
-                                    <p class="text-muted mb-1">Concepción, Biobío</p>
-                                    <p class="text-muted mb-3">Chile</p>
-
-                                    <small class="text-muted">
-                                        <i class="bi bi-telephone me-2"></i>
-                                        +56 9 1234 5678
-                                    </small>
-
-                                </div>
-
-                                <!-- Opciones -->
-                                <div class="col-auto">
-
-                                    <div class="dropdown">
-
-                                        <button class="btn btn-light border" type="button" data-bs-toggle="dropdown"
-                                            aria-expanded="false" aria-label="Opciones de dirección">
-
-                                            <i class="bi bi-three-dots"></i>
-
-                                        </button>
-
-                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-
-                                            <li>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="bi bi-pencil me-2"></i>
-                                                    Editar
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="bi bi-star me-2"></i>
-                                                    Quitar principal
-                                                </a>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- ================= TRABAJO ================= -->
-                        <article class="direccion-item py-4 border-bottom">
-
-                            <div class="row g-3">
-
-                                <!-- Icono -->
-                                <div class="col-auto">
-                                    <div class="direccion-icono">
-                                        <i class="bi bi-building"></i>
-                                    </div>
-                                </div>
-
-                                <!-- Datos -->
-                                <div class="col">
-
-                                    <h5 class="fw-bold mb-1">Trabajo</h5>
-
-                                    <small class="text-muted d-block mb-3">
-                                        Dirección alternativa
-                                    </small>
-
-                                    <h6 class="fw-bold mb-2">Juan Pérez</h6>
-
-                                    <p class="mb-1">Av. Los Carrera 567</p>
-                                    <p class="mb-1">Oficina 204</p>
-                                    <p class="text-muted mb-1">Concepción, Biobío</p>
-                                    <p class="text-muted mb-3">Chile</p>
-
-                                    <small class="text-muted">
-                                        <i class="bi bi-telephone me-2"></i>
-                                        +56 9 1234 5678
-                                    </small>
-
-                                </div>
-
-                                <!-- Opciones -->
-                                <div class="col-auto">
-
-                                    <div class="dropdown">
-
-                                        <button class="btn btn-light border" type="button" data-bs-toggle="dropdown"
-                                            aria-expanded="false" aria-label="Opciones de dirección">
-
-                                            <i class="bi bi-three-dots"></i>
-
-                                        </button>
-
-                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-
-                                            <li>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="bi bi-pencil me-2"></i>
-                                                    Editar
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="bi bi-star me-2"></i>
-                                                    Establecer como principal
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-
-                                            <li>
-                                                <a class="dropdown-item text-danger" href="#">
-                                                    <i class="bi bi-trash me-2"></i>
-                                                    Eliminar
-                                                </a>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- Agregar otra dirección -->
-                        <button type="button" class="direccion-agregar btn w-100 mt-4 py-4">
-
+                        <!-- Único botón para agregar -->
+                        <button type="button" class="direccion-agregar btn w-100 mt-4 py-4 btn-nueva-direccion"
+                            data-bs-toggle="modal" data-bs-target="#modalDireccion">
                             <i class="bi bi-plus-circle fs-3"></i>
-
                             <span class="d-block fw-semibold mt-1">
                                 Agregar una nueva dirección
                             </span>
-
                             <small class="text-muted">
                                 Guarda otra dirección para tus pedidos.
                             </small>
-
                         </button>
 
                     </div>
                 </section>
-
             </div>
         </div>
-
     </main>
 
+    <!-- MODAL DIRECCIÓN -->
+    <div class="modal fade" id="modalDireccion" tabindex="-1" aria-labelledby="tituloModalDireccion" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
 
-    <!-- ===== FOOTER ===== -->
-    <!-- Padding arriba de 5 y abajo de 3, el mt-5 ayuda a separar el footer del contenido de arriba-->
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="tituloModalDireccion">
+                        Agregar dirección
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <form id="formDireccion">
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <label for="direccionNombre" class="form-label">
+                                    Nombre de la dirección
+                                </label>
+                                <input type="text" id="direccionNombre" class="form-control"
+                                    placeholder="Ej: Casa, Trabajo" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="direccionDestinatario" class="form-label">
+                                    Nombre del destinatario
+                                </label>
+                                <input type="text" id="direccionDestinatario" class="form-control" required>
+                            </div>
+
+                            <div class="col-md-8">
+                                <label for="direccionCalle" class="form-label">
+                                    Dirección
+                                </label>
+                                <input type="text" id="direccionCalle" class="form-control" placeholder="Calle y número"
+                                    required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="direccionDetalle" class="form-label">
+                                    Depto. / Oficina
+                                </label>
+                                <input type="text" id="direccionDetalle" class="form-control">
+                            </div>
+
+                            <!-- Ubicación -->
+                            <div class="col-md-4">
+                                <label for="direccionComuna" class="form-label">Comuna</label>
+                                <input type="text" id="direccionComuna" class="form-control"
+                                    placeholder="Ej: Talcahuano" required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="direccionCiudad" class="form-label">Ciudad</label>
+                                <input type="text" id="direccionCiudad" class="form-control"
+                                    placeholder="Ej: Concepción" required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="direccionRegion" class="form-label">Región</label>
+                                <input type="text" id="direccionRegion" class="form-control" placeholder="Ej: Biobío"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="direccionPais" class="form-label">
+                                    País
+                                </label>
+                                <input type="text" id="direccionPais" class="form-control" value="Chile" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="direccionTelefono" class="form-label">
+                                    Teléfono
+                                </label>
+                                <input type="tel" id="direccionTelefono" class="form-control"
+                                    placeholder="+56 9 1234 5678" required>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="direccionPrincipal">
+                                    <label class="form-check-label" for="direccionPrincipal">
+                                        Establecer como dirección principal
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <p id="mensajeDireccion" class="text-center mt-3 mb-0"></p>
+
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+
+                            <button type="submit" class="btn btn-rosa">
+                                <i class="bi bi-check-lg me-2"></i>
+                                Guardar dirección
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
     <footer class="bg-dark text-white pt-5 pb-3 mt-5">
         <div class="container">
             <div class="row g-4">
-                <!-- === COLUMNA 1: Marca === -->
-                <!-- col-md-4 En celular cada columna ocupa el 100% (una debajo de otra), y en tablet(md) en adelante se reparten en 3 columnas iguales -->
+
                 <div class="col-md-4">
                     <h5 class="fw-bold">🎈 Villa del Globo</h5>
-                    <!-- Estilo de texto, gris suave, bueno para texto secundario con fondo oscuro -->
                     <p class="text-secondary">
-                        Todo lo que necesitas para tus fiestas:
-                        cotillón, decoración,
+                        Todo lo que necesitas para tus fiestas: cotillón, decoración,
                         globos, disfraces y mucho más.
                     </p>
                 </div>
 
-                <!-- === COLUMNA 2: Tienda === -->
                 <div class="col-md-4">
                     <h6 class="fw-bold">Tienda</h6>
-                    <!-- Estilo del link -->
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="link-light text-decoration-none">Inicio</a></li>
-                        <li><a href="#" class="link-light text-decoration-none">Nuestra Tienda</a></li>
-                        <li><a href="packs.html" class="link-light text-decoration-none">Packs Decoración</a></li>
+                        <li>
+                            <a href="index.html" class="link-light text-decoration-none">
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="link-light text-decoration-none">
+                                Nuestra Tienda
+                            </a>
+                        </li>
+                        <li>
+                            <a href="packs.html" class="link-light text-decoration-none">
+                                Packs Decoración
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- === COLUMNA 3: Contacto === -->
                 <div class="col-md-4">
                     <h6 class="fw-bold">Contacto</h6>
                     <ul class="list-unstyled text-secondary">
                         <li>📞 9 7909 9900</li>
                         <li>✉️ villadelglobospa@gmail.com</li>
                     </ul>
-                    <!-- REDES SOCIALES -->
+
                     <div class="d-flex gap-3 mt-3">
-                        <!-- FACEBOOK -->
                         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
                             class="link-light text-decoration-none fs-4" aria-label="Facebook">
                             <i class="bi bi-facebook"></i>
                         </a>
-                        <!-- INSTAGRAM -->
+
                         <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
                             class="link-light text-decoration-none fs-4" aria-label="Instagram">
                             <i class="bi bi-instagram"></i>
@@ -677,21 +489,19 @@
                 </div>
 
             </div>
-            <!-- Una linea divisoria -->
+
             <hr class="border-secondary my-4">
+
             <p class="text-center text-secondary mb-0">
-                <!-- El &copy; es el símbolo de copyright -->
-                &copy; 2026 Villa del Globo. Todos los derechos
-                reservados.
+                &copy; 2026 Villa del Globo. Todos los derechos reservados.
             </p>
         </div>
     </footer>
-    <!-- ===== FIN FOOTER ===== -->
 
-
-    <!-- Bootstrap Bundle -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/direcciones.js"></script>
 
 </body>
 

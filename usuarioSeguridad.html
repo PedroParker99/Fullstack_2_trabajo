@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Seguridad | Villa del Globo</title>
 
-    <!-- Bootstrap 5 -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <!-- CSS -->
@@ -19,41 +16,36 @@
 
 <body>
 
-    <!-- ========= NAVBAR ========= -->
-    <!-- El "#" Se ocupara para aún no mandar a ninguna parte-->
-    <!-- Se deja con el nav, para que pueda identificar que cumple ese rol -->
-    <!-- navbar-light es para señalar el color-->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <!--navbar-light es para señalar el color-->
-        <!--container centra el contenido y genera margenes laterales -->
         <div class="container">
-            <!-- Logo / marca -->
+
             <a class="navbar-brand" href="index.html">
                 <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
             </a>
-            <!-- Botón hamburguesa (solo aparece en celular) -->
-            <!-- navbar-toggler es para el modo hamburguesa de celular, además que el target menuPrincipal
-            le dice que elemento debe abrir/cerrar, por eso el id de abajo debe coincidir perfectamente-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Contenido que se colapsa en celular, acá se coloca la id que nombré arriba -->
+
             <div class="collapse navbar-collapse" id="menuPrincipal">
-                <!-- El ms-auto obliga que el menu se empuje hacia la derecha -->
-                <!-- Cada <li> es un item, y cada <a> dentro es el link con el estilo correspondiente-->
-                <!-- ===== INICIO GRUPO 1 ===== -->
+
+                <!-- Menú principal -->
                 <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
-                    <!-- Apartado "Boton de Inicio" -->
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Inicio</a>
+                        <a class="nav-link" href="index.html">Inicio</a>
                     </li>
-                    <!-- Apartado "Boton de Nuestra Tienda" -->
+
                     <li class="nav-item dropdown mega-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Nuestra tienda </a>
-                        <!-- ===  INICIO OPCIONES DE TEMATICAS === -->
+                            Nuestra tienda
+                        </a>
+
                         <div class="dropdown-menu mega-menu p-4">
                             <div class="row">
+
                                 <div class="col">
                                     <h6 class="fw-bold">Temáticas 1</h6>
                                     <ul class="list-unstyled">
@@ -67,6 +59,7 @@
                                         <li><a href="#" class="dropdown-item px-0">Circo Digital</a></li>
                                     </ul>
                                 </div>
+
                                 <div class="col">
                                     <h6 class="fw-bold">Temáticas 2</h6>
                                     <ul class="list-unstyled">
@@ -75,15 +68,16 @@
                                         <li><a href="#" class="dropdown-item px-0">FNAF</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Frozen</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Guerreras K-pop</a></li>
-                                        <li><a href="#" class="dropdown-item px-0">Hello kitty</a></li>
+                                        <li><a href="#" class="dropdown-item px-0">Hello Kitty</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Intensamente</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Kuromi</a></li>
                                     </ul>
                                 </div>
+
                                 <div class="col">
                                     <h6 class="fw-bold">Temáticas 3</h6>
                                     <ul class="list-unstyled">
-                                        <li><a href="#" class="dropdown-item px-0">Mario Bross</a></li>
+                                        <li><a href="#" class="dropdown-item px-0">Mario Bros</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Masha</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Merlina</a></li>
                                         <li><a href="#" class="dropdown-item px-0">Mickey Mouse</a></li>
@@ -92,59 +86,45 @@
                                         <li><a href="#" class="dropdown-item px-0">Minnie Mouse</a></li>
                                     </ul>
                                 </div>
+
                             </div>
                         </div>
-                        <!-- ===  FIN OPCIONES DE TEMATICAS === -->
                     </li>
-                    <!-- Apartado "Boton de Packs de Decoración" -->
+
                     <li class="nav-item">
                         <a class="nav-link" href="packs.html">Packs Decoración Cumpleaños</a>
                     </li>
+
                 </ul>
-                <!-- ===== FIN GRUPO 1 =====-->
 
+                <!-- Iconos -->
+                <ul class="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
 
-                <!-- ===== INICIO GRUPO 2 ===== -->
-                <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
-
-                    <!-- BUSCADOR -->
+                    <!-- Buscador -->
                     <li class="nav-item">
-                        <button type="button" class="btn btn-link text-dark p-0 me-3 border-0 shadow-none"
+                        <button type="button" class="btn btn-link text-dark p-0 border-0 shadow-none"
                             data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
-
                             <i class="bi bi-search fs-2"></i>
-
                         </button>
                     </li>
 
-
-                    <!-- PERFIL -->
+                    <!-- Perfil -->
                     <li class="nav-item">
-
-                        <div class="dropdown me-3">
+                        <div class="dropdown">
 
                             <button class="btn btn-link text-dark p-0 border-0 shadow-none" type="button"
                                 id="dropdownPerfil" data-bs-toggle="dropdown" aria-expanded="false"
                                 aria-label="Cuenta de usuario">
-
                                 <i class="bi bi-person fs-2"></i>
-
                             </button>
 
-                            <!-- MENÚ PERFIL -->
-                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
-                                aria-labelledby="dropdownPerfil"
-                                style="border-radius: 12px; min-width: 220px; z-index: 1050;">
+                            <ul id="menuUsuario" class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
+                                aria-labelledby="dropdownPerfil">
 
                                 <li>
                                     <div class="px-2 py-1">
-                                        <p class="mb-0 small text-muted">
-                                            ¡Hola! Bienvenido a
-                                        </p>
-
-                                        <h6 class="fw-bold text-dark mb-0">
-                                            Villa del Globo
-                                        </h6>
+                                        <p class="mb-0 small text-muted">¡Hola! Bienvenido a</p>
+                                        <h6 class="fw-bold mb-0">Villa del Globo</h6>
                                     </div>
                                 </li>
 
@@ -153,278 +133,186 @@
                                 </li>
 
                                 <li>
-                                    <button class="dropdown-item rounded py-2 fw-semibold text-white mb-1
-                               d-flex align-items-center justify-content-center" data-bs-toggle="modal"
-                                        data-bs-target="#modalLogin" style="background-color: #e6007e;">
-
+                                    <button type="button"
+                                        class="dropdown-item rounded py-2 fw-semibold text-white text-center bg-rosa"
+                                        data-bs-toggle="modal" data-bs-target="#modalLogin">
                                         <i class="bi bi-box-arrow-in-right me-2"></i>
-
-                                        Iniciar Sesión
+                                        Iniciar sesión
                                     </button>
                                 </li>
 
                                 <li>
-                                    <a class="dropdown-item rounded py-2 text-muted small d-flex align-items-center"
-                                        href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
-
+                                    <a class="dropdown-item rounded py-2 text-muted small" href="#"
+                                        data-bs-toggle="modal" data-bs-target="#modalLogin">
                                         <i class="bi bi-person-plus me-2"></i>
-
                                         ¿No tienes cuenta? Regístrate
                                     </a>
                                 </li>
 
                             </ul>
-
                         </div>
-
                     </li>
 
-                    <!-- CARRITO -->
+                    <!-- Carrito -->
                     <li class="nav-item">
-
                         <button type="button" class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
                             data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito"
                             aria-controls="offcanvasCarrito" aria-label="Ver carrito">
 
                             <i class="bi bi-bag fs-2"></i>
 
-                            <!-- Contador -->
                             <span id="cart-count"
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
-                                style="background-color: #e6007e; font-size: 0.85rem;">
-
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-rosa">
                                 0
-
                             </span>
-
                         </button>
-
                     </li>
 
                 </ul>
-                <!-- ===== FIN GRUPO 2 ===== -->
             </div>
         </div>
     </nav>
 
-    <!-- ==============================
-     BUSCADOR
-================================== -->
+    <!-- BUSCADOR -->
     <div class="modal fade" id="modalBuscador" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content border-0 shadow">
 
                 <div class="modal-header">
-                    <h5 class="modal-title">
-                        <i class="bi bi-search me-2"></i>
-                        Buscar productos
-                    </h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-                    </button>
+                    <h5 class="modal-title">Buscar productos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
 
                 <div class="modal-body">
+                    <form id="formBuscador">
+                        <div class="input-group">
 
-                    <input type="search" id="buscador" class="form-control" placeholder="Buscar productos...">
+                            <input type="search" id="buscador" class="form-control"
+                                placeholder="Buscar Toy Story, Mario Bros..." required>
 
-                    <div id="resultadosBusqueda" class="mt-3"></div>
+                            <button class="btn btn-rosa" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
 
+                        </div>
+                    </form>
                 </div>
 
             </div>
         </div>
     </div>
 
-
-    <!-- ==============================
-     LOGIN
-================================== -->
+    <!-- LOGIN -->
     <div class="modal fade" id="modalLogin" tabindex="-1">
-
         <div class="modal-dialog modal-dialog-centered">
-
             <div class="modal-content">
 
                 <div class="modal-header">
-
-                    <h5 class="modal-title">
-                        Iniciar sesión
-                    </h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-                    </button>
-
+                    <h5 class="modal-title">Iniciar sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
 
-
                 <div class="modal-body">
-
                     <form id="formLogin">
 
                         <div class="mb-3">
-
-                            <label for="correoLogin" class="form-label">
-                                Correo electrónico
-                            </label>
-
+                            <label for="correoLogin" class="form-label">Correo electrónico</label>
                             <input type="email" id="correoLogin" class="form-control" required>
-
                         </div>
-
 
                         <div class="mb-3">
-
-                            <label for="passwordLogin" class="form-label">
-                                Contraseña
-                            </label>
-
+                            <label for="passwordLogin" class="form-label">Contraseña</label>
                             <input type="password" id="passwordLogin" class="form-control" required>
-
                         </div>
 
-
                         <button type="submit" class="btn btn-rosa w-100">
-
                             Iniciar sesión
-
                         </button>
 
                     </form>
 
-                    <p id="mensajeLogin" class="text-center mt-3">
-                    </p>
-
+                    <p id="mensajeLogin" class="text-center mt-3 mb-0"></p>
                 </div>
 
             </div>
-
         </div>
-
     </div>
 
-
-    <!-- ==============================
-     CARRITO
-================================== -->
+    <!-- CARRITO -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
 
         <div class="offcanvas-header">
-
             <h5 class="offcanvas-title">
-
                 <i class="bi bi-bag me-2"></i>
-
                 Mi carrito
-
             </h5>
 
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
-            </button>
-
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
         </div>
-
 
         <div class="offcanvas-body d-flex flex-column">
 
-            <!-- Aquí JavaScript mostrará los productos -->
-            <div id="carritoProductos" class="flex-grow-1">
+            <div id="carritoProductos" class="flex-grow-1"></div>
 
-            </div>
-
-
-            <!-- Total -->
             <div class="border-top pt-3">
-
                 <div class="d-flex justify-content-between mb-3">
-
-                    <span>
-                        Total:
-                    </span>
-
-                    <strong id="carritoTotal">
-                        $0
-                    </strong>
-
+                    <span>Total:</span>
+                    <strong id="carritoTotal">$0</strong>
                 </div>
 
-
                 <button type="button" class="btn btn-rosa w-100">
-
                     Finalizar compra
-
                 </button>
-
             </div>
 
         </div>
-
     </div>
-    <!-- ======= FIN DEL NAVBAR ======= -->
 
-
-    <!-- ================= CONTENIDO ================= -->
+    <!-- SEGURIDAD -->
     <main class="container py-5">
-
         <div class="cuenta-panel bg-white rounded-4 shadow-sm overflow-hidden">
 
             <!-- Encabezado -->
             <header class="p-4 p-lg-5 border-bottom">
-
-                <span class="text-rosa small fw-semibold">
-                    MI CUENTA
-                </span>
-
-                <h1 class="fw-bold mt-2 mb-1">
-                    Seguridad
-                </h1>
-
+                <span class="text-rosa small fw-semibold">MI CUENTA</span>
+                <h1 class="fw-bold mt-2 mb-1">Seguridad</h1>
                 <p class="text-muted mb-0">
                     Administra la seguridad y el acceso a tu cuenta.
                 </p>
-
             </header>
-
 
             <div class="row g-0">
 
-                <!-- ================= SIDEBAR ================= -->
+                <!-- Menú lateral -->
                 <aside class="col-lg-3 border-end">
-
                     <nav class="p-3 p-lg-4">
 
                         <a href="perfilUsuario.html" class="perfil-menu-item">
-
                             <i class="bi bi-person"></i>
                             Mi perfil
                         </a>
 
                         <a href="usuarioCompras.html" class="perfil-menu-item">
-
                             <i class="bi bi-box-seam"></i>
                             Mis compras
                         </a>
 
                         <a href="usuarioDirecciones.html" class="perfil-menu-item">
-
                             <i class="bi bi-geo-alt"></i>
                             Mis direcciones
                         </a>
 
                         <a href="usuarioPagos.html" class="perfil-menu-item">
-
                             <i class="bi bi-credit-card"></i>
                             Métodos de pago
                         </a>
 
                         <a href="usuarioSeguridad.html" class="perfil-menu-item active">
-
                             <i class="bi bi-shield-lock"></i>
                             Seguridad
                         </a>
 
                         <a href="usuarioFavoritos.html" class="perfil-menu-item">
-
                             <i class="bi bi-heart"></i>
                             Lista de deseos
                         </a>
@@ -432,146 +320,100 @@
                         <hr class="my-3">
 
                         <a href="#" class="perfil-menu-item text-danger">
-
                             <i class="bi bi-box-arrow-right"></i>
                             Cerrar sesión
                         </a>
 
                     </nav>
-
                 </aside>
 
-
-                <!-- ================= SEGURIDAD ================= -->
+                <!-- Contenido -->
                 <section class="col-lg-9">
-
                     <div class="p-4 p-lg-5">
 
-
-                        <!-- ================= CONTRASEÑA ================= -->
+                        <!-- Contraseña -->
                         <section class="seguridad-seccion pt-0">
-
                             <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
 
                                 <div class="d-flex align-items-center">
-
                                     <div class="seguridad-icono me-3">
                                         <i class="bi bi-key"></i>
                                     </div>
 
                                     <div>
-
-                                        <h4 class="fw-bold mb-1">
-                                            Contraseña
-                                        </h4>
-
+                                        <h4 class="fw-bold mb-1">Contraseña</h4>
                                         <p class="text-muted mb-0">
                                             Mantén segura tu cuenta utilizando una contraseña fuerte.
                                         </p>
-
                                     </div>
-
                                 </div>
 
                                 <button type="button" class="btn btn-outline-dark">
-
                                     Cambiar contraseña
                                 </button>
 
                             </div>
 
-
                             <div class="d-flex align-items-center text-muted small mt-4">
-
                                 <i class="bi bi-check-circle-fill text-success me-2"></i>
-
                                 Última actualización: hace 3 meses
-
                             </div>
-
                         </section>
 
-
-                        <!-- ================= VERIFICACIÓN ================= -->
+                        <!-- Verificación -->
                         <section class="seguridad-seccion">
 
                             <div class="d-flex justify-content-between align-items-start gap-3">
 
                                 <div class="d-flex align-items-center">
-
                                     <div class="seguridad-icono me-3">
                                         <i class="bi bi-shield-check"></i>
                                     </div>
 
                                     <div>
-
-                                        <h4 class="fw-bold mb-1">
-                                            Verificación en dos pasos
-                                        </h4>
-
+                                        <h4 class="fw-bold mb-1">Verificación en dos pasos</h4>
                                         <p class="text-muted mb-0">
                                             Añade una capa adicional de seguridad a tu cuenta.
                                         </p>
-
                                     </div>
-
                                 </div>
 
-
-                                <!-- Switch -->
                                 <div class="form-check form-switch fs-4">
-
                                     <input class="form-check-input" type="checkbox" role="switch"
                                         id="verificacionDosPasos" aria-label="Activar verificación en dos pasos">
-
                                 </div>
 
                             </div>
 
-
                             <div class="aviso-seguridad d-flex align-items-start gap-3 mt-4">
-
                                 <i class="bi bi-info-circle"></i>
 
                                 <p class="small text-muted mb-0">
-                                    Cuando esta opción esté activada, se solicitará
-                                    un código adicional al iniciar sesión desde un
-                                    dispositivo nuevo.
+                                    Cuando esta opción esté activada, se solicitará un código adicional
+                                    al iniciar sesión desde un dispositivo nuevo.
                                 </p>
-
                             </div>
 
                         </section>
 
-
-                        <!-- ================= SESIONES ACTIVAS ================= -->
+                        <!-- Sesiones -->
                         <section class="seguridad-seccion">
 
                             <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
-
                                 <div>
-
-                                    <h4 class="fw-bold mb-1">
-                                        Sesiones activas
-                                    </h4>
-
+                                    <h4 class="fw-bold mb-1">Sesiones activas</h4>
                                     <p class="text-muted mb-0">
                                         Revisa los dispositivos donde tienes iniciada tu sesión.
                                     </p>
-
                                 </div>
 
                                 <button type="button" class="btn btn-outline-danger">
-
                                     Cerrar todas
                                 </button>
-
                             </div>
-
 
                             <!-- Dispositivo actual -->
                             <div class="sesion-item">
-
                                 <div class="d-flex align-items-center">
 
                                     <div class="sesion-icono me-3">
@@ -579,20 +421,13 @@
                                     </div>
 
                                     <div>
-
-                                        <h6 class="fw-bold mb-1">
-                                            Este dispositivo
-                                        </h6>
-
-                                        <p class="text-muted small mb-1">
-                                            Chrome · Windows
-                                        </p>
+                                        <h6 class="fw-bold mb-1">Este dispositivo</h6>
+                                        <p class="text-muted small mb-1">Chrome · Windows</p>
 
                                         <small class="text-success">
                                             <i class="bi bi-circle-fill me-1"></i>
                                             Activo ahora
                                         </small>
-
                                     </div>
 
                                 </div>
@@ -600,13 +435,10 @@
                                 <span class="badge rounded-pill bg-success-subtle text-success">
                                     Actual
                                 </span>
-
                             </div>
-
 
                             <!-- Teléfono -->
                             <div class="sesion-item border-top">
-
                                 <div class="d-flex align-items-center">
 
                                     <div class="sesion-icono me-3">
@@ -614,103 +446,61 @@
                                     </div>
 
                                     <div>
-
-                                        <h6 class="fw-bold mb-1">
-                                            Teléfono móvil
-                                        </h6>
-
-                                        <p class="text-muted small mb-1">
-                                            Safari · iPhone
-                                        </p>
-
-                                        <small class="text-muted">
-                                            Último acceso: hace 2 días
-                                        </small>
-
+                                        <h6 class="fw-bold mb-1">Teléfono móvil</h6>
+                                        <p class="text-muted small mb-1">Safari · iPhone</p>
+                                        <small class="text-muted">Último acceso: hace 2 días</small>
                                     </div>
 
                                 </div>
 
                                 <button type="button" class="btn btn-sm btn-outline-danger">
-
                                     Cerrar sesión
                                 </button>
-
                             </div>
 
                         </section>
 
-
-                        <!-- ================= ACTIVIDAD ================= -->
+                        <!-- Actividad -->
                         <section class="seguridad-seccion">
 
-                            <h4 class="fw-bold mb-1">
-                                Actividad de seguridad
-                            </h4>
+                            <h4 class="fw-bold mb-1">Actividad de seguridad</h4>
 
                             <p class="text-muted mb-4">
-                                Revisa los últimos cambios relacionados con
-                                la seguridad de tu cuenta.
+                                Revisa los últimos cambios relacionados con la seguridad de tu cuenta.
                             </p>
 
-
-                            <!-- Inicio sesión -->
                             <div class="actividad-item">
-
                                 <div class="actividad-icono">
                                     <i class="bi bi-box-arrow-in-right"></i>
                                 </div>
 
                                 <div>
-
-                                    <h6 class="fw-bold mb-1">
-                                        Inicio de sesión
-                                    </h6>
-
+                                    <h6 class="fw-bold mb-1">Inicio de sesión</h6>
                                     <p class="text-muted small mb-1">
                                         Se inició sesión desde Chrome en Windows.
                                     </p>
-
-                                    <small class="text-muted">
-                                        Hoy, 10:32
-                                    </small>
-
+                                    <small class="text-muted">Hoy, 10:32</small>
                                 </div>
-
                             </div>
 
-
-                            <!-- Cambio contraseña -->
                             <div class="actividad-item">
-
                                 <div class="actividad-icono">
                                     <i class="bi bi-key"></i>
                                 </div>
 
                                 <div>
-
-                                    <h6 class="fw-bold mb-1">
-                                        Contraseña actualizada
-                                    </h6>
-
+                                    <h6 class="fw-bold mb-1">Contraseña actualizada</h6>
                                     <p class="text-muted small mb-1">
                                         Se realizó un cambio en la contraseña.
                                     </p>
-
-                                    <small class="text-muted">
-                                        12 de junio de 2026
-                                    </small>
-
+                                    <small class="text-muted">12 de junio de 2026</small>
                                 </div>
-
                             </div>
 
                         </section>
 
-
-                        <!-- ================= ZONA DE SEGURIDAD ================= -->
+                        <!-- Eliminar cuenta -->
                         <section class="seguridad-seccion">
-
                             <div class="zona-peligro">
 
                                 <div class="d-flex align-items-start gap-3">
@@ -720,32 +510,24 @@
                                     </div>
 
                                     <div class="flex-grow-1">
-
-                                        <h4 class="fw-bold text-danger mb-2">
-                                            Eliminar cuenta
-                                        </h4>
+                                        <h4 class="fw-bold text-danger mb-2">Eliminar cuenta</h4>
 
                                         <p class="text-muted mb-3">
-                                            Esta acción eliminará permanentemente tu
-                                            cuenta y puede afectar el acceso a tu información.
+                                            Esta acción eliminará permanentemente tu cuenta y puede
+                                            afectar el acceso a tu información.
                                         </p>
 
                                         <button type="button" class="btn btn-outline-danger">
-
                                             <i class="bi bi-trash me-2"></i>
                                             Eliminar mi cuenta
                                         </button>
-
                                     </div>
 
                                 </div>
-
                             </div>
-
                         </section>
 
-
-                        <!-- ================= AVISO FINAL ================= -->
+                        <!-- Protección -->
                         <div class="d-flex align-items-start gap-3 pt-4">
 
                             <div class="proteccion-icono">
@@ -753,52 +535,39 @@
                             </div>
 
                             <div>
-
-                                <h6 class="fw-bold mb-1">
-                                    Protege tu cuenta
-                                </h6>
-
+                                <h6 class="fw-bold mb-1">Protege tu cuenta</h6>
                                 <p class="small text-muted mb-0">
-                                    Nunca compartas tu contraseña ni los códigos
-                                    de seguridad con otras personas.
+                                    Nunca compartas tu contraseña ni los códigos de seguridad
+                                    con otras personas.
                                 </p>
-
                             </div>
 
                         </div>
 
                     </div>
-
                 </section>
 
             </div>
-
         </div>
-
     </main>
 
-
-    <!-- ===== FOOTER ===== -->
-    <!-- Padding arriba de 5 y abajo de 3, el mt-5 ayuda a separar el footer del contenido de arriba-->
+    <!-- FOOTER -->
     <footer class="bg-dark text-white pt-5 pb-3 mt-5">
         <div class="container">
             <div class="row g-4">
-                <!-- === COLUMNA 1: Marca === -->
-                <!-- col-md-4 En celular cada columna ocupa el 100% (una debajo de otra), y en tablet(md) en adelante se reparten en 3 columnas iguales -->
+
+                <!-- Marca -->
                 <div class="col-md-4">
                     <h5 class="fw-bold">🎈 Villa del Globo</h5>
-                    <!-- Estilo de texto, gris suave, bueno para texto secundario con fondo oscuro -->
                     <p class="text-secondary">
-                        Todo lo que necesitas para tus fiestas:
-                        cotillón, decoración,
+                        Todo lo que necesitas para tus fiestas: cotillón, decoración,
                         globos, disfraces y mucho más.
                     </p>
                 </div>
 
-                <!-- === COLUMNA 2: Tienda === -->
+                <!-- Tienda -->
                 <div class="col-md-4">
                     <h6 class="fw-bold">Tienda</h6>
-                    <!-- Estilo del link -->
                     <ul class="list-unstyled">
                         <li><a href="index.html" class="link-light text-decoration-none">Inicio</a></li>
                         <li><a href="#" class="link-light text-decoration-none">Nuestra Tienda</a></li>
@@ -806,21 +575,21 @@
                     </ul>
                 </div>
 
-                <!-- === COLUMNA 3: Contacto === -->
+                <!-- Contacto -->
                 <div class="col-md-4">
                     <h6 class="fw-bold">Contacto</h6>
                     <ul class="list-unstyled text-secondary">
                         <li>📞 9 7909 9900</li>
                         <li>✉️ villadelglobospa@gmail.com</li>
                     </ul>
-                    <!-- REDES SOCIALES -->
+
+                    <!-- Redes sociales -->
                     <div class="d-flex gap-3 mt-3">
-                        <!-- FACEBOOK -->
                         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
                             class="link-light text-decoration-none fs-4" aria-label="Facebook">
                             <i class="bi bi-facebook"></i>
                         </a>
-                        <!-- INSTAGRAM -->
+
                         <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
                             class="link-light text-decoration-none fs-4" aria-label="Instagram">
                             <i class="bi bi-instagram"></i>
@@ -829,19 +598,17 @@
                 </div>
 
             </div>
-            <!-- Una linea divisoria -->
+
             <hr class="border-secondary my-4">
+
             <p class="text-center text-secondary mb-0">
-                <!-- El &copy; es el símbolo de copyright -->
-                &copy; 2026 Villa del Globo. Todos los derechos
-                reservados.
+                &copy; 2026 Villa del Globo. Todos los derechos reservados.
             </p>
         </div>
     </footer>
     <!-- ===== FIN FOOTER ===== -->
 
-
-    <!-- Bootstrap Bundle -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
 

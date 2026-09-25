@@ -23,292 +23,303 @@
     <div class="page-wrapper">
         <div class="d-flex">
 
-        <!-- ===== SIDEBAR ===== -->
-        <!-- flex-shrink-0: no se encoge -->
-        <!-- vh-100: ocupa el 100% del alto de la pantalla -->
-        <!-- position-sticky top-0: se queda fijo aunque hagas scroll en el contenido -->
-        <nav class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0"
-            style="width: 260px;">
+            <!-- ===== SIDEBAR ===== -->
+            <!-- flex-shrink-0: no se encoge -->
+            <!-- vh-100: ocupa el 100% del alto de la pantalla -->
+            <!-- position-sticky top-0: se queda fijo aunque hagas scroll en el contenido -->
+            <nav class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0"
+                style="width: 260px;">
 
-            <!-- Marca del panel -->
-            <a href="perfilAdmin.html" class="d-flex align-items-center mb-3 text-white text-decoration-none">
-                <span class="fs-4">🎈 Panel Admin</span>
-            </a>
-            <hr>
-
-            <!-- === Links de navegación === -->
-            <!-- nav-pills + flex-column: menú vertical con fondo tipo "píldora" en el activo -->
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a href="perfilAdmin.html" class="nav-link active" aria-current="page">
-                        <i class="bi bi-house-door me-2"></i>Inicio
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="adminPedidos.html" class="nav-link text-white">
-                        <i class="bi bi-bag-check me-2"></i>Pedidos
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="adminProductos.html" class="nav-link text-white">
-                        <i class="bi bi-box-seam me-2"></i>Productos
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="adminClientes.html" class="nav-link text-white">
-                        <i class="bi bi-people me-2"></i>Clientes
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="adminDescuentos.html" class="nav-link text-white">
-                        <i class="bi bi-percent me-2"></i>Descuentos
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="adminInformes.html" class="nav-link text-white">
-                        <i class="bi bi-graph-up me-2"></i>Informe y Estadísticas
-                    </a>
-                </li>
-            </ul>
-            <hr>
-
-            <!-- === Pie del sidebar: usuario conectado === -->
-            <div class="dropdown">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                    data-bs-toggle="dropdown">
-                    <i class="bi bi-person-circle me-2 fs-4"></i>
-                    <strong>Admin</strong>
+                <!-- Marca del panel -->
+                <a href="perfilAdmin.html" class="d-flex align-items-center mb-3 text-white text-decoration-none">
+                    <span class="fs-4">🎈 Panel Admin</span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                    <li><a class="dropdown-item" href="#">Configuración</a></li>
-                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                <hr>
+
+                <!-- === Links de navegación === -->
+                <!-- nav-pills + flex-column: menú vertical con fondo tipo "píldora" en el activo -->
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="perfilAdmin.html" class="nav-link active" aria-current="page">
+                            <i class="bi bi-house-door me-2"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminPedidos.html" class="nav-link text-white">
+                            <i class="bi bi-bag-check me-2"></i>Pedidos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminProductos.html" class="nav-link text-white">
+                            <i class="bi bi-box-seam me-2"></i>Productos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminClientes.html" class="nav-link text-white">
+                            <i class="bi bi-people me-2"></i>Clientes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminDescuentos.html" class="nav-link text-white">
+                            <i class="bi bi-percent me-2"></i>Descuentos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminInformes.html" class="nav-link text-white">
+                            <i class="bi bi-graph-up me-2"></i>Informe y Estadísticas
+                        </a>
+                    </li>
                 </ul>
-            </div>
-        </nav>
-        <!-- ===== FIN SIDEBAR ===== -->
+                <hr>
 
-        <!-- ===== CONTENIDO PRINCIPAL ===== -->
-        <main class="flex-grow-1 p-4">
-
-            <!-- === Encabezado y Bienvenida === -->
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <div>
-                    <h1 class="mb-1">¡Hola, Administrador! 👋</h1>
-                    <p class="text-muted mb-0">Resumen operativo y estado general de Villa del Globo hoy.</p>
-                </div>
-                <div>
-                    <a href="index.html" target="_blank" class="btn btn-outline-primary">
-                        <i class="bi bi-shop me-1"></i>Ver Tienda
+                <!-- === Pie del sidebar: usuario conectado === -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle me-2 fs-4"></i>
+                        <strong>Admin</strong>
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="#">Configuración</a></li>
+                        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                    </ul>
                 </div>
-            </div>
+            </nav>
+            <!-- ===== FIN SIDEBAR ===== -->
 
-            <!-- === Resumen del Día (KPIs Rápidos) === -->
-            <div class="row g-3 mb-4">
-                <!-- Ventas de Hoy -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm h-100 border-start border-primary border-4">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="text-muted small fw-bold">VENTAS DE HOY</span>
-                                <i class="bi bi-currency-dollar text-primary fs-4"></i>
-                            </div>
-                            <h3 class="card-title fw-bold mb-1">$185.000</h3>
-                            <span class="small text-muted">12 pedidos realizados hoy</span>
-                        </div>
+            <!-- ===== CONTENIDO PRINCIPAL ===== -->
+            <main class="flex-grow-1 p-4">
+
+                <!-- === Encabezado y Bienvenida === -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h1 class="mb-1">¡Hola, Administrador! 👋</h1>
+                        <p class="text-muted mb-0">Resumen operativo y estado general de Villa del Globo hoy.</p>
                     </div>
-                </div>
-
-                <!-- Pedidos Pendientes -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm h-100 border-start border-warning border-4">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="text-muted small fw-bold">POR PREPARAR</span>
-                                <i class="bi bi-clock-history text-warning fs-4"></i>
-                            </div>
-                            <h3 class="card-title fw-bold mb-1">5</h3>
-                            <span class="badge bg-warning text-dark">Requieren atención</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Alerta Stock Bajo -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm h-100 border-start border-danger border-4">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="text-muted small fw-bold">STOCK CRÍTICO</span>
-                                <i class="bi bi-exclamation-triangle text-danger fs-4"></i>
-                            </div>
-                            <h3 class="card-title fw-bold mb-1">3</h3>
-                            <span class="badge bg-danger-subtle text-danger">Productos sin stock</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Clientes Registrados Hoy -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm h-100 border-start border-success border-4">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="text-muted small fw-bold">NUEVOS CLIENTES</span>
-                                <i class="bi bi-person-check text-success fs-4"></i>
-                            </div>
-                            <h3 class="card-title fw-bold mb-1">4</h3>
-                            <span class="small text-muted">Registrados hoy</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- === Acciones Rápidas === -->
-            <div class="card border-0 shadow-sm mb-4">
-                <div class="card-body">
-                    <h5 class="card-title fs-6 fw-bold mb-3"><i class="bi bi-lightning-charge me-2"></i>Acciones Rápidas</h5>
-                    <div class="d-flex flex-wrap gap-2">
-                        <a href="adminProductos.html" class="btn btn-light border">
-                            <i class="bi bi-plus-circle me-1 text-primary"></i>Agregar Producto
-                        </a>
-                        <a href="adminDescuentos.html" class="btn btn-light border">
-                            <i class="bi bi-tag me-1 text-success"></i>Crear Cupón
-                        </a>
-                        <a href="adminPedidos.html" class="btn btn-light border">
-                            <i class="bi bi-box-seam me-1 text-warning"></i>Gestionar Despachos
-                        </a>
-                        <a href="adminInformes.html" class="btn btn-light border">
-                            <i class="bi bi-file-earmark-bar-graph me-1 text-info"></i>Ver Reporte Completo
+                    <div>
+                        <a href="index.html" target="_blank" class="btn btn-outline-primary">
+                            <i class="bi bi-shop me-1"></i>Ver Tienda
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- === Fila Principal: Últimos Pedidos + Alertas de Stock === -->
-            <div class="row g-4">
-                
-                <!-- Tabla de Últimos Pedidos (8 columnas) -->
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
-                            <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-bag-check me-2"></i>Últimos Pedidos Recibidos</h5>
-                            <a href="adminPedidos.html" class="btn btn-sm btn-link text-decoration-none">Ver todos</a>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Cliente</th>
-                                        <th>Fecha/Hora</th>
-                                        <th>Total</th>
-                                        <th>Estado</th>
-                                        <th class="text-end">Acción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>#1048</strong></td>
-                                        <td>Camila Soto</td>
-                                        <td>Hoy, 12:40 PM</td>
-                                        <td>$24.990</td>
-                                        <td><span class="badge bg-warning text-dark">Pendiente</span></td>
-                                        <td class="text-end">
-                                            <a href="adminPedidos.html" class="btn btn-sm btn-outline-primary">Atender</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>#1047</strong></td>
-                                        <td>Gonzalo Pérez</td>
-                                        <td>Hoy, 11:15 AM</td>
-                                        <td>$15.500</td>
-                                        <td><span class="badge bg-info text-dark">En Preparación</span></td>
-                                        <td class="text-end">
-                                            <a href="adminPedidos.html" class="btn btn-sm btn-outline-primary">Ver</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>#1046</strong></td>
-                                        <td>María Morales</td>
-                                        <td>Hoy, 09:30 AM</td>
-                                        <td>$45.000</td>
-                                        <td><span class="badge bg-primary">Enviado</span></td>
-                                        <td class="text-end">
-                                            <a href="adminPedidos.html" class="btn btn-sm btn-outline-primary">Ver</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>#1045</strong></td>
-                                        <td>Felipe Rojas</td>
-                                        <td>Ayer, 18:20 PM</td>
-                                        <td>$8.990</td>
-                                        <td><span class="badge bg-success">Entregado</span></td>
-                                        <td class="text-end">
-                                            <a href="adminPedidos.html" class="btn btn-sm btn-outline-primary">Ver</a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Panel Lateral: Stock Crítico y Notas (4 columnas) -->
-                <div class="col-lg-4">
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-header bg-white py-3">
-                            <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-exclamation-circle text-danger me-2"></i>Stock Crítico</h5>
-                        </div>
-                        <div class="card-body p-0">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item d-flex justify-content-between align-items-center py-3">
-                                    <div>
-                                        <h6 class="mb-0 fs-6">Globo Helio Metalizado "4"</h6>
-                                        <small class="text-muted">Categoría: Números</small>
-                                    </div>
-                                    <span class="badge bg-danger rounded-pill">0 unid.</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center py-3">
-                                    <div>
-                                        <h6 class="mb-0 fs-6">Inflador Eléctrico 600W</h6>
-                                        <small class="text-muted">Categoría: Accesorios</small>
-                                    </div>
-                                    <span class="badge bg-warning text-dark rounded-pill">2 unid.</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center py-3">
-                                    <div>
-                                        <h6 class="mb-0 fs-6">Set Decoración Pastel Pink</h6>
-                                        <small class="text-muted">Categoría: Sets</small>
-                                    </div>
-                                    <span class="badge bg-warning text-dark rounded-pill">1 unid.</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-footer bg-white text-center py-2">
-                            <a href="adminProductos.html" class="small text-decoration-none">Ir a Inventario de Productos</a>
-                        </div>
-                    </div>
-
-                    <!-- Cupones Activos Rápidos -->
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-header bg-white py-3">
-                            <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-percent text-success me-2"></i>Campaña Activa</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div>
-                                    <span class="badge bg-light text-dark border font-monospace fs-6 mb-1">BIENVENIDA10</span>
-                                    <div class="small text-muted">10% OFF en primera compra</div>
+                <!-- === Resumen del Día (KPIs Rápidos) === -->
+                <div class="row g-3 mb-4">
+                    <!-- Ventas de Hoy -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card border-0 shadow-sm h-100 border-start border-primary border-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="text-muted small fw-bold">VENTAS DE HOY</span>
+                                    <i class="bi bi-currency-dollar text-primary fs-4"></i>
                                 </div>
-                                <span class="badge bg-success">Activo</span>
+                                <h3 class="card-title fw-bold mb-1">$185.000</h3>
+                                <span class="small text-muted">12 pedidos realizados hoy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pedidos Pendientes -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card border-0 shadow-sm h-100 border-start border-warning border-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="text-muted small fw-bold">POR PREPARAR</span>
+                                    <i class="bi bi-clock-history text-warning fs-4"></i>
+                                </div>
+                                <h3 class="card-title fw-bold mb-1">5</h3>
+                                <span class="badge bg-warning text-dark">Requieren atención</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alerta Stock Bajo -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card border-0 shadow-sm h-100 border-start border-danger border-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="text-muted small fw-bold">STOCK CRÍTICO</span>
+                                    <i class="bi bi-exclamation-triangle text-danger fs-4"></i>
+                                </div>
+                                <h3 class="card-title fw-bold mb-1">3</h3>
+                                <span class="badge bg-danger-subtle text-danger">Productos sin stock</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clientes Registrados Hoy -->
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card border-0 shadow-sm h-100 border-start border-success border-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="text-muted small fw-bold">NUEVOS CLIENTES</span>
+                                    <i class="bi bi-person-check text-success fs-4"></i>
+                                </div>
+                                <h3 class="card-title fw-bold mb-1">4</h3>
+                                <span class="small text-muted">Registrados hoy</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-            </div>
+                <!-- === Acciones Rápidas === -->
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold mb-3"><i class="bi bi-lightning-charge me-2"></i>Acciones
+                            Rápidas</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="adminProductos.html" class="btn btn-light border">
+                                <i class="bi bi-plus-circle me-1 text-primary"></i>Agregar Producto
+                            </a>
+                            <a href="adminDescuentos.html" class="btn btn-light border">
+                                <i class="bi bi-tag me-1 text-success"></i>Crear Cupón
+                            </a>
+                            <a href="adminPedidos.html" class="btn btn-light border">
+                                <i class="bi bi-box-seam me-1 text-warning"></i>Gestionar Despachos
+                            </a>
+                            <a href="adminInformes.html" class="btn btn-light border">
+                                <i class="bi bi-file-earmark-bar-graph me-1 text-info"></i>Ver Reporte Completo
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-        </main>
-        <!-- ===== FIN CONTENIDO PRINCIPAL ===== -->
+                <!-- === Fila Principal: Últimos Pedidos + Alertas de Stock === -->
+                <div class="row g-4">
+
+                    <!-- Tabla de Últimos Pedidos (8 columnas) -->
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                                <h5 class="card-title mb-0 fs-6 fw-bold"><i class="bi bi-bag-check me-2"></i>Últimos
+                                    Pedidos Recibidos</h5>
+                                <a href="adminPedidos.html" class="btn btn-sm btn-link text-decoration-none">Ver
+                                    todos</a>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Cliente</th>
+                                            <th>Fecha/Hora</th>
+                                            <th>Total</th>
+                                            <th>Estado</th>
+                                            <th class="text-end">Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>#1048</strong></td>
+                                            <td>Camila Soto</td>
+                                            <td>Hoy, 12:40 PM</td>
+                                            <td>$24.990</td>
+                                            <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                                            <td class="text-end">
+                                                <a href="adminPedidos.html"
+                                                    class="btn btn-sm btn-outline-primary">Atender</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>#1047</strong></td>
+                                            <td>Gonzalo Pérez</td>
+                                            <td>Hoy, 11:15 AM</td>
+                                            <td>$15.500</td>
+                                            <td><span class="badge bg-info text-dark">En Preparación</span></td>
+                                            <td class="text-end">
+                                                <a href="adminPedidos.html"
+                                                    class="btn btn-sm btn-outline-primary">Ver</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>#1046</strong></td>
+                                            <td>María Morales</td>
+                                            <td>Hoy, 09:30 AM</td>
+                                            <td>$45.000</td>
+                                            <td><span class="badge bg-primary">Enviado</span></td>
+                                            <td class="text-end">
+                                                <a href="adminPedidos.html"
+                                                    class="btn btn-sm btn-outline-primary">Ver</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>#1045</strong></td>
+                                            <td>Felipe Rojas</td>
+                                            <td>Ayer, 18:20 PM</td>
+                                            <td>$8.990</td>
+                                            <td><span class="badge bg-success">Entregado</span></td>
+                                            <td class="text-end">
+                                                <a href="adminPedidos.html"
+                                                    class="btn btn-sm btn-outline-primary">Ver</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel Lateral: Stock Crítico y Notas (4 columnas) -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-white py-3">
+                                <h5 class="card-title mb-0 fs-6 fw-bold"><i
+                                        class="bi bi-exclamation-circle text-danger me-2"></i>Stock Crítico</h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                        <div>
+                                            <h6 class="mb-0 fs-6">Globo Helio Metalizado "4"</h6>
+                                            <small class="text-muted">Categoría: Números</small>
+                                        </div>
+                                        <span class="badge bg-danger rounded-pill">0 unid.</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                        <div>
+                                            <h6 class="mb-0 fs-6">Inflador Eléctrico 600W</h6>
+                                            <small class="text-muted">Categoría: Accesorios</small>
+                                        </div>
+                                        <span class="badge bg-warning text-dark rounded-pill">2 unid.</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                        <div>
+                                            <h6 class="mb-0 fs-6">Set Decoración Pastel Pink</h6>
+                                            <small class="text-muted">Categoría: Sets</small>
+                                        </div>
+                                        <span class="badge bg-warning text-dark rounded-pill">1 unid.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-white text-center py-2">
+                                <a href="adminProductos.html" class="small text-decoration-none">Ir a Inventario de
+                                    Productos</a>
+                            </div>
+                        </div>
+
+                        <!-- Cupones Activos Rápidos -->
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white py-3">
+                                <h5 class="card-title mb-0 fs-6 fw-bold"><i
+                                        class="bi bi-percent text-success me-2"></i>Campaña Activa</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <span
+                                            class="badge bg-light text-dark border font-monospace fs-6 mb-1">BIENVENIDA10</span>
+                                        <div class="small text-muted">10% OFF en primera compra</div>
+                                    </div>
+                                    <span class="badge bg-success">Activo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+            <!-- ===== FIN CONTENIDO PRINCIPAL ===== -->
 
         </div>
         <!-- cierra .d-flex -->
@@ -317,8 +328,10 @@
     <!-- cierra .page-wrapper -->
     <!-- ========= FIN LAYOUT ADMIN ========= -->
 
-    <!-- BOOTSTRAP 5 JS BUNDLE -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
 
 </body>
 

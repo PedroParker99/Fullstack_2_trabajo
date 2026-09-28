@@ -333,10 +333,6 @@ body {
     --rosa-claro: #fff0f7;
 }
 
-body {
-    background: #f5f6f8;
-}
-
 .text-rosa {
     color: var(--rosa) !important;
 }

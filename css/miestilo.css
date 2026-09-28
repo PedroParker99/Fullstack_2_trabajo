@@ -329,7 +329,7 @@ body {
 
 /* ===== INICIO DEV2 ===== */
 
-/* VILLA DEL GLOBO */
+
 :root {
     --rosa: #e6007e;
     --rosa-hover: #c9006e;
@@ -652,3 +652,17 @@ footer a:hover {
 }
 
 /* ===== FIN DEV2 ===== */
+
+
+
+/* ===== INICIO DEV1 ===== */
+
+/* Ancho estricto e inalterable para el menú lateral */
+.sidebar-admin {
+    width: 260px !important;
+    min-width: 260px !important;
+    max-width: 260px !important;
+    flex-shrink: 0 !important;
+}
+
+/* ===== FIN DEV1 ===== */

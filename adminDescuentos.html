@@ -23,8 +23,8 @@
         <div class="d-flex min-vh-100">
 
             <!-- ===== SIDEBAR ===== -->
-            <nav class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0"
-                style="width: 260px;">
+            <nav
+                class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 position-sticky top-0 sidebar-admin">
 
                 <!-- Marca del panel -->
                 <a href="perfilAdmin.html" class="d-flex align-items-center mb-3 text-white text-decoration-none">
@@ -75,15 +75,14 @@
                         <strong>Admin</strong>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="#">Configuración</a></li>
-                        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </nav>
             <!-- ===== FIN SIDEBAR ===== -->
 
             <!-- ===== CONTENIDO PRINCIPAL ===== -->
-            <main class="flex-grow-1 p-4">
+            <main class="flex-grow-1 p-4 overflow-x-auto">
 
                 <!-- === Encabezado de la página === -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -100,16 +99,18 @@
                 </div>
 
                 <!-- === Barra de búsqueda y filtros === -->
+                <!-- === Barra de búsqueda y filtros === -->
                 <div class="row g-3 mb-4">
                     <div class="col-md-5 col-lg-4">
                         <div class="input-group">
                             <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Buscar por código promocional...">
+                            <input type="text" id="inputBuscarCupon" class="form-control"
+                                placeholder="Buscar por código promocional..." oninput="filtrarCupones()">
                         </div>
                     </div>
                     <div class="col-md-4 col-lg-3">
-                        <select class="form-select">
-                            <option selected>Todos los tipos</option>
+                        <select id="selectTipoCupon" class="form-select" onchange="filtrarCupones()">
+                            <option value="" selected>Todos los tipos</option>
                             <option value="porcentaje">Porcentaje (%)</option>
                             <option value="monto">Monto Fijo ($)</option>
                             <option value="envio">Envío Gratis</option>
@@ -161,11 +162,8 @@
                                 </thead>
                                 <tbody>
                                     <!-- Cupón 1 -->
-                                    <tr>
-                                        <td>
-                                            <span
-                                                class="badge bg-light text-dark border font-monospace fs-6">BIENVENIDA10</span>
-                                        </td>
+                                    <tr id="fila-CUP-001">
+                                        <td><span class="badge bg-light text-dark border font-monospace fs-6">BIENVENIDA10</span></td>
                                         <td>Porcentaje</td>
                                         <td><strong>10% OFF</strong></td>
                                         <td>45 / 100 usos</td>
@@ -173,32 +171,24 @@
                                         <td><span class="badge bg-success">Activo</span></td>
                                         <td class="text-end">
                                             <div class="dropdown">
-                                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle"
-                                                    data-bs-toggle="dropdown">
-                                                    Acciones
-                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acciones</button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
-                                                                class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item" href="#"><i
-                                                                class="bi bi-bar-chart me-2"></i>Ver estadísticas</a>
-                                                    </li>
                                                     <li>
-                                                        <hr class="dropdown-divider">
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalEditarDescuento" onclick="prepararEdicionCupon('CUP-001')">
+                                                            <i class="bi bi-pencil me-2"></i>Editar
+                                                        </a>
                                                     </li>
-                                                    <li><a class="dropdown-item text-danger" href="#"><i
-                                                                class="bi bi-pause-circle me-2"></i>Desactivar</a></li>
+                                                    <li><a class="dropdown-item" href="#"><i class="bi bi-bar-chart me-2"></i>Ver estadísticas</a></li>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-pause-circle me-2"></i>Desactivar</a></li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
-
+                                
                                     <!-- Cupón 2 -->
-                                    <tr>
-                                        <td>
-                                            <span
-                                                class="badge bg-light text-dark border font-monospace fs-6">FIESTAFIESTA</span>
-                                        </td>
+                                    <tr id="fila-CUP-002">
+                                        <td><span class="badge bg-light text-dark border font-monospace fs-6">FIESTAFIESTA</span></td>
                                         <td>Monto Fijo</td>
                                         <td><strong>$5.000 OFF</strong></td>
                                         <td>12 / 50 usos</td>
@@ -206,32 +196,24 @@
                                         <td><span class="badge bg-success">Activo</span></td>
                                         <td class="text-end">
                                             <div class="dropdown">
-                                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle"
-                                                    data-bs-toggle="dropdown">
-                                                    Acciones
-                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acciones</button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
-                                                                class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item" href="#"><i
-                                                                class="bi bi-bar-chart me-2"></i>Ver estadísticas</a>
-                                                    </li>
                                                     <li>
-                                                        <hr class="dropdown-divider">
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalEditarDescuento" onclick="prepararEdicionCupon('CUP-002')">
+                                                            <i class="bi bi-pencil me-2"></i>Editar
+                                                        </a>
                                                     </li>
-                                                    <li><a class="dropdown-item text-danger" href="#"><i
-                                                                class="bi bi-pause-circle me-2"></i>Desactivar</a></li>
+                                                    <li><a class="dropdown-item" href="#"><i class="bi bi-bar-chart me-2"></i>Ver estadísticas</a></li>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-pause-circle me-2"></i>Desactivar</a></li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
-
+                                
                                     <!-- Cupón 3 -->
-                                    <tr>
-                                        <td>
-                                            <span
-                                                class="badge bg-light text-dark border font-monospace fs-6">CUMPLEOCTUBRE</span>
-                                        </td>
+                                    <tr id="fila-CUP-003">
+                                        <td><span class="badge bg-light text-dark border font-monospace fs-6">CUMPLEOCTUBRE</span></td>
                                         <td>Porcentaje</td>
                                         <td><strong>20% OFF</strong></td>
                                         <td>0 / 200 usos</td>
@@ -239,26 +221,22 @@
                                         <td><span class="badge bg-info text-dark">Programado</span></td>
                                         <td class="text-end">
                                             <div class="dropdown">
-                                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle"
-                                                    data-bs-toggle="dropdown">
-                                                    Acciones
-                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acciones</button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
-                                                                class="bi bi-pencil me-2"></i>Editar</a></li>
-                                                    <li><a class="dropdown-item text-danger" href="#"><i
-                                                                class="bi bi-trash me-2"></i>Eliminar</a></li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalEditarDescuento" onclick="prepararEdicionCupon('CUP-003')">
+                                                            <i class="bi bi-pencil me-2"></i>Editar
+                                                        </a>
+                                                    </li>
+                                                    <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
-
+                                
                                     <!-- Cupón 4 -->
-                                    <tr>
-                                        <td>
-                                            <span
-                                                class="badge bg-light text-dark border font-monospace fs-6">ENVIOFREE</span>
-                                        </td>
+                                    <tr id="fila-CUP-004">
+                                        <td><span class="badge bg-light text-dark border font-monospace fs-6">ENVIOFREE</span></td>
                                         <td>Envío Gratis</td>
                                         <td><strong>100% Envío</strong></td>
                                         <td>30 / 30 usos</td>
@@ -266,16 +244,14 @@
                                         <td><span class="badge bg-secondary">Agotado</span></td>
                                         <td class="text-end">
                                             <div class="dropdown">
-                                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle"
-                                                    data-bs-toggle="dropdown">
-                                                    Acciones
-                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acciones</button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#"><i
-                                                                class="bi bi-arrow-counterclockwise me-2"></i>Reactivar</a>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalEditarDescuento" onclick="prepararEdicionCupon('CUP-004')">
+                                                            <i class="bi bi-pencil me-2"></i>Editar
+                                                        </a>
                                                     </li>
-                                                    <li><a class="dropdown-item text-danger" href="#"><i
-                                                                class="bi bi-trash me-2"></i>Eliminar</a></li>
+                                                    <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
                                                 </ul>
                                             </div>
                                         </td>
@@ -481,10 +457,140 @@
         </div>
     </div>
     <!-- ========= FIN MODAL ========= -->
+     <!-- ========= MODAL: EDITAR DESCUENTO ========= -->
+<div class="modal fade" id="modalEditarDescuento" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title"><i class="bi bi-pencil-square me-2"></i>Editar Cupón de Descuento</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <form id="formEditarCupon" onsubmit="guardarEdicionCupon(event)">
+                <input type="hidden" id="editCuponId">
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="editCodigoCupon" class="form-label fw-bold">Código del Cupón</label>
+                            <input type="text" class="form-control font-monospace text-uppercase" id="editCodigoCupon" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="editTipoDescuento" class="form-label fw-bold">Tipo de Descuento</label>
+                            <select class="form-select" id="editTipoDescuento" required>
+                                <option value="Porcentaje">Porcentaje (%)</option>
+                                <option value="Monto Fijo">Monto Fijo ($)</option>
+                                <option value="Envío Gratis">Envío Gratis</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="editValorDescuento" class="form-label fw-bold">Valor del Descuento</label>
+                            <input type="text" class="form-control" id="editValorDescuento" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="editUsos" class="form-label fw-bold">Usos / Límite</label>
+                            <input type="text" class="form-control" id="editUsos" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="editVigencia" class="form-label fw-bold">Vigencia</label>
+                            <input type="text" class="form-control" id="editVigencia" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="editEstadoCupon" class="form-label fw-bold">Estado</label>
+                            <select class="form-select" id="editEstadoCupon">
+                                <option value="Activo">Activo</option>
+                                <option value="Programado">Programado</option>
+                                <option value="Agotado">Agotado</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
     <!-- BOOTSTRAP 5 JS BUNDLE -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+<script>
+    // BD Simulada de Cupones
+    const cuponesBD = {
+        'CUP-001': { codigo: 'BIENVENIDA10', tipo: 'Porcentaje', valor: '10% OFF', usos: '45 / 100 usos', vigencia: '01-09-2026 al 31-12-2026', estado: 'Activo' },
+        'CUP-002': { codigo: 'FIESTAFIESTA', tipo: 'Monto Fijo', valor: '$5.000 OFF', usos: '12 / 50 usos', vigencia: '15-09-2026 al 30-09-2026', estado: 'Activo' },
+        'CUP-003': { codigo: 'CUMPLEOCTUBRE', tipo: 'Porcentaje', valor: '20% OFF', usos: '0 / 200 usos', vigencia: '01-10-2026 al 31-10-2026', estado: 'Programado' },
+        'CUP-004': { codigo: 'ENVIOFREE', tipo: 'Envío Gratis', valor: '100% Envío', usos: '30 / 30 usos', vigencia: '01-08-2026 al 31-08-2026', estado: 'Agotado' }
+    };
+
+    // Función para Cargar Datos en el Modal Editar
+    function prepararEdicionCupon(id) {
+        const c = cuponesBD[id];
+        if (!c) return;
+
+        document.getElementById('editCuponId').value = id;
+        document.getElementById('editCodigoCupon').value = c.codigo;
+        document.getElementById('editTipoDescuento').value = c.tipo;
+        document.getElementById('editValorDescuento').value = c.valor;
+        document.getElementById('editUsos').value = c.usos;
+        document.getElementById('editVigencia').value = c.vigencia;
+        document.getElementById('editEstadoCupon').value = c.estado;
+    }
+
+    // Función para Guardar Cambios y Actualizar la Tabla
+    function guardarEdicionCupon(event) {
+        event.preventDefault();
+        const id = document.getElementById('editCuponId').value;
+        const c = cuponesBD[id];
+        if (!c) return;
+
+        c.codigo = document.getElementById('editCodigoCupon').value.toUpperCase();
+        c.tipo = document.getElementById('editTipoDescuento').value;
+        c.valor = document.getElementById('editValorDescuento').value;
+        c.usos = document.getElementById('editUsos').value;
+        c.vigencia = document.getElementById('editVigencia').value;
+        c.estado = document.getElementById('editEstadoCupon').value;
+
+        const fila = document.getElementById(`fila-${id}`);
+        if (fila) {
+            fila.cells[0].querySelector('span').textContent = c.codigo;
+            fila.cells[1].textContent = c.tipo;
+            fila.cells[2].querySelector('strong').textContent = c.valor;
+            fila.cells[3].textContent = c.usos;
+            fila.cells[4].textContent = c.vigencia;
+
+            let badgeClass = 'bg-success';
+            if (c.estado === 'Programado') badgeClass = 'bg-info text-dark';
+            if (c.estado === 'Agotado') badgeClass = 'bg-secondary';
+
+            fila.cells[5].innerHTML = `<span class="badge ${badgeClass}">${c.estado}</span>`;
+        }
+
+        const modalElement = document.getElementById('modalEditarDescuento');
+        const modal = bootstrap.Modal.getInstance(modalElement);
+        modal.hide();
+    }
+
+    // Función para Filtrar por Búsqueda y Tipo
+    function filtrarCupones() {
+        const textoBusqueda = document.getElementById('inputBuscarCupon').value.toLowerCase();
+        const tipoSeleccionado = document.getElementById('selectTipoCupon').value.toLowerCase();
+        const filas = document.querySelectorAll('#contenidoTabsDescuentos tbody tr');
+
+        filas.forEach(fila => {
+            const contenido = fila.textContent.toLowerCase();
+            const coincideTexto = contenido.includes(textoBusqueda);
+            const coincideTipo = tipoSeleccionado === '' || contenido.includes(tipoSeleccionado);
+
+            if (coincideTexto && coincideTipo) {
+                fila.style.display = '';
+            } else {
+                fila.style.display = 'none';
+            }
+        });
+    }
+</script>
 
 </html>

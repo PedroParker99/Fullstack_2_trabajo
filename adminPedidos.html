@@ -81,7 +81,11 @@
                         <strong>Admin</strong>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+                        <li>
+                            <button type="button" class="dropdown-item" onclick="cerrarSesion()">
+                                <i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -104,7 +108,7 @@
                     </button>
                 </div>
 
-                <!-- === Barra de búsqueda === -->
+                <!-- ===    Barra de búsqueda === -->
                 <div class="input-group mb-4" style="max-width: 350px;">
                     <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
                     <input type="text" id="inputBuscarPedido" class="form-control"
@@ -462,9 +466,6 @@
     <!-- cierra .page-wrapper -->
     <!-- ========= FIN LAYOUT ADMIN ========= -->
 
-    <!-- COLOCAR BOOTSTRAP 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- ================= MODAL UNIFICADO Y DINÁMICO ================= -->
     <div class="modal fade" id="modalDetallePedido" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -534,181 +535,11 @@
     </div>
     <!-- ================= FIN MODAL UNIFICADO Y DINÁMICO ================= -->
 
-    <script>
-        // Objeto con la información simulada de tus pedidos
-        const pedidosBD = {
-            'VG-1042': {
-                cliente: 'Camila Reyes',
-                email: 'camila.reyes@email.com',
-                direccion: 'Av. Providencia 1234, Depto 502, Santiago',
-                fecha: '18-09-2026',
-                estado: 'Pendiente',
-                badgeClass: 'bg-warning text-dark',
-                total: '$38.990',
-                productos: [
-                    { nombre: '🎈 Pack Globos Pastel Cumpleaños', cant: 2, subtotal: '$25.980' },
-                    { nombre: '✨ Guirnalda Metálica Dorada 3m', cant: 1, subtotal: '$13.010' }
-                ]
-            },
-            'VG-1041': {
-                cliente: 'Matías Soto',
-                email: 'matias.soto@email.com',
-                direccion: 'Calle Los Alerces 456, Concepción',
-                fecha: '17-09-2026',
-                estado: 'Enviado',
-                badgeClass: 'bg-info text-dark',
-                total: '$21.500',
-                productos: [
-                    { nombre: '🎉 Inflador Eléctrico de Globos', cant: 1, subtotal: '$21.500' }
-                ]
-            },
-            'VG-1040': {
-                cliente: 'Francisca Muñoz',
-                email: 'f.munoz@email.com',
-                direccion: 'Aníbal Pinto 789, Valparaíso',
-                fecha: '15-09-2026',
-                estado: 'Completado',
-                badgeClass: 'bg-success text-white',
-                total: '$54.300',
-                productos: [
-                    { nombre: '👑 Kit Decoración Fiesta Deluxe', cant: 1, subtotal: '$40.000' },
-                    { nombre: '🎈 Pack 50 Globos Rojos 12"', cant: 1, subtotal: '$14.300' }
-                ]
-            },
-            'VG-1039': {
-                cliente: 'Ignacio Vera',
-                email: 'ignacio.vera@email.com',
-                direccion: 'Av. Alemania 123, Temuco',
-                fecha: '14-09-2026',
-                estado: 'Cancelado',
-                badgeClass: 'bg-danger text-white',
-                total: '$12.990',
-                productos: [
-                    { nombre: '🎈 Set Globos Metalizados Número 5', cant: 1, subtotal: '$12.990' }
-                ]
-            }
-        };
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
 
-        // Función que reescribe el contenido del modal dinámicamente
-        function cargarDetalle(idPedido) {
-            const pedido = pedidosBD[idPedido];
-            if (!pedido) return;
-
-            // Inyectar datos en el Modal
-            document.getElementById('modalNumPedido').textContent = `#${idPedido}`;
-            document.getElementById('modalFecha').textContent = pedido.fecha;
-            document.getElementById('modalCliente').textContent = pedido.cliente;
-            document.getElementById('modalEmail').textContent = pedido.email;
-            document.getElementById('modalDireccion').textContent = pedido.direccion;
-            document.getElementById('modalTotal').textContent = pedido.total;
-
-            // Cambiar estado y color de badge
-            const badge = document.getElementById('modalEstado');
-            badge.textContent = pedido.estado;
-            badge.className = `badge fs-6 px-3 py-2 ${pedido.badgeClass}`;
-
-            // Construir la tabla de productos dinámicamente
-            const tablaBody = document.getElementById('modalTablaProductos');
-            tablaBody.innerHTML = ''; // Limpiar filas anteriores
-
-            pedido.productos.forEach(prod => {
-                tablaBody.innerHTML += `
-                <tr>
-                    <td>${prod.nombre}</td>
-                    <td class="text-center">${prod.cant}</td>
-                    <td class="text-end fw-semibold">${prod.subtotal}</td>
-                </tr>
-            `;
-            });
-        }
-
-
-        // Función para filtrar filas de pedidos por N° de pedido, cliente o fecha
-        function filtrarPedidos() {
-            const textoBusqueda = document.getElementById('inputBuscarPedido').value.toLowerCase();
-            // Selecciona todas las filas de las tablas en todas las pestañas
-            const filas = document.querySelectorAll('#contenidoTabsPedidos tbody tr');
-
-            filas.forEach(fila => {
-                const contenidoFila = fila.textContent.toLowerCase();
-                if (contenidoFila.includes(textoBusqueda)) {
-                    fila.style.display = '';
-                } else {
-                    fila.style.display = 'none';
-                }
-            });
-        }
-        // Contador correlativo para autogenerar el N° de pedido
-        let contadorPedido = 1043;
-
-        function guardarNuevoPedido(event) {
-            event.preventDefault();
-
-            const idPedido = `VG-${contadorPedido++}`;
-            const cliente = document.getElementById('nuevoCliente').value;
-            const email = document.getElementById('nuevoEmail').value;
-            const direccion = document.getElementById('nuevaDireccion').value;
-            const totalMonto = parseInt(document.getElementById('nuevoTotal').value).toLocaleString('es-CL');
-            const total = `$${totalMonto}`;
-            const estado = document.getElementById('nuevoEstado').value;
-            const productoNombre = document.getElementById('nuevoProducto').value;
-
-            // Obtener la fecha actual en formato DD-MM-YYYY
-            const hoy = new Date();
-            const fecha = `${String(hoy.getDate()).padStart(2, '0')}-${String(hoy.getMonth() + 1).padStart(2, '0')}-${hoy.getFullYear()}`;
-
-            // Determinar la clase Bootstrap para el Badge según el estado seleccionado
-            let badgeClass = 'bg-secondary';
-            if (estado === 'Pendiente') badgeClass = 'bg-warning text-dark';
-            if (estado === 'Enviado') badgeClass = 'bg-info text-dark';
-            if (estado === 'Completado') badgeClass = 'bg-success text-white';
-            if (estado === 'Cancelado') badgeClass = 'bg-danger text-white';
-
-            // 1. Guardar los datos en el objeto global de pedidosBD para permitir ver el detalle
-            pedidosBD[idPedido] = {
-                cliente: cliente,
-                email: email,
-                direccion: direccion,
-                fecha: fecha,
-                estado: estado,
-                badgeClass: badgeClass,
-                total: total,
-                productos: [
-                    { nombre: productoNombre, cant: 1, subtotal: total }
-                ]
-            };
-
-            // 2. Crear dinámicamente la fila HTML e insertarla al principio de la tabla "Todos"
-            const tablaTodos = document.querySelector('#tab-todos tbody');
-            const nuevaFila = document.createElement('tr');
-            nuevaFila.innerHTML = `
-        <td>#${idPedido}</td>
-        <td>${cliente}</td>
-        <td>${fecha}</td>
-        <td>${total}</td>
-        <td><span class="badge ${badgeClass}">${estado}</span></td>
-        <td class="text-end">
-            <div class="dropdown">
-                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acciones</button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalDetallePedido" onclick="cargarDetalle('${idPedido}')">
-                            <i class="bi bi-eye me-2"></i>Ver detalle
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </td>
-    `;
-            tablaTodos.insertBefore(nuevaFila, tablaTodos.firstChild);
-
-            // 3. Resetear el formulario y cerrar el modal automáticamente
-            document.getElementById('formNuevoPedido').reset();
-            const modalElement = document.getElementById('modalNuevoPedido');
-            const modal = bootstrap.Modal.getInstance(modalElement);
-            modal.hide();
-        }
-    </script>
 </body>
 
 </html>

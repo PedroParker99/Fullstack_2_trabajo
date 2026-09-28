@@ -75,7 +75,11 @@
                         <strong>Admin</strong>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+                        <li>
+                            <button type="button" class="dropdown-item" onclick="cerrarSesion()">
+                                <i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -512,85 +516,10 @@
     </div>
 </div>
 
-    <!-- BOOTSTRAP 5 JS BUNDLE -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
 
 </body>
-<script>
-    // BD Simulada de Cupones
-    const cuponesBD = {
-        'CUP-001': { codigo: 'BIENVENIDA10', tipo: 'Porcentaje', valor: '10% OFF', usos: '45 / 100 usos', vigencia: '01-09-2026 al 31-12-2026', estado: 'Activo' },
-        'CUP-002': { codigo: 'FIESTAFIESTA', tipo: 'Monto Fijo', valor: '$5.000 OFF', usos: '12 / 50 usos', vigencia: '15-09-2026 al 30-09-2026', estado: 'Activo' },
-        'CUP-003': { codigo: 'CUMPLEOCTUBRE', tipo: 'Porcentaje', valor: '20% OFF', usos: '0 / 200 usos', vigencia: '01-10-2026 al 31-10-2026', estado: 'Programado' },
-        'CUP-004': { codigo: 'ENVIOFREE', tipo: 'Envío Gratis', valor: '100% Envío', usos: '30 / 30 usos', vigencia: '01-08-2026 al 31-08-2026', estado: 'Agotado' }
-    };
-
-    // Función para Cargar Datos en el Modal Editar
-    function prepararEdicionCupon(id) {
-        const c = cuponesBD[id];
-        if (!c) return;
-
-        document.getElementById('editCuponId').value = id;
-        document.getElementById('editCodigoCupon').value = c.codigo;
-        document.getElementById('editTipoDescuento').value = c.tipo;
-        document.getElementById('editValorDescuento').value = c.valor;
-        document.getElementById('editUsos').value = c.usos;
-        document.getElementById('editVigencia').value = c.vigencia;
-        document.getElementById('editEstadoCupon').value = c.estado;
-    }
-
-    // Función para Guardar Cambios y Actualizar la Tabla
-    function guardarEdicionCupon(event) {
-        event.preventDefault();
-        const id = document.getElementById('editCuponId').value;
-        const c = cuponesBD[id];
-        if (!c) return;
-
-        c.codigo = document.getElementById('editCodigoCupon').value.toUpperCase();
-        c.tipo = document.getElementById('editTipoDescuento').value;
-        c.valor = document.getElementById('editValorDescuento').value;
-        c.usos = document.getElementById('editUsos').value;
-        c.vigencia = document.getElementById('editVigencia').value;
-        c.estado = document.getElementById('editEstadoCupon').value;
-
-        const fila = document.getElementById(`fila-${id}`);
-        if (fila) {
-            fila.cells[0].querySelector('span').textContent = c.codigo;
-            fila.cells[1].textContent = c.tipo;
-            fila.cells[2].querySelector('strong').textContent = c.valor;
-            fila.cells[3].textContent = c.usos;
-            fila.cells[4].textContent = c.vigencia;
-
-            let badgeClass = 'bg-success';
-            if (c.estado === 'Programado') badgeClass = 'bg-info text-dark';
-            if (c.estado === 'Agotado') badgeClass = 'bg-secondary';
-
-            fila.cells[5].innerHTML = `<span class="badge ${badgeClass}">${c.estado}</span>`;
-        }
-
-        const modalElement = document.getElementById('modalEditarDescuento');
-        const modal = bootstrap.Modal.getInstance(modalElement);
-        modal.hide();
-    }
-
-    // Función para Filtrar por Búsqueda y Tipo
-    function filtrarCupones() {
-        const textoBusqueda = document.getElementById('inputBuscarCupon').value.toLowerCase();
-        const tipoSeleccionado = document.getElementById('selectTipoCupon').value.toLowerCase();
-        const filas = document.querySelectorAll('#contenidoTabsDescuentos tbody tr');
-
-        filas.forEach(fila => {
-            const contenido = fila.textContent.toLowerCase();
-            const coincideTexto = contenido.includes(textoBusqueda);
-            const coincideTipo = tipoSeleccionado === '' || contenido.includes(tipoSeleccionado);
-
-            if (coincideTexto && coincideTipo) {
-                fila.style.display = '';
-            } else {
-                fila.style.display = 'none';
-            }
-        });
-    }
-</script>
-
 </html>

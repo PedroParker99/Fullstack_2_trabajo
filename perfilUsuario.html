@@ -1,939 +1,1033 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mi cuenta | Villa del Globo</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/miestilo.css">
-</head>
-
-<body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-        <div class="container">
-
-            <!-- Logo -->
-            <a class="navbar-brand" href="index.html">
-                <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
-            </a>
-
-            <!-- Menú responsive -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
-                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
-
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="menuPrincipal">
-
-                <!-- Menú principal -->
-                <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            Inicio
-                        </a>
-                    </li>
-
-                    <!-- Nuestra tienda -->
-                    <li class="nav-item dropdown mega-dropdown">
-
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-
-                            Nuestra tienda
-                        </a>
-
-                        <div class="dropdown-menu mega-menu p-4">
-
-                            <div class="row g-4">
-
-                                <!-- Columna 1 -->
-                                <div class="col-lg-4">
-
-                                    <h6 class="fw-bold border-bottom pb-2">
-                                        Temáticas 1
-                                    </h6>
-
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#" class="dropdown-item">Among Us</a></li>
-                                        <li><a href="#" class="dropdown-item">Baby Shark</a></li>
-                                        <li><a href="#" class="dropdown-item">Barbie</a></li>
-                                        <li><a href="#" class="dropdown-item">Bluey</a></li>
-                                        <li><a href="#" class="dropdown-item">Bob Esponja</a></li>
-                                        <li><a href="#" class="dropdown-item">Cars</a></li>
-                                        <li><a href="#" class="dropdown-item">Cinnamonroll</a></li>
-                                        <li><a href="#" class="dropdown-item">Circo Digital</a></li>
-                                    </ul>
-
-                                </div>
-
-                                <!-- Columna 2 -->
-                                <div class="col-lg-4">
-
-                                    <h6 class="fw-bold border-bottom pb-2">
-                                        Temáticas 2
-                                    </h6>
-
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#" class="dropdown-item">Dragon Ball</a></li>
-                                        <li><a href="#" class="dropdown-item">Dinosaurio</a></li>
-                                        <li><a href="#" class="dropdown-item">FNAF</a></li>
-                                        <li><a href="#" class="dropdown-item">Frozen</a></li>
-                                        <li><a href="#" class="dropdown-item">Guerreras K-pop</a></li>
-                                        <li><a href="#" class="dropdown-item">Hello Kitty</a></li>
-                                        <li><a href="#" class="dropdown-item">Intensamente</a></li>
-                                        <li><a href="#" class="dropdown-item">Kuromi</a></li>
-                                    </ul>
-
-                                </div>
-
-                                <!-- Columna 3 -->
-                                <div class="col-lg-4">
-
-                                    <h6 class="fw-bold border-bottom pb-2">
-                                        Temáticas 3
-                                    </h6>
-
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#" class="dropdown-item">Mario Bros</a></li>
-                                        <li><a href="#" class="dropdown-item">Masha</a></li>
-                                        <li><a href="#" class="dropdown-item">Merlina</a></li>
-                                        <li><a href="#" class="dropdown-item">Mickey Mouse</a></li>
-                                        <li><a href="#" class="dropdown-item">Minecraft</a></li>
-                                        <li><a href="#" class="dropdown-item">Minions</a></li>
-                                        <li><a href="#" class="dropdown-item">Minnie Mouse</a></li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Packs -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="packs.html">
-                            Packs Decoración Cumpleaños
-                        </a>
-                    </li>
-
-                </ul>
-
-                <!-- Iconos -->
-                <ul class="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
-
-                    <!-- Buscar -->
-                    <li class="nav-item">
-
-                        <button type="button" class="btn btn-link text-dark p-0 border-0 shadow-none"
-                            data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
-
-                            <i class="bi bi-search fs-2"></i>
-                        </button>
-
-                    </li>
-
-                    <!-- Perfil -->
-                    <li class="nav-item">
-
-                        <div class="dropdown">
-
-                            <button class="btn btn-link text-dark p-0 border-0 shadow-none" type="button"
-                                id="dropdownPerfil" data-bs-toggle="dropdown" aria-expanded="false"
-                                aria-label="Cuenta de usuario">
-
-                                <i class="bi bi-person fs-2"></i>
-                            </button>
-
-                            <ul id="menuUsuario" class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
-                                aria-labelledby="dropdownPerfil">
-
-                                <li>
-                                    <div class="px-2 py-1">
-
-                                        <p class="mb-0 small text-muted">
-                                            ¡Hola! Bienvenido a
-                                        </p>
-
-                                        <h6 class="fw-bold mb-0">
-                                            Villa del Globo
-                                        </h6>
-
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <hr class="dropdown-divider my-2">
-                                </li>
-
-                                <li>
-
-                                    <button type="button"
-                                        class="dropdown-item rounded py-2 fw-semibold text-white text-center bg-rosa"
-                                        data-bs-toggle="modal" data-bs-target="#modalLogin">
-
-                                        <i class="bi bi-box-arrow-in-right me-2"></i>
-                                        Iniciar sesión
-
-                                    </button>
-
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                    </li>
-
-                    <!-- Carrito -->
-                    <li class="nav-item">
-
-                        <button type="button" class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
-                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito"
-                            aria-controls="offcanvasCarrito" aria-label="Ver carrito">
-
-                            <i class="bi bi-bag fs-2"></i>
-
-                            <span id="cart-count"
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-rosa">
-                                0
-                            </span>
-
-                        </button>
-
-                    </li>
-
-                </ul>
-
-            </div>
-        </div>
-    </nav>
-
-
-    <!-- BUSCADOR -->
-    <div class="modal fade" id="modalBuscador" tabindex="-1" aria-labelledby="tituloBuscador" aria-hidden="true">
-
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="modal-content border-0 shadow">
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title" id="tituloBuscador">
-                        Buscar productos
-                    </h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar">
-                    </button>
-
-                </div>
-
-                <div class="modal-body">
-
-                    <form id="formBuscador">
-
-                        <div class="input-group">
-
-                            <input type="search" id="buscador" class="form-control"
-                                placeholder="Buscar Toy Story, Mario Bros..." required>
-
-                            <button class="btn btn-rosa" type="submit">
-                                <i class="bi bi-search"></i>
-                            </button>
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- LOGIN -->
-    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="tituloLogin" aria-hidden="true">
-
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title" id="tituloLogin">
-                        Iniciar sesión
-                    </h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar">
-                    </button>
-
-                </div>
-
-                <div class="modal-body">
-
-                    <form id="formLogin">
-
-                        <div class="mb-3">
-
-                            <label for="correoLogin" class="form-label">
-                                Correo electrónico
-                            </label>
-
-                            <input type="email" id="correoLogin" class="form-control" required>
-
-                        </div>
-
-                        <div class="mb-3">
-
-                            <label for="passwordLogin" class="form-label">
-                                Contraseña
-                            </label>
-
-                            <input type="password" id="passwordLogin" class="form-control" required>
-
-                        </div>
-
-                        <button type="submit" class="btn btn-rosa w-100">
-                            Iniciar sesión
-                        </button>
-
-                    </form>
-
-                    <p id="mensajeLogin" class="text-center mt-3 mb-0">
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- CARRITO -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito" aria-labelledby="tituloCarrito">
-
-        <div class="offcanvas-header">
-
-            <h5 class="offcanvas-title" id="tituloCarrito">
-
-                <i class="bi bi-bag me-2"></i>
-                Mi carrito
-
-            </h5>
-
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar">
-            </button>
-
-        </div>
-
-        <div class="offcanvas-body d-flex flex-column">
-
-            <div id="carritoProductos" class="flex-grow-1">
-            </div>
-
-            <div class="border-top pt-3">
-
-                <div class="d-flex justify-content-between mb-3">
-
-                    <span>Total:</span>
-
-                    <strong id="carritoTotal">
-                        $0
-                    </strong>
-
-                </div>
-
-                <button type="button" class="btn btn-rosa w-100">
-
-                    Finalizar compra
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Mi cuenta | Villa del Globo</title>
+
+        <!-- Bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/miestilo.css">
+    </head>
+
+    <body>
+
+        <!-- NAVBAR -->
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+            <div class="container">
+
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/Villa_del_Globo_Mark.avif"
+                        alt="Villa del Globo" class="rounded-circle"
+                        height="70">
+                </a>
+
+                <!-- Menú responsive -->
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false"
+                    aria-label="Abrir menú">
+
+                    <span class="navbar-toggler-icon"></span>
                 </button>
 
-            </div>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
 
-        </div>
-    </div>
+                    <!-- Menú principal -->
+                    <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0">
 
-
-    <!-- MI CUENTA -->
-    <main class="container py-5">
-
-        <div class="cuenta-panel bg-white rounded-4 shadow-sm overflow-hidden">
-
-            <!-- Encabezado -->
-            <header class="p-4 p-lg-5 border-bottom">
-
-                <span class="text-rosa small fw-semibold">
-                    MI CUENTA
-                </span>
-
-                <h1 class="fw-bold mt-2 mb-1">
-                    Hola, <span id="nombreBienvenida">Usuario</span>
-                </h1>
-
-                <p class="text-muted mb-0">
-                    Administra tu información, compras y preferencias.
-                </p>
-
-            </header>
-
-
-            <div class="row g-0">
-
-                <!-- Menú lateral -->
-                <aside class="col-lg-3 border-end">
-
-                    <nav class="p-3 p-lg-4">
-
-                        <a href="perfilUsuario.html" class="perfil-menu-item active">
-
-                            <i class="bi bi-person"></i>
-                            Mi perfil
-
-                        </a>
-
-                        <a href="usuarioCompras.html" class="perfil-menu-item">
-
-                            <i class="bi bi-box-seam"></i>
-                            Mis compras
-
-                        </a>
-
-                        <a href="usuarioDirecciones.html" class="perfil-menu-item">
-
-                            <i class="bi bi-geo-alt"></i>
-                            Mis direcciones
-
-                        </a>
-
-                        <a href="usuarioPagos.html" class="perfil-menu-item">
-
-                            <i class="bi bi-credit-card"></i>
-                            Métodos de pago
-
-                        </a>
-
-                        <a href="usuarioSeguridad.html" class="perfil-menu-item">
-
-                            <i class="bi bi-shield-lock"></i>
-                            Seguridad
-
-                        </a>
-
-                        <a href="usuarioFavoritos.html" class="perfil-menu-item">
-
-                            <i class="bi bi-heart"></i>
-                            Lista de deseos
-
-                        </a>
-
-                        <hr class="my-3">
-
-                        <a href="#" class="perfil-menu-item text-danger" id="cerrarSesion">
-
-                            <i class="bi bi-box-arrow-right"></i>
-                            Cerrar sesión
-
-                        </a>
-
-                    </nav>
-
-                </aside>
-
-
-                <!-- Contenido -->
-                <section class="col-lg-9">
-
-                    <div class="p-4 p-lg-5">
-
-                        <!-- Información personal -->
-                        <section class="pb-5 border-bottom">
-
-                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
-
-                                <div>
-
-                                    <h3 class="fw-bold mb-1">
-                                        Información personal
-                                    </h3>
-
-                                    <p class="text-muted mb-0">
-                                        Datos principales de tu cuenta
-                                    </p>
-
-                                </div>
-
-                                <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                    data-bs-target="#modalEditarPerfil">
-
-                                    <i class="bi bi-pencil me-2"></i>
-                                    Editar
-
-                                </button>
-
-                            </div>
-
-
-                            <div class="row g-4">
-
-                                <!-- Nombre -->
-                                <div class="col-md-6">
-
-                                    <small class="text-muted d-block mb-1">
-                                        Nombre
-                                    </small>
-
-                                    <span id="perfilNombre" class="fw-semibold">
-                                        Usuario
-                                    </span>
-
-                                </div>
-
-                                <!-- Apellido -->
-                                <div class="col-md-6">
-
-                                    <small class="text-muted d-block mb-1">
-                                        Apellido
-                                    </small>
-
-                                    <span id="perfilApellido" class="fw-semibold">
-                                        -
-                                    </span>
-
-                                </div>
-
-                                <!-- Correo -->
-                                <div class="col-md-6">
-
-                                    <small class="text-muted d-block mb-1">
-                                        Correo electrónico
-                                    </small>
-
-                                    <span id="perfilCorreo" class="fw-semibold">
-                                        -
-                                    </span>
-
-                                </div>
-
-                                <!-- Teléfono -->
-                                <div class="col-md-6">
-
-                                    <small class="text-muted d-block mb-1">
-                                        Teléfono
-                                    </small>
-
-                                    <span id="perfilTelefono" class="fw-semibold">
-                                        No registrado
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-                        </section>
-
-
-                        <!-- Última compra -->
-                        <section class="py-5 border-bottom">
-
-                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
-
-                                <div>
-
-                                    <h3 class="fw-bold mb-1">
-                                        Última compra
-                                    </h3>
-
-                                    <p class="text-muted mb-0">
-                                        Revisa el estado de tu pedido
-                                    </p>
-
-                                </div>
-
-                                <a href="usuarioCompras.html" class="text-rosa fw-semibold text-decoration-none">
-
-                                    Ver todas
-                                    <i class="bi bi-arrow-right ms-1"></i>
-
-                                </a>
-
-                            </div>
-
-
-                            <div class="row align-items-center g-3">
-
-                                <!-- Imagen -->
-                                <div class="col-4 col-md-2">
-
-                                    <img src="img/SETTOYSTORY2.webp" class="img-fluid rounded-3"
-                                        alt="Pack decoración Toy Story">
-
-                                </div>
-
-                                <!-- Producto -->
-                                <div class="col-8 col-md-5">
-
-                                    <h6 class="fw-bold mb-1">
-                                        Pack decoración Toy Story
-                                    </h6>
-
-                                    <small class="text-muted d-block">
-                                        Pedido #000123
-                                    </small>
-
-                                    <small class="text-muted">
-                                        21 de septiembre de 2026
-                                    </small>
-
-                                </div>
-
-                                <!-- Estado -->
-                                <div class="col-6 col-md-3">
-
-                                    <span class="badge rounded-pill bg-rosa px-3 py-2">
-                                        En preparación
-                                    </span>
-
-                                </div>
-
-                                <!-- Precio -->
-                                <div class="col-6 col-md-2 text-end">
-
-                                    <strong class="fs-5">
-                                        $19.990
-                                    </strong>
-
-                                </div>
-
-                            </div>
-
-                        </section>
-
-
-                        <!-- Dirección -->
-                        <section class="pt-5">
-
-                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
-
-                                <div>
-
-                                    <h3 class="fw-bold mb-1">
-                                        Dirección principal
-                                    </h3>
-
-                                    <p class="text-muted mb-0">
-                                        Dirección utilizada para tus pedidos
-                                    </p>
-
-                                </div>
-
-                                <a href="usuarioDirecciones.html" class="btn btn-outline-dark">
-
-                                    <i class="bi bi-pencil me-2"></i>
-                                    Editar
-
-                                </a>
-
-                            </div>
-
-
-                            <div class="d-flex align-items-start">
-
-                                <div class="perfil-icono me-3">
-
-                                    <i class="bi bi-geo-alt"></i>
-
-                                </div>
-
-                                <div>
-
-                                    <h6 class="fw-bold mb-1">
-                                        Casa
-                                    </h6>
-
-                                    <p class="mb-1">
-                                        Av. Principal 1234
-                                    </p>
-
-                                    <p class="text-muted mb-0">
-                                        Concepción, Biobío
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </section>
-
-                    </div>
-
-                </section>
-
-            </div>
-
-        </div>
-
-    </main>
-
-
-    <!-- MODAL EDITAR PERFIL -->
-    <div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-labelledby="tituloEditarPerfil"
-        aria-hidden="true">
-
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="modal-content border-0 shadow">
-
-                <!-- Encabezado -->
-                <div class="modal-header">
-
-                    <div>
-
-                        <h5 class="modal-title fw-bold" id="tituloEditarPerfil">
-
-                            Editar información personal
-
-                        </h5>
-
-                        <small class="text-muted">
-                            Actualiza los datos de tu cuenta
-                        </small>
-
-                    </div>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar">
-                    </button>
-
-                </div>
-
-
-                <!-- Formulario -->
-                <form id="formEditarPerfil">
-
-                    <div class="modal-body">
-
-                        <!-- Nombre -->
-                        <div class="mb-3">
-
-                            <label for="editarNombre" class="form-label">
-
-                                Nombre
-
-                            </label>
-
-                            <input type="text" class="form-control" id="editarNombre" autocomplete="given-name"
-                                required>
-
-                        </div>
-
-
-                        <!-- Apellido -->
-                        <div class="mb-3">
-
-                            <label for="editarApellido" class="form-label">
-
-                                Apellido
-
-                            </label>
-
-                            <input type="text" class="form-control" id="editarApellido" autocomplete="family-name">
-
-                        </div>
-
-
-                        <!-- Correo -->
-                        <div class="mb-3">
-
-                            <label for="editarCorreo" class="form-label">
-
-                                Correo electrónico
-
-                            </label>
-
-                            <input type="email" class="form-control" id="editarCorreo" autocomplete="email" required>
-
-                        </div>
-
-
-                        <!-- Teléfono -->
-                        <div class="mb-3">
-
-                            <label for="editarTelefono" class="form-label">
-
-                                Teléfono
-
-                            </label>
-
-                            <input type="tel" class="form-control" id="editarTelefono" placeholder="+56 9 1234 5678"
-                                autocomplete="tel">
-
-                        </div>
-
-
-                        <!-- Mensaje -->
-                        <p id="mensajePerfil" class="text-center mb-0">
-                        </p>
-
-                    </div>
-
-
-                    <!-- Botones -->
-                    <div class="modal-footer">
-
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-
-                            Cancelar
-
-                        </button>
-
-                        <button type="submit" class="btn btn-rosa">
-
-                            <i class="bi bi-check-lg me-2"></i>
-                            Guardar cambios
-
-                        </button>
-
-                    </div>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
-
-        <div class="container">
-
-            <div class="row g-4">
-
-                <!-- Marca -->
-                <div class="col-md-4">
-
-                    <h5 class="fw-bold">
-                        🎈 Villa del Globo
-                    </h5>
-
-                    <p class="text-secondary">
-                        Todo lo que necesitas para tus fiestas:
-                        cotillón, decoración, globos, disfraces y mucho más.
-                    </p>
-
-                </div>
-
-
-                <!-- Tienda -->
-                <div class="col-md-4">
-
-                    <h6 class="fw-bold">
-                        Tienda
-                    </h6>
-
-                    <ul class="list-unstyled">
-
-                        <li>
-                            <a href="index.html" class="link-light text-decoration-none">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
                                 Inicio
                             </a>
                         </li>
 
-                        <li>
-                            <a href="#" class="link-light text-decoration-none">
-                                Nuestra Tienda
+                        <!-- Nuestra tienda -->
+                        <li class="nav-item dropdown mega-dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+
+                                Nuestra tienda
+                            </a>
+
+                            <div class="dropdown-menu mega-menu p-4">
+
+                                <div class="row g-4">
+
+                                    <!-- Columna 1 -->
+                                    <div class="col-lg-4">
+
+                                        <h6 class="fw-bold border-bottom pb-2">
+                                            Temáticas 1
+                                        </h6>
+
+                                        <ul class="list-unstyled mb-0">
+                                            <li><a href="#"
+                                                    class="dropdown-item">Among
+                                                    Us</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Baby
+                                                    Shark</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Barbie</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Bluey</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Bob
+                                                    Esponja</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Cars</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Cinnamonroll</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Circo
+                                                    Digital</a></li>
+                                        </ul>
+
+                                    </div>
+
+                                    <!-- Columna 2 -->
+                                    <div class="col-lg-4">
+
+                                        <h6 class="fw-bold border-bottom pb-2">
+                                            Temáticas 2
+                                        </h6>
+
+                                        <ul class="list-unstyled mb-0">
+                                            <li><a href="#"
+                                                    class="dropdown-item">Dragon
+                                                    Ball</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Dinosaurio</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">FNAF</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Frozen</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Guerreras
+                                                    K-pop</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Hello
+                                                    Kitty</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Intensamente</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Kuromi</a></li>
+                                        </ul>
+
+                                    </div>
+
+                                    <!-- Columna 3 -->
+                                    <div class="col-lg-4">
+
+                                        <h6 class="fw-bold border-bottom pb-2">
+                                            Temáticas 3
+                                        </h6>
+
+                                        <ul class="list-unstyled mb-0">
+                                            <li><a href="#"
+                                                    class="dropdown-item">Mario
+                                                    Bros</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Masha</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Merlina</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Mickey
+                                                    Mouse</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Minecraft</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Minions</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown-item">Minnie
+                                                    Mouse</a></li>
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Packs -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="packs.html">
+                                Packs Decoración Cumpleaños
                             </a>
                         </li>
 
-                        <li>
-                            <a href="packs.html" class="link-light text-decoration-none">
-                                Packs Decoración
-                            </a>
+                    </ul>
+
+                    <!-- Iconos -->
+                    <ul
+                        class="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
+
+                        <!-- Buscar -->
+                        <li class="nav-item">
+
+                            <button type="button"
+                                class="btn btn-link text-dark p-0 border-0 shadow-none"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalBuscador"
+                                aria-label="Buscar productos">
+
+                                <i class="bi bi-search fs-2"></i>
+                            </button>
+
+                        </li>
+
+                        <!-- Perfil -->
+                        <li class="nav-item">
+
+                            <div class="dropdown">
+
+                                <button
+                                    class="btn btn-link text-dark p-0 border-0 shadow-none"
+                                    type="button"
+                                    id="dropdownPerfil"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    aria-label="Cuenta de usuario">
+
+                                    <i class="bi bi-person fs-2"></i>
+                                </button>
+
+                                <ul id="menuUsuario"
+                                    class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
+                                    aria-labelledby="dropdownPerfil">
+
+                                    <li>
+                                        <div class="px-2 py-1">
+
+                                            <p class="mb-0 small text-muted">
+                                                ¡Hola! Bienvenido a
+                                            </p>
+
+                                            <h6 class="fw-bold mb-0">
+                                                Villa del Globo
+                                            </h6>
+
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <hr class="dropdown-divider my-2">
+                                    </li>
+
+                                    <li>
+
+                                        <button type="button"
+                                            class="dropdown-item rounded py-2 fw-semibold text-white text-center bg-rosa"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modalLogin">
+
+                                            <i
+                                                class="bi bi-box-arrow-in-right me-2"></i>
+                                            Iniciar sesión
+
+                                        </button>
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </li>
+
+                        <!-- Carrito -->
+                        <li class="nav-item">
+
+                            <button type="button"
+                                class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasCarrito"
+                                aria-controls="offcanvasCarrito"
+                                aria-label="Ver carrito">
+
+                                <i class="bi bi-bag fs-2"></i>
+
+                                <span id="cart-count"
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-rosa">
+                                    0
+                                </span>
+
+                            </button>
+
                         </li>
 
                     </ul>
 
                 </div>
+            </div>
+        </nav>
 
+        <!-- BUSCADOR -->
+        <div class="modal fade" id="modalBuscador" tabindex="-1"
+            aria-labelledby="tituloBuscador" aria-hidden="true">
 
-                <!-- Contacto -->
-                <div class="col-md-4">
+            <div class="modal-dialog modal-dialog-centered">
 
-                    <h6 class="fw-bold">
-                        Contacto
-                    </h6>
+                <div class="modal-content border-0 shadow">
 
-                    <ul class="list-unstyled text-secondary">
+                    <div class="modal-header">
 
-                        <li>
-                            📞 9 7909 9900
-                        </li>
+                        <h5 class="modal-title" id="tituloBuscador">
+                            Buscar productos
+                        </h5>
 
-                        <li>
-                            ✉️ villadelglobospa@gmail.com
-                        </li>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Cerrar">
+                        </button>
 
-                    </ul>
+                    </div>
 
+                    <div class="modal-body">
 
-                    <div class="d-flex gap-3 mt-3">
+                        <form id="formBuscador">
 
-                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                            class="link-light text-decoration-none fs-4" aria-label="Facebook">
+                            <div class="input-group">
 
-                            <i class="bi bi-facebook"></i>
+                                <input type="search" id="buscador"
+                                    class="form-control"
+                                    placeholder="Buscar Toy Story, Mario Bros..."
+                                    required>
 
-                        </a>
+                                <button class="btn btn-rosa" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
 
-                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
-                            class="link-light text-decoration-none fs-4" aria-label="Instagram">
+                            </div>
 
-                            <i class="bi bi-instagram"></i>
-
-                        </a>
+                        </form>
 
                     </div>
 
                 </div>
 
             </div>
+        </div>
 
+        <!-- LOGIN -->
+        <div class="modal fade" id="modalLogin" tabindex="-1"
+            aria-labelledby="tituloLogin" aria-hidden="true">
 
-            <hr class="border-secondary my-4">
+            <div class="modal-dialog modal-dialog-centered">
 
+                <div class="modal-content">
 
-            <p class="text-center text-secondary mb-0">
-                &copy; 2026 Villa del Globo.
-                Todos los derechos reservados.
-            </p>
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="tituloLogin">
+                            Iniciar sesión
+                        </h5>
+
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Cerrar">
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body">
+
+                        <form id="formLogin">
+
+                            <div class="mb-3">
+
+                                <label for="correoLogin" class="form-label">
+                                    Correo electrónico
+                                </label>
+
+                                <input type="email" id="correoLogin"
+                                    class="form-control" required>
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label for="passwordLogin" class="form-label">
+                                    Contraseña
+                                </label>
+
+                                <input type="password" id="passwordLogin"
+                                    class="form-control" required>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-rosa w-100">
+                                Iniciar sesión
+                            </button>
+
+                        </form>
+
+                        <p id="mensajeLogin" class="text-center mt-3 mb-0">
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CARRITO -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito"
+            aria-labelledby="tituloCarrito">
+
+            <div class="offcanvas-header">
+
+                <h5 class="offcanvas-title" id="tituloCarrito">
+
+                    <i class="bi bi-bag me-2"></i>
+                    Mi carrito
+
+                </h5>
+
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="offcanvas" aria-label="Cerrar">
+                </button>
+
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column">
+
+                <div id="carritoProductos" class="flex-grow-1">
+                </div>
+
+                <div class="border-top pt-3">
+
+                    <div class="d-flex justify-content-between mb-3">
+
+                        <span>Total:</span>
+
+                        <strong id="carritoTotal">
+                            $0
+                        </strong>
+
+                    </div>
+
+                    <button type="button" class="btn btn-rosa w-100">
+
+                        Finalizar compra
+
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- MI CUENTA -->
+        <main class="container py-5">
+
+            <div
+                class="cuenta-panel bg-white rounded-4 shadow-sm overflow-hidden">
+
+                <!-- Encabezado -->
+                <header class="p-4 p-lg-5 border-bottom">
+
+                    <span class="text-rosa small fw-semibold">
+                        MI CUENTA
+                    </span>
+
+                    <h1 class="fw-bold mt-2 mb-1">
+                        Hola, <span id="nombreBienvenida">Usuario</span>
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Administra tu información, compras y preferencias.
+                    </p>
+
+                </header>
+
+                <div class="row g-0">
+
+                    <!-- Menú lateral -->
+                    <aside class="col-lg-3 border-end">
+
+                        <nav class="p-3 p-lg-4">
+
+                            <a href="perfilUsuario.html"
+                                class="perfil-menu-item active">
+
+                                <i class="bi bi-person"></i>
+                                Mi perfil
+
+                            </a>
+
+                            <a href="usuarioCompras.html"
+                                class="perfil-menu-item">
+
+                                <i class="bi bi-box-seam"></i>
+                                Mis compras
+
+                            </a>
+
+                            <a href="usuarioDirecciones.html"
+                                class="perfil-menu-item">
+
+                                <i class="bi bi-geo-alt"></i>
+                                Mis direcciones
+
+                            </a>
+
+                            <a href="usuarioPagos.html"
+                                class="perfil-menu-item">
+
+                                <i class="bi bi-credit-card"></i>
+                                Métodos de pago
+
+                            </a>
+
+                            <a href="usuarioSeguridad.html"
+                                class="perfil-menu-item">
+
+                                <i class="bi bi-shield-lock"></i>
+                                Seguridad
+
+                            </a>
+
+                            <a href="usuarioFavoritos.html"
+                                class="perfil-menu-item">
+
+                                <i class="bi bi-heart"></i>
+                                Lista de deseos
+
+                            </a>
+
+                            <hr class="my-3">
+
+                            <a href="#" class="perfil-menu-item text-danger"
+                                id="cerrarSesion">
+
+                                <i class="bi bi-box-arrow-right"></i>
+                                Cerrar sesión
+
+                            </a>
+
+                        </nav>
+
+                    </aside>
+
+                    <!-- Contenido -->
+                    <section class="col-lg-9">
+
+                        <div class="p-4 p-lg-5">
+
+                            <!-- Información personal -->
+                            <section class="pb-5 border-bottom">
+
+                                <div
+                                    class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+                                    <div>
+
+                                        <h3 class="fw-bold mb-1">
+                                            Información personal
+                                        </h3>
+
+                                        <p class="text-muted mb-0">
+                                            Datos principales de tu cuenta
+                                        </p>
+
+                                    </div>
+
+                                    <button type="button"
+                                        class="btn btn-outline-dark"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#modalEditarPerfil">
+
+                                        <i class="bi bi-pencil me-2"></i>
+                                        Editar
+
+                                    </button>
+
+                                </div>
+
+                                <div class="row g-4">
+
+                                    <!-- Nombre -->
+                                    <div class="col-md-6">
+
+                                        <small class="text-muted d-block mb-1">
+                                            Nombre
+                                        </small>
+
+                                        <span id="perfilNombre"
+                                            class="fw-semibold">
+                                            Usuario
+                                        </span>
+
+                                    </div>
+
+                                    <!-- Apellido -->
+                                    <div class="col-md-6">
+
+                                        <small class="text-muted d-block mb-1">
+                                            Apellido
+                                        </small>
+
+                                        <span id="perfilApellido"
+                                            class="fw-semibold">
+                                            -
+                                        </span>
+
+                                    </div>
+
+                                    <!-- Correo -->
+                                    <div class="col-md-6">
+
+                                        <small class="text-muted d-block mb-1">
+                                            Correo electrónico
+                                        </small>
+
+                                        <span id="perfilCorreo"
+                                            class="fw-semibold">
+                                            -
+                                        </span>
+
+                                    </div>
+
+                                    <!-- Teléfono -->
+                                    <div class="col-md-6">
+
+                                        <small class="text-muted d-block mb-1">
+                                            Teléfono
+                                        </small>
+
+                                        <span id="perfilTelefono"
+                                            class="fw-semibold">
+                                            No registrado
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                            <!-- Última compra -->
+                            <section class="py-5 border-bottom">
+
+                                <div
+                                    class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+                                    <div>
+
+                                        <h3 class="fw-bold mb-1">
+                                            Última compra
+                                        </h3>
+
+                                        <p class="text-muted mb-0">
+                                            Revisa el estado de tu pedido
+                                        </p>
+
+                                    </div>
+
+                                    <a href="usuarioCompras.html"
+                                        class="text-rosa fw-semibold text-decoration-none">
+
+                                        Ver todas
+                                        <i class="bi bi-arrow-right ms-1"></i>
+
+                                    </a>
+
+                                </div>
+
+                                <div class="row align-items-center g-3">
+
+                                    <!-- Imagen -->
+                                    <div class="col-4 col-md-2">
+
+                                        <img src="img/SETTOYSTORY2.webp"
+                                            class="img-fluid rounded-3"
+                                            alt="Pack decoración Toy Story">
+
+                                    </div>
+
+                                    <!-- Producto -->
+                                    <div class="col-8 col-md-5">
+
+                                        <h6 class="fw-bold mb-1">
+                                            Pack decoración Toy Story
+                                        </h6>
+
+                                        <small class="text-muted d-block">
+                                            Pedido #000123
+                                        </small>
+
+                                        <small class="text-muted">
+                                            21 de septiembre de 2026
+                                        </small>
+
+                                    </div>
+
+                                    <!-- Estado -->
+                                    <div class="col-6 col-md-3">
+
+                                        <span
+                                            class="badge rounded-pill bg-rosa px-3 py-2">
+                                            En preparación
+                                        </span>
+
+                                    </div>
+
+                                    <!-- Precio -->
+                                    <div class="col-6 col-md-2 text-end">
+
+                                        <strong class="fs-5">
+                                            $19.990
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                            <!-- Dirección -->
+                            <section class="pt-5">
+
+                                <div
+                                    class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+                                    <div>
+
+                                        <h3 class="fw-bold mb-1">
+                                            Dirección principal
+                                        </h3>
+
+                                        <p class="text-muted mb-0">
+                                            Dirección utilizada para tus pedidos
+                                        </p>
+
+                                    </div>
+
+                                    <a href="usuarioDirecciones.html"
+                                        class="btn btn-outline-dark">
+
+                                        <i class="bi bi-pencil me-2"></i>
+                                        Editar
+
+                                    </a>
+
+                                </div>
+
+                                <div class="d-flex align-items-start">
+
+                                    <div class="perfil-icono me-3">
+
+                                        <i class="bi bi-geo-alt"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <h6 class="fw-bold mb-1">
+                                            Casa
+                                        </h6>
+
+                                        <p class="mb-1">
+                                            Av. Principal 1234
+                                        </p>
+
+                                        <p class="text-muted mb-0">
+                                            Concepción, Biobío
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- MODAL EDITAR PERFIL -->
+        <div class="modal fade" id="modalEditarPerfil" tabindex="-1"
+            aria-labelledby="tituloEditarPerfil"
+            aria-hidden="true">
+
+            <div class="modal-dialog modal-dialog-centered">
+
+                <div class="modal-content border-0 shadow">
+
+                    <!-- Encabezado -->
+                    <div class="modal-header">
+
+                        <div>
+
+                            <h5 class="modal-title fw-bold"
+                                id="tituloEditarPerfil">
+
+                                Editar información personal
+
+                            </h5>
+
+                            <small class="text-muted">
+                                Actualiza los datos de tu cuenta
+                            </small>
+
+                        </div>
+
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Cerrar">
+                        </button>
+
+                    </div>
+
+                    <!-- Formulario -->
+                    <form id="formEditarPerfil">
+
+                        <div class="modal-body">
+
+                            <!-- Nombre -->
+                            <div class="mb-3">
+
+                                <label for="editarNombre" class="form-label">
+
+                                    Nombre
+
+                                </label>
+
+                                <input type="text" class="form-control"
+                                    id="editarNombre" autocomplete="given-name"
+                                    required>
+
+                            </div>
+
+                            <!-- Apellido -->
+                            <div class="mb-3">
+
+                                <label for="editarApellido" class="form-label">
+
+                                    Apellido
+
+                                </label>
+
+                                <input type="text" class="form-control"
+                                    id="editarApellido"
+                                    autocomplete="family-name">
+
+                            </div>
+
+                            <!-- Correo -->
+                            <div class="mb-3">
+
+                                <label for="editarCorreo" class="form-label">
+
+                                    Correo electrónico
+
+                                </label>
+
+                                <input type="email" class="form-control"
+                                    id="editarCorreo" autocomplete="email"
+                                    required>
+
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="mb-3">
+
+                                <label for="editarTelefono" class="form-label">
+
+                                    Teléfono
+
+                                </label>
+
+                                <input type="tel" class="form-control"
+                                    id="editarTelefono"
+                                    placeholder="+56 9 1234 5678"
+                                    autocomplete="tel">
+
+                            </div>
+
+                            <!-- Mensaje -->
+                            <p id="mensajePerfil" class="text-center mb-0">
+                            </p>
+
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="modal-footer">
+
+                            <button type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal">
+
+                                Cancelar
+
+                            </button>
+
+                            <button type="submit" class="btn btn-rosa">
+
+                                <i class="bi bi-check-lg me-2"></i>
+                                Guardar cambios
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </footer>
+        <!-- FOOTER -->
+        <footer class="bg-dark text-white pt-5 pb-3 mt-5">
 
+            <div class="container">
 
-    <!-- SCRIPTS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/perfilUsuario.js"></script>
+                <div class="row g-4">
 
-</body>
+                    <!-- Marca -->
+                    <div class="col-md-4">
+
+                        <h5 class="fw-bold">
+                            🎈 Villa del Globo
+                        </h5>
+
+                        <p class="text-secondary">
+                            Todo lo que necesitas para tus fiestas:
+                            cotillón, decoración, globos, disfraces y mucho más.
+                        </p>
+
+                    </div>
+
+                    <!-- Tienda -->
+                    <div class="col-md-4">
+
+                        <h6 class="fw-bold">
+                            Tienda
+                        </h6>
+
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <a href="index.html"
+                                    class="link-light text-decoration-none">
+                                    Inicio
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="link-light text-decoration-none">
+                                    Nuestra Tienda
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="packs.html"
+                                    class="link-light text-decoration-none">
+                                    Packs Decoración
+                                </a>
+                            </li>
+                            <li>
+                                <a href="politicas-envio.html"
+                                    class="link-light text-decoration-none">
+                                    Políticas de Envío
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contacto.html"
+                                    class="link-light text-decoration-none">
+                                    Contacto
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Contacto -->
+                    <div class="col-md-4">
+
+                        <h6 class="fw-bold">
+                            Contacto
+                        </h6>
+
+                        <ul class="list-unstyled text-secondary">
+
+                            <li>
+                                📞 9 7909 9900
+                            </li>
+
+                            <li>
+                                ✉️ villadelglobospa@gmail.com
+                            </li>
+
+                        </ul>
+
+                        <div class="d-flex gap-3 mt-3">
+
+                            <a href="https://www.facebook.com/" target="_blank"
+                                rel="noopener noreferrer"
+                                class="link-light text-decoration-none fs-4"
+                                aria-label="Facebook">
+
+                                <i class="bi bi-facebook"></i>
+
+                            </a>
+
+                            <a href="https://www.instagram.com/" target="_blank"
+                                rel="noopener noreferrer"
+                                class="link-light text-decoration-none fs-4"
+                                aria-label="Instagram">
+
+                                <i class="bi bi-instagram"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr class="border-secondary my-4">
+
+                <p class="text-center text-secondary mb-0">
+                    &copy; 2026 Villa del Globo.
+                    Todos los derechos reservados.
+                </p>
+
+            </div>
+
+        </footer>
+
+        <!-- SCRIPTS -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/perfilUsuario.js"></script>
+
+    </body>
 
 </html>

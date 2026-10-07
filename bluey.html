@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todos los Productos | Villa del Globo</title>
+    <title>Decoración y Cotillón Bluey | Villa del Globo</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@
                                         <li><a href="#" class="dropdown-item">Among Us</a></li>
                                         <li><a href="#" class="dropdown-item">Baby Shark</a></li>
                                         <li><a href="#" class="dropdown-item">Barbie</a></li>
-                                        <li><a href="bluey.html" class="dropdown-item">Bluey</a></li>
+                                        <li><a href="bluey.html" class="dropdown-item fw-bold text-rosa">Bluey</a></li>
                                         <li><a href="#" class="dropdown-item">Bob Esponja</a></li>
                                         <li><a href="#" class="dropdown-item">Cars</a></li>
                                         <li><a href="#" class="dropdown-item">Cinnamonroll</a></li>
@@ -82,7 +82,7 @@
                                         <li><a href="#" class="dropdown-item">Masha</a></li>
                                         <li><a href="#" class="dropdown-item">Merlina</a></li>
                                         <li><a href="#" class="dropdown-item">Mickey Mouse</a></li>
-                                        <li><a href="minecraft.html" class="dropdown-item">Minecraft</a></li>
+                                        <li><a href="#" class="dropdown-item">Minecraft</a></li>
                                         <li><a href="#" class="dropdown-item">Minions</a></li>
                                         <li><a href="#" class="dropdown-item">Minnie Mouse</a></li>
                                     </ul>
@@ -95,6 +95,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="packs.html">Packs Decoración Cumpleaños</a>
                     </li>
+
                 </ul>
 
                 <!-- Iconos -->
@@ -188,7 +189,7 @@
                         <div class="input-group">
 
                             <input type="search" id="buscador" class="form-control"
-                                placeholder="Buscar Globos, Manteles, Cumpleaños..." required>
+                                placeholder="Buscar Globos, Manteles, Bluey..." required>
 
                             <button class="btn btn-rosa" type="submit">
                                 <i class="bi bi-search"></i>
@@ -269,7 +270,7 @@
         </div>
     </div>
 
-    <!-- COLECCIÓN COMPLETA -->
+    <!-- PRODUCTOS BLUEY -->
     <main class="container py-5">
         <div class="bg-white rounded-4 shadow-sm p-4">
 
@@ -282,7 +283,7 @@
                             <a href="index.html" class="text-rosa text-decoration-none">Inicio</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            Colección Completa
+                            Bluey
                         </li>
                     </ol>
                 </nav>
@@ -291,15 +292,15 @@
 
                     <div>
                         <span class="text-rosa small fw-bold text-uppercase">
-                            Catálogo General
+                            Temática destacada
                         </span>
 
                         <h1 class="fw-bold mt-2 mb-2">
-                            Colección Completa de Cotillón y Decoración 🎈
+                            Decoración y Cumpleaños Bluey 🐾
                         </h1>
 
                         <p class="text-muted mb-0">
-                            Explora todos nuestros productos, packs temáticos, vajilla y globos en un solo lugar.
+                            Todo lo que necesitas para organizar la fiesta perfecta de Bluey y Bingo.
                         </p>
                     </div>
 
@@ -327,7 +328,7 @@
 
                     <p class="text-muted mb-0">
                         Mostrando
-                        <strong id="cantidadPacks" class="text-dark">8 productos</strong>
+                        <strong id="cantidadPacks" class="text-dark">6 productos</strong>
                     </p>
 
                     <div class="input-group buscador-packs" style="max-width: 380px;">
@@ -336,7 +337,7 @@
                         </span>
 
                         <input type="search" id="buscadorPacks" class="form-control"
-                            placeholder="Buscar en el catálogo..." aria-label="Buscar productos">
+                            placeholder="Buscar en Bluey..." aria-label="Buscar productos de Bluey">
                     </div>
 
                 </div>
@@ -378,7 +379,7 @@
 
                                     <label class="form-check-label w-100 d-flex justify-content-between" for="catSet">
                                         <span>Set Decoración</span>
-                                        <small class="text-muted">3</small>
+                                        <small class="text-muted">1</small>
                                     </label>
                                 </div>
 
@@ -388,7 +389,7 @@
 
                                     <label class="form-check-label w-100 d-flex justify-content-between" for="catGlobos">
                                         <span>Globos</span>
-                                        <small class="text-muted">2</small>
+                                        <small class="text-muted">1</small>
                                     </label>
                                 </div>
 
@@ -412,12 +413,22 @@
                                     </label>
                                 </div>
 
-                                <div class="form-check">
+                                <div class="form-check mb-3">
                                     <input class="form-check-input filtro-personaje" type="checkbox" id="catPinata"
                                         value="pinata">
 
                                     <label class="form-check-label w-100 d-flex justify-content-between" for="catPinata">
                                         <span>Piñatas</span>
+                                        <small class="text-muted">1</small>
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input filtro-personaje" type="checkbox" id="catCorona"
+                                        value="corona">
+
+                                    <label class="form-check-label w-100 d-flex justify-content-between" for="catCorona">
+                                        <span>Accesorios</span>
                                         <small class="text-muted">1</small>
                                     </label>
                                 </div>
@@ -445,7 +456,7 @@
                                     <label class="form-check-label w-100 d-flex justify-content-between"
                                         for="disponible">
                                         <span>En existencia</span>
-                                        <small class="text-muted">8</small>
+                                        <small class="text-muted">6</small>
                                     </label>
                                 </div>
 
@@ -488,7 +499,7 @@
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-text">$</span>
                                             <input type="number" class="form-control" id="precioMinimo" value="0"
-                                                min="0" max="19990">
+                                                min="0" max="18990">
                                         </div>
                                     </div>
 
@@ -499,19 +510,19 @@
 
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-text">$</span>
-                                            <input type="number" class="form-control" id="precioMaximo" value="19990"
-                                                min="0" max="19990">
+                                            <input type="number" class="form-control" id="precioMaximo" value="18990"
+                                                min="0" max="18990">
                                         </div>
                                     </div>
 
                                 </div>
 
-                                <input type="range" class="form-range" id="rangoPrecio" min="0" max="19990"
-                                    value="19990">
+                                <input type="range" class="form-range" id="rangoPrecio" min="0" max="18990"
+                                    value="18990">
 
                                 <div class="d-flex justify-content-between text-muted small">
                                     <span>$0</span>
-                                    <span id="precioRangoTexto">$19.990</span>
+                                    <span id="precioRangoTexto">$18.990</span>
                                 </div>
 
                             </div>
@@ -525,20 +536,21 @@
 
                     <div id="gridPacks" class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
 
-                        <!-- Producto 1: Set Bluey -->
+                        <!-- Set Completo -->
                         <div class="col producto-col">
                             <article class="card producto-card h-100 border-0 shadow-sm" data-personaje="set-decoracion"
                                 data-precio="18990" data-disponibilidad="disponible" data-orden="1">
 
                                 <div class="producto-imagen">
-                                    <img src="img/Bluey.jpg" class="card-img-top" alt="Set Completo Bluey">
+                                    <img src="img/Bluey.jpg" class="card-img-top"
+                                        alt="Set Completo Bluey">
 
                                     <span class="badge bg-rosa producto-badge">
-                                        Bluey
+                                        Pack destacado
                                     </span>
 
                                     <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                        aria-label="Agregar a favoritos">
+                                        aria-label="Agregar Set Bluey a favoritos">
                                         <i class="bi bi-heart"></i>
                                     </button>
                                 </div>
@@ -546,7 +558,7 @@
                                 <div class="card-body d-flex flex-column p-4">
 
                                     <small class="text-rosa fw-semibold mb-2">
-                                        Set Decoración
+                                        Bluey
                                     </small>
 
                                     <h5 class="card-title fw-bold">
@@ -554,7 +566,7 @@
                                     </h5>
 
                                     <p class="text-muted small">
-                                        Banderín, platos, vasos, manteles y globos temáticos para la fiesta completa.
+                                        Incluye banderín, platos, vasos, manteles y globos temáticos para la fiesta completa.
                                     </p>
 
                                     <div class="mt-auto">
@@ -577,72 +589,20 @@
                             </article>
                         </div>
 
-                        <!-- Producto 2: Set Minecraft -->
-                        <div class="col producto-col">
-                            <article class="card producto-card h-100 border-0 shadow-sm" data-personaje="set-decoracion"
-                                data-precio="19990" data-disponibilidad="disponible" data-orden="2">
-
-                                <div class="producto-imagen">
-                                    <img src="img/Minecraft.jpg" class="card-img-top" alt="Set Completo Minecraft">
-
-                                    <span class="badge bg-rosa producto-badge">
-                                        Minecraft
-                                    </span>
-
-                                    <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                        aria-label="Agregar a favoritos">
-                                        <i class="bi bi-heart"></i>
-                                    </button>
-                                </div>
-
-                                <div class="card-body d-flex flex-column p-4">
-
-                                    <small class="text-rosa fw-semibold mb-2">
-                                        Set Decoración
-                                    </small>
-
-                                    <h5 class="card-title fw-bold">
-                                        Set Cumpleaños Completo Minecraft
-                                    </h5>
-
-                                    <p class="text-muted small">
-                                        Incluye banderín, vajilla completa y globos temáticos de Creeper y Steve.
-                                    </p>
-
-                                    <div class="mt-auto">
-
-                                        <p class="text-success small mb-2">
-                                            <i class="bi bi-check-circle-fill me-1"></i>
-                                            En existencia
-                                        </p>
-
-                                        <p class="fs-5 fw-bold mb-3">$19.990</p>
-
-                                        <button type="button" class="btn btn-rosa w-100">
-                                            <i class="bi bi-bag-plus me-2"></i>
-                                            Añadir al carrito
-                                        </button>
-
-                                    </div>
-                                </div>
-
-                            </article>
-                        </div>
-
-                        <!-- Producto 3: Globos Bluey -->
+                        <!-- Globos -->
                         <div class="col producto-col">
                             <article class="card producto-card h-100 border-0 shadow-sm" data-personaje="globos"
-                                data-precio="4990" data-disponibilidad="disponible" data-orden="3">
+                                data-precio="4990" data-disponibilidad="disponible" data-orden="2">
 
                                 <div class="producto-imagen">
                                     <img src="img/Bluey.jpg" class="card-img-top" alt="Globos Metalizados Bluey">
 
                                     <span class="badge bg-rosa producto-badge">
-                                        Bluey
+                                        Globos
                                     </span>
 
                                     <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                        aria-label="Agregar a favoritos">
+                                        aria-label="Agregar Globos Bluey a favoritos">
                                         <i class="bi bi-heart"></i>
                                     </button>
                                 </div>
@@ -650,7 +610,7 @@
                                 <div class="card-body d-flex flex-column p-4">
 
                                     <small class="text-rosa fw-semibold mb-2">
-                                        Globos
+                                        Bluey
                                     </small>
 
                                     <h5 class="card-title fw-bold">
@@ -658,7 +618,7 @@
                                     </h5>
 
                                     <p class="text-muted small">
-                                        Globos metalizados de alta duración con las figuras de Bluey y Bingo.
+                                        Hermosos globos metalizados de alta duración con figuras de Bluey y Bingo.
                                     </p>
 
                                     <div class="mt-auto">
@@ -681,72 +641,21 @@
                             </article>
                         </div>
 
-                        <!-- Producto 4: Globos Minecraft -->
-                        <div class="col producto-col">
-                            <article class="card producto-card h-100 border-0 shadow-sm" data-personaje="globos"
-                                data-precio="4990" data-disponibilidad="disponible" data-orden="4">
-
-                                <div class="producto-imagen">
-                                    <img src="img/Minecraft.jpg" class="card-img-top" alt="Globos Metalizados Minecraft">
-
-                                    <span class="badge bg-rosa producto-badge">
-                                        Minecraft
-                                    </span>
-
-                                    <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                        aria-label="Agregar a favoritos">
-                                        <i class="bi bi-heart"></i>
-                                    </button>
-                                </div>
-
-                                <div class="card-body d-flex flex-column p-4">
-
-                                    <small class="text-rosa fw-semibold mb-2">
-                                        Globos
-                                    </small>
-
-                                    <h5 class="card-title fw-bold">
-                                        Set Globos Metalizados Minecraft x5
-                                    </h5>
-
-                                    <p class="text-muted small">
-                                        Globos metalizados resistentes de Creeper, TNT y Espada de Diamante.
-                                    </p>
-
-                                    <div class="mt-auto">
-
-                                        <p class="text-success small mb-2">
-                                            <i class="bi bi-check-circle-fill me-1"></i>
-                                            En existencia
-                                        </p>
-
-                                        <p class="fs-5 fw-bold mb-3">$4.990</p>
-
-                                        <button type="button" class="btn btn-rosa w-100">
-                                            <i class="bi bi-bag-plus me-2"></i>
-                                            Añadir al carrito
-                                        </button>
-
-                                    </div>
-                                </div>
-
-                            </article>
-                        </div>
-
-                        <!-- Producto 5: Mantel Plástico -->
+                        <!-- Mantel -->
                         <div class="col producto-col">
                             <article class="card producto-card h-100 border-0 shadow-sm" data-personaje="mantel"
-                                data-precio="3490" data-disponibilidad="disponible" data-orden="5">
+                                data-precio="3490" data-disponibilidad="disponible" data-orden="3">
 
                                 <div class="producto-imagen">
-                                    <img src="img/Bluey.jpg" class="card-img-top" alt="Mantel Plástico Bluey">
+                                    <img src="img/Bluey.jpg" class="card-img-top"
+                                        alt="Mantel Plástico Bluey">
 
                                     <span class="badge bg-rosa producto-badge">
-                                        Bluey
+                                        Decoración
                                     </span>
 
                                     <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                        aria-label="Agregar a favoritos">
+                                        aria-label="Agregar Mantel Bluey a favoritos">
                                         <i class="bi bi-heart"></i>
                                     </button>
                                 </div>
@@ -754,7 +663,7 @@
                                 <div class="card-body d-flex flex-column p-4">
 
                                     <small class="text-rosa fw-semibold mb-2">
-                                        Manteles
+                                        Bluey
                                     </small>
 
                                     <h5 class="card-title fw-bold">
@@ -762,7 +671,7 @@
                                     </h5>
 
                                     <p class="text-muted small">
-                                        Mantel de plástico impermeable con diseño ilustrado de la familia Heelers.
+                                        Mantel de plástico impermeable con diseño estampado de la familia Heelers.
                                     </p>
 
                                     <div class="mt-auto">
@@ -785,20 +694,20 @@
                             </article>
                         </div>
 
-                        <!-- Producto 6: Vasos Polipapel -->
+                        <!-- Vasos -->
                         <div class="col producto-col">
                             <article class="card producto-card h-100 border-0 shadow-sm" data-personaje="vasos"
-                                data-precio="2990" data-disponibilidad="disponible" data-orden="6">
+                                data-precio="2990" data-disponibilidad="disponible" data-orden="4">
 
                                 <div class="producto-imagen">
-                                    <img src="img/Minecraft.jpg" class="card-img-top" alt="Vasos Minecraft">
+                                    <img src="img/Bluey.jpg" class="card-img-top" alt="Vasos Polipapel Bluey">
 
                                     <span class="badge bg-rosa producto-badge">
-                                        Minecraft
+                                        Vajilla
                                     </span>
 
                                     <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                        aria-label="Agregar a favoritos">
+                                        aria-label="Agregar Vasos Bluey a favoritos">
                                         <i class="bi bi-heart"></i>
                                     </button>
                                 </div>
@@ -806,15 +715,15 @@
                                 <div class="card-body d-flex flex-column p-4">
 
                                     <small class="text-rosa fw-semibold mb-2">
-                                        Vasos y Vajilla
+                                        Bluey
                                     </small>
 
                                     <h5 class="card-title fw-bold">
-                                        Vasos Polipapel Minecraft x10
+                                        Vasos Polipapel Bluey x10
                                     </h5>
 
                                     <p class="text-muted small">
-                                        Pack de 10 vasos ecológicos de polipapel aptos para bebidas frías y calientes.
+                                        Pack de 10 vasos biodegradables de polipapel aptos para bebidas frías y calientes.
                                     </p>
 
                                     <div class="mt-auto">
@@ -837,20 +746,20 @@
                             </article>
                         </div>
 
-                        <!-- Producto 7: Piñata TNT -->
+                        <!-- Piñata -->
                         <div class="col producto-col">
                             <article class="card producto-card h-100 border-0 shadow-sm" data-personaje="pinata"
-                                data-precio="6990" data-disponibilidad="disponible" data-orden="7">
+                                data-precio="6990" data-disponibilidad="disponible" data-orden="5">
 
                                 <div class="producto-imagen">
-                                    <img src="img/Minecraft.jpg" class="card-img-top" alt="Piñata TNT Minecraft">
+                                    <img src="img/Bluey.jpg" class="card-img-top" alt="Piñata Bluey">
 
                                     <span class="badge bg-rosa producto-badge">
-                                        Minecraft
+                                        Cotillón
                                     </span>
 
                                     <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                        aria-label="Agregar a favoritos">
+                                        aria-label="Agregar Piñata Bluey a favoritos">
                                         <i class="bi bi-heart"></i>
                                     </button>
                                 </div>
@@ -858,15 +767,15 @@
                                 <div class="card-body d-flex flex-column p-4">
 
                                     <small class="text-rosa fw-semibold mb-2">
-                                        Piñatas
+                                        Bluey
                                     </small>
 
                                     <h5 class="card-title fw-bold">
-                                        Piñata Bloque TNT Minecraft
+                                        Piñata Reutilizable Bluey
                                     </h5>
 
                                     <p class="text-muted small">
-                                        Piñata con tiras de cinta para abrir de forma limpia, segura y fácil.
+                                        Piñata con tiras de cinta para abrir de forma segura y reutilizable.
                                     </p>
 
                                     <div class="mt-auto">
@@ -889,20 +798,20 @@
                             </article>
                         </div>
 
-                        <!-- Producto 8: Pack Arco de Globos -->
+                        <!-- Corona -->
                         <div class="col producto-col">
-                            <article class="card producto-card h-100 border-0 shadow-sm" data-personaje="set-decoracion"
-                                data-precio="12990" data-disponibilidad="disponible" data-orden="8">
+                            <article class="card producto-card h-100 border-0 shadow-sm" data-personaje="corona"
+                                data-precio="2490" data-disponibilidad="disponible" data-orden="6">
 
                                 <div class="producto-imagen">
-                                    <img src="img/Bluey.jpg" class="card-img-top" alt="Arco de Globos Orgánico">
+                                    <img src="img/Bluey.jpg" class="card-img-top" alt="Corona Cumpleañero Bluey">
 
                                     <span class="badge bg-rosa producto-badge">
-                                        Decoración
+                                        Accesorios
                                     </span>
 
                                     <button type="button" class="btn btn-light rounded-circle btn-favorito shadow-sm"
-                                        aria-label="Agregar a favoritos">
+                                        aria-label="Agregar Corona Bluey a favoritos">
                                         <i class="bi bi-heart"></i>
                                     </button>
                                 </div>
@@ -910,15 +819,15 @@
                                 <div class="card-body d-flex flex-column p-4">
 
                                     <small class="text-rosa fw-semibold mb-2">
-                                        Set Decoración
+                                        Bluey
                                     </small>
 
                                     <h5 class="card-title fw-bold">
-                                        Kit Arco Orgánico de Globos Pastel x80
+                                        Corona Cumpleañero Bluey
                                     </h5>
 
                                     <p class="text-muted small">
-                                        Incluye 80 globos pastel surtidos, cinta para arco orgánico y puntos de pegamento.
+                                        Corona ajustable de cartón resistente para destacar al cumpleañero o cumpleañera.
                                     </p>
 
                                     <div class="mt-auto">
@@ -928,7 +837,7 @@
                                             En existencia
                                         </p>
 
-                                        <p class="fs-5 fw-bold mb-3">$12.990</p>
+                                        <p class="fs-5 fw-bold mb-3">$2.490</p>
 
                                         <button type="button" class="btn btn-rosa w-100">
                                             <i class="bi bi-bag-plus me-2"></i>
@@ -979,7 +888,7 @@
                             <a href="index.html" class="link-light text-decoration-none">Inicio</a>
                         </li>
                         <li>
-                            <a href="coleccion.html" class="link-light text-decoration-none">Nuestra Tienda</a>
+                            <a href="#" class="link-light text-decoration-none">Nuestra Tienda</a>
                         </li>
                         <li>
                             <a href="packs.html" class="link-light text-decoration-none">Packs Decoración</a>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Villa del Globo</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/miestilo.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+            <div class="container">
+
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/Villa_del_Globo_Mark.avif" alt="Villa del Globo" class="rounded-circle" height="70">
+                </a>
+
+                <!-- Menú responsive -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+
+                    <!-- Menú principal -->
+                    <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <!-- Nuestra tienda -->
+                        <li class="nav-item dropdown mega-dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Nuestra tienda
+                            </a>
+
+                            <div class="dropdown-menu mega-menu p-4">
+                                <div class="row g-4">
+
+                                    <!-- Temáticas 1 -->
+                                    <div class="col-lg-4">
+                                        <h6 class="fw-bold border-bottom pb-2">
+                                            Temáticas 1
+                                        </h6>
+
+                                        <ul class="list-unstyled mb-0">
+                                            <li><a href="#" class="dropdown-item">Among Us</a></li>
+                                            <li><a href="#" class="dropdown-item">Baby Shark</a></li>
+                                            <li><a href="#" class="dropdown-item">Barbie</a></li>
+                                            <li><a href="#" class="dropdown-item">Bluey</a></li>
+                                            <li><a href="#" class="dropdown-item">Bob Esponja</a></li>
+                                            <li><a href="#" class="dropdown-item">Cars</a></li>
+                                            <li><a href="#" class="dropdown-item">Cinnamonroll</a></li>
+                                            <li><a href="#" class="dropdown-item">Circo Digital</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Temáticas 2 -->
+                                    <div class="col-lg-4">
+                                        <h6 class="fw-bold border-bottom pb-2">
+                                            Temáticas 2
+                                        </h6>
+
+                                        <ul class="list-unstyled mb-0">
+                                            <li><a href="#" class="dropdown-item">Dragon Ball</a></li>
+                                            <li><a href="#" class="dropdown-item">Dinosaurio</a></li>
+                                            <li><a href="#" class="dropdown-item">FNAF</a></li>
+                                            <li><a href="#" class="dropdown-item">Frozen</a></li>
+                                            <li><a href="#" class="dropdown-item">Guerreras K-pop</a></li>
+                                            <li><a href="#" class="dropdown-item">Hello Kitty</a></li>
+                                            <li><a href="#" class="dropdown-item">Intensamente</a></li>
+                                            <li><a href="#" class="dropdown-item">Kuromi</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Temáticas 3 -->
+                                    <div class="col-lg-4">
+                                        <h6 class="fw-bold border-bottom pb-2">
+                                            Temáticas 3
+                                        </h6>
+
+                                        <ul class="list-unstyled mb-0">
+                                            <li><a href="#" class="dropdown-item">Mario Bros</a></li>
+                                            <li><a href="#" class="dropdown-item">Masha</a></li>
+                                            <li><a href="#" class="dropdown-item">Merlina</a></li>
+                                            <li><a href="#" class="dropdown-item">Mickey Mouse</a></li>
+                                            <li><a href="#" class="dropdown-item">Minecraft</a></li>
+                                            <li><a href="#" class="dropdown-item">Minions</a></li>
+                                            <li><a href="#" class="dropdown-item">Minnie Mouse</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="packs.html">
+                                Packs Decoración Cumpleaños
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Iconos -->
+                    <ul class="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
+
+                        <!-- Buscar -->
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-link text-dark p-0 border-0 shadow-none"
+                                data-bs-toggle="modal" data-bs-target="#modalBuscador" aria-label="Buscar productos">
+                                <i class="bi bi-search fs-2"></i>
+                            </button>
+                        </li>
+
+                        <!-- Perfil -->
+                        <li class="nav-item">
+                            <div class="dropdown">
+
+                                <button type="button" class="btn btn-link text-dark p-0 border-0 shadow-none"
+                                    id="dropdownPerfil" data-bs-toggle="dropdown" aria-expanded="false"
+                                    aria-label="Cuenta de usuario">
+                                    <i class="bi bi-person fs-2"></i>
+                                </button>
+
+                                <ul id="menuUsuario" class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2"
+                                    aria-labelledby="dropdownPerfil">
+
+                                    <li>
+                                        <div class="px-2 py-1">
+                                            <p class="mb-0 small text-muted">
+                                                ¡Hola! Bienvenido a
+                                            </p>
+                                            <h6 class="fw-bold mb-0">
+                                                Villa del Globo
+                                            </h6>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <hr class="dropdown-divider my-2">
+                                    </li>
+
+                                    <li>
+                                        <button type="button"
+                                            class="dropdown-item rounded py-2 fw-semibold text-white text-center bg-rosa"
+                                            data-bs-toggle="modal" data-bs-target="#modalLogin">
+                                            <i class="bi bi-box-arrow-in-right me-2"></i>
+                                            Iniciar sesión
+                                        </button>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item rounded py-2 text-muted small" href="#"
+                                            data-bs-toggle="modal" data-bs-target="#modalLogin">
+                                            <i class="bi bi-person-plus me-2"></i>
+                                            ¿No tienes cuenta? Regístrate
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Carrito -->
+                        <li class="nav-item">
+                            <button type="button"
+                                class="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito"
+                                aria-controls="offcanvasCarrito" aria-label="Ver carrito">
+
+                                <i class="bi bi-bag fs-2"></i>
+
+                                <span id="cart-count"
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-rosa">
+                                    0
+                                </span>
+                            </button>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- ENCABEZADO DE PÁGINA -->
+        <section class="bg-light py-5 border-bottom">
+            <div class="container text-center">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-2">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Inicio</a></li>
+                        <li class="breadcrumb-item active text-rosa fw-bold" aria-current="page">Contacto</li>
+                    </ol>
+                </nav>
+                <h1 class="fw-bold display-6">Ponte en Contacto con Nosotros</h1>
+                <p class="text-muted mb-0">¿Tienes dudas sobre tu pedido o un producto? Estamos aquí para ayudarte.</p>
+            </div>
+        </section>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <section class="container my-5">
+            <div class="row g-4">
+
+                <!-- INFORMACIÓN DE CONTACTO -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm h-100 p-4">
+                        <h4 class="fw-bold mb-4 text-dark">Información de Atención</h4>
+
+                        <!-- Teléfono / WhatsApp -->
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-rosa text-white rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                <i class="bi bi-whatsapp fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">WhatsApp & Teléfono</h6>
+                                <p class="text-secondary mb-1">Escríbenos para una respuesta más rápida:</p>
+                                <a href="https://wa.me/56979099900" target="_blank" class="text-rosa fw-semibold text-decoration-none">
+                                    +56 9 7909 9900
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Correo Electrónico -->
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-rosa text-white rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                <i class="bi bi-envelope-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Correo Electrónico</h6>
+                                <p class="text-secondary mb-1">Envíanos tus consultas o cotizaciones:</p>
+                                <a href="mailto:villadelglobospa@gmail.com" class="text-rosa fw-semibold text-decoration-none">
+                                    villadelglobospa@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Horario de Atención -->
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-rosa text-white rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                <i class="bi bi-clock-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Horario de Atención Online</h6>
+                                <p class="text-secondary mb-0">Lunes a Viernes: 09:00 - 19:00 hrs</p>
+                                <p class="text-secondary mb-0">Sábados: 10:00 - 14:00 hrs</p>
+                            </div>
+                        </div>
+
+                        <!-- Redes Sociales -->
+                        <hr class="my-3">
+                        <h6 class="fw-bold mb-3">Síguenos en Redes Sociales</h6>
+                        <div class="d-flex gap-2">
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary rounded-circle" aria-label="Facebook">
+                                <i class="bi bi-facebook fs-5"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary rounded-circle" aria-label="Instagram">
+                                <i class="bi bi-instagram fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORMULARIO DE CONTACTO -->
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm p-4 p-md-5">
+                        <h3 class="fw-bold mb-3">Envíanos un Mensaje</h3>
+                        <p class="text-muted mb-4">Rellena el siguiente formulario y nuestro equipo te responderá a la brevedad posible.</p>
+
+                        <form id="formContacto">
+                            <div class="row g-3">
+                                
+                                <!-- Nombre -->
+                                <div class="col-md-6">
+                                    <label for="nombreContacto" class="form-label fw-semibold">Nombre Completo <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="nombreContacto" placeholder="Ej. Maria González" required>
+                                </div>
+
+                                <!-- Correo -->
+                                <div class="col-md-6">
+                                    <label for="emailContacto" class="form-label fw-semibold">Correo Electrónico <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="emailContacto" placeholder="correo@ejemplo.cl" required>
+                                </div>
+
+                                <!-- Teléfono -->
+                                <div class="col-md-6">
+                                    <label for="telefonoContacto" class="form-label fw-semibold">Teléfono de Contacto</label>
+                                    <input type="tel" class="form-control" id="telefonoContacto" placeholder="+56 9 1234 5678">
+                                </div>
+
+                                <!-- Asunto -->
+                                <div class="col-md-6">
+                                    <label for="asuntoContacto" class="form-label fw-semibold">Asunto <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="asuntoContacto" required>
+                                        <option value="" selected disabled>Selecciona una opción</option>
+                                        <option value="consulta">Consulta sobre productos</option>
+                                        <option value="pedido">Estado de un pedido</option>
+                                        <option value="envio">Duda sobre envíos</option>
+                                        <option value="cambio">Cambios y devoluciones</option>
+                                        <option value="otro">Otro motivo</option>
+                                    </select>
+                                </div>
+
+                                <!-- Mensaje -->
+                                <div class="col-12">
+                                    <label for="mensajeContacto" class="form-label fw-semibold">Mensaje <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="mensajeContacto" rows="5" placeholder="Escribe aquí tu duda o comentario..." required></textarea>
+                                </div>
+
+                                <!-- Botón de Envío -->
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-rosa py-2 px-4 fw-semibold">
+                                        <i class="bi bi-send me-2"></i>Enviar Mensaje
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Marca -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold">🎈 Villa del Globo</h5>
+
+                    <p class="text-secondary">
+                        Todo lo que necesitas para tus fiestas:
+                        cotillón, decoración, globos, disfraces y mucho más.
+                    </p>
+                </div>
+
+                <!-- Tienda -->
+                <div class="col-md-4">
+                    <h6 class="fw-bold">Tienda</h6>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.html" class="link-light text-decoration-none">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="link-light text-decoration-none">
+                                Nuestra Tienda
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="packs.html" class="link-light text-decoration-none">
+                                Packs Decoración
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="politicas.html" class="link-light text-decoration-none">
+                                Políticas de Envío
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contacto.html" class="link-light text-decoration-none">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contacto -->
+                <div class="col-md-4">
+
+                    <h6 class="fw-bold">Contacto</h6>
+
+                    <ul class="list-unstyled text-secondary">
+                        <li>📞 9 7909 9900</li>
+                        <li>✉️ villadelglobospa@gmail.com</li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                            class="link-light text-decoration-none fs-4" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                            class="link-light text-decoration-none fs-4" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <p class="text-center text-secondary mb-0">
+                &copy; 2026 Villa del Globo. Todos los derechos reservados.
+            </p>
+        </div>
+
+    </footer>
+
+    <!-- BUSCADOR -->
+    <div class="modal fade" id="modalBuscador" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="bi bi-search me-2"></i> Buscar productos
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formBuscador">
+                        <div class="input-group">
+                            <input type="search" id="buscador" class="form-control" placeholder="Buscar productos..." required>
+                            <button type="submit" class="btn btn-rosa">Buscar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="bi bi-person-circle me-2"></i> Iniciar sesión
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formLogin">
+                        <div class="mb-3">
+                            <label for="correoLogin" class="form-label">Correo electrónico</label>
+                            <input type="email" id="correoLogin" class="form-control" placeholder="correo@ejemplo.cl" autocomplete="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordLogin" class="form-label">Contraseña</label>
+                            <input type="password" id="passwordLogin" class="form-control" placeholder="Contraseña" autocomplete="current-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-rosa w-100">
+                            <i class="bi bi-box-arrow-in-right me-2"></i> Iniciar sesión
+                        </button>
+                        <p id="mensajeLogin" class="text-center mt-3 mb-0"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARRITO -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito" aria-labelledby="tituloCarrito">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold" id="tituloCarrito">
+                <i class="bi bi-bag me-2"></i> Mi carrito
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="carritoProductos"></div>
+            <div class="border-top pt-3 mt-auto">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-semibold">Total</span>
+                    <strong id="carritoTotal" class="fs-5">$0</strong>
+                </div>
+                <button type="button" class="btn btn-rosa w-100 mt-3">Finalizar compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

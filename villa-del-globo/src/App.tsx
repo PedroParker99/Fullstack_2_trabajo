@@ -1,10 +1,7 @@
+import Home from './pages/Home'
+
 function App() {
-  return (
-    <div className="container py-5">
-      <h1>Villa del Globo</h1>
-      <button className="btn btn-primary">Prueba Bootstrap</button>
-    </div>
-  )
+  return <Home />
 }
 
 export default App

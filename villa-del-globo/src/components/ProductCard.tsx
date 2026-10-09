@@ -1,11 +1,9 @@
 import type { Producto } from '../models/Producto'
+import { formatearPrecio } from '../utils/formato'
 
 interface ProductCardProps {
   producto: Producto
 }
-
-const formatearPrecio = (valor: number): string =>
-  `$${valor.toLocaleString('es-CL')}`
 
 function ProductCard({ producto }: ProductCardProps) {
   const { nombre, precio, precioAnterior, imagen, disponible } = producto

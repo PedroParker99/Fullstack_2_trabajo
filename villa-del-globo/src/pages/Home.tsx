@@ -1,6 +1,6 @@
 import CarruselProductos from '../components/CarruselProductos'
 import CategoriaCard from '../components/CategoriaCard'
-import ProductCard from '../components/ProductCard'
+import ProductList from '../components/ProductList'
 import SeccionTematica from '../components/SeccionTematica'
 import { obtenerCategorias } from '../services/categoriaService'
 import { obtenerProductos } from '../services/productoService'
@@ -47,16 +47,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="container mb-5">
-        <h2 className="text-center mb-4">Productos más Vendidos</h2>
-        <div className="row g-4">
-          {masVendidos.map((producto) => (
-            <div className="col-6 col-md-4 col-lg-3" key={producto.id}>
-              <ProductCard producto={producto} />
-            </div>
-          ))}
-        </div>
-      </section>
+      <ProductList titulo="Productos más Vendidos" productos={masVendidos} />
 
       <section className="container mb-5">
         <h2 className="text-center mb-4">Novedades en Decoración</h2>

@@ -1,5 +1,5 @@
 import Footer from './components/Footer'
-import Home from './pages/Home'
+import Catalogo from './pages/Coleccion'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <>
       <div className="page-wrapper">
         <Navbar />
-        <Home />
+        <Catalogo />
       </div>
       <Footer />
     </>

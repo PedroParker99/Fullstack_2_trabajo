@@ -1,7 +1,13 @@
+import Footer from './components/Footer'
 import Home from './pages/Home'
 
 function App() {
-  return <Home />
+  return (
+    <>
+      <Home />
+      <Footer />
+    </>
+  )
 }
 
 export default App

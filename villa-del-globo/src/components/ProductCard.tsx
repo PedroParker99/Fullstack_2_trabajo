@@ -1,11 +1,9 @@
 import type { Producto } from '../models/Producto'
+import { formatearPrecio } from '../utils/formato'
 
 interface ProductCardProps {
   producto: Producto
 }
-
-const formatearPrecio = (valor: number): string =>
-  `$${valor.toLocaleString('es-CL')}`
 
 function ProductCard({ producto }: ProductCardProps) {
   const { nombre, precio, precioAnterior, imagen, disponible } = producto
@@ -15,7 +13,7 @@ function ProductCard({ producto }: ProductCardProps) {
     : 0
 
   return (
-    <article className="card h-100 shadow-sm">
+    <article className="card h-100 card-producto producto-card shadow-sm">
       {descuento > 0 && (
         <span className="badge bg-danger position-absolute m-2">
           Ahorras {descuento}%
@@ -29,15 +27,18 @@ function ProductCard({ producto }: ProductCardProps) {
 
         <p className="mb-3">
           {precioAnterior && (
-            <span className="text-decoration-line-through text-muted me-2">
+            <span className="text-decoration-line-through text-muted">
               {formatearPrecio(precioAnterior)}
             </span>
           )}
-          <span className="fw-bold fs-5">{formatearPrecio(precio)}</span>
+          <span className={precioAnterior ? 'text-danger fw-bold ms-2 fs-5' : 'fw-bold fs-5'}>
+            {formatearPrecio(precio)}
+          </span>
         </p>
 
         {disponible ? (
-          <button type="button" className="btn btn-primary mt-auto">
+          <button type="button" className="btn btn-rosa mt-auto">
+            <i className="bi bi-bag-plus me-2"></i>
             Añadir al carrito
           </button>
         ) : (

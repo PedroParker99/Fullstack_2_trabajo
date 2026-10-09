@@ -1,0 +1,668 @@
+/* Crear el cuerpo que se vaya repitiendo*/
+body {
+    background-image: url('/img/Nubes_Fondo.png');
+    background-repeat: repeat;
+}
+
+/* Clase para el banner principal */
+.banner-hero {
+    max-height: 600px;
+    overflow: hidden;
+}
+
+/* Rosado vibrante de la marca */
+.bg-rosa-brand {
+    background-color: #e6027e;
+}
+
+/* Diseño como pagina, en el sitio principal */
+.page-wrapper {
+    max-width: 1610px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+.banner-hero img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.page-wrapper {
+    position: relative;
+}
+
+.navbar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent);
+}
+
+.navbar-overlay .navbar-brand,
+.navbar-overlay .nav-link {
+    color: #ffffff !important;
+}
+
+.navbar-brand img {
+    margin-left: -65px;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+.categoria-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    aspect-ratio: 3 / 4;
+}
+
+.categoria-card img.categoria-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.categoria-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    transition: background 0.3s ease;
+    z-index: 1;
+}
+
+.categoria-nombre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+    text-align: center;
+}
+
+.categoria-card:hover .categoria-img {
+    transform: scale(1.1);
+}
+
+.categoria-card:hover::before {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.categoria-card:hover .categoria-nombre {
+    font-size: 1.7rem;
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+.seccion-categorias {
+    max-width: 1200px;
+}
+
+.mega-menu {
+    width: 900px;
+    max-width: 95vw;
+    left: 0%;
+    transform: translateX(-10%);
+}
+
+@media (hover: hover) {
+    .mega-dropdown:hover>.dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+}
+
+.mega-menu {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mega-menu h6 {
+    color: #030303;
+    border-bottom: 2px solid #e2e5eb;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mega-menu .row>.col:not(:first-child) {
+    border-left: 1px solid #eee;
+    padding-left: 1.5rem;
+}
+
+.mega-menu .dropdown-item {
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.mega-menu .dropdown-item:hover {
+    background-color: #e7f1ff;
+    color: #0d6efd;
+    transform: translateX(4px);
+}
+
+/* Para el texto final del index */
+.texto-descripcion {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+/* Efecto al pasar el mouse por encima */
+.btn-limpiar:hover {
+    background-color: #bb2d3b;
+    /* Rojo un poco más oscuro */
+    color: #ffffff !important;
+}
+
+/* Efecto al hacer clic */
+.btn-limpiar:active {
+    transform: scale(0.98);
+}
+
+/* Acordeón siempre blanco (abierto o cerrado) */
+.accordion-button,
+.accordion-button:not(.collapsed) {
+    background-color: #ffffff !important;
+    color: #212529 !important;
+    box-shadow: none !important;
+}
+
+/* Eliminar el borde/sombra azul al hacer clic (focus) */
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 125px;
+    /* Ajusta este valor según la altura de tu menú superior */
+    max-height: calc(100vh - 40px);
+    /* Opcional: permite scroll interno si el menú es muy alto */
+    overflow-y: auto;
+}
+
+.bg-rosa-brand {
+    background-color: #e6027e;
+    /* Rosado vibrante de la marca */
+}
+
+
+/* SECCIÓN PARA LAS TARJETAS DE LOS PRODUCTOS */
+
+/* Transición suave para todas las tarjetas */
+.card-producto {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+    /* Mantiene la imagen redondeada en los bordes */
+}
+
+/* Transición suave para las imágenes */
+.card-producto .card-img-top {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL PUNTERO (HOVER) */
+.card-producto:hover {
+    /* 1. Eleva ligeramente la tarjeta */
+    transform: translateY(-6px);
+
+    /* 2. EFECTO DE LUZ / RESPLANDOR (Glow con el rosado de tu marca o sombra suave) */
+    box-shadow: 0 10px 25px rgba(230, 0, 126, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* EFECTO DE ILUMINACIÓN EN LA IMAGEN */
+.card-producto:hover .card-img-top {
+    /* Alumbra / aclara la foto un 8% */
+    filter: brightness(1.08);
+
+    /* Pequeño zoom suave a la imagen */
+    transform: scale(1.02);
+}
+
+/* Asegura que las etiquetas flotantes siempre estén por encima de la imagen */
+.card-producto .badge {
+    z-index: 5;
+    top: 10px;
+    left: 10px;
+}
+
+
+/* ESTO ES PARA EL FILTRO QUE CUENTA CON LOS PRECIOS */
+
+
+/* Quita el borde y la sombra azul al hacer foco en el buscador del modal */
+#inputSearchModal:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: transparent !important;
+}
+
+.rango-precio {
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* 1. Línea gris de fondo (Capa inferior z-index: 1) */
+.rango-precio::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+/* 2. Limpieza de inputs y z-index superior */
+.rango-precio input[type="range"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent !important;
+    border: none;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+/* Ocultar la pista nativa de Chrome/Safari/Firefox */
+.rango-precio input[type="range"]::-webkit-slider-runnable-track {
+    background: transparent;
+    border: none;
+}
+
+.rango-precio input[type="range"]::-moz-range-track {
+    background: transparent;
+    border: none;
+}
+
+/* 3. Perilla rosada (Chrome, Safari, Edge) */
+.rango-precio input[type="range"]::-webkit-slider-thumb {
+    pointer-events: auto;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #e6007e;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+/* 3. Perilla rosada (Firefox) */
+.rango-precio input[type="range"]::-moz-range-thumb {
+    pointer-events: auto;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #e6007e;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    border: none;
+}
+
+/* ===== INICIO DEV2 ===== */
+
+
+:root {
+    --rosa: #e6007e;
+    --rosa-hover: #c9006e;
+    --rosa-claro: #fff0f7;
+}
+
+.text-rosa {
+    color: var(--rosa) !important;
+}
+
+.bg-rosa {
+    background: var(--rosa) !important;
+}
+
+/* Botón rosa */
+.btn-rosa {
+    background: var(--rosa);
+    border-color: var(--rosa);
+    color: #fff;
+}
+
+.btn-rosa:hover {
+    background: var(--rosa-hover);
+    border-color: var(--rosa-hover);
+    color: #fff;
+}
+
+/* PACKS */
+.ordenar-productos {
+    width: 350px;
+    max-width: 100%;
+}
+
+.filtro-grupo {
+    padding: 1rem 0;
+    border-top: 1px solid #dee2e6;
+}
+
+.filtro-titulo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-weight: 600;
+}
+
+.filtro-titulo:hover {
+    color: var(--rosa);
+}
+
+.flecha {
+    transition: .2s;
+}
+
+.filtro-titulo[aria-expanded="false"] .flecha {
+    transform: rotate(180deg);
+}
+
+.form-check-input:checked {
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+}
+
+/* Productos */
+.producto-card {
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: .2s;
+}
+
+.producto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .12) !important;
+}
+
+.producto-imagen {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    background: #f8f9fa;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.producto-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.btn-favorito {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    color: var(--rosa);
+}
+
+.btn-favorito:hover,
+.btn-favorito.activo {
+    background: var(--rosa) !important;
+    color: #fff;
+}
+
+/* ÁREA DE USUARIO */
+.cuenta-panel {
+    min-height: 650px;
+}
+
+/* Menú lateral */
+.perfil-menu-item {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .8rem 1rem;
+    margin-bottom: .25rem;
+    border-radius: .5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.perfil-menu-item i {
+    width: 20px;
+}
+
+.perfil-menu-item:hover {
+    background: #f8f9fa;
+    color: var(--rosa);
+}
+
+.perfil-menu-item.active {
+    background: var(--rosa-claro);
+    color: var(--rosa);
+    font-weight: 600;
+}
+
+/* COMPRAS */
+.compras-orden {
+    width: 160px;
+}
+
+.pedido-imagen {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.pedido:hover {
+    background: #fafafa;
+}
+
+/* DIRECCIONES Y PAGOS */
+.direccion-icono,
+.pago-icono,
+.perfil-icono {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--rosa-claro);
+    color: var(--rosa);
+}
+
+.badge-principal {
+    background: var(--rosa-claro);
+    color: var(--rosa);
+}
+
+.direccion-item:hover,
+.pago-item:hover {
+    background: #fafafa;
+}
+
+.direccion-agregar {
+    border: 2px dashed #dee2e6;
+}
+
+.direccion-agregar:hover {
+    border-color: var(--rosa);
+    background: var(--rosa-claro);
+    color: var(--rosa);
+}
+
+/* SEGURIDAD */
+.seguridad-seccion {
+    padding: 2rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.seguridad-icono,
+.sesion-icono,
+.actividad-icono,
+.peligro-icono,
+.proteccion-icono {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.seguridad-icono,
+.actividad-icono {
+    background: var(--rosa-claro);
+    color: var(--rosa);
+}
+
+.sesion-icono {
+    background: #f1f3f5;
+    color: #495057;
+}
+
+.peligro-icono {
+    background: #fdecef;
+    color: #dc3545;
+}
+
+.proteccion-icono {
+    background: #e8f7ee;
+    color: #198754;
+}
+
+.form-switch .form-check-input {
+    cursor: pointer;
+}
+
+.form-switch .form-check-input:checked {
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+}
+
+.sesion-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 0;
+}
+
+.actividad-item {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+.aviso-seguridad {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: .6rem;
+}
+
+.zona-peligro {
+    padding: 1.25rem;
+    border: 1px solid rgba(220, 53, 69, .25);
+    border-radius: .75rem;
+    background: #fffafa;
+}
+
+/* FOOTER */
+footer a:hover {
+    opacity: .7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991.98px) {
+
+    .mega-menu,
+    .ordenar-productos {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cuenta-panel aside {
+        border-right: 0 !important;
+        border-bottom: 1px solid #dee2e6;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .producto-imagen {
+        height: 280px;
+    }
+
+    .compras-orden {
+        width: 100%;
+    }
+
+    .pedido-imagen {
+        width: 85px;
+        height: 85px;
+    }
+
+    .sesion-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Buscador de packs */
+.buscador-packs {
+    width: 280px;
+    max-width: 100%;
+}
+
+/* ===== FIN DEV2 ===== */
+
+
+
+/* ===== INICIO DEV1 ===== */
+
+/* Ancho estricto e inalterable para el menú lateral */
+.sidebar-admin {
+    width: 260px !important;
+    min-width: 260px !important;
+    max-width: 260px !important;
+    flex-shrink: 0 !important;
+}
+
+/* ===== FIN DEV1 ===== */

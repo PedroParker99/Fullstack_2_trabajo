@@ -36,6 +36,43 @@ const productos: Producto[] = [
     tematica: 'Minnie Mouse',
     disponible: true,
   },
+  {
+    id: 5,
+    nombre: 'Mantel Spiderman',
+    precio: 3990,
+    precioAnterior: 4990,
+    imagen: '/img/spiderman_mantel.webp',
+    tematica: 'Spiderman',
+    disponible: true,
+  },
+  {
+    id: 6,
+    nombre: 'Mantel Frozen',
+    precio: 3990,
+    precioAnterior: 4990,
+    imagen: '/img/frozen_mantel.webp',
+    tematica: 'Frozen',
+    disponible: true,
+  },
+  {
+    id: 7,
+    nombre: 'Set Mario Bros',
+    precio: 19990,
+    precioAnterior: 24990,
+    imagen: '/img/SETMARIO.webp',
+    tematica: 'Mario Bros',
+    disponible: true,
+  },
+  {
+    id: 8,
+    nombre: 'Corona Minecraft',
+    precio: 3990,
+    precioAnterior: 4990,
+    imagen: '/img/minecraft_corona.webp',
+    tematica: 'Minecraft',
+    disponible: true,
+  },
+
 ]
 
 export const obtenerProductos = (): Producto[] => productos

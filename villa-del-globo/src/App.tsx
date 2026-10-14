@@ -1,6 +1,7 @@
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
+import CarritoOffcanvas from './components/CarritoOffcanvas'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Home />
       </div>
       <Footer />
+      <CarritoOffcanvas />
     </>
   )
 }

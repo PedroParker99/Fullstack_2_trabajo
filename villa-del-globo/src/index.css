@@ -665,4 +665,23 @@ footer a:hover {
     flex-shrink: 0 !important;
 }
 
+/* Ajuste para pantallas pequeñas -TS*/
+.sidebar-admin {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .sidebar-admin {
+    width: 250px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+
+  .sidebar-admin .nav-item,
+  .sidebar-admin .nav-link {
+    width: 100%;
+  }
+}
+
 /* ===== FIN DEV1 ===== */

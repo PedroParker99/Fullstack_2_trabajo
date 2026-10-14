@@ -1,6 +1,5 @@
-interface NavbarProps {
-  cantidadCarrito?: number
-}
+import { useCarrito } from "../hooks/useCarrito";
+
 
 const tematicas: string[][] = [
   ['Among Us', 'Baby Shark', 'Barbie', 'Bluey', 'Bob Esponja', 'Cars', 'Cinnamonroll', 'Circo Digital'],
@@ -8,7 +7,9 @@ const tematicas: string[][] = [
   ['Mario Bros', 'Masha', 'Merlina', 'Mickey Mouse', 'Minecraft', 'Minions', 'Minnie Mouse'],
 ]
 
-function Navbar({ cantidadCarrito = 0 }: NavbarProps) {
+
+function Navbar() {
+  const { cantidadTotal } = useCarrito()
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
       <div className="container">
@@ -100,12 +101,17 @@ function Navbar({ cantidadCarrito = 0 }: NavbarProps) {
               <button
                 type="button"
                 className="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasCarrito"
+                aria-controls="offcanvasCarrito"
                 aria-label="Ver carrito"
               >
                 <i className="bi bi-bag fs-2"></i>
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-rosa">
-                  {cantidadCarrito}
-                </span>
+                {cantidadTotal > 0 && (
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-rosa">
+                    {cantidadTotal}
+                  </span>
+                )}
               </button>
             </li>
           </ul>

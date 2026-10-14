@@ -1,5 +1,6 @@
 import type { Producto } from '../models/Producto'
 import { formatearPrecio } from '../utils/formato'
+import { useCarrito } from "../hooks/useCarrito";
 
 interface ProductCardProps {
   producto: Producto
@@ -7,6 +8,7 @@ interface ProductCardProps {
 
 function ProductCard({ producto }: ProductCardProps) {
   const { nombre, precio, precioAnterior, imagen, disponible } = producto
+  const { agregar } = useCarrito();
 
   const descuento = precioAnterior
     ? Math.round(((precioAnterior - precio) / precioAnterior) * 100)
@@ -19,7 +21,6 @@ function ProductCard({ producto }: ProductCardProps) {
           Ahorras {descuento}%
         </span>
       )}
-
       <img src={imagen} className="card-img-top" alt={nombre} />
 
       <div className="card-body d-flex flex-column">
@@ -37,7 +38,7 @@ function ProductCard({ producto }: ProductCardProps) {
         </p>
 
         {disponible ? (
-          <button type="button" className="btn btn-rosa mt-auto">
+          <button type="button" className="btn btn-rosa mt-auto" onClick={() => agregar(producto)}>
             <i className="bi bi-bag-plus me-2"></i>
             Añadir al carrito
           </button>

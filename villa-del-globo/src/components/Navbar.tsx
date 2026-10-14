@@ -101,6 +101,9 @@ function Navbar() {
               <button
                 type="button"
                 className="btn btn-link text-dark p-0 position-relative border-0 shadow-none"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasCarrito"
+                aria-controls="offcanvasCarrito"
                 aria-label="Ver carrito"
               >
                 <i className="bi bi-bag fs-2"></i>

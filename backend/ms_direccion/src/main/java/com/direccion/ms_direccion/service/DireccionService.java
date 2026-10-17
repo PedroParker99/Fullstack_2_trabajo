@@ -47,7 +47,19 @@ public class DireccionService {
     @Transactional
     public Direccion crearDireccion(Direccion direccion) {
 
-        direccion.setId(null);
+        if (direccion.getId() == null || direccion.getId() <= 0) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "El ID de la dirección debe ser válido"
+            );
+        }
+
+        if (direccionRepository.existsById(direccion.getId())) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "Ya existe una dirección con ese ID"
+            );
+        }
 
         if (direccion.getUsuarioId() == null || direccion.getUsuarioId() <= 0) {
             throw new ResponseStatusException(

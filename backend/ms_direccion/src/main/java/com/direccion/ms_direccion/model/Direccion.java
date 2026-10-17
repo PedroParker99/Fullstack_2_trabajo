@@ -16,7 +16,8 @@ import lombok.NoArgsConstructor;
 public class Direccion {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull(message = "El ID de la dirección es obligatorio")
+    @Positive(message = "El ID de la dirección debe ser positivo")
     private Long id;
 
     @NotNull(message = "El ID del usuario es obligatorio")

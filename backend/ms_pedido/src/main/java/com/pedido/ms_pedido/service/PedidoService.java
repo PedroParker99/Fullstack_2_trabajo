@@ -31,6 +31,7 @@ public class PedidoService {
 
     private final RestClient usuarioClient = RestClient.create("http://localhost:8082");
     private final RestClient productoClient = RestClient.create("http://localhost:8081");
+    private final RestClient direccionClient = RestClient.create("http://localhost:8086");
 
     public PedidoService(PedidoRepository pedidoRepository,
                          DetallePedidoRepository detallePedidoRepository,
@@ -41,6 +42,16 @@ public class PedidoService {
     }
 
     private record ProductoResponse(Long id, String nombre, Integer precio, Integer stock) {}
+    private record DireccionResponse(
+            Long id,
+            Long usuarioId,
+            String calle,
+            String numero,
+            String departamento,
+            String comuna,
+            String ciudad,
+            String region
+    ) {}
     private record MovimientoStockRequest(Integer cantidad) {}
 
     private ResponseStatusException error(HttpStatus estado, String mensaje) {
@@ -91,6 +102,39 @@ public class PedidoService {
                     e
             );
         }
+
+        }
+
+        private DireccionResponse verificarDireccion(Long direccionId, Long usuarioId) {
+        if (direccionId == null || direccionId <= 0) {
+            throw error(HttpStatus.BAD_REQUEST, "Debe indicar un ID de dirección válido");
+        }
+
+        DireccionResponse direccion;
+
+        try {
+            direccion = direccionClient.get()
+                    .uri("/api/direcciones/{id}", direccionId)
+                    .retrieve()
+                    .body(DireccionResponse.class);
+
+        } catch (HttpClientErrorException.NotFound e) {
+            throw error(HttpStatus.BAD_REQUEST, "La dirección indicada no existe");
+
+        } catch (RestClientException e) {
+            throw new ResponseStatusException(
+                    HttpStatus.SERVICE_UNAVAILABLE,
+                    "No se pudo verificar la dirección de entrega",
+                    e
+            );
+        }
+
+        if (direccion == null || direccion.usuarioId() == null ||
+                !direccion.usuarioId().equals(usuarioId)) {
+            throw error(HttpStatus.BAD_REQUEST, "La dirección no pertenece al usuario indicado");
+        }
+
+        return direccion;
     }
 
     private ProductoResponse obtenerProducto(Long productoId) {
@@ -185,9 +229,24 @@ public class PedidoService {
             throw error(HttpStatus.BAD_REQUEST, "Debe indicar un usuario válido");
         }
 
-        if (pedido.getDireccionEntrega() == null || pedido.getDireccionEntrega().isBlank()) {
-            throw error(HttpStatus.BAD_REQUEST, "La dirección de entrega es obligatoria");
+        verificarUsuario(pedido.getUsuarioId());
+
+        DireccionResponse direccion = verificarDireccion(
+                pedido.getDireccionId(),
+                pedido.getUsuarioId()
+        );
+
+        String direccionCompleta = direccion.calle() + " " + direccion.numero();
+
+        if (direccion.departamento() != null && !direccion.departamento().isBlank()) {
+            direccionCompleta += ", " + direccion.departamento();
         }
+
+        direccionCompleta += ", " + direccion.comuna()
+                + ", " + direccion.ciudad()
+                + ", " + direccion.region();
+
+        pedido.setDireccionEntrega(direccionCompleta);
 
         verificarUsuario(pedido.getUsuarioId());
 

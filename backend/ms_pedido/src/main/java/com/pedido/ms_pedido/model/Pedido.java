@@ -25,6 +25,9 @@ public class Pedido {
     @NotNull(message = "El ID del usuario es obligatorio")
     private Long usuarioId;
 
+    @jakarta.persistence.Transient
+    private Long direccionId;
+
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private LocalDateTime fechaPedido;
 
@@ -35,5 +38,6 @@ public class Pedido {
     @Column(precision = 12, scale = 2)
     private BigDecimal total;
 
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private String direccionEntrega;
 }

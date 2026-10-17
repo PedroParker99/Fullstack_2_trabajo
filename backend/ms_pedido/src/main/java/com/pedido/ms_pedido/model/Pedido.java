@@ -25,7 +25,8 @@ public class Pedido {
     @NotNull(message = "El ID del usuario es obligatorio")
     private Long usuarioId;
 
-    @jakarta.persistence.Transient
+    @NotNull(message = "El ID de la dirección es obligatorio")
+    @Column(name = "direccion_id")
     private Long direccionId;
 
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)

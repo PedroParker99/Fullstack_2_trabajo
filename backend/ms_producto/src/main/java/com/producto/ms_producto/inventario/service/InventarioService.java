@@ -2,6 +2,8 @@ package com.producto.ms_producto.inventario.service;
 
 import com.producto.ms_producto.inventario.model.Inventario;
 import com.producto.ms_producto.inventario.repository.InventarioRepository;
+import com.producto.ms_producto.model.Producto;
+import com.producto.ms_producto.repository.ProductoRepository;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -14,9 +16,13 @@ import java.util.List;
 public class InventarioService {
 
     private final InventarioRepository inventarioRepository;
+    private final ProductoRepository productoRepository;
 
-    public InventarioService(InventarioRepository inventarioRepository) {
+    public InventarioService(
+            InventarioRepository inventarioRepository,
+            ProductoRepository productoRepository) {
         this.inventarioRepository = inventarioRepository;
+        this.productoRepository = productoRepository;
     }
 
     public List<Inventario> listarInventarios() {
@@ -39,9 +45,17 @@ public class InventarioService {
                 ));
     }
 
+    @Transactional
     public Inventario crearInventario(Inventario inventario) {
 
         validarInventario(inventario);
+
+        if (inventarioRepository.existsById(inventario.getId())) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "Ya existe un inventario con ID: " + inventario.getId()
+            );
+        }
 
         if (inventarioRepository.existsByProductoId(inventario.getProductoId())) {
             throw new ResponseStatusException(
@@ -50,16 +64,33 @@ public class InventarioService {
             );
         }
 
-        inventario.setId(null);
+        Producto producto = buscarProducto(inventario.getProductoId());
+
+        producto.setStock(inventario.getCantidadDisponible());
+
+        productoRepository.save(producto);
 
         return inventarioRepository.save(inventario);
     }
 
+    @Transactional
     public Inventario actualizarInventario(Long id, Inventario datos) {
 
-        Inventario inventario = buscarInventario(id);
-
         validarInventario(datos);
+
+        Inventario inventario = inventarioRepository
+                .findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Inventario no encontrado con ID: " + id
+                ));
+
+        if (!inventario.getId().equals(datos.getId())) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "No se puede cambiar el ID del inventario"
+            );
+        }
 
         if (!inventario.getProductoId().equals(datos.getProductoId())) {
             throw new ResponseStatusException(
@@ -68,8 +99,16 @@ public class InventarioService {
             );
         }
 
+        inventario = bloquearInventario(inventario.getProductoId());
+
+        Producto producto = buscarProducto(inventario.getProductoId());
+
         inventario.setCantidadDisponible(datos.getCantidadDisponible());
         inventario.setStockMinimo(datos.getStockMinimo());
+
+        producto.setStock(datos.getCantidadDisponible());
+
+        productoRepository.save(producto);
 
         return inventarioRepository.save(inventario);
     }
@@ -79,11 +118,27 @@ public class InventarioService {
 
         validarCantidad(cantidad);
 
-        Inventario inventario = buscarPorProducto(productoId);
+        Inventario inventario = bloquearInventario(productoId);
+        Producto producto = buscarProducto(productoId);
 
-        inventario.setCantidadDisponible(
-                inventario.getCantidadDisponible() + cantidad
-        );
+        int nuevoStock;
+
+        try {
+            nuevoStock = Math.addExact(
+                    inventario.getCantidadDisponible(),
+                    cantidad
+            );
+        } catch (ArithmeticException e) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "La cantidad supera el límite permitido"
+            );
+        }
+
+        inventario.setCantidadDisponible(nuevoStock);
+        producto.setStock(nuevoStock);
+
+        productoRepository.save(producto);
 
         return inventarioRepository.save(inventario);
     }
@@ -93,7 +148,8 @@ public class InventarioService {
 
         validarCantidad(cantidad);
 
-        Inventario inventario = buscarPorProducto(productoId);
+        Inventario inventario = bloquearInventario(productoId);
+        Producto producto = buscarProducto(productoId);
 
         if (inventario.getCantidadDisponible() < cantidad) {
             throw new ResponseStatusException(
@@ -102,9 +158,12 @@ public class InventarioService {
             );
         }
 
-        inventario.setCantidadDisponible(
-                inventario.getCantidadDisponible() - cantidad
-        );
+        int nuevoStock = inventario.getCantidadDisponible() - cantidad;
+
+        inventario.setCantidadDisponible(nuevoStock);
+        producto.setStock(nuevoStock);
+
+        productoRepository.save(producto);
 
         return inventarioRepository.save(inventario);
     }
@@ -119,6 +178,7 @@ public class InventarioService {
                 .toList();
     }
 
+    @Transactional
     public void eliminarInventario(Long id) {
 
         Inventario inventario = buscarInventario(id);
@@ -126,10 +186,30 @@ public class InventarioService {
         inventarioRepository.delete(inventario);
     }
 
+    private Inventario bloquearInventario(Long productoId) {
+        return inventarioRepository
+                .findByProductoIdParaActualizar(productoId)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Inventario no encontrado para el producto: " + productoId
+                ));
+    }
+
+    private Producto buscarProducto(Long productoId) {
+        return productoRepository.findById(productoId)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Producto no encontrado con ID: " + productoId
+                ));
+    }
+
     private void validarInventario(Inventario inventario) {
 
         if (inventario == null ||
+                inventario.getId() == null ||
+                inventario.getId() <= 0 ||
                 inventario.getProductoId() == null ||
+                inventario.getProductoId() <= 0 ||
                 inventario.getCantidadDisponible() == null ||
                 inventario.getCantidadDisponible() < 0 ||
                 inventario.getStockMinimo() == null ||

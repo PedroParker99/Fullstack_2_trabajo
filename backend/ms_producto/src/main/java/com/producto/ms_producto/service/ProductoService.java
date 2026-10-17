@@ -2,8 +2,9 @@ package com.producto.ms_producto.service;
 
 import com.producto.ms_producto.model.Producto;
 import com.producto.ms_producto.repository.ProductoRepository;
-import org.springframework.stereotype.Service;
+
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -22,14 +23,29 @@ public class ProductoService {
     }
 
     public Producto buscarProducto(Long id) {
-    return productoRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(
-                    HttpStatus.NOT_FOUND,
-                    "Producto no encontrado con ID: " + id
-            ));
+        return productoRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Producto no encontrado con ID: " + id
+                ));
     }
 
     public Producto guardarProducto(Producto producto) {
+
+        if (producto.getId() == null || producto.getId() <= 0) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Debe ingresar un ID de producto mayor que cero"
+            );
+        }
+
+        if (productoRepository.existsById(producto.getId())) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "Ya existe un producto con ID: " + producto.getId()
+            );
+        }
+
         return productoRepository.save(producto);
     }
 

@@ -64,7 +64,7 @@ public class PedidoController {
     @ApiResponse(responseCode = "400", description = "Datos inválidos")
     @PostMapping
     public ResponseEntity<Pedido> crearPedido(
-            @RequestBody CrearPedidoRequest solicitud) {
+            @Valid @RequestBody CrearPedidoRequest solicitud) {
 
         Pedido nuevoPedido = pedidoService.crearPedido(
                 solicitud.pedido(),

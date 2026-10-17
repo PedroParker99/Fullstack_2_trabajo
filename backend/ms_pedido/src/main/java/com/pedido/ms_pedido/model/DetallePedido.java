@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.math.BigDecimal;
 
@@ -18,9 +19,10 @@ public class DetallePedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
 
-    @NotNull(message = "El ID del pedido es obligatorio")
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private Long pedidoId;
 
     @NotNull(message = "El ID del producto es obligatorio")
@@ -30,12 +32,11 @@ public class DetallePedido {
     @Positive(message = "La cantidad debe ser mayor que cero")
     private Integer cantidad;
 
-    @NotNull(message = "El precio unitario es obligatorio")
-    @Positive(message = "El precio debe ser mayor que cero")
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     @Column(precision = 12, scale = 2)
     private BigDecimal precioUnitario;
 
-    @NotNull(message = "El subtotal es obligatorio")
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     @Column(precision = 12, scale = 2)
     private BigDecimal subtotal;
 }

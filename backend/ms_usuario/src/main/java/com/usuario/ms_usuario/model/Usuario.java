@@ -3,6 +3,9 @@ package com.usuario.ms_usuario.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +18,8 @@ import lombok.NoArgsConstructor;
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull(message = "El ID del usuario es obligatorio")
+    @Positive(message = "El ID debe ser mayor que cero")
     private Long id;
 
     @NotBlank(message = "El nombre es obligatorio")
@@ -29,6 +33,11 @@ public class Usuario {
     @Column(unique = true)
     private String correo;
 
+    @NotBlank(message = "El teléfono es obligatorio")
+    @Pattern(
+            regexp = "^[0-9]{9}$",
+            message = "El teléfono debe contener exactamente 9 dígitos"
+    )
     private String telefono;
 
     @NotBlank(message = "El rol es obligatorio")

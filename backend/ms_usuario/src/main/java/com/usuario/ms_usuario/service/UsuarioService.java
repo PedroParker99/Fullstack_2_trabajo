@@ -32,16 +32,28 @@ public class UsuarioService {
 
     public Usuario crearUsuario(Usuario usuario) {
 
+        if (usuario == null ||
+                usuario.getId() == null ||
+                usuario.getId() <= 0) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Debe ingresar un ID de usuario mayor que cero"
+            );
+        }
+
+        if (usuarioRepository.existsById(usuario.getId())) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "Ya existe un usuario con ID: " + usuario.getId()
+            );
+        }
+
         if (usuarioRepository.existsByCorreo(usuario.getCorreo())) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
                     "El correo ya está registrado"
             );
         }
-
-        usuario.setId(null);
-
-        usuario.setRol("CLIENTE");
 
         return usuarioRepository.save(usuario);
     }
@@ -63,7 +75,7 @@ public class UsuarioService {
         usuario.setApellido(datos.getApellido());
         usuario.setCorreo(datos.getCorreo());
         usuario.setTelefono(datos.getTelefono());
-
+        usuario.setRol(datos.getRol());
 
         return usuarioRepository.save(usuario);
     }

@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 public class Producto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull(message = "El ID del producto es obligatorio")
+    @Positive(message = "El ID debe ser mayor que cero")
     private Long id;
 
     @NotBlank(message = "El nombre es obligatorio")

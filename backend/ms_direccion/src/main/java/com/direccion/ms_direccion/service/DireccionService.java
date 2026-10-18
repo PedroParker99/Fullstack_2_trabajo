@@ -10,10 +10,14 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+import org.springframework.web.client.RestClient;
+
 @Service
 public class DireccionService {
 
     private final DireccionRepository direccionRepository;
+
+    private final RestClient pedidoClient = RestClient.create("http://localhost:8083");
 
     public DireccionService(DireccionRepository direccionRepository) {
         this.direccionRepository = direccionRepository;
@@ -127,6 +131,13 @@ public class DireccionService {
     public void eliminarDireccion(Long id) {
 
         Direccion direccion = buscarDireccion(id);
+    
+        if (direccionTienePedidos(id)) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "No se puede eliminar la dirección porque está asociada a uno o más pedidos"
+            );
+        }
 
         Long usuarioId = direccion.getUsuarioId();
 
@@ -146,6 +157,24 @@ public class DireccionService {
                 nuevaPrincipal.setPredeterminada(true);
                 direccionRepository.save(nuevaPrincipal);
             }
+        }
+    }
+    
+    private boolean direccionTienePedidos(Long direccionId) {
+        try {
+            Boolean existe = pedidoClient.get()
+                    .uri("/api/pedidos/direccion/{direccionId}/existe", direccionId)
+                    .retrieve()
+                    .body(Boolean.class);
+
+            return Boolean.TRUE.equals(existe);
+
+        } catch (org.springframework.web.client.RestClientException e) {
+            throw new ResponseStatusException(
+                    HttpStatus.SERVICE_UNAVAILABLE,
+                    "No se pudo verificar si la dirección tiene pedidos asociados",
+                    e
+            );
         }
     }
 

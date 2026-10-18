@@ -94,4 +94,10 @@ public class PedidoController {
         pedidoService.eliminarPedido(id);
         return ResponseEntity.noContent().build();
     }
+
+    @Operation(summary = "Verificar si una dirección está asociada a pedidos")
+    @GetMapping("/direccion/{direccionId}/existe")
+    public boolean direccionTienePedidos(@PathVariable Long direccionId) {
+        return pedidoService.direccionTienePedidos(direccionId);
+    }
 }

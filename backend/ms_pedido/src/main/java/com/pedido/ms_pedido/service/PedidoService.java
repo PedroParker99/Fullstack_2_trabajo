@@ -219,6 +219,10 @@ public class PedidoService {
         return pedidoRepository.findByUsuarioId(usuarioId);
     }
 
+    public boolean direccionTienePedidos(Long direccionId) {
+        return pedidoRepository.existsByDireccionId(direccionId);
+    }
+
     public List<DetallePedido> listarDetalles(Long pedidoId) {
         buscarPedido(pedidoId);
         return detallePedidoRepository.findByPedidoId(pedidoId);

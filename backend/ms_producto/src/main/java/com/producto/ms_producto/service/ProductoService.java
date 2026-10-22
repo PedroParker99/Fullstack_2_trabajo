@@ -2,6 +2,7 @@ package com.producto.ms_producto.service;
 
 import com.producto.ms_producto.model.Producto;
 import com.producto.ms_producto.repository.ProductoRepository;
+import com.producto.ms_producto.inventario.repository.InventarioRepository;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -13,9 +14,14 @@ import java.util.List;
 public class ProductoService {
 
     private final ProductoRepository productoRepository;
+    private final InventarioRepository inventarioRepository;
 
-    public ProductoService(ProductoRepository productoRepository) {
+    public ProductoService(
+            ProductoRepository productoRepository,
+            InventarioRepository inventarioRepository) {
+
         this.productoRepository = productoRepository;
+        this.inventarioRepository = inventarioRepository;
     }
 
     public List<Producto> listarProductos() {
@@ -56,7 +62,6 @@ public class ProductoService {
         producto.setNombre(datosProducto.getNombre());
         producto.setDescripcion(datosProducto.getDescripcion());
         producto.setPrecio(datosProducto.getPrecio());
-        producto.setStock(datosProducto.getStock());
         producto.setImagenUrl(datosProducto.getImagenUrl());
         producto.setCategoria(datosProducto.getCategoria());
 
@@ -66,6 +71,13 @@ public class ProductoService {
     public void eliminarProducto(Long id) {
 
         Producto producto = buscarProducto(id);
+
+        if (inventarioRepository.existsByProductoId(id)) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "No se puede eliminar el producto porque tiene un inventario asociado"
+            );
+        }
 
         productoRepository.delete(producto);
     }

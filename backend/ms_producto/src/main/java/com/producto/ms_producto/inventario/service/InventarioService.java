@@ -183,6 +183,13 @@ public class InventarioService {
 
         Inventario inventario = buscarInventario(id);
 
+        if (productoRepository.existsById(inventario.getProductoId())) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "No se puede eliminar el inventario porque está asociado a un producto"
+            );
+        }
+
         inventarioRepository.delete(inventario);
     }
 

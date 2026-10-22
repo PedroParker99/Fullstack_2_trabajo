@@ -7,10 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.client.RestClient;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.List;
-
-import org.springframework.web.client.RestClient;
 
 @Service
 public class DireccionService {
@@ -18,6 +19,7 @@ public class DireccionService {
     private final DireccionRepository direccionRepository;
 
     private final RestClient pedidoClient = RestClient.create("http://localhost:8083");
+    private final RestClient usuarioClient = RestClient.create("http://localhost:8082");
 
     public DireccionService(DireccionRepository direccionRepository) {
         this.direccionRepository = direccionRepository;
@@ -65,12 +67,7 @@ public class DireccionService {
             );
         }
 
-        if (direccion.getUsuarioId() == null || direccion.getUsuarioId() <= 0) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST,
-                    "El ID del usuario debe ser válido"
-            );
-        }
+        verificarUsuario(direccion.getUsuarioId());
 
         if (!direccionRepository.existsByUsuarioId(direccion.getUsuarioId())) {
             direccion.setPredeterminada(true);
@@ -173,6 +170,35 @@ public class DireccionService {
             throw new ResponseStatusException(
                     HttpStatus.SERVICE_UNAVAILABLE,
                     "No se pudo verificar si la dirección tiene pedidos asociados",
+                    e
+            );
+        }
+    }
+   
+    private void verificarUsuario(Long usuarioId) {
+        if (usuarioId == null || usuarioId <= 0) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "El ID del usuario debe ser válido"
+            );
+        }
+
+        try {
+            usuarioClient.get()
+                    .uri("/api/usuarios/{id}", usuarioId)
+                    .retrieve()
+                    .toBodilessEntity();
+
+        } catch (HttpClientErrorException.NotFound e) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "El usuario indicado no existe"
+            );
+
+        } catch (RestClientException e) {
+            throw new ResponseStatusException(
+                    HttpStatus.SERVICE_UNAVAILABLE,
+                    "No se pudo verificar la existencia del usuario",
                     e
             );
         }

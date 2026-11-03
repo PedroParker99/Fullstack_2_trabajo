@@ -1,4 +1,4 @@
-import type { Filtros } from '../models/Filtros'
+import type { Filtros, OrdenProductos } from '../models/Filtros'
 import type { Producto } from '../models/Producto'
 import { normalizarTexto } from './texto'
 
@@ -33,4 +33,20 @@ export const filtrarProductos = (
 
     return cumpleBusqueda && cumpleCategoria && cumpleDisponibilidad && cumplePrecio
   })
+}
+
+// Devuelve una copia de la lista ordenada según la opción elegida.
+export const ordenarProductos = (productos: Producto[], orden: OrdenProductos): Producto[] => {
+  const copia = [...productos]
+
+  switch (orden) {
+    case 'precio-asc':
+      return copia.sort((a, b) => a.precio - b.precio)
+    case 'precio-desc':
+      return copia.sort((a, b) => b.precio - a.precio)
+    case 'nombre':
+      return copia.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'))
+    case 'caracteristicas':
+      return copia.sort((a, b) => a.id - b.id)
+  }
 }

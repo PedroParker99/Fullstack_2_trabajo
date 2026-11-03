@@ -3,8 +3,8 @@ import { Link } from 'react-router'
 import FiltrosColeccion from '../components/FiltrosColeccion'
 import TarjetaColeccion from '../components/TarjetaColeccion'
 import { obtenerProductos } from '../services/productoService'
-import type { Filtros } from '../models/Filtros'
-import { filtrarProductos } from '../utils/filtros'
+import type { Filtros, OrdenProductos } from '../models/Filtros'
+import { filtrarProductos, ordenarProductos } from '../utils/filtros'
 
 function Coleccion() {
   const productos = obtenerProductos()
@@ -19,8 +19,12 @@ function Coleccion() {
 
   const [busqueda, setBusqueda] = useState('')
   const [filtros, setFiltros] = useState<Filtros>(filtrosIniciales)
+  const [orden, setOrden] = useState<OrdenProductos>('caracteristicas')
 
-  const productosFiltrados = filtrarProductos(productos, busqueda, filtros)
+  const productosFiltrados = ordenarProductos(
+    filtrarProductos(productos, busqueda, filtros),
+    orden
+  )
 
   const cantidad = productosFiltrados.length
 
@@ -56,7 +60,12 @@ function Coleccion() {
                 <i className="bi bi-sort-down me-2"></i>
                 Ordenar por
               </span>
-              <select className="form-select" aria-label="Ordenar productos" defaultValue="caracteristicas">
+              <select
+                className="form-select"
+                aria-label="Ordenar productos"
+                value={orden}
+                onChange={(evento) => setOrden(evento.target.value as OrdenProductos)}
+              >
                 <option value="caracteristicas">Características</option>
                 <option value="precio-asc">Precio: menor a mayor</option>
                 <option value="precio-desc">Precio: mayor a menor</option>

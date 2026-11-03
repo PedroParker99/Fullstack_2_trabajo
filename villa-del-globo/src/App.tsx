@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Coleccion from './pages/Coleccion'
 import Carrito from './pages/Carrito'
 import AdminPanel from './pages/AdminPanel'
+import NoEncontrada from './pages/NoEncontrada'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="coleccion" element={<Coleccion />} />
         <Route path="carrito" element={<Carrito />} />
+        <Route path="*" element={<NoEncontrada />} />
       </Route>
 
       {/* Panel de administración: sin el Navbar de la tienda */}

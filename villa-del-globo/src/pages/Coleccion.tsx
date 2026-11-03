@@ -1,21 +1,19 @@
-import ProductList from '../components/ProductList'
+import TarjetaColeccion from '../components/TarjetaColeccion'
 import { obtenerProductos } from '../services/productoService'
 
 function Coleccion() {
   const productos = obtenerProductos()
-  const disponibles = productos.filter((p) => p.disponible)
 
   return (
-    <>
-      <div className="container text-center my-5">
-        <h1 className="fw-bold">Catálogo</h1>
-        <p className="text-muted">Todos nuestros productos en un solo lugar</p>
+    <main className="container py-5">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+        {productos.map((producto) => (
+          <div className="col producto-col" key={producto.id}>
+            <TarjetaColeccion producto={producto} />
+          </div>
+        ))}
       </div>
-
-      <ProductList productos={productos} />
-
-      <ProductList titulo="Disponibles ahora" productos={disponibles} />
-    </>
+    </main>
   )
 }
 

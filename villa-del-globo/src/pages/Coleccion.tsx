@@ -3,20 +3,24 @@ import { Link } from 'react-router'
 import FiltrosColeccion from '../components/FiltrosColeccion'
 import TarjetaColeccion from '../components/TarjetaColeccion'
 import { obtenerProductos } from '../services/productoService'
-import { normalizarTexto } from '../utils/texto'
+import type { Filtros } from '../models/Filtros'
+import { filtrarProductos } from '../utils/filtros'
 
 function Coleccion() {
   const productos = obtenerProductos()
+  const precioTope = Math.max(...productos.map((p) => p.precio))
+
+  const filtrosIniciales: Filtros = {
+    categorias: [],
+    disponibilidad: [],
+    precioMinimo: 0,
+    precioMaximo: precioTope,
+  }
+
   const [busqueda, setBusqueda] = useState('')
+  const [filtros, setFiltros] = useState<Filtros>(filtrosIniciales)
 
-  const textoBuscado = normalizarTexto(busqueda.trim())
-
-  const productosFiltrados = productos.filter((producto) => {
-    const textoProducto = normalizarTexto(
-      `${producto.nombre} ${producto.tematica} ${producto.categoria} ${producto.descripcion}`
-    )
-    return textoProducto.includes(textoBuscado)
-  })
+  const productosFiltrados = filtrarProductos(productos, busqueda, filtros)
 
   const cantidad = productosFiltrados.length
 
@@ -89,7 +93,13 @@ function Coleccion() {
         </div>
 
         <div className="row g-4 align-items-start">
-          <FiltrosColeccion productos={productos} />
+          <FiltrosColeccion
+            productos={productos}
+            filtros={filtros}
+            precioTope={precioTope}
+            onCambiar={setFiltros}
+            onLimpiar={() => setFiltros(filtrosIniciales)}
+          />
 
           {/* Productos */}
           <section className="col-lg-9">

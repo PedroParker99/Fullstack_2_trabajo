@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router";
 import { useCarrito } from "../hooks/useCarrito";
 
 
@@ -13,14 +14,14 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img
             src="/img/Villa_del_Globo_Mark.avif"
             alt="Villa del Globo"
             className="rounded-circle"
             height="70"
           />
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -37,7 +38,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="menuPrincipal">
           <ul className="navbar-nav ms-lg-3 mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" href="#">Inicio</a>
+              <NavLink className="nav-link" to="/" end>Inicio</NavLink>
             </li>
 
             <li className="nav-item dropdown mega-dropdown">
@@ -61,7 +62,7 @@ function Navbar() {
                       <ul className="list-unstyled mb-0">
                         {columna.map((nombre) => (
                           <li key={nombre}>
-                            <a href="#" className="dropdown-item">{nombre}</a>
+                            <Link to="/coleccion" className="dropdown-item">{nombre}</Link>
                           </li>
                         ))}
                       </ul>
@@ -72,7 +73,7 @@ function Navbar() {
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">Packs Decoración Cumpleaños</a>
+              <NavLink className="nav-link" to="/packs">Packs Decoración Cumpleaños</NavLink>
             </li>
           </ul>
 

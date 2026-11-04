@@ -1,4 +1,5 @@
 import type { TematicaDestacada } from '../models/TematicaDestacada'
+import { Link } from 'react-router'
 
 interface SeccionTematicaProps {
   tematica: TematicaDestacada
@@ -38,9 +39,9 @@ function SeccionTematica({ tematica }: SeccionTematicaProps) {
             ))}
           </div>
 
-          <a href={ruta} className={`btn btn-${color} mt-4`}>
+          <Link to={ruta} className={`btn btn-${color} mt-4`}>
             Ver todo de {nombre}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

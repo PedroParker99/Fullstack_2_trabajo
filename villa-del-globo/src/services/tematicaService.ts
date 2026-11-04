@@ -1,4 +1,5 @@
 import type { TematicaDestacada } from '../models/TematicaDestacada'
+import { crearSlug } from '../utils/texto'
 
 const tematicas: TematicaDestacada[] = [
   {
@@ -25,4 +26,18 @@ const tematicas: TematicaDestacada[] = [
   },
 ]
 
+// Temáticas del mega-menú "Nuestra tienda", en 3 columnas.
+const tematicasMenu: string[][] = [
+  ['Among Us', 'Baby Shark', 'Barbie', 'Bluey', 'Bob Esponja', 'Cars', 'Cinnamonroll', 'Circo Digital'],
+  ['Dragon Ball', 'Dinosaurio', 'FNAF', 'Frozen', 'Guerreras K-pop', 'Hello Kitty', 'Intensamente', 'Kuromi'],
+  ['Mario Bros', 'Masha', 'Merlina', 'Mickey Mouse', 'Minecraft', 'Minions', 'Minnie Mouse'],
+]
+
 export const obtenerTematicasDestacadas = (): TematicaDestacada[] => tematicas
+
+export const obtenerTematicasMenu = (): string[][] => tematicasMenu
+
+// Recibe el slug de la URL ("mario-bros") y devuelve el nombre ("Mario Bros").
+// Si no existe esa temática, devuelve undefined.
+export const buscarTematicaPorSlug = (slug: string): string | undefined =>
+  tematicasMenu.flat().find((nombre) => crearSlug(nombre) === slug)

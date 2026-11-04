@@ -1,14 +1,41 @@
 import { useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useParams } from 'react-router'
 import FiltrosColeccion from '../components/FiltrosColeccion'
 import TarjetaColeccion from '../components/TarjetaColeccion'
 import { obtenerProductos } from '../services/productoService'
 import type { Filtros, OrdenProductos } from '../models/Filtros'
+import { buscarTematicaPorSlug } from '../services/tematicaService'
 import { filtrarProductos, ordenarProductos } from '../utils/filtros'
+import { crearSlug } from '../utils/texto'
+import NoEncontrada from './NoEncontrada'
 
+// Página de la ruta: lee la URL y decide qué catálogo mostrar.
 function Coleccion() {
-  const productos = obtenerProductos()
-  const precioTope = Math.max(...productos.map((p) => p.precio))
+  const { tematica } = useParams()
+
+  // /coleccion/algo-que-no-existe -> 404
+  if (tematica && !buscarTematicaPorSlug(tematica)) {
+    return <NoEncontrada />
+  }
+
+  // key: al cambiar de temática, React crea un catálogo nuevo
+  // y la búsqueda y los filtros vuelven a cero.
+  return <CatalogoColeccion key={tematica ?? 'todas'} slugTematica={tematica} />
+}
+
+interface CatalogoColeccionProps {
+  slugTematica?: string
+}
+
+function CatalogoColeccion({ slugTematica }: CatalogoColeccionProps) {
+  const nombreTematica = slugTematica ? buscarTematicaPorSlug(slugTematica) : undefined
+
+  const todosLosProductos = obtenerProductos()
+  const productos = slugTematica
+    ? todosLosProductos.filter((p) => crearSlug(p.tematica).startsWith(slugTematica))
+    : todosLosProductos
+
+  const precioTope = Math.max(0, ...productos.map((p) => p.precio))
 
   const filtrosIniciales: Filtros = {
     categorias: [],
@@ -40,19 +67,29 @@ function Coleccion() {
                 <Link to="/" className="text-rosa text-decoration-none">Inicio</Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                Colección Completa
+                {nombreTematica ?? 'Colección Completa'}
               </li>
             </ol>
           </nav>
 
           <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-4">
-            <div>
-              <span className="text-rosa small fw-bold text-uppercase">Catálogo General</span>
-              <h1 className="fw-bold mt-2 mb-2">Colección Completa de Cotillón y Decoración 🎈</h1>
-              <p className="text-muted mb-0">
-                Explora todos nuestros productos, packs temáticos, vajilla y globos en un solo lugar.
-              </p>
-            </div>
+            {nombreTematica ? (
+              <div>
+                <span className="text-rosa small fw-bold text-uppercase">Temática destacada</span>
+                <h1 className="fw-bold mt-2 mb-2">Decoración y Cumpleaños {nombreTematica} 🎈</h1>
+                <p className="text-muted mb-0">
+                  Todo lo que necesitas para organizar la fiesta perfecta de {nombreTematica}.
+                </p>
+              </div>
+            ) : (
+              <div>
+                <span className="text-rosa small fw-bold text-uppercase">Catálogo General</span>
+                <h1 className="fw-bold mt-2 mb-2">Colección Completa de Cotillón y Decoración 🎈</h1>
+                <p className="text-muted mb-0">
+                  Explora todos nuestros productos, packs temáticos, vajilla y globos en un solo lugar.
+                </p>
+              </div>
+            )}
 
             {/* Ordenar */}
             <div className="input-group ordenar-productos">

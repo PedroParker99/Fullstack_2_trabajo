@@ -13,6 +13,7 @@ function App() {
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="coleccion" element={<Coleccion />} />
+        <Route path="coleccion/:tematica" element={<Coleccion />} />
         <Route path="carrito" element={<Carrito />} />
         <Route path="*" element={<NoEncontrada />} />
       </Route>

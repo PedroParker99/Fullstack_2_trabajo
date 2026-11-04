@@ -5,3 +5,11 @@ export const normalizarTexto = (texto: string): string =>
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
+
+// Convierte un nombre en un texto apto para URL.
+// Ejemplo: "Guerreras K-pop" -> "guerreras-k-pop", "Mario Bros" -> "mario-bros".
+export const crearSlug = (texto: string): string =>
+  normalizarTexto(texto)
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')

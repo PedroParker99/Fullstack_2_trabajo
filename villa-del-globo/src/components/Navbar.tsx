@@ -1,12 +1,10 @@
+// DESPUÉS
 import { Link, NavLink } from "react-router";
 import { useCarrito } from "../hooks/useCarrito";
+import { obtenerTematicasMenu } from "../services/tematicaService";
+import { crearSlug } from "../utils/texto";
 
-
-const tematicas: string[][] = [
-  ['Among Us', 'Baby Shark', 'Barbie', 'Bluey', 'Bob Esponja', 'Cars', 'Cinnamonroll', 'Circo Digital'],
-  ['Dragon Ball', 'Dinosaurio', 'FNAF', 'Frozen', 'Guerreras K-pop', 'Hello Kitty', 'Intensamente', 'Kuromi'],
-  ['Mario Bros', 'Masha', 'Merlina', 'Mickey Mouse', 'Minecraft', 'Minions', 'Minnie Mouse'],
-]
+const tematicas = obtenerTematicasMenu()
 
 
 function Navbar() {
@@ -62,7 +60,7 @@ function Navbar() {
                       <ul className="list-unstyled mb-0">
                         {columna.map((nombre) => (
                           <li key={nombre}>
-                            <Link to="/coleccion" className="dropdown-item">{nombre}</Link>
+                            <Link to={`/coleccion/${crearSlug(nombre)}`} className="dropdown-item">{nombre}</Link>
                           </li>
                         ))}
                       </ul>

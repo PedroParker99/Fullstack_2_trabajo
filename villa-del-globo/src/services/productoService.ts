@@ -171,6 +171,58 @@ const productos: Producto[] = [
     categoria: 'Set Decoración',
     disponible: true,
   },
+  
+  // Productos que solo estaban en bluey.html y minecraft.html
+  {
+    id: 17,
+    nombre: 'Vasos Polipapel Bluey x10',
+    descripcion: 'Pack de 10 vasos biodegradables de polipapel aptos para bebidas frías y calientes.',
+    precio: 2990,
+    imagen: '/img/Bluey.jpg',
+    tematica: 'Bluey',
+    categoria: 'Vasos y Vajilla',
+    disponible: true,
+  },
+  {
+    id: 18,
+    nombre: 'Piñata Reutilizable Bluey',
+    descripcion: 'Piñata con tiras de cinta para abrir de forma segura y reutilizable.',
+    precio: 6990,
+    imagen: '/img/Bluey.jpg',
+    tematica: 'Bluey',
+    categoria: 'Piñatas',
+    disponible: true,
+  },
+  {
+    id: 19,
+    nombre: 'Corona Cumpleañero Bluey',
+    descripcion: 'Corona ajustable de cartón resistente para destacar al cumpleañero o cumpleañera.',
+    precio: 2490,
+    imagen: '/img/Bluey.jpg',
+    tematica: 'Bluey',
+    categoria: 'Accesorios',
+    disponible: true,
+  },
+  {
+    id: 20,
+    nombre: 'Mantel Plástico Minecraft (108x180 cm)',
+    descripcion: 'Mantel plástico impermeable con diseño impreso de bloques de pasto y mobs.',
+    precio: 3490,
+    imagen: '/img/Minecraft.jpg',
+    tematica: 'Minecraft',
+    categoria: 'Manteles',
+    disponible: true,
+  },
+  {
+    id: 21,
+    nombre: 'Cajas Sorpresa Dulceras x6',
+    descripcion: 'Cajitas de cartón para entregar dulces o sorpresas con la carita de Creeper.',
+    precio: 3990,
+    imagen: '/img/Minecraft.jpg',
+    tematica: 'Minecraft',
+    categoria: 'Accesorios',
+    disponible: true,
+  },
 ]
 
 export const obtenerProductos = (): Producto[] => productos

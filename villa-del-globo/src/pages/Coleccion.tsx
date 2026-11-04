@@ -4,7 +4,7 @@ import FiltrosColeccion from '../components/FiltrosColeccion'
 import TarjetaColeccion from '../components/TarjetaColeccion'
 import { obtenerProductos } from '../services/productoService'
 import type { Filtros, OrdenProductos } from '../models/Filtros'
-import { buscarTematicaPorSlug } from '../services/tematicaService'
+import { buscarTematicaPorSlug, obtenerEncabezadoTematica } from '../services/tematicaService'
 import { filtrarProductos, ordenarProductos } from '../utils/filtros'
 import { crearSlug } from '../utils/texto'
 import NoEncontrada from './NoEncontrada'
@@ -29,6 +29,7 @@ interface CatalogoColeccionProps {
 
 function CatalogoColeccion({ slugTematica }: CatalogoColeccionProps) {
   const nombreTematica = slugTematica ? buscarTematicaPorSlug(slugTematica) : undefined
+  const encabezado = nombreTematica ? obtenerEncabezadoTematica(nombreTematica) : undefined
 
   const todosLosProductos = obtenerProductos()
   const productos = slugTematica
@@ -73,13 +74,13 @@ function CatalogoColeccion({ slugTematica }: CatalogoColeccionProps) {
           </nav>
 
           <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-4">
-            {nombreTematica ? (
+            {nombreTematica && encabezado ? (
               <div>
                 <span className="text-rosa small fw-bold text-uppercase">Temática destacada</span>
-                <h1 className="fw-bold mt-2 mb-2">Decoración y Cumpleaños {nombreTematica} 🎈</h1>
-                <p className="text-muted mb-0">
-                  Todo lo que necesitas para organizar la fiesta perfecta de {nombreTematica}.
-                </p>
+                <h1 className="fw-bold mt-2 mb-2">
+                  Decoración y Cumpleaños {nombreTematica} {encabezado.emoji}
+                </h1>
+                <p className="text-muted mb-0">{encabezado.descripcion}</p>
               </div>
             ) : (
               <div>

@@ -8,7 +8,7 @@ const tematicas: TematicaDestacada[] = [
     descripcion:
       'Todo lo que necesitas para una fiesta con la temática favorita de los más pequeños. Descubre nuestros productos relacionados:',
     imagen: '/img/Bluey.jpg',
-    ruta: '#',
+    ruta: '/coleccion/bluey',
     color: 'primary',
     imagenIzquierda: true,
     articulos: ['Set decoración', 'Globos', 'Mantel', 'Vasos', 'Piñata', 'Corona'],
@@ -19,7 +19,7 @@ const tematicas: TematicaDestacada[] = [
     descripcion:
       'Construye la fiesta perfecta para los amantes de este mundo de bloques. Todo lo que necesitas en un solo lugar:',
     imagen: '/img/Minecraft.jpg',
-    ruta: '#',
+    ruta: '/coleccion/minecraft',
     color: 'success',
     imagenIzquierda: false,
     articulos: ['Set decoración', 'Cajas sorpresa', 'Corona', 'Globos', 'Mantel', 'Vasos'],
@@ -33,6 +33,23 @@ const tematicasMenu: string[][] = [
   ['Mario Bros', 'Masha', 'Merlina', 'Mickey Mouse', 'Minecraft', 'Minions', 'Minnie Mouse'],
 ]
 
+// Textos propios de algunas temáticas (los de bluey.html y minecraft.html).
+interface EncabezadoTematica {
+  emoji: string
+  descripcion: string
+}
+
+const encabezados: Record<string, EncabezadoTematica> = {
+  Bluey: {
+    emoji: '🐾',
+    descripcion: 'Todo lo que necesitas para organizar la fiesta perfecta de Bluey y Bingo.',
+  },
+  Minecraft: {
+    emoji: '⛏️',
+    descripcion: 'Construye la mejor fiesta pixeleada con Steve, Creepers y TNT.',
+  },
+}
+
 export const obtenerTematicasDestacadas = (): TematicaDestacada[] => tematicas
 
 export const obtenerTematicasMenu = (): string[][] => tematicasMenu
@@ -41,3 +58,10 @@ export const obtenerTematicasMenu = (): string[][] => tematicasMenu
 // Si no existe esa temática, devuelve undefined.
 export const buscarTematicaPorSlug = (slug: string): string | undefined =>
   tematicasMenu.flat().find((nombre) => crearSlug(nombre) === slug)
+
+// Devuelve el encabezado propio de la temática o uno genérico si no tiene.
+export const obtenerEncabezadoTematica = (nombre: string): EncabezadoTematica =>
+  encabezados[nombre] ?? {
+    emoji: '🎈',
+    descripcion: `Todo lo que necesitas para organizar la fiesta perfecta de ${nombre}.`,
+  }

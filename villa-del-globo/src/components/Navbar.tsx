@@ -40,15 +40,9 @@ function Navbar() {
             </li>
 
             <li className="nav-item dropdown mega-dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+              <NavLink className="nav-link dropdown-toggle" to="/coleccion">
                 Nuestra tienda
-              </a>
+              </NavLink>
 
               <div className="dropdown-menu mega-menu p-4">
                 <div className="row g-4">

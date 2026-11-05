@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { Link, useParams } from 'react-router'
 import FiltrosColeccion from '../components/FiltrosColeccion'
 import TarjetaColeccion from '../components/TarjetaColeccion'
-import { obtenerProductos } from '../services/productoService'
+import { useProductos } from '../hooks/useProductos'
 import type { Filtros, OrdenProductos } from '../models/Filtros'
+import type { Producto } from '../models/Producto'
 import { buscarTematicaPorSlug, obtenerEncabezadoTematica } from '../services/tematicaService'
 import { filtrarProductos, ordenarProductos } from '../utils/filtros'
 import { crearSlug } from '../utils/texto'
@@ -12,26 +13,53 @@ import NoEncontrada from './NoEncontrada'
 // Página de la ruta: lee la URL y decide qué catálogo mostrar.
 function Coleccion() {
   const { tematica } = useParams()
+  const { productos, cargando, error } = useProductos()
 
   // /coleccion/algo-que-no-existe -> 404
   if (tematica && !buscarTematicaPorSlug(tematica)) {
     return <NoEncontrada />
   }
 
-  // key: al cambiar de temática, React crea un catálogo nuevo
-  // y la búsqueda y los filtros vuelven a cero.
-  return <CatalogoColeccion key={tematica ?? 'todas'} slugTematica={tematica} />
+  if (cargando) {
+    return (
+      <main className="container py-5 text-center">
+        <div className="spinner-border text-rosa" role="status"></div>
+        <p className="text-muted mt-3">Cargando productos...</p>
+      </main>
+    )
+  }
+
+  return (
+    <>
+      {error && (
+        <div className="container mt-4">
+          <div className="alert alert-warning mb-0" role="alert">
+            <i className="bi bi-exclamation-triangle me-2"></i>
+            {error}
+          </div>
+        </div>
+      )}
+
+      {/* key: al cambiar de temática, React crea un catálogo nuevo
+          y la búsqueda y los filtros vuelven a cero. */}
+      <CatalogoColeccion
+        key={tematica ?? 'todas'}
+        slugTematica={tematica}
+        todosLosProductos={productos}
+      />
+    </>
+  )
 }
 
 interface CatalogoColeccionProps {
   slugTematica?: string
+  todosLosProductos: Producto[]
 }
 
-function CatalogoColeccion({ slugTematica }: CatalogoColeccionProps) {
+function CatalogoColeccion({ slugTematica, todosLosProductos }: CatalogoColeccionProps) {
   const nombreTematica = slugTematica ? buscarTematicaPorSlug(slugTematica) : undefined
   const encabezado = nombreTematica ? obtenerEncabezadoTematica(nombreTematica) : undefined
 
-  const todosLosProductos = obtenerProductos()
   const productos = slugTematica
     ? todosLosProductos.filter((p) => crearSlug(p.tematica).startsWith(slugTematica))
     : todosLosProductos

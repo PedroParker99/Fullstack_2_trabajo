@@ -5,6 +5,7 @@ import Coleccion from './pages/Coleccion'
 import Carrito from './pages/Carrito'
 import Checkout from './pages/Checkout'
 import Registro from './pages/Registro'
+import Ingresar from './pages/Ingresar'
 import AdminPanel from './pages/AdminPanel'
 import NoEncontrada from './pages/NoEncontrada'
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="carrito" element={<Carrito />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="registro" element={<Registro />} />
+        <Route path="ingresar" element={<Ingresar />} />
         <Route path="*" element={<NoEncontrada />} />
       </Route>
 

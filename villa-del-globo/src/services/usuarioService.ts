@@ -1,4 +1,5 @@
 import type { Usuario } from '../models/Usuario'
+import { normalizarTexto } from '../utils/texto'
 import { apiUsuarios } from './api'
 
 // Datos que escribe la persona en el formulario de registro.
@@ -23,4 +24,12 @@ export const crearUsuario = async (datos: NuevoUsuario): Promise<Usuario> => {
     rol: 'CLIENTE',
   })
   return respuesta.data
+}
+
+// Busca un usuario por su correo (sin importar mayúsculas).
+// ms_usuario no tiene un endpoint por correo, así que filtramos la lista.
+export const buscarUsuarioPorCorreo = async (correo: string): Promise<Usuario | undefined> => {
+  const usuarios = await obtenerUsuarios()
+  const buscado = normalizarTexto(correo.trim())
+  return usuarios.find((u) => normalizarTexto(u.correo) === buscado)
 }

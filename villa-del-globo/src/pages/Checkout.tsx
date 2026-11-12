@@ -1,17 +1,26 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Link } from 'react-router'
 import { useCarrito } from '../hooks/useCarrito'
 import { useDatosApi } from '../hooks/useDatosApi'
+import { useSesion } from '../hooks/useSesion'
 import type { Pedido } from '../models/Pedido'
-import { obtenerMisDirecciones } from '../services/direccionService'
+import { obtenerDireccionesUsuario } from '../services/direccionService'
 import { crearPedido } from '../services/pedidoService'
-import { USUARIO_ACTUAL_ID } from '../services/sesion'
 import { obtenerMensajeError } from '../utils/errores'
 import { formatearPrecio } from '../utils/formato'
 
 function Checkout() {
   const { items, total, vaciar } = useCarrito()
-  const direcciones = useDatosApi(obtenerMisDirecciones, [])
+  const { usuario } = useSesion()
+  const usuarioId = usuario?.id ?? null
+
+  // useCallback: la función solo cambia si cambia el usuario,
+  // así useDatosApi no vuelve a pedir las direcciones en cada render.
+  const cargarDirecciones = useCallback(
+    () => (usuarioId ? obtenerDireccionesUsuario(usuarioId) : Promise.resolve([])),
+    [usuarioId]
+  )
+  const direcciones = useDatosApi(cargarDirecciones, [])
 
   const [direccionElegida, setDireccionElegida] = useState<number | null>(null)
   const [enviando, setEnviando] = useState(false)
@@ -23,13 +32,13 @@ function Checkout() {
   const direccionId = direccionElegida ?? predeterminada?.id ?? null
 
   const confirmarPedido = async () => {
-    if (direccionId === null) return
+    if (direccionId === null || usuarioId === null) return
 
     setEnviando(true)
     setError(null)
 
     try {
-      const pedido = await crearPedido(USUARIO_ACTUAL_ID, direccionId, items)
+      const pedido = await crearPedido(usuarioId, direccionId, items)
       setPedidoCreado(pedido)
       vaciar()
     } catch (e) {
@@ -71,7 +80,28 @@ function Checkout() {
     )
   }
 
-  // 3) Formulario de compra
+  // 3) Sin sesión: hay que ingresar para comprar
+  if (!usuario) {
+    return (
+      <main className="container py-5">
+        <div className="bg-white rounded-4 shadow-sm p-5 text-center">
+          <i className="bi bi-person-lock fs-1 text-muted"></i>
+          <h1 className="fw-bold mt-3">Inicia sesión para comprar</h1>
+          <p className="text-muted">Tu carrito se mantiene guardado.</p>
+          <div className="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-3">
+            <Link to="/ingresar" className="btn btn-rosa">
+              Iniciar sesión
+            </Link>
+            <Link to="/registro" className="btn btn-outline-secondary">
+              Crear cuenta
+            </Link>
+          </div>
+        </div>
+      </main>
+    )
+  }
+
+  // 4) Formulario de compra
   return (
     <main className="container py-5">
       <div className="bg-white rounded-4 shadow-sm p-4">

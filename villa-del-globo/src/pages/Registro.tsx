@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link } from 'react-router'
+import { useSesion } from '../hooks/useSesion'
 import type { Usuario } from '../models/Usuario'
 import { crearUsuario } from '../services/usuarioService'
 import type { NuevoUsuario } from '../services/usuarioService'
@@ -14,6 +15,7 @@ const formularioVacio: NuevoUsuario = {
 }
 
 function Registro() {
+  const { iniciarSesion } = useSesion()
     const [formulario, setFormulario] = useState<NuevoUsuario>(formularioVacio)
     const [enviando, setEnviando] = useState(false)
     const [error, setError] = useState<string | null>(null)
@@ -39,6 +41,7 @@ function Registro() {
         try {
             const usuario = await crearUsuario(formulario)
             setUsuarioCreado(usuario)
+      iniciarSesion(usuario) // queda conectado apenas crea su cuenta
             setFormulario(formularioVacio)
         } catch (e) {
             setError(obtenerMensajeError(e))

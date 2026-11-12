@@ -1,6 +1,6 @@
-// DESPUÉS
 import { Link, NavLink } from "react-router";
 import { useCarrito } from "../hooks/useCarrito";
+import { useSesion } from "../hooks/useSesion";
 import { obtenerTematicasMenu } from "../services/tematicaService";
 import { crearSlug } from "../utils/texto";
 
@@ -9,6 +9,7 @@ const tematicas = obtenerTematicasMenu()
 
 function Navbar() {
   const { cantidadTotal } = useCarrito()
+  const { usuario, cerrarSesion } = useSesion()
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
       <div className="container">
@@ -80,14 +81,68 @@ function Navbar() {
               </button>
             </li>
 
+            {/* Perfil: menú desplegable (igual que index.html) */}
             <li className="nav-item">
-              <button
-                type="button"
-                className="btn btn-link text-dark p-0 border-0 shadow-none"
-                aria-label="Cuenta de usuario"
-              >
-                <i className="bi bi-person fs-2"></i>
-              </button>
+              <div className="dropdown">
+                <button
+                  type="button"
+                  className="btn btn-link text-dark p-0 border-0 shadow-none"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-label="Cuenta de usuario"
+                >
+                  <i className={`bi ${usuario ? 'bi-person-check' : 'bi-person'} fs-2`}></i>
+                </button>
+
+                <ul className="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2">
+                  <li>
+                    <div className="px-2 py-1">
+                      <p className="mb-0 small text-muted">
+                        {usuario ? '¡Hola de nuevo!' : '¡Hola! Bienvenido a'}
+                      </p>
+                      <h6 className="fw-bold mb-0">
+                        {usuario ? `${usuario.nombre} ${usuario.apellido}` : 'Villa del Globo'}
+                      </h6>
+                      {usuario && <p className="mb-0 small text-muted">{usuario.correo}</p>}
+                    </div>
+                  </li>
+
+                  <li>
+                    <hr className="dropdown-divider my-2" />
+                  </li>
+
+                  {usuario ? (
+                    <li>
+                      <button
+                        type="button"
+                        className="dropdown-item rounded py-2 text-danger"
+                        onClick={cerrarSesion}
+                      >
+                        <i className="bi bi-box-arrow-right me-2"></i>
+                        Cerrar sesión
+                      </button>
+                    </li>
+                  ) : (
+                    <>
+                      <li>
+                        <Link
+                          to="/ingresar"
+                          className="dropdown-item rounded py-2 fw-semibold text-white text-center bg-rosa"
+                        >
+                          <i className="bi bi-box-arrow-in-right me-2"></i>
+                          Iniciar sesión
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/registro" className="dropdown-item rounded py-2 text-muted small">
+                          <i className="bi bi-person-plus me-2"></i>
+                          ¿No tienes cuenta? Regístrate
+                        </Link>
+                      </li>
+                    </>
+                  )}
+                </ul>
+              </div>
             </li>
 
             <li className="nav-item">

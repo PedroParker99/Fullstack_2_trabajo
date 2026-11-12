@@ -29,7 +29,7 @@ public class PedidoService {
     private final DetallePedidoRepository detallePedidoRepository;
     private final TransactionTemplate transactionTemplate;
 
-    private final RestClient usuarioClient = RestClient.create("http://localhost:8082");
+    private final RestClient usuarioClient = RestClient.create("http://localhost:8087");
     private final RestClient productoClient = RestClient.create("http://localhost:8081");
     private final RestClient direccionClient = RestClient.create("http://localhost:8086");
 

@@ -7,7 +7,7 @@ export const apiProductos = axios.create({
 })
 
 export const apiUsuarios = axios.create({
-  baseURL: 'http://localhost:8082/api',
+  baseURL: 'http://localhost:8087/api',
   timeout: 5000,
 })
 

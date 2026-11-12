@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Coleccion from './pages/Coleccion'
 import Carrito from './pages/Carrito'
 import Checkout from './pages/Checkout'
+import Registro from './pages/Registro'
 import AdminPanel from './pages/AdminPanel'
 import NoEncontrada from './pages/NoEncontrada'
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="coleccion/:tematica" element={<Coleccion />} />
         <Route path="carrito" element={<Carrito />} />
         <Route path="checkout" element={<Checkout />} />
+        <Route path="registro" element={<Registro />} />
         <Route path="*" element={<NoEncontrada />} />
       </Route>
 

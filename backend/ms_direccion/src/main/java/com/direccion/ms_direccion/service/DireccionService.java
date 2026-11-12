@@ -19,7 +19,7 @@ public class DireccionService {
     private final DireccionRepository direccionRepository;
 
     private final RestClient pedidoClient = RestClient.create("http://localhost:8083");
-    private final RestClient usuarioClient = RestClient.create("http://localhost:8082");
+    private final RestClient usuarioClient = RestClient.create("http://localhost:8087");
 
     public DireccionService(DireccionRepository direccionRepository) {
         this.direccionRepository = direccionRepository;

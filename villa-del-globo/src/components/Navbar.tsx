@@ -112,6 +112,13 @@ function Navbar() {
                   </li>
 
                   {usuario ? (
+                    <>
+                    <li>
+                      <Link to="/perfil" className="dropdown-item rounded py-2 fw-semibold text-white text-center bg-rosa">
+                        <i className="bi bi-person me-2"></i>
+                        Mi perfil
+                      </Link>
+                    </li>
                     <li>
                       <button
                         type="button"
@@ -122,6 +129,7 @@ function Navbar() {
                         Cerrar sesión
                       </button>
                     </li>
+                    </>
                   ) : (
                     <>
                       <li>

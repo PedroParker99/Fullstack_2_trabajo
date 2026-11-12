@@ -8,6 +8,12 @@ export const obtenerPedidos = async (): Promise<Pedido[]> => {
   return respuesta.data
 }
 
+// GET http://localhost:8083/api/pedidos/usuario/{usuarioId}
+export const obtenerPedidosUsuario = async (usuarioId: number): Promise<Pedido[]> => {
+  const respuesta = await apiPedidos.get<Pedido[]>(`/pedidos/usuario/${usuarioId}`)
+  return respuesta.data
+}
+
 // POST http://localhost:8083/api/pedidos
 // Convierte el carrito al formato que espera ms_pedido.
 export const crearPedido = async (

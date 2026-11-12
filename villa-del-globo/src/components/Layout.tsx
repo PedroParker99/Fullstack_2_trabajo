@@ -2,6 +2,7 @@ import { Outlet } from 'react-router'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import CarritoOffcanvas from './CarritoOffcanvas'
+import BuscadorModal from './BuscadorModal'
 
 function Layout() {
     return (
@@ -12,6 +13,7 @@ function Layout() {
             </div>
             <Footer />
             <CarritoOffcanvas />
+            <BuscadorModal />
         </>
     )
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useParams } from 'react-router'
+import { Link, useParams, useSearchParams } from 'react-router'
 import FiltrosColeccion from '../components/FiltrosColeccion'
 import TarjetaColeccion from '../components/TarjetaColeccion'
 import { useProductos } from '../hooks/useProductos'
@@ -13,6 +13,8 @@ import NoEncontrada from './NoEncontrada'
 // Página de la ruta: lee la URL y decide qué catálogo mostrar.
 function Coleccion() {
   const { tematica } = useParams()
+  const [parametros] = useSearchParams()
+  const buscar = parametros.get('buscar') ?? '' // texto que viene del buscador del Navbar
   const { productos, cargando, error } = useProductos()
 
   // /coleccion/algo-que-no-existe -> 404
@@ -40,12 +42,13 @@ function Coleccion() {
         </div>
       )}
 
-      {/* key: al cambiar de temática, React crea un catálogo nuevo
+      {/* key: al cambiar de temática o de búsqueda, React crea un catálogo nuevo
           y la búsqueda y los filtros vuelven a cero. */}
       <CatalogoColeccion
-        key={tematica ?? 'todas'}
+        key={`${tematica ?? 'todas'}-${buscar}`}
         slugTematica={tematica}
         todosLosProductos={productos}
+        busquedaInicial={buscar}
       />
     </>
   )
@@ -54,9 +57,10 @@ function Coleccion() {
 interface CatalogoColeccionProps {
   slugTematica?: string
   todosLosProductos: Producto[]
+  busquedaInicial: string
 }
 
-function CatalogoColeccion({ slugTematica, todosLosProductos }: CatalogoColeccionProps) {
+function CatalogoColeccion({ slugTematica, todosLosProductos, busquedaInicial }: CatalogoColeccionProps) {
   const nombreTematica = slugTematica ? buscarTematicaPorSlug(slugTematica) : undefined
   const encabezado = nombreTematica ? obtenerEncabezadoTematica(nombreTematica) : undefined
 
@@ -73,7 +77,7 @@ function CatalogoColeccion({ slugTematica, todosLosProductos }: CatalogoColeccio
     precioMaximo: precioTope,
   }
 
-  const [busqueda, setBusqueda] = useState('')
+  const [busqueda, setBusqueda] = useState(busquedaInicial)
   const [filtros, setFiltros] = useState<Filtros>(filtrosIniciales)
   const [orden, setOrden] = useState<OrdenProductos>('caracteristicas')
 

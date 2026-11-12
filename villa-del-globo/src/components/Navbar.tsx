@@ -75,6 +75,8 @@ function Navbar() {
               <button
                 type="button"
                 className="btn btn-link text-dark p-0 border-0 shadow-none"
+                data-bs-toggle="modal"
+                data-bs-target="#modalBuscador"
                 aria-label="Buscar productos"
               >
                 <i className="bi bi-search fs-2"></i>
@@ -113,22 +115,22 @@ function Navbar() {
 
                   {usuario ? (
                     <>
-                    <li>
-                      <Link to="/perfil" className="dropdown-item rounded py-2 fw-semibold text-white text-center bg-rosa">
-                        <i className="bi bi-person me-2"></i>
-                        Mi perfil
-                      </Link>
-                    </li>
-                    <li>
-                      <button
-                        type="button"
-                        className="dropdown-item rounded py-2 text-danger"
-                        onClick={cerrarSesion}
-                      >
-                        <i className="bi bi-box-arrow-right me-2"></i>
-                        Cerrar sesión
-                      </button>
-                    </li>
+                      <li>
+                        <Link to="/perfil" className="dropdown-item rounded py-2 fw-semibold text-white text-center bg-rosa">
+                          <i className="bi bi-person me-2"></i>
+                          Mi perfil
+                        </Link>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          className="dropdown-item rounded py-2 text-danger"
+                          onClick={cerrarSesion}
+                        >
+                          <i className="bi bi-box-arrow-right me-2"></i>
+                          Cerrar sesión
+                        </button>
+                      </li>
                     </>
                   ) : (
                     <>

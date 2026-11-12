@@ -1,3 +1,4 @@
+import type { DetallePedido } from '../models/DetallePedido'
 import type { ItemCarrito } from '../models/ItemCarrito'
 import type { Pedido } from '../models/Pedido'
 import { apiPedidos } from './api'
@@ -30,5 +31,18 @@ export const crearPedido = async (
   }
 
   const respuesta = await apiPedidos.post<Pedido>('/pedidos', solicitud)
+  return respuesta.data
+}
+
+// GET http://localhost:8083/api/pedidos/{id}/detalles
+export const obtenerDetallesPedido = async (pedidoId: number): Promise<DetallePedido[]> => {
+  const respuesta = await apiPedidos.get<DetallePedido[]>(`/pedidos/${pedidoId}/detalles`)
+  return respuesta.data
+}
+
+// PATCH http://localhost:8083/api/pedidos/{id}/estado
+// Al cancelar, ms_pedido le devuelve el stock a ms_producto.
+export const cambiarEstadoPedido = async (pedidoId: number, estado: string): Promise<Pedido> => {
+  const respuesta = await apiPedidos.patch<Pedido>(`/pedidos/${pedidoId}/estado`, { estado })
   return respuesta.data
 }

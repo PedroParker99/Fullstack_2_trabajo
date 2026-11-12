@@ -38,4 +38,6 @@ public class Producto {
     private String imagenUrl;
 
     private String categoria;
+
+    private String tematica;
 }

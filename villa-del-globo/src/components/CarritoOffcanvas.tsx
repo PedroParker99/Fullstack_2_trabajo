@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router'
 import { useCarrito } from '../hooks/useCarrito'
 import { formatearPrecio } from '../utils/formato'
 
 function CarritoOffcanvas() {
     const { items, total, cambiarCantidad, quitar } = useCarrito()
+    const navigate = useNavigate()
 
     return (
         <div
@@ -92,6 +94,8 @@ function CarritoOffcanvas() {
                         type="button"
                         className="btn btn-rosa w-100 mt-3"
                         disabled={items.length === 0}
+                        data-bs-dismiss="offcanvas"
+                        onClick={() => navigate('/checkout')}
                     >
                         Finalizar compra
                     </button>

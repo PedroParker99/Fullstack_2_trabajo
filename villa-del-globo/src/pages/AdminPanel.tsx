@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import SeccionClientes from '../components/admin/SeccionClientes'
+import SeccionPedidos from '../components/admin/SeccionPedidos'
 import SidebarAdmin from '../components/admin/SidebarAdmin'
 import TablaProductos from '../components/admin/TablaProductos'
 import type { Producto } from '../models/Producto'
@@ -24,6 +26,10 @@ function AdminPanel() {
             <h1 className="fw-bold mb-4">Productos</h1>
             <TablaProductos productos={productos} onEliminar={eliminarProducto} />
           </>
+        ) : activo === 'clientes' ? (
+          <SeccionClientes />
+        ) : activo === 'pedidos' ? (
+          <SeccionPedidos />
         ) : (
           <>
             <h1 className="fw-bold">{activo}</h1>

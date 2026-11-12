@@ -4,9 +4,10 @@ interface SidebarAdminProps {
   items: ItemMenu[]
   activo: string
   onSeleccionar: (id: string) => void
+  onSalir: () => void
 }
 
-function SidebarAdmin({ items, activo, onSeleccionar }: SidebarAdminProps) {
+function SidebarAdmin({ items, activo, onSeleccionar, onSalir }: SidebarAdminProps) {
   return (
     <aside className="sidebar-admin d-flex flex-column flex-shrink-0 p-3 bg-dark text-white">
       <h5 className="fw-bold mb-3">🎈 Panel Admin</h5>
@@ -26,6 +27,12 @@ function SidebarAdmin({ items, activo, onSeleccionar }: SidebarAdminProps) {
           </li>
         ))}
       </ul>
+
+      <hr className="border-secondary" />
+      <button type="button" className="nav-link text-start text-danger" onClick={onSalir}>
+        <i className="bi bi-box-arrow-right me-2"></i>
+        Cerrar sesión
+      </button>
     </aside>
   )
 }

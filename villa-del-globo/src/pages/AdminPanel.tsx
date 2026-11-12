@@ -1,31 +1,34 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
+import Dashboard from '../components/admin/Dashboard'
 import SeccionClientes from '../components/admin/SeccionClientes'
 import SeccionPedidos from '../components/admin/SeccionPedidos'
+import SeccionProductos from '../components/admin/SeccionProductos'
 import SidebarAdmin from '../components/admin/SidebarAdmin'
-import TablaProductos from '../components/admin/TablaProductos'
-import type { Producto } from '../models/Producto'
+import { useSesion } from '../hooks/useSesion'
 import { obtenerItemsAdmin } from '../services/adminService'
-import { obtenerProductos } from '../services/productoService'
 
 function AdminPanel() {
   const items = obtenerItemsAdmin()
   const [activo, setActivo] = useState('dashboard')
-  const [productos, setProductos] = useState<Producto[]>(obtenerProductos())
+  const { cerrarSesion } = useSesion()
+  const navigate = useNavigate()
 
-  const eliminarProducto = (id: Producto['id']) => {
-    setProductos((actuales) => actuales.filter((p) => p.id !== id))
+  // Cierra la sesión del admin y vuelve a la página de inicio
+  const salir = () => {
+    cerrarSesion()
+    navigate('/')
   }
 
   return (
     <div className="d-flex flex-column flex-md-row">
-      <SidebarAdmin items={items} activo={activo} onSeleccionar={setActivo} />
+      <SidebarAdmin items={items} activo={activo} onSeleccionar={setActivo} onSalir={salir} />
 
-      <main className="flex-grow-1 p-4">
-        {activo === 'productos' ? (
-          <>
-            <h1 className="fw-bold mb-4">Productos</h1>
-            <TablaProductos productos={productos} onEliminar={eliminarProducto} />
-          </>
+      <main className="flex-grow-1 p-4 bg-light">
+        {activo === 'dashboard' ? (
+          <Dashboard onIr={setActivo} />
+        ) : activo === 'productos' ? (
+          <SeccionProductos />
         ) : activo === 'clientes' ? (
           <SeccionClientes />
         ) : activo === 'pedidos' ? (

@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import Coleccion from './pages/Coleccion'
 import Carrito from './pages/Carrito'
+import Checkout from './pages/Checkout'
 import AdminPanel from './pages/AdminPanel'
 import NoEncontrada from './pages/NoEncontrada'
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="coleccion" element={<Coleccion />} />
         <Route path="coleccion/:tematica" element={<Coleccion />} />
         <Route path="carrito" element={<Carrito />} />
+        <Route path="checkout" element={<Checkout />} />
         <Route path="*" element={<NoEncontrada />} />
       </Route>
 

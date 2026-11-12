@@ -8,6 +8,8 @@ export function useDatosApi<T>(cargar: () => Promise<T>, valorInicial: T) {
   const [datos, setDatos] = useState<T>(valorInicial)
   const [cargando, setCargando] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  // Cambiar "version" obliga a volver a pedir los datos (por ejemplo, después de guardar)
+  const [version, setVersion] = useState(0)
 
   useEffect(() => {
     let activo = true
@@ -26,7 +28,9 @@ export function useDatosApi<T>(cargar: () => Promise<T>, valorInicial: T) {
     return () => {
       activo = false
     }
-  }, [cargar])
+  }, [cargar, version])
 
-  return { datos, cargando, error }
+  const recargar = () => setVersion((v) => v + 1)
+
+  return { datos, cargando, error, recargar }
 }

@@ -27,7 +27,7 @@ function Ingresar() {
       }
 
       iniciarSesion(usuario)
-      navigate('/coleccion')
+      navigate(usuario.rol === 'ADMIN' ? '/admin' : '/coleccion')
     } catch (e) {
       setError(obtenerMensajeError(e))
     } finally {

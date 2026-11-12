@@ -33,3 +33,9 @@ export const buscarUsuarioPorCorreo = async (correo: string): Promise<Usuario | 
   const buscado = normalizarTexto(correo.trim())
   return usuarios.find((u) => normalizarTexto(u.correo) === buscado)
 }
+
+// PUT /api/usuarios/{id}
+export const actualizarUsuario = async (usuario: Usuario): Promise<Usuario> => {
+  const respuesta = await apiUsuarios.put<Usuario>(`/usuarios/${usuario.id}`, usuario)
+  return respuesta.data
+}
